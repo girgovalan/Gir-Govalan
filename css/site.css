@@ -546,7 +546,6 @@ section { padding: 60px 0; }
   background: var(--accent-2);
   margin-top: 60px;
   padding-top: 72px;
-  overflow: hidden;
 }
 .footer-wave {
   position: absolute;
@@ -574,15 +573,20 @@ section { padding: 60px 0; }
 .footer-brand p { font-size: 0.95rem; color: #333; }
 .footer-tagline { font-weight: 600; }
 
-/* Gir cows illustration — same images as original Shopify theme */
+/* Gir cows illustration — full image, no crop (desktop + mobile) */
 .footer-cows {
   width: 100%;
-  min-height: 260px;
   margin: 0;
   padding: 0;
-  background: transparent url('https://cdn.shopify.com/s/files/1/0686/6944/0297/files/footer_image_1_home_page.png?v=1676397932') center bottom / 100% auto no-repeat;
-  background-size: 100% auto;
-  background-position: center bottom;
+  line-height: 0;
+}
+.footer-cows-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: bottom;
+  object-fit: contain;
+  object-position: center bottom;
 }
 .social-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
 .social-links a { font-weight: 600; font-size: 0.9rem; }
@@ -676,12 +680,6 @@ section { padding: 60px 0; }
   }
   .categories-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
-  .footer-cows {
-    min-height: 130px;
-    background-image: url('https://cdn.shopify.com/s/files/1/0686/6944/0297/files/footer_image_2_Mobile_view.png?v=1676397930');
-    background-size: cover;
-    background-position: center bottom;
-  }
   .footer-logo { width: 140px; }
   .cart-table thead { display: none; }
   .cart-table tr { display: block; margin-bottom: 16px; border: 1px solid #eee; border-radius: var(--radius); }

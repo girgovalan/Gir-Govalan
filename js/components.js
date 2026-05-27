@@ -122,7 +122,12 @@
             </ul>
           </div>
         </div>
-        <div class="footer-cows" role="img" aria-label="Gir cows illustration"></div>
+        <div class="footer-cows">
+          <picture>
+            <source media="(max-width: 500px)" srcset="${SITE.footerImageMobile}">
+            <img src="${SITE.footerImageDesktop}" alt="Gir cows at Gir Govalan farm" class="footer-cows-img" width="1200" height="289" loading="lazy">
+          </picture>
+        </div>
         <div class="footer-bottom container">
           <p>&copy; ${new Date().getFullYear()} ${SITE.name}. All rights reserved.</p>
         </div>
