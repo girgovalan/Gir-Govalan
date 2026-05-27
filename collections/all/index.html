@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — Gir Govalan</title>
+  <link rel="canonical" href="https://girgovalan.com/collections/all/">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <div class="page-hero">
+    <div class="container">
+      <h1 id="products-title">All Products</h1>
+      <p>Authentic Gir cow ghee, dairy, sweets, and more from our farm to your home.</p>
+    </div>
+  </div>
+  <section>
+    <div class="container">
+      <div class="categories-grid" style="margin-bottom:40px" id="category-filters"></div>
+      <div class="products-grid" id="products-grid"></div>
+      <p class="text-center mt-2" id="no-results" hidden>No products found.</p>
+    </div>
+  </section>
+  <div id="site-footer"></div>
+  <button class="scroll-top" aria-label="Back to top">↑</button>
+  <script src="/js/urls.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/app.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const category = params.get('category') || 'all';
+    const q = (params.get('q') || '').toLowerCase();
+    document.getElementById('products-title').textContent = getCategoryLabel(category);
+    document.getElementById('category-filters').innerHTML = [{ id: 'all', title: 'All' }, ...CATEGORIES].map(c => {
+      const id = c.id || 'all';
+      const url = id === 'all' ? URLS.products : URLS.productsCategory(id);
+      const active = category === id ? ' style="outline:2px solid var(--accent-1)"' : '';
+      return `<a href="${url}" class="category-card"${active}><h3>${c.title}</h3></a>`;
+    }).join('');
+    let list = getProductsByCategory(category);
+    if (q) list = list.filter(p => p.name.toLowerCase().includes(q));
+    const grid = document.getElementById('products-grid');
+    if (list.length) grid.innerHTML = list.map(productCardHTML).join('');
+    else { grid.innerHTML = ''; document.getElementById('no-results').hidden = false; }
+  </script>
+</body>
+</html>

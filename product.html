@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — Gir Govalan</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section style="padding-top:40px">
+    <div class="container" id="product-root">
+      <p class="text-center">Loading…</p>
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="container">
+      <div class="section-title"><h2>You may also like</h2></div>
+      <div class="products-grid" id="related-products"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <button class="scroll-top" aria-label="Back to top">↑</button>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    const id = new URLSearchParams(location.search).get('id');
+    const product = getProduct(id);
+
+    if (!product) {
+      document.getElementById('product-root').innerHTML = `
+        <div class="text-center">
+          <h2>Product not found</h2>
+          <a href="products.html" class="btn btn-primary">Browse products</a>
+        </div>`;
+    } else {
+      document.title = `${product.name} — Gir Govalan`;
+      const imgs = product.images || [product.image];
+      let selectedVariant = product.variants ? product.variants[0] : null;
+      let price = selectedVariant ? selectedVariant.price : product.price;
+
+      document.getElementById('product-root').innerHTML = `
+        <div class="featured-product">
+          <div>
+            <img id="main-img" src="${imgs[0]}" alt="${product.name}">
+          </div>
+          <div>
+            <p class="product-vendor">${product.vendor}</p>
+            <h1>${product.name}</h1>
+            <p class="product-rating">${'★'.repeat(Math.round(product.rating || 5))}</p>
+            <p class="product-price" id="product-price">${formatPrice(price)}</p>
+            <p>${product.description}</p>
+            ${product.variants ? `<div class="variant-pills" id="variants">${product.variants.map((v,i) =>
+              `<button type="button" class="variant-pill${i===0?' active':''}" data-label="${v.label}" data-price="${v.price}">${v.label}</button>`
+            ).join('')}</div>` : ''}
+            <div class="qty-row">
+              <button type="button" class="qty-btn" id="qty-minus">−</button>
+              <input type="number" class="qty-input" id="qty" value="1" min="1">
+              <button type="button" class="qty-btn" id="qty-plus">+</button>
+            </div>
+            <button type="button" class="btn btn-primary" id="add-cart">Add to Cart</button>
+            <button type="button" class="btn btn-secondary" style="margin-left:8px" id="wa-single">Order on WhatsApp</button>
+          </div>
+        </div>`;
+
+      document.querySelectorAll('#variants .variant-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('#variants .variant-pill').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedVariant = { label: btn.dataset.label, price: +btn.dataset.price };
+          price = selectedVariant.price;
+          document.getElementById('product-price').textContent = formatPrice(price);
+        });
+      });
+
+      document.getElementById('qty-minus').onclick = () => {
+        const el = document.getElementById('qty');
+        if (+el.value > 1) el.value = +el.value - 1;
+      };
+      document.getElementById('qty-plus').onclick = () => {
+        document.getElementById('qty').value = +document.getElementById('qty').value + 1;
+      };
+
+      document.getElementById('add-cart').onclick = () => {
+        const qty = +document.getElementById('qty').value;
+        addToCart(product.id, qty, selectedVariant?.label);
+      };
+
+      document.getElementById('wa-single').onclick = () => {
+        const qty = +document.getElementById('qty').value;
+        const item = {
+          key: 'wa',
+          productId: product.id,
+          name: product.name,
+          price,
+          qty,
+          variant: selectedVariant?.label,
+          image: product.image
+        };
+        window.open(whatsappOrderLink([item]), '_blank');
+      };
+
+      document.getElementById('related-products').innerHTML =
+        PRODUCTS.filter(p => p.category === product.category && p.id !== product.id)
+          .slice(0, 3).map(productCardHTML).join('') ||
+        PRODUCTS.filter(p => p.id !== product.id).slice(0, 3).map(productCardHTML).join('');
+    }
+  </script>
+</body>
+</html>

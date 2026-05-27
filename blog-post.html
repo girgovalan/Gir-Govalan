@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Post — Gir Govalan</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <article id="article-root">
+    <p class="text-center container" style="padding:60px 20px">Loading…</p>
+  </article>
+
+  <section class="bg-cream">
+    <div class="container">
+      <div class="section-title"><h2>More from our blog</h2></div>
+      <div class="blog-grid" id="more-posts"></div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <button class="scroll-top" aria-label="Back to top">↑</button>
+
+  <script src="js/data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    const slug = new URLSearchParams(location.search).get('slug');
+    const post = getBlogPost(slug);
+
+    if (!post) {
+      document.getElementById('article-root').innerHTML = `
+        <div class="text-center container" style="padding:80px 20px">
+          <h2>Post not found</h2>
+          <a href="blog.html" class="btn btn-primary">Back to blog</a>
+        </div>`;
+    } else {
+      document.title = `${post.title} — Gir Govalan Blog`;
+      document.getElementById('article-root').innerHTML = `
+        <div class="article-content">
+          <a href="blog.html">← Back to blog</a>
+          <p class="article-meta">${new Date(post.date).toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' })}</p>
+          <h1>${post.title}</h1>
+          <img class="article-hero-img" src="${post.image}" alt="${post.title}">
+          <div class="article-body">${post.content}</div>
+        </div>`;
+      document.getElementById('more-posts').innerHTML = BLOG_POSTS
+        .filter(p => p.slug !== slug).slice(0, 3).map(p => `
+          <a href="blog-post.html?slug=${p.slug}" class="blog-card">
+            <div class="blog-card-image" style="background-image:url('${p.image}')"></div>
+            <div class="blog-card-body">
+              <h3>${p.title}</h3>
+            </div>
+          </a>
+        `).join('');
+    }
+  </script>
+</body>
+</html>

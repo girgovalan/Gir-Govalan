@@ -1,0 +1,26 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/blog-post.html",
+      "has": [{ "type": "query", "key": "slug", "value": "(?<slug>.*)" }],
+      "destination": "/blogs/news/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/product.html",
+      "has": [{ "type": "query", "key": "id", "value": "(?<id>.*)" }],
+      "destination": "/products/:id/",
+      "permanent": true
+    },
+    { "source": "/who-is-gir-govalan.html", "destination": "/pages/who-is-gir-govalan/", "permanent": true },
+    { "source": "/contact.html", "destination": "/pages/contact/", "permanent": true },
+    { "source": "/gallery.html", "destination": "/pages/gallery/", "permanent": true },
+    { "source": "/blog.html", "destination": "/blogs/news/", "permanent": true },
+    { "source": "/blog-post.html", "destination": "/blogs/news/", "permanent": true },
+    { "source": "/products.html", "destination": "/collections/all/", "permanent": true },
+    { "source": "/product.html", "destination": "/collections/all/", "permanent": true },
+    { "source": "/cart.html", "destination": "/cart/", "permanent": true }
+  ]
+}

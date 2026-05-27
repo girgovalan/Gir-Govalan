@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gir Govalan — Authentic Gir Cow Ghee from Gujarat</title>
+  <meta name="description" content="Live Pure, Eat Pure. Authentic A2 Gir Cow Ghee hand-churned using the bilona method from the Gir region of Gujarat.">
+  <link rel="canonical" href="https://girgovalan.com/">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero" style="background-image:url('https://cdn.shopify.com/s/files/1/0686/6944/0297/files/2.jpg')">
+    <div class="hero-content">
+      <h1>Live Pure, Eat Pure — Gir Cow Ghee from Our Village to Your Home</h1>
+      <p>Sourced ethically. Made traditionally. Nourishing generations the natural way.</p>
+      <a href="/collections/all/" class="btn btn-primary">Our Products</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container about-split">
+      <div>
+        <h2>Authentic Gir Cow Ghee — Rooted in Tradition, Delivered with Purity.</h2>
+        <p>We are originally from the <strong>Gir region</strong>, and we proudly bring you <strong>authentic Gir Cow Ghee</strong>.</p>
+        <p>Our Gir cows are lovingly raised in the natural surroundings of our native land, nourished with organic feed and cared for like family. The ghee is handcrafted using the traditional <strong>bilona method</strong>, ensuring exceptional purity, rich nutrition, and unmatched taste.</p>
+        <a href="/pages/who-is-gir-govalan/" class="btn btn-outline">Who Is Gir Govalan</a>
+      </div>
+      <img src="https://cdn.shopify.com/s/files/1/0686/6944/0297/files/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg" alt="Gir cows at Gir Govalan">
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="container">
+      <div id="label-categories"></div>
+      <div class="section-title"><h2>From the land to your home</h2></div>
+      <div class="categories-grid" id="home-categories"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div id="label-products"></div>
+      <div class="section-title"><h2>Fresh &amp; natural product</h2></div>
+      <div class="products-grid" id="home-products"></div>
+      <p class="text-center mt-2"><a href="/collections/all/" class="btn btn-primary">View All Products</a></p>
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="container">
+      <div id="label-featured"></div>
+      <div class="section-title"><h2>Our best selling featured product</h2></div>
+      <div id="featured-product"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div id="label-collections"></div>
+      <div class="section-title"><h2>Explore our collection</h2></div>
+      <div class="categories-grid" id="home-collections"></div>
+    </div>
+  </section>
+
+  <section class="bg-cream">
+    <div class="container">
+      <div id="label-testimonials"></div>
+      <div class="section-title"><h2>Our satisfied buyers from store</h2></div>
+      <div class="testimonials-grid" id="home-testimonials"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div id="label-blog"></div>
+      <div class="section-title"><h2>Blogging is good for your organic</h2></div>
+      <div class="blog-grid" id="home-blog"></div>
+      <p class="text-center mt-2"><a href="/blogs/news/" class="btn btn-outline">View All Posts</a></p>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container">
+      <p class="section-label"><span>SUBSCRIBE</span></p>
+      <h2>Our farm newsletter</h2>
+      <p>Be the first to know about new collections and exclusive offers.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <button class="scroll-top" aria-label="Back to top">↑</button>
+
+  <script src="/js/urls.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/app.js"></script>
+  <script>
+    document.getElementById('label-categories').innerHTML = sectionLabel('OUR CATEGORIES');
+    document.getElementById('label-products').innerHTML = sectionLabel('FEATURED PRODUCTS');
+    document.getElementById('label-featured').innerHTML = sectionLabel('TOP SALES');
+    document.getElementById('label-collections').innerHTML = sectionLabel('EXPLORE OUR COLLECTION');
+    document.getElementById('label-testimonials').innerHTML = sectionLabel('TESTIMONIAL');
+    document.getElementById('label-blog').innerHTML = sectionLabel('TIPS & ARTICLE');
+
+    document.getElementById('home-categories').innerHTML = CATEGORIES.map(c =>
+      `<a href="${c.url}" class="category-card"><img src="${c.icon}" alt="${c.title}"><h3>${c.title}</h3></a>`
+    ).join('');
+
+    document.getElementById('home-collections').innerHTML = CATEGORIES.map(c =>
+      `<a href="${c.url}" class="category-card"><img src="${c.icon}" alt="${c.title}"><h3>${c.title}</h3></a>`
+    ).join('');
+
+    document.getElementById('home-products').innerHTML = PRODUCTS.slice(0, 5).map(productCardHTML).join('');
+
+    const featured = PRODUCTS.find(p => p.featured) || PRODUCTS[0];
+    document.getElementById('featured-product').innerHTML = `
+      <div class="featured-product">
+        <img src="${featured.images ? featured.images[0] : featured.image}" alt="${featured.name}">
+        <div>
+          <p class="product-vendor">${featured.vendor}</p>
+          <h2>${featured.name}</h2>
+          <p class="product-rating">${'★'.repeat(5)}</p>
+          <p class="product-price">${formatPrice(featured.price)}</p>
+          <p>${featured.description}</p>
+          ${featured.variants ? `<div class="variant-pills" id="feat-variants">${featured.variants.map((v,i) =>
+            `<button type="button" class="variant-pill${i===1?' active':''}" data-price="${v.price}">${v.label} — ${formatPrice(v.price)}</button>`
+          ).join('')}</div>` : ''}
+          <div class="qty-row">
+            <button type="button" class="qty-btn" id="feat-minus">−</button>
+            <input type="number" class="qty-input" id="feat-qty" value="1" min="1">
+            <button type="button" class="qty-btn" id="feat-plus">+</button>
+          </div>
+          <button type="button" class="btn btn-primary" id="feat-add">Add to Cart</button>
+          <a href="/products/${featured.id}/" class="btn btn-outline" style="margin-left:8px">View Details</a>
+        </div>
+      </div>`;
+
+    let featPrice = featured.price;
+    let featVariant = featured.variants ? featured.variants[1].label : null;
+    document.querySelectorAll('#feat-variants .variant-pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#feat-variants .variant-pill').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        featPrice = +btn.dataset.price;
+        featVariant = btn.textContent.split(' — ')[0];
+      });
+    });
+    document.getElementById('feat-minus').onclick = () => {
+      const i = document.getElementById('feat-qty');
+      if (+i.value > 1) i.value = +i.value - 1;
+    };
+    document.getElementById('feat-plus').onclick = () => {
+      document.getElementById('feat-qty').value = +document.getElementById('feat-qty').value + 1;
+    };
+    document.getElementById('feat-add').onclick = () => {
+      const qty = +document.getElementById('feat-qty').value;
+      addToCart(featured.id, qty, featVariant);
+    };
+
+    document.getElementById('home-testimonials').innerHTML = TESTIMONIALS.map(t => `
+      <div class="testimonial-card"><p>"${t.text}"</p><strong>${t.author}</strong> — ${t.role}</div>
+    `).join('');
+
+    document.getElementById('home-blog').innerHTML = BLOG_POSTS.slice(0, 3).map(post => `
+      <a href="/blogs/news/${post.slug}/" class="blog-card">
+        <div class="blog-card-image" style="background-image:url('${post.image}')"></div>
+        <div class="blog-card-body">
+          <span class="blog-card-date">${new Date(post.date).toLocaleDateString('en-IN', { day:'numeric', month:'long', year:'numeric' })}</span>
+          <h3>${post.title}</h3>
+        </div>
+      </a>
+    `).join('');
+  </script>
+</body>
+</html>

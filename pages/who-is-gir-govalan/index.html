@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who Is Gir Govalan — Our Story | Gir Govalan</title>
+  <meta name="description" content="Meet Jituben and the Gir Govalan family — Maldhari heritage, Gir cows, bilona ghee, and our journey from Aakolda to your home.">
+  <link rel="canonical" href="https://girgovalan.com/pages/who-is-gir-govalan/">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <div class="page-hero">
+    <div class="container">
+      <h1>Who Is Gir Govalan</h1>
+      <p>From Aakolda, Gir — to your home. The story of Jituben and our family.</p>
+    </div>
+  </div>
+  <section>
+    <div class="container page-content" id="about-sections"></div>
+  </section>
+  <section class="bg-cream">
+    <div class="container about-split">
+      <figure>
+        <img src="https://cdn.shopify.com/s/files/1/0686/6944/0297/files/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg" alt="Gir Govalan real photo">
+        <figcaption style="text-align:center;margin-top:8px;color:#666">Gir Govalan real photo</figcaption>
+      </figure>
+      <div>
+        <h2>Rooted in Heritage. Blessed with Purity.</h2>
+        <p>At Gir Govalan, we honor the timeless legacy of Gir Cow Ghee, crafted the way nature intended.</p>
+        <a href="/collections/all/" class="btn btn-primary">Shop Our Products</a>
+        <a href="/pages/contact/" class="btn btn-outline" style="margin-left:8px">Contact Us</a>
+      </div>
+    </div>
+  </section>
+  <div id="site-footer"></div>
+  <button class="scroll-top" aria-label="Back to top">↑</button>
+  <script src="/js/urls.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/app.js"></script>
+  <script>
+    document.getElementById('about-sections').innerHTML = PAGES.about.sections.map(s =>
+      `<article class="about-block"><h2>${s.heading}</h2><div class="rte">${s.body}</div></article>`
+    ).join('');
+  </script>
+</body>
+</html>

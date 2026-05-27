@@ -1,0 +1,24 @@
+# Dependencies / tools
+node_modules/
+.vercel/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.cursor/
+
+# Backups / exports
+*.zip
+
+# Old Shopify theme (new site uses index.html, pages/, blogs/, css/, js/)
+sections/
+snippets/
+templates/
+layout/
+locales/
+config/
+assets/
+*.tsx
+*.liquid
+theme_export*/

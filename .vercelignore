@@ -1,0 +1,11 @@
+# Old Shopify theme — not needed on Vercel (site uses /css, /js, HTML pages only)
+sections/
+snippets/
+templates/
+layout/
+locales/
+config/
+assets/
+*.tsx
+*.liquid
+agent-transcripts/

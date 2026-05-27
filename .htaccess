@@ -1,0 +1,22 @@
+# Apache redirects for girgovalan.com (cPanel / shared hosting)
+RewriteEngine On
+RewriteBase /
+
+# Force HTTPS (uncomment when SSL is active)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Old flat files → SEO URLs
+RewriteRule ^who-is-gir-govalan\.html$ /pages/who-is-gir-govalan/ [R=301,L]
+RewriteRule ^contact\.html$ /pages/contact/ [R=301,L]
+RewriteRule ^gallery\.html$ /pages/gallery/ [R=301,L]
+RewriteRule ^blog\.html$ /blogs/news/ [R=301,L]
+RewriteRule ^products\.html$ /collections/all/ [R=301,L]
+RewriteRule ^cart\.html$ /cart/ [R=301,L]
+RewriteRule ^product\.html\?id=([^&]+)$ /products/$1/ [R=301,L,QSA]
+RewriteRule ^blog-post\.html\?slug=([^&]+)$ /blogs/news/$1/ [R=301,L,QSA]
+
+# Trailing slash for directories
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ $1/ [R=301,L]

@@ -1,0 +1,270 @@
+/* Gir Govalan — site content (from original Shopify theme) */
+const CDN = 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files';
+
+const SITE = {
+  name: 'Gir Govalan',
+  tagline: 'Rooted in Heritage. Blessed with Purity.',
+  email: 'info@girgovalan.com',
+  phone: '+91 98765 43210',
+  whatsapp: '919876543210',
+  address: 'Gir, Gujarat, India',
+  social: {
+    facebook: 'https://www.facebook.com/GirGovalan/',
+    instagram: 'https://www.instagram.com/girgovalan/',
+    youtube: 'https://www.youtube.com/@GirGovalan',
+    twitter: 'https://twitter.com/GirGovalan'
+  },
+  logo: `${CDN}/logo_done_3a598d0d-0c1a-41fb-9aac-92c5d9a2f98f.jpg`,
+  logoFooter: `${CDN}/png_logo.png`,
+  decor: `${CDN}/Vector.svg`,
+  heroImage: `${CDN}/2.jpg`,
+  colors: {
+    accent1: '#7b5495',
+    accent2: '#faefc6',
+    bg1: '#fcfcfc',
+    bg2: '#f6f3ee',
+    text: '#000000'
+  }
+};
+
+const CATEGORIES = [
+  { id: 'ghee', title: 'Ghee', icon: `${CDN}/clean-GHEE-icon.jpg`, url: '/collections/all/?category=ghee' },
+  { id: 'sweets', title: 'Desserts', icon: `${CDN}/girgovalan__DESSERTS_icon_9c2b61f0-1076-4fc1-aef1-f6359de9c8d0.png`, url: '/collections/all/?category=sweets' },
+  { id: 'dairy', title: 'Dairy', icon: `${CDN}/girgovalan__DAIRY_icon_729cc151-5743-466c-b219-d727fb6e089e.png`, url: '/collections/all/?category=dairy' },
+  { id: 'seeds-nuts', title: 'Seed & Nuts', icon: `${CDN}/girgovalan__SEED_NUTS_icon_70bea663-b2f9-4021-b14a-4bc4d23c7294.png`, url: '/collections/all/?category=seeds-nuts' }
+];
+
+const PRODUCTS = [
+  {
+    id: 'pure-organic-a2-gir-cow-ghee',
+    name: 'Pure Organic A2 Gir Cow Ghee',
+    vendor: 'Gir Govalan',
+    price: 1299,
+    compareAt: 1499,
+    category: 'ghee',
+    image: `${CDN}/Fresh_gir_cow_ghee_png.png`,
+    images: [`${CDN}/Fresh_gir_cow_ghee_png.png`, `${CDN}/Gir_cow_gir_cow_ghee.jpg`],
+    rating: 5,
+    featured: true,
+    description: 'Hand-churned A2 Gir Cow Ghee using the traditional bilona method. Rich aroma, golden colour, and exceptional purity from grass-fed Gir cows of the Gir region.',
+    variants: [
+      { label: '250ml', price: 699 },
+      { label: '500ml', price: 1299 },
+      { label: '1L', price: 2499 }
+    ]
+  },
+  {
+    id: 'bilona-gir-ghee-500ml',
+    name: 'Bilona Gir Cow Ghee — 500ml',
+    vendor: 'Gir Govalan',
+    price: 1199,
+    category: 'ghee',
+    image: `${CDN}/Gir_cow_gir_cow_ghee.jpg`,
+    rating: 5,
+    description: 'Premium bilona-churned ghee from indigenous Gir cows, nourished with organic feed in natural surroundings.'
+  },
+  {
+    id: 'bilona-gir-ghee-1l',
+    name: 'Bilona Gir Cow Ghee — 1L',
+    vendor: 'Gir Govalan',
+    price: 2299,
+    category: 'ghee',
+    image: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`,
+    rating: 5,
+    description: 'Family-size pack of authentic bilona ghee — ideal for daily cooking and traditional sweets.'
+  },
+  {
+    id: 'a2-gir-milk',
+    name: 'A2 Gir Cow Milk',
+    vendor: 'Gir Govalan',
+    price: 89,
+    category: 'dairy',
+    image: `${CDN}/girgovalan__DAIRY_icon_729cc151-5743-466c-b219-d727fb6e089e.png`,
+    rating: 4,
+    description: 'Fresh A2 milk from Gir cows — delivered with care from our farm to your home.'
+  },
+  {
+    id: 'fresh-curd',
+    name: 'Fresh Curd (Dahi)',
+    vendor: 'Gir Govalan',
+    price: 79,
+    category: 'dairy',
+    image: `${CDN}/girgovalan__DAIRY_icon_729cc151-5743-466c-b219-d727fb6e089e.png`,
+    rating: 4,
+    description: 'Thick, creamy curd made from pure Gir cow milk using traditional methods.'
+  },
+  {
+    id: 'traditional-ladoo',
+    name: 'Traditional Ladoo',
+    vendor: 'Gir Govalan',
+    price: 349,
+    category: 'sweets',
+    image: `${CDN}/girgovalan__DESSERTS_icon_9c2b61f0-1076-4fc1-aef1-f6359de9c8d0.png`,
+    rating: 5,
+    description: 'Homestyle ladoos prepared with our Gir cow ghee for authentic taste and richness.'
+  },
+  {
+    id: 'shrikhand',
+    name: 'Shrikhand',
+    vendor: 'Gir Govalan',
+    price: 299,
+    category: 'sweets',
+    image: `${CDN}/girgovalan__DESSERTS_icon_9c2b61f0-1076-4fc1-aef1-f6359de9c8d0.png`,
+    rating: 4,
+    description: 'Creamy Gujarati shrikhand made from hung curd and natural flavours.'
+  },
+  {
+    id: 'premium-almonds',
+    name: 'Premium Almonds',
+    vendor: 'Gir Govalan',
+    price: 449,
+    category: 'seeds-nuts',
+    image: `${CDN}/girgovalan__SEED_NUTS_icon_70bea663-b2f9-4021-b14a-4bc4d23c7294.png`,
+    rating: 4,
+    description: 'Hand-selected premium almonds — perfect for snacking and traditional recipes.'
+  },
+  {
+    id: 'mixed-dry-fruits',
+    name: 'Mixed Dry Fruits',
+    vendor: 'Gir Govalan',
+    price: 599,
+    category: 'seeds-nuts',
+    image: `${CDN}/girgovalan__SEED_NUTS_icon_70bea663-b2f9-4021-b14a-4bc4d23c7294.png`,
+    rating: 4,
+    description: 'A wholesome mix of nuts and dry fruits sourced with quality you can trust.'
+  }
+];
+
+const TESTIMONIALS = [
+  {
+    text: 'Gir Cow Ghee has been a game-changer in my kitchen! The rich aroma and exceptional taste of their ghee elevate every dish I prepare. Not only does it add a delightful flavor, but I also appreciate its purity and quality. Highly recommended!',
+    author: 'Priya Sharma',
+    role: 'Home Chef'
+  },
+  {
+    text: "Switching to Gir Cow Ghee has been a revelation for me. The difference in taste and aroma compared to other ghees is remarkable. It's truly a taste of tradition and excellence in every spoonful.",
+    author: 'Rajesh Kumar',
+    role: 'Food Blogger'
+  },
+  {
+    text: 'As a mother who takes pride in nurturing her family through wholesome cooking, Gir Cow Ghee has become my trusted ally in the kitchen. With Gir Cow Ghee, I can confidently serve meals filled with love and the goodness of pure, natural ingredients.',
+    author: 'Meera Patel',
+    role: 'Homemaker'
+  }
+];
+
+const GALLERY = [
+  { src: `${CDN}/2.jpg`, alt: 'Gir Govalan farm landscape' },
+  { src: `${CDN}/Gir_cow_gir_cow_ghee.jpg`, alt: 'Gir cow and ghee' },
+  { src: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`, alt: 'Bilona ghee making' },
+  { src: `${CDN}/Fresh_gir_cow_ghee_png.png`, alt: 'Fresh Gir cow ghee' },
+  { src: `${CDN}/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg`, alt: 'Our Gir cows' },
+  { src: `${CDN}/new-banner1.jpg`, alt: 'Gir Govalan banner' }
+];
+
+const BLOG_POSTS = [
+  {
+    slug: 'benefits-of-gir-cow-ghee',
+    title: 'Benefits of Gir Cow Ghee for Your Daily Diet',
+    date: '2025-03-10',
+    image: `${CDN}/Fresh_gir_cow_ghee_png.png`,
+    excerpt: 'Discover why A2 Gir cow ghee is prized in Ayurveda and everyday Indian cooking for nourishment and flavour.',
+    content: `<p>Gir cow ghee has been treasured for generations in Gujarat and across India. Rich in healthy fats and made through the traditional bilona process, it supports digestion, adds depth to cooking, and carries the authentic taste of the Gir region.</p>
+    <p>When you choose ghee from indigenous Gir cows raised ethically on organic feed, you are choosing purity — for your family, for the cows, and for the land.</p>
+    <h3>Why bilona matters</h3>
+    <p>The bilona method slowly churns curd into butter and then clarifies it into ghee. This labour-intensive process preserves nutrients and creates the distinctive aroma that sets Gir ghee apart from mass-produced alternatives.</p>`
+  },
+  {
+    slug: 'what-is-bilona-ghee',
+    title: 'What Is Bilona Ghee and Why It Matters',
+    date: '2025-02-18',
+    image: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`,
+    excerpt: 'Learn how the ancient bilona method turns A2 milk into the golden ghee your grandmother trusted.',
+    content: `<p>Bilona ghee begins with whole A2 milk from Gir cows. The milk is cultured into curd, hand-churned to extract butter, and then slow-cooked until water evaporates and pure ghee remains.</p>
+    <p>At Gir Govalan, we honour this craft because it aligns with our values: no shortcuts, no compromise on quality, and full respect for our cows and their natural rhythm.</p>`
+  },
+  {
+    slug: 'know-your-gir-cow',
+    title: 'Know Your Gir Cow — The Pride of Gujarat',
+    date: '2025-01-25',
+    image: `${CDN}/Gir_cow_gir_cow_ghee.jpg`,
+    excerpt: 'The indigenous Gir breed is known for rich A2 milk and resilience — the heart of our farm.',
+    content: `<p>Gir cows are native to the Gir forest region of Gujarat. They are admired for their gentle nature, distinctive appearance, and milk that is naturally high in A2 protein.</p>
+    <p>Our herd grazes in open surroundings and receives care like family — because healthy, happy cows are the foundation of exceptional ghee.</p>`
+  },
+  {
+    slug: 'cooking-with-pure-ghee',
+    title: 'Cooking with Pure Ghee — Tips from Our Kitchen',
+    date: '2024-12-05',
+    image: `${CDN}/2.jpg`,
+    excerpt: 'From tadka to sweets, here is how to get the most from authentic Gir cow ghee in your recipes.',
+    content: `<p>Use Gir ghee for tempering spices, roasting grains, or finishing dal — a little goes a long way. Its high smoke point makes it excellent for traditional frying and festive sweets like ladoo and halwa.</p>
+    <p>Store ghee in a cool, dry place away from direct sunlight. Properly made bilona ghee stays fresh and aromatic for months when handled with care.</p>`
+  }
+];
+
+const PAGES = {
+  about: {
+    title: 'Who Is Gir Govalan',
+    hero: `${CDN}/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg`,
+    photoCaption: 'Gir Govalan real photo',
+    sections: [
+      {
+        heading: 'Who is Gir Govalan?',
+        body: `<p><strong>Gir Govalan (Jituben)</strong> was born in Aakolda Amreli, a small town in the Gir area. Unable to go to school since it was the custom in her community for girls not to attend school. Belonging to the Maldhari community, whose primary occupation involves caring for cows and animals. Our little home is tucked away in the area where the famous Asiatic lions reside. With more than 500 lions living in Saurashtra and in close proximity, conflicts with these majestic creatures are not uncommon.</p>
+        <p>Despite the occasional clashes, we've developed strategies to safeguard our herds of cows and buffaloes. Our animals are well-trained to deter lions from entering and hunting. However, there are instances when lions manage to isolate and prey on a member of the herd right before our eyes. Witnessing this becomes a part of our daily routine, and the hunted prey serves as the lions' dinner.</p>
+        <p>In such situations, we display resilience, coexisting with these magnificent beasts with smiles on our faces. When a lion targets a small calf, we don't allow it to consume the kill; instead, we swiftly retrieve and bury it, emphasizing our profound affection for our cattle, akin to our own children.</p>
+        <p>Growing up in these unusual circumstances, I saw a large number of our community's families progressively move into cities. However, I chose a different path. Now, with three children of my own, we lead a content life engaged in farming and dairy business together. Both my boys are pursuing their studies, and as a family, we navigate life with gratitude and determination.</p>`
+      },
+      {
+        heading: 'A New Life.',
+        body: `<p>In 2019, we made a significant move to the city. The year 2020, marked by the challenges of the pandemic, saw my son completing his 10th standard. Unfortunately, his father succumbed to COVID-19, compelling me to step up and support my son in building resilience. To adapt to the changing times, he began working part-time. Reflecting on our traditional ways, we realized the necessity of transitioning to the online era. In a world dominated by laptops, we acknowledged the shift from 'lakdis' (sticks) to laptops and online platforms. This realization prompted the inception of Gir Govalan.</p>
+        <p>Nestled in Gir, our hometown, <strong>'Gir Govalan'</strong> embodies the spirit of our community. The term <strong>'Govalan'</strong> refers to women who trade in milk and ghee. In navigating this new journey, we find strength in our roots and adapt to the contemporary landscape of online commerce and technology.</p>`
+      },
+      {
+        heading: 'The Future and our aims.',
+        body: `<p>Residing in the city presents distinct challenges compared to our hometown, particularly concerning the quality of milk. My son is dissatisfied with the milk available here. In our village, we have a tradition of freely distributing buttermilk to everyone, and any surplus is poured around the sweet neem tree. We've consistently provided pure milk, and often our customers send their children to collect deliveries. Observing the joy on their faces, we always provide extra milk because we believe in encouraging children to consume it. However, obtaining pure milk and ghee in the city has proven to be quite challenging in recent years but we make it possible with Gir Govalan.</p>
+        <ul>
+          <li>Enhancing access to affordable and high-quality milk and ghee.</li>
+          <li>Ensuring ethical and responsible practices in all aspects of our service.</li>
+          <li>Our commitment is to enrich lives through health-focused products that embody excellence and prioritize organic goodness.</li>
+          <li>As we strive to be a global leader, our vision extends beyond products; we aspire to create a healthy environment, fostering a world where wellness thrives naturally.</li>
+        </ul>`
+      },
+      {
+        heading: 'Rooted in Heritage. Blessed with Purity.',
+        body: `<p>At Gir Govalan, we honor the timeless legacy of Gir Cow Ghee, crafted the way nature intended. Born in the heart of the Gir region, our ghee is a testament to purity, tradition, and the unwavering care we give to our cows. Every drop is hand-churned using the ancient bilona method, nourished by organic practices, and steeped in ethical values. Join us in celebrating a healthier tomorrow — for you, our gentle Gir cows, and the earth we cherish.</p>`
+      }
+    ]
+  },
+  gallery: {
+    title: 'Gallery',
+    intro: 'A glimpse into our farm, our Gir cows, and the traditional craft of making pure bilona ghee.'
+  },
+  contact: {
+    title: 'Contact Us',
+    intro: 'We would love to hear from you. Reach out for orders, wholesale enquiries, or any questions about our products.'
+  }
+};
+
+function formatPrice(amount) {
+  return '₹' + amount.toLocaleString('en-IN');
+}
+
+function getProduct(id) {
+  return PRODUCTS.find(p => p.id === id);
+}
+
+function getProductsByCategory(category) {
+  if (!category || category === 'all') return PRODUCTS;
+  return PRODUCTS.filter(p => p.category === category);
+}
+
+function getBlogPost(slug) {
+  return BLOG_POSTS.find(p => p.slug === slug);
+}
+
+function getCategoryLabel(id) {
+  const map = { ghee: 'Ghee', dairy: 'Dairy Products', sweets: 'Traditional Sweets', 'seeds-nuts': 'Seeds & Nuts', all: 'All Products' };
+  return map[id] || id;
+}

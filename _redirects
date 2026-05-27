@@ -1,0 +1,22 @@
+# Netlify redirects — keep Google-indexed Shopify URLs working
+
+# Old flat .html files → SEO paths (301 permanent)
+/who-is-gir-govalan.html    /pages/who-is-gir-govalan/    301
+/contact.html               /pages/contact/               301
+/gallery.html               /pages/gallery/               301
+/blog.html                  /blogs/news/                  301
+/blog-post.html             /blogs/news/                  301
+/products.html              /collections/all/             301
+/product.html               /collections/all/             301
+/cart.html                  /cart/                        301
+
+# Shopify blog post query URLs
+/blog-post.html?slug=:slug  /blogs/news/:slug/            301
+/product.html?id=:id        /products/:id/                301
+
+# Optional trailing slash normalization
+/pages/who-is-gir-govalan   /pages/who-is-gir-govalan/    301
+/pages/contact              /pages/contact/               301
+/pages/gallery              /pages/gallery/               301
+/blogs/news                 /blogs/news/                  301
+/collections/all            /collections/all/             301
