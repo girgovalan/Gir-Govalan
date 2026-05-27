@@ -30,6 +30,20 @@ const SITE = {
   }
 };
 
+/* Product photos — ghee from Shopify CDN; other items use quality food photos until you upload real images to data.js */
+const PRODUCT_IMAGES = {
+  gheeJar: `${CDN}/gfgd.png`,
+  gheeHero: `${CDN}/Fresh_gir_cow_ghee_png.png`,
+  gheeCow: `${CDN}/Gir_cow_gir_cow_ghee.jpg`,
+  gheeBilona: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`,
+  milk: 'https://images.unsplash.com/photo-1563636619-e9143a785af1?w=800&q=85',
+  curd: 'https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=800&q=85',
+  ladoo: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476b?w=800&q=85',
+  shrikhand: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=85',
+  almonds: 'https://images.unsplash.com/photo-1508747703725-f2f5e0f3974b?w=800&q=85',
+  dryFruits: 'https://images.unsplash.com/photo-1599594001899-afa833055e28?w=800&q=85'
+};
+
 const CATEGORIES = [
   { id: 'ghee', title: 'Ghee', icon: `${CDN}/clean-GHEE-icon.jpg`, url: '/collections/all/?category=ghee' },
   { id: 'sweets', title: 'Desserts', icon: `${CDN}/girgovalan__DESSERTS_icon_9c2b61f0-1076-4fc1-aef1-f6359de9c8d0.png`, url: '/collections/all/?category=sweets' },
@@ -45,8 +59,8 @@ const PRODUCTS = [
     price: 1299,
     compareAt: 1499,
     category: 'ghee',
-    image: `${CDN}/Fresh_gir_cow_ghee_png.png`,
-    images: [`${CDN}/Fresh_gir_cow_ghee_png.png`, `${CDN}/Gir_cow_gir_cow_ghee.jpg`],
+    image: PRODUCT_IMAGES.gheeHero,
+    images: [PRODUCT_IMAGES.gheeHero, PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeCow],
     rating: 5,
     featured: true,
     description: 'Hand-churned A2 Gir Cow Ghee using the traditional bilona method. Rich aroma, golden colour, and exceptional purity from grass-fed Gir cows of the Gir region.',
@@ -62,7 +76,8 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 1199,
     category: 'ghee',
-    image: `${CDN}/Gir_cow_gir_cow_ghee.jpg`,
+    image: PRODUCT_IMAGES.gheeJar,
+    images: [PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeCow],
     rating: 5,
     description: 'Premium bilona-churned ghee from indigenous Gir cows, nourished with organic feed in natural surroundings.'
   },
@@ -72,7 +87,8 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 2299,
     category: 'ghee',
-    image: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`,
+    image: PRODUCT_IMAGES.gheeBilona,
+    images: [PRODUCT_IMAGES.gheeBilona, PRODUCT_IMAGES.gheeHero],
     rating: 5,
     description: 'Family-size pack of authentic bilona ghee — ideal for daily cooking and traditional sweets.'
   },
@@ -82,7 +98,8 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 89,
     category: 'dairy',
-    image: `${CDN}/girgovalan__DAIRY_icon_729cc151-5743-466c-b219-d727fb6e089e.png`,
+    image: PRODUCT_IMAGES.milk,
+    images: [PRODUCT_IMAGES.milk],
     rating: 4,
     description: 'Fresh A2 milk from Gir cows — delivered with care from our farm to your home.'
   },
@@ -92,7 +109,8 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 79,
     category: 'dairy',
-    image: `${CDN}/girgovalan__DAIRY_icon_729cc151-5743-466c-b219-d727fb6e089e.png`,
+    image: PRODUCT_IMAGES.curd,
+    images: [PRODUCT_IMAGES.curd],
     rating: 4,
     description: 'Thick, creamy curd made from pure Gir cow milk using traditional methods.'
   },
@@ -102,7 +120,8 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 349,
     category: 'sweets',
-    image: `${CDN}/girgovalan__DESSERTS_icon_9c2b61f0-1076-4fc1-aef1-f6359de9c8d0.png`,
+    image: PRODUCT_IMAGES.ladoo,
+    images: [PRODUCT_IMAGES.ladoo],
     rating: 5,
     description: 'Homestyle ladoos prepared with our Gir cow ghee for authentic taste and richness.'
   },
@@ -112,7 +131,8 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 299,
     category: 'sweets',
-    image: `${CDN}/girgovalan__DESSERTS_icon_9c2b61f0-1076-4fc1-aef1-f6359de9c8d0.png`,
+    image: PRODUCT_IMAGES.shrikhand,
+    images: [PRODUCT_IMAGES.shrikhand],
     rating: 4,
     description: 'Creamy Gujarati shrikhand made from hung curd and natural flavours.'
   },
@@ -122,7 +142,8 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 449,
     category: 'seeds-nuts',
-    image: `${CDN}/girgovalan__SEED_NUTS_icon_70bea663-b2f9-4021-b14a-4bc4d23c7294.png`,
+    image: PRODUCT_IMAGES.almonds,
+    images: [PRODUCT_IMAGES.almonds],
     rating: 4,
     description: 'Hand-selected premium almonds — perfect for snacking and traditional recipes.'
   },
@@ -132,7 +153,8 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 599,
     category: 'seeds-nuts',
-    image: `${CDN}/girgovalan__SEED_NUTS_icon_70bea663-b2f9-4021-b14a-4bc4d23c7294.png`,
+    image: PRODUCT_IMAGES.dryFruits,
+    images: [PRODUCT_IMAGES.dryFruits],
     rating: 4,
     description: 'A wholesome mix of nuts and dry fruits sourced with quality you can trust.'
   }

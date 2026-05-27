@@ -66,10 +66,11 @@ function showToast(msg, type = 'success') {
 function productCardHTML(p) {
   const stars = '★'.repeat(Math.round(p.rating || 5));
   const productUrl = typeof URLS !== 'undefined' ? URLS.product(p.id) : `/products/${p.id}/`;
+  const gheeClass = p.category === 'ghee' ? ' product-card--ghee' : '';
   return `
-    <article class="product-card" data-name="${p.name.toLowerCase()}">
+    <article class="product-card${gheeClass}" data-name="${p.name.toLowerCase()}">
       <a href="${productUrl}" class="product-card-image">
-        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        <img src="${p.image}" alt="${p.name}" loading="lazy" width="400" height="400">
         ${p.compareAt ? '<span class="badge-sale">Sale</span>' : ''}
       </a>
       <div class="product-card-body">
