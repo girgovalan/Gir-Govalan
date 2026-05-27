@@ -1,4 +1,20 @@
+# Gir Govalan — https://girgovalan.com
 User-agent: *
+Allow: /
+
+# Do not index cart or utility redirects
+Disallow: /cart/
+Disallow: /*.html$
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://girgovalan.com/sitemap.xml
