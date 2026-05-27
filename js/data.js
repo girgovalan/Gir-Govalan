@@ -1,5 +1,10 @@
 /* Gir Govalan — site content (from original Shopify theme) */
 const CDN = 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files';
+const IMG_PRODUCTS = '/images/products';
+
+function productImg(filename) {
+  return `${IMG_PRODUCTS}/${encodeURIComponent(filename)}`;
+}
 
 const SITE = {
   name: 'Gir Govalan',
@@ -30,12 +35,15 @@ const SITE = {
   }
 };
 
-/* Product photos — ghee from Shopify CDN; other items use quality food photos until you upload real images to data.js */
+/* Product photos — ghee from images/products/; add more files there for dairy/sweets/nuts */
 const PRODUCT_IMAGES = {
-  gheeJar: `${CDN}/gfgd.png`,
-  gheeHero: `${CDN}/Fresh_gir_cow_ghee_png.png`,
-  gheeCow: `${CDN}/Gir_cow_gir_cow_ghee.jpg`,
-  gheeBilona: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`,
+  gheeHero: productImg('700 3.jpg'),
+  gheeJar: productImg('700.jpg'),
+  gheeJar2: productImg('700 1.jpg'),
+  gheeBilona: productImg('700 2.jpg'),
+  gheeAlt1: productImg('642b2faa-b742-44c0-9a83-542d1a418852.jpg'),
+  gheeAlt2: productImg('f57b4631-d06c-4bc5-b029-70b3cbb6504a.jpg'),
+  gheeAlt3: productImg('920c5e90-e7d1-41df-b1b0-7221a0af6bd7.jpg'),
   milk: 'https://images.unsplash.com/photo-1563636619-e9143a785af1?w=800&q=85',
   curd: 'https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=800&q=85',
   ladoo: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476b?w=800&q=85',
@@ -60,7 +68,7 @@ const PRODUCTS = [
     compareAt: 1499,
     category: 'ghee',
     image: PRODUCT_IMAGES.gheeHero,
-    images: [PRODUCT_IMAGES.gheeHero, PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeCow],
+    images: [PRODUCT_IMAGES.gheeHero, PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeJar2, PRODUCT_IMAGES.gheeAlt1],
     rating: 5,
     featured: true,
     description: 'Hand-churned A2 Gir Cow Ghee using the traditional bilona method. Rich aroma, golden colour, and exceptional purity from grass-fed Gir cows of the Gir region.',
@@ -77,7 +85,7 @@ const PRODUCTS = [
     price: 1199,
     category: 'ghee',
     image: PRODUCT_IMAGES.gheeJar,
-    images: [PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeCow],
+    images: [PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeAlt2],
     rating: 5,
     description: 'Premium bilona-churned ghee from indigenous Gir cows, nourished with organic feed in natural surroundings.'
   },
@@ -88,7 +96,7 @@ const PRODUCTS = [
     price: 2299,
     category: 'ghee',
     image: PRODUCT_IMAGES.gheeBilona,
-    images: [PRODUCT_IMAGES.gheeBilona, PRODUCT_IMAGES.gheeHero],
+    images: [PRODUCT_IMAGES.gheeBilona, PRODUCT_IMAGES.gheeHero, PRODUCT_IMAGES.gheeAlt3],
     rating: 5,
     description: 'Family-size pack of authentic bilona ghee — ideal for daily cooking and traditional sweets.'
   },
@@ -179,12 +187,14 @@ const TESTIMONIALS = [
 ];
 
 const GALLERY = [
-  { src: `${CDN}/2.jpg`, alt: 'Gir Govalan farm landscape' },
-  { src: `${CDN}/Gir_cow_gir_cow_ghee.jpg`, alt: 'Gir cow and ghee' },
-  { src: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`, alt: 'Bilona ghee making' },
-  { src: `${CDN}/Fresh_gir_cow_ghee_png.png`, alt: 'Fresh Gir cow ghee' },
+  { src: PRODUCT_IMAGES.gheeHero, alt: 'Gir Cow Ghee — Gir Govalan' },
+  { src: PRODUCT_IMAGES.gheeJar, alt: 'Gir Govalan ghee jar' },
+  { src: PRODUCT_IMAGES.gheeJar2, alt: 'Gir Cow Ghee product' },
+  { src: PRODUCT_IMAGES.gheeBilona, alt: 'Premium Gir Cow Ghee' },
+  { src: PRODUCT_IMAGES.gheeAlt1, alt: 'Gir Govalan ghee' },
   { src: `${CDN}/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg`, alt: 'Our Gir cows' },
-  { src: `${CDN}/new-banner1.jpg`, alt: 'Gir Govalan banner' }
+  { src: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`, alt: 'Bilona ghee making' },
+  { src: `${CDN}/2.jpg`, alt: 'Gir Govalan farm landscape' }
 ];
 
 const BLOG_POSTS = [
@@ -192,7 +202,7 @@ const BLOG_POSTS = [
     slug: 'benefits-of-gir-cow-ghee',
     title: 'Benefits of Gir Cow Ghee for Your Daily Diet',
     date: '2025-03-10',
-    image: `${CDN}/Fresh_gir_cow_ghee_png.png`,
+    image: PRODUCT_IMAGES.gheeHero,
     excerpt: 'Discover why A2 Gir cow ghee is prized in Ayurveda and everyday Indian cooking for nourishment and flavour.',
     content: `<p>Gir cow ghee has been treasured for generations in Gujarat and across India. Rich in healthy fats and made through the traditional bilona process, it supports digestion, adds depth to cooking, and carries the authentic taste of the Gir region.</p>
     <p>When you choose ghee from indigenous Gir cows raised ethically on organic feed, you are choosing purity — for your family, for the cows, and for the land.</p>
