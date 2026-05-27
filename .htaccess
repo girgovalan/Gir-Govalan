@@ -16,6 +16,19 @@ RewriteRule ^cart\.html$ /cart/ [R=301,L]
 RewriteRule ^product\.html\?id=([^&]+)$ /products/$1/ [R=301,L,QSA]
 RewriteRule ^blog-post\.html\?slug=([^&]+)$ /blogs/news/$1/ [R=301,L,QSA]
 
+# Old Shopify collection URLs
+RewriteRule ^collections/ghee/?$ /collections/all/?category=ghee [R=301,L,QSA]
+RewriteRule ^collections/dairy/?$ /collections/all/?category=dairy [R=301,L,QSA]
+RewriteRule ^collections/sweets/?$ /collections/all/?category=sweets [R=301,L,QSA]
+RewriteRule ^collections/desserts/?$ /collections/all/?category=sweets [R=301,L,QSA]
+RewriteRule ^collections/seed-nuts/?$ /collections/all/?category=seeds-nuts [R=301,L,QSA]
+RewriteRule ^collections/seeds-nuts/?$ /collections/all/?category=seeds-nuts [R=301,L,QSA]
+
+# Trailing slash for pages
+RewriteRule ^pages/contact$ /pages/contact/ [R=301,L]
+RewriteRule ^pages/who-is-gir-govalan$ /pages/who-is-gir-govalan/ [R=301,L]
+RewriteRule ^pages/gallery$ /pages/gallery/ [R=301,L]
+
 # Trailing slash for directories
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$

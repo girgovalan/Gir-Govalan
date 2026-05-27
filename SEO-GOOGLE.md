@@ -22,6 +22,15 @@
    - `https://girgovalan.com/collections/all/`
    - `https://girgovalan.com/blogs/news/`
 
+## Why Google shows "No information is available for this page"
+
+This usually means one of these:
+
+1. **Old Shopify URL still in Google** — e.g. `/collections/ghee` returned 404 on the new site. Fixed with redirects in `vercel.json`.
+2. **Page had almost no visible text for Google** — contact info was loaded only by JavaScript. Fixed with static HTML on contact page.
+3. **Site is new / not re-crawled yet** — submit sitemap and request indexing (steps below).
+4. **Takes 1–4 weeks** after migration for Google to update all results.
+
 ## Same URLs as old Shopify (important)
 
 Google already knows these paths — keep them:

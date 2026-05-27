@@ -20,7 +20,20 @@
     { "source": "/blog.html", "destination": "/blogs/news/", "permanent": true },
     { "source": "/blog-post.html", "destination": "/blogs/news/", "permanent": true },
     { "source": "/products.html", "destination": "/collections/all/", "permanent": true },
-    { "source": "/product.html", "destination": "/collections/all/", "permanent": true },
-    { "source": "/cart.html", "destination": "/cart/", "permanent": true }
+    { "source": "/cart.html", "destination": "/cart/", "permanent": true },
+
+    { "source": "/pages/contact", "destination": "/pages/contact/", "permanent": true },
+    { "source": "/pages/who-is-gir-govalan", "destination": "/pages/who-is-gir-govalan/", "permanent": true },
+    { "source": "/pages/gallery", "destination": "/pages/gallery/", "permanent": true },
+    { "source": "/blogs/news", "destination": "/blogs/news/", "permanent": true },
+    { "source": "/collections/all", "destination": "/collections/all/", "permanent": true },
+
+    { "source": "/collections/ghee", "destination": "/collections/all/?category=ghee", "permanent": true },
+    { "source": "/collections/dairy", "destination": "/collections/all/?category=dairy", "permanent": true },
+    { "source": "/collections/sweets", "destination": "/collections/all/?category=sweets", "permanent": true },
+    { "source": "/collections/desserts", "destination": "/collections/all/?category=sweets", "permanent": true },
+    { "source": "/collections/seed-nuts", "destination": "/collections/all/?category=seeds-nuts", "permanent": true },
+    { "source": "/collections/seeds-nuts", "destination": "/collections/all/?category=seeds-nuts", "permanent": true },
+    { "source": "/collections/all/products", "destination": "/collections/all/", "permanent": true }
   ]
 }

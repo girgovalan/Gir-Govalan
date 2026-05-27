@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us — Gir Govalan</title>
-  <meta name="description" content="Contact Gir Govalan for orders, wholesale, and questions about authentic Gir cow ghee and dairy products.">
+  <title>Contact Gir Govalan — Order A2 Gir Cow Ghee | Gujarat India</title>
+  <meta name="description" content="Contact Gir Govalan for orders, wholesale enquiries, and questions. Email info@girgovalan.com, phone, WhatsApp. Authentic Gir cow ghee from Gir region, Gujarat.">
+  <meta name="keywords" content="contact Gir Govalan, order ghee online, Gir cow ghee Gujarat, wholesale ghee">
   <link rel="canonical" href="https://girgovalan.com/pages/contact/">
   <link rel="stylesheet" href="/css/site.css">
 </head>
@@ -13,19 +14,34 @@
   <div class="page-hero">
     <div class="container">
       <h1>Contact Us</h1>
-      <p id="contact-intro"></p>
+      <p>We would love to hear from you. Reach out for orders, wholesale enquiries, or any questions about our authentic Gir cow ghee and farm products from Gujarat.</p>
     </div>
   </div>
   <section>
     <div class="container contact-grid">
       <form class="contact-form" id="contact-form">
-        <div class="field"><label for="name">Name</label><input type="text" id="name" required></div>
-        <div class="field"><label for="email">Email</label><input type="email" id="email" required></div>
-        <div class="field"><label for="phone">Phone</label><input type="tel" id="phone"></div>
-        <div class="field"><label for="message">Message</label><textarea id="message" rows="6" required></textarea></div>
+        <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+        <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone"></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div>
         <button type="submit" class="btn btn-primary">Send Message</button>
       </form>
-      <div class="contact-info-card" id="contact-info"></div>
+      <div class="contact-info-card">
+        <h2>Get in touch</h2>
+        <p>Order <strong>pure A2 Gir cow ghee</strong>, bilona ghee, dairy products, and traditional sweets directly from Gir Govalan.</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:info@girgovalan.com">info@girgovalan.com</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></li>
+          <li><strong>WhatsApp:</strong> <a href="https://wa.me/919876543210" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
+          <li><strong>Address:</strong> Gir, Gujarat, India</li>
+        </ul>
+        <h3>Follow us</h3>
+        <p>
+          <a href="https://www.instagram.com/girgovalan/" target="_blank" rel="noopener">Instagram</a> ·
+          <a href="https://www.facebook.com/GirGovalan/" target="_blank" rel="noopener">Facebook</a> ·
+          <a href="https://www.youtube.com/@GirGovalan" target="_blank" rel="noopener">YouTube</a>
+        </p>
+      </div>
     </div>
   </section>
   <div id="site-footer"></div>
@@ -36,21 +52,12 @@
   <script src="/js/components.js"></script>
   <script src="/js/app.js"></script>
   <script>
-    document.getElementById('contact-intro').textContent = PAGES.contact.intro;
-    document.getElementById('contact-info').innerHTML = `
-      <h3>Get in touch</h3>
-      <ul>
-        <li><strong>Email:</strong> <a href="mailto:${SITE.email}">${SITE.email}</a></li>
-        <li><strong>Phone:</strong> <a href="tel:${SITE.phone.replace(/\s/g,'')}">${SITE.phone}</a></li>
-        <li><strong>WhatsApp:</strong> <a href="https://wa.me/${SITE.whatsapp}" target="_blank" rel="noopener">Chat on WhatsApp</a></li>
-        <li><strong>Address:</strong> ${SITE.address}</li>
-      </ul>`;
     document.getElementById('contact-form').addEventListener('submit', e => {
       e.preventDefault();
       const subject = encodeURIComponent('Contact from Gir Govalan website');
       const body = encodeURIComponent(`Name: ${document.getElementById('name').value}\nEmail: ${document.getElementById('email').value}\nPhone: ${document.getElementById('phone').value}\n\n${document.getElementById('message').value}`);
-      window.location.href = `mailto:${SITE.email}?subject=${subject}&body=${body}`;
-      showToast('Opening your email app…');
+      window.location.href = `mailto:info@girgovalan.com?subject=${subject}&body=${body}`;
+      if (typeof showToast === 'function') showToast('Opening your email app…');
     });
   </script>
 </body>
