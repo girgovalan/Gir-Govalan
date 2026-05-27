@@ -51,10 +51,22 @@ a:hover { text-decoration: underline; }
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 12px 0;
-  min-height: 72px;
+  padding: 14px 0;
+  min-height: 88px;
 }
-.logo-img { height: 52px; width: auto; object-fit: contain; }
+.logo-link { display: flex; align-items: center; flex-shrink: 0; }
+.logo-img {
+  height: 72px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  .logo-img {
+    height: 56px;
+    max-width: 150px;
+  }
+}
 .nav-list {
   display: flex;
   list-style: none;
@@ -533,24 +545,45 @@ section { padding: 60px 0; }
   position: relative;
   background: var(--accent-2);
   margin-top: 60px;
-  padding-top: 80px;
+  padding-top: 72px;
+  overflow: hidden;
 }
 .footer-wave {
   position: absolute;
-  top: -60px;
+  top: -48px;
   left: 0;
   right: 0;
-  height: 80px;
-  background: url('https://cdn.shopify.com/s/files/1/0686/6944/0297/files/footer_image_1_home_page.png') top center / 100% auto no-repeat;
+  height: 56px;
+  background: var(--bg-1);
+  clip-path: ellipse(55% 100% at 50% 100%);
+  z-index: 1;
 }
 .footer-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 24px;
+  position: relative;
+  z-index: 2;
+}
+.footer-logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 12px;
 }
 .footer-brand p { font-size: 0.95rem; color: #333; }
 .footer-tagline { font-weight: 600; }
+
+/* Gir cows illustration — same images as original Shopify theme */
+.footer-cows {
+  width: 100%;
+  min-height: 260px;
+  margin: 0;
+  padding: 0;
+  background: transparent url('https://cdn.shopify.com/s/files/1/0686/6944/0297/files/footer_image_1_home_page.png?v=1676397932') center bottom / 100% auto no-repeat;
+  background-size: 100% auto;
+  background-position: center bottom;
+}
 .social-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
 .social-links a { font-weight: 600; font-size: 0.9rem; }
 .footer-col h4 { margin: 0 0 16px; color: var(--accent-1); }
@@ -559,6 +592,8 @@ section { padding: 60px 0; }
 .footer-col a { color: var(--text); text-decoration: none; }
 .footer-col a:hover { color: var(--accent-1); }
 .footer-bottom {
+  position: relative;
+  z-index: 2;
   border-top: 1px solid rgba(0,0,0,.1);
   padding: 20px 0;
   text-align: center;
@@ -641,6 +676,13 @@ section { padding: 60px 0; }
   }
   .categories-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .footer-cows {
+    min-height: 130px;
+    background-image: url('https://cdn.shopify.com/s/files/1/0686/6944/0297/files/footer_image_2_Mobile_view.png?v=1676397930');
+    background-size: cover;
+    background-position: center bottom;
+  }
+  .footer-logo { width: 140px; }
   .cart-table thead { display: none; }
   .cart-table tr { display: block; margin-bottom: 16px; border: 1px solid #eee; border-radius: var(--radius); }
   .cart-table td { display: block; border: none; }

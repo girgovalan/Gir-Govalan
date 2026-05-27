@@ -40,7 +40,7 @@
             <span></span><span></span><span></span>
           </button>
           <a href="${URLS.home}" class="logo-link">
-            <img src="${SITE.logo}" alt="${SITE.name}" class="logo-img" width="160" height="60">
+            <img src="${SITE.logo}" alt="${SITE.name}" class="logo-img" width="190" height="72">
           </a>
           <nav class="nav" aria-label="Main">
             <ul class="nav-list">
@@ -82,10 +82,10 @@
     if (!el) return;
     el.innerHTML = `
       <footer class="footer">
-        <div class="footer-wave"></div>
+        <div class="footer-wave" aria-hidden="true"></div>
         <div class="container footer-grid">
           <div class="footer-brand">
-            <img src="${SITE.logoFooter}" alt="${SITE.name}" width="120" class="footer-logo">
+            <img src="${SITE.logoFooter}" alt="${SITE.name}" width="160" class="footer-logo">
             <p>At Gir Govalan, we honor the timeless legacy of Gir Cow Ghee, crafted the way nature intended. Born in the heart of the Gir region, our ghee is hand-churned using the ancient bilona method.</p>
             <p class="footer-tagline"><em>${SITE.tagline}</em></p>
             <div class="social-links">
@@ -122,6 +122,7 @@
             </ul>
           </div>
         </div>
+        <div class="footer-cows" role="img" aria-label="Gir cows illustration"></div>
         <div class="footer-bottom container">
           <p>&copy; ${new Date().getFullYear()} ${SITE.name}. All rights reserved.</p>
         </div>

@@ -15,7 +15,10 @@ const SITE = {
     twitter: 'https://twitter.com/GirGovalan'
   },
   logo: `${CDN}/logo_done_3a598d0d-0c1a-41fb-9aac-92c5d9a2f98f.jpg`,
+  logoWidth: 190,
   logoFooter: `${CDN}/png_logo.png`,
+  footerImageDesktop: `${CDN}/footer_image_1_home_page.png?v=1676397932`,
+  footerImageMobile: `${CDN}/footer_image_2_Mobile_view.png?v=1676397930`,
   decor: `${CDN}/Vector.svg`,
   heroImage: `${CDN}/2.jpg`,
   colors: {
