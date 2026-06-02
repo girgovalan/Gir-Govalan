@@ -35,15 +35,15 @@ const SITE = {
   }
 };
 
-/* Product photos — ghee from images/products/; add more files there for dairy/sweets/nuts */
+/* Product photos — currently using available local files in images/products/ */
 const PRODUCT_IMAGES = {
-  gheeHero: productImg('700 3.jpg'),
-  gheeJar: productImg('700.jpg'),
-  gheeJar2: productImg('700 1.jpg'),
-  gheeBilona: productImg('700 2.jpg'),
-  gheeAlt1: productImg('642b2faa-b742-44c0-9a83-542d1a418852.jpg'),
-  gheeAlt2: productImg('f57b4631-d06c-4bc5-b029-70b3cbb6504a.jpg'),
-  gheeAlt3: productImg('920c5e90-e7d1-41df-b1b0-7221a0af6bd7.jpg'),
+  gheeHero: productImg('Gir Govalan Packaging.jpeg'),
+  gheeJar: productImg('Gir Govalan Packaging.jpeg'),
+  gheeJar2: productImg('Gir Govalan Packaging.jpeg'),
+  gheeBilona: productImg('Gir Govalan Packaging.jpeg'),
+  gheeAlt1: productImg('Gir Govalan Packaging.jpeg'),
+  gheeAlt2: productImg('Gir Govalan Packaging.jpeg'),
+  gheeAlt3: productImg('Gir Govalan Packaging.jpeg'),
   milk: productImg('a2-gir-milk.jpg'),
   curd: productImg('fresh-curd.jpg'),
   ladoo: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476b?w=800&q=85',
