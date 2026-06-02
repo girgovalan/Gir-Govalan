@@ -10,8 +10,8 @@ const SITE = {
   name: 'Gir Govalan',
   tagline: 'Rooted in Heritage. Blessed with Purity.',
   email: 'info@girgovalan.com',
-  phone: '+91 63536 15116',
-  whatsapp: '916353615116',
+  phone: '+91 93282 89550',
+  whatsapp: '919328289550',
   address: 'Gir, Gujarat, India',
   social: {
     facebook: 'https://www.facebook.com/GirGovalan/',
