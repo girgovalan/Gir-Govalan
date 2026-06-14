@@ -40,4 +40,13 @@ function renderCart() {
   });
   bindRazorpayPayButton(cart);
 }
-document.addEventListener('DOMContentLoaded', renderCart);
+
+function initCartPage() {
+  if (document.getElementById('cart-root')) renderCart();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCartPage);
+} else {
+  initCartPage();
+}
