@@ -47,6 +47,7 @@ const PRODUCT_IMAGES = {
   milk: productImg('a2-gir-milk.jpg'),
   curd: productImg('fresh-curd.jpg'),
   ladoo: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476b?w=800&q=85',
+  peda: 'https://images.unsplash.com/photo-1606312619070-df7c6a486c70?w=800&q=85',
   shrikhand: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=85',
   almonds: 'https://images.unsplash.com/photo-1508747703725-f2f5e0f3974b?w=800&q=85',
   dryFruits: 'https://images.unsplash.com/photo-1599594001899-afa833055e28?w=800&q=85'
@@ -234,6 +235,111 @@ const PRODUCTS = [
     images: [PRODUCT_IMAGES.ladoo],
     rating: 5,
     description: 'Homestyle ladoos prepared with our Gir cow ghee for authentic taste and richness.'
+  },
+  {
+    id: 'milk-peda',
+    name: 'Milk Peda',
+    vendor: 'Gir Govalan',
+    price: 399,
+    compareAt: 449,
+    category: 'sweets',
+    image: PRODUCT_IMAGES.peda,
+    images: [PRODUCT_IMAGES.peda],
+    rating: 5,
+    featured: true,
+    description: 'Gir Govalan Milk Peda is handcrafted from pure A2 Gir cow milk and our traditional bilona ghee. Soft, rich, and naturally sweet — a classic Indian mithai made in small batches for authentic taste and freshness.',
+    longDescription: `<div class="product-details-intro">
+<h2>Premium Milk Peda Made from Pure A2 Gir Cow Milk</h2>
+<p>Gir Govalan Milk Peda is handcrafted from the milk of indigenous Gir cows and prepared using time-honoured methods passed down through generations. Each peda is slow-cooked to a rich, creamy texture with a delicate sweetness and the unmistakable aroma of pure desi milk.</p>
+<p>Our Milk Peda is made in small batches to maintain freshness, quality, and the authentic taste of traditional Gujarati mithai.</p>
+</div>
+
+<h2>What is Milk Peda?</h2>
+<p>Milk Peda (also known as Doodh Peda or Penda) is one of India's most beloved traditional sweets. Made primarily from reduced milk (khoya or mawa), sugar, and ghee, peda has a soft, grainy texture and a rich milky flavour that melts in the mouth.</p>
+<p>Unlike mass-produced sweets, Gir Govalan Milk Peda is prepared using pure A2 Gir cow milk and our own bilona ghee — preserving the authentic taste that Indian households have cherished for centuries.</p>
+
+<h2>Our Traditional Preparation</h2>
+<p>Gir Govalan Milk Peda follows a careful, time-tested process to deliver superior taste and texture.</p>
+<h3>Our Process</h3>
+<ol>
+<li>Fresh A2 Gir Cow Milk is collected from our farm.</li>
+<li>Milk is slowly reduced to rich, creamy khoya (mawa).</li>
+<li>Pure Gir Govalan bilona ghee and natural ingredients are added.</li>
+<li>The mixture is hand-kneaded and shaped into classic peda rounds.</li>
+<li>Each batch is prepared fresh in small quantities for optimal quality.</li>
+</ol>
+<p>This traditional method requires patience and skill, resulting in pedas with a richer taste and smoother texture than factory-made alternatives.</p>
+
+<h2>Why Choose Gir Govalan Milk Peda?</h2>
+<h3>Made from A2 Gir Cow Milk</h3>
+<p>Prepared exclusively from the milk of indigenous Gir cows, known for naturally occurring A2 protein and rich, creamy quality.</p>
+<h3>Prepared with Bilona Ghee</h3>
+<p>Enhanced with our own traditional bilona ghee for authentic aroma, depth of flavour, and a truly homestyle taste.</p>
+<h3>Handcrafted in Small Batches</h3>
+<p>Every batch is made fresh in limited quantities to ensure quality, consistency, and natural freshness.</p>
+<h3>Classic Homestyle Taste</h3>
+<p>Soft, melt-in-the-mouth texture with balanced sweetness — just like pedas made in traditional Gujarati kitchens.</p>
+<h3>No Artificial Additives</h3>
+<ul class="check-list">
+<li>No Preservatives</li>
+<li>No Artificial Colors</li>
+<li>No Artificial Flavors</li>
+<li>No Adulteration</li>
+</ul>
+
+<h2>Nutritional Highlights</h2>
+<p>Gir Govalan Milk Peda is a wholesome traditional sweet made from pure milk-based ingredients.</p>
+<p>It naturally contains:</p>
+<ul>
+<li>Milk proteins and calcium from A2 Gir cow milk</li>
+<li>Healthy fats from bilona ghee</li>
+<li>Natural milk sugars</li>
+<li>Essential nutrients from pure, unadulterated ingredients</li>
+</ul>
+<p>Enjoyed in moderation, Milk Peda is a cherished part of festive celebrations and everyday indulgence in Indian culture.</p>
+
+<h2>Perfect For</h2>
+<p>Gir Govalan Milk Peda is ideal for:</p>
+<ul>
+<li>Festivals and celebrations (Diwali, Raksha Bandhan, weddings)</li>
+<li>Prasad and religious offerings</li>
+<li>Gifting to family and friends</li>
+<li>Tea-time snacks and sweet cravings</li>
+<li>Traditional Gujarati gatherings</li>
+<li>Children and elders who love authentic mithai</li>
+</ul>
+
+<h2>Commitment to Purity</h2>
+<p>At Gir Govalan, we focus on:</p>
+<ul>
+<li>Traditional sweet-making methods</li>
+<li>Ethical cow care and pure A2 milk sourcing</li>
+<li>Small-batch, fresh preparation</li>
+<li>No shortcuts or artificial enhancers</li>
+<li>Authentic taste rooted in Gir heritage</li>
+</ul>
+<p>Every peda reflects our commitment to purity, tradition, and the love we put into every product from our farm.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="product-faq">
+<h3>What is the difference between peda and penda?</h3>
+<p>Peda and penda refer to the same traditional Indian milk sweet. The spelling varies by region — both names describe the classic soft, round milk fudge enjoyed across Gujarat and India.</p>
+<h3>Is Gir Govalan Milk Peda made from A2 Gir cow milk?</h3>
+<p>Yes. Our Milk Peda is prepared from pure A2 Gir cow milk sourced from indigenous Gir cows raised with care on our farm.</p>
+<h3>Does Milk Peda contain preservatives?</h3>
+<p>No. Gir Govalan Milk Peda contains no artificial preservatives, colors, or flavors. We recommend storing in a cool, dry place and consuming within the recommended freshness period.</p>
+<h3>Can I order Milk Peda for festivals and gifting?</h3>
+<p>Absolutely. Milk Peda is one of our most popular sweets for festivals, celebrations, and gifting. Contact us via WhatsApp for bulk or custom orders.</p>
+</div>
+
+<h2>Experience Authentic Tradition</h2>
+<p>Bring home the sweetness of traditional Gujarati mithai with Gir Govalan Milk Peda. Crafted from pure A2 Gir Cow Milk and our bilona ghee, every bite delivers the warmth, richness, and timeless flavour of homestyle Indian sweets.</p>
+<p class="product-tagline"><strong>Gir Govalan – Pure Tradition. Pure Sweetness. Pure Peda.</strong></p>`,
+    variants: [
+      { label: '250g', price: 249 },
+      { label: '500g', price: 399 },
+      { label: '1kg', price: 749 }
+    ]
   },
   {
     id: 'shrikhand',
