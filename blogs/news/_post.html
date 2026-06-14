@@ -19,6 +19,7 @@
   <button class="scroll-top" aria-label="Back to top">↑</button>
   <script src="/js/urls.js"></script>
   <script src="/js/data.js"></script>
+  <script src="/js/blog-scheduled.js"></script>
   <script src="/js/seo.js"></script>
   <script src="/js/components.js"></script>
   <script src="/js/app.js"></script>
@@ -42,7 +43,7 @@
           <img class="article-hero-img" src="${post.image}" alt="${post.title}">
           <div class="article-body">${post.content}</div>
         </div>`;
-      document.getElementById('more-posts').innerHTML = BLOG_POSTS.filter(p => p.slug !== slug).slice(0, 3).map(p => `
+      document.getElementById('more-posts').innerHTML = getPublishedBlogPosts().filter(p => p.slug !== slug).slice(0, 3).map(p => `
         <a href="${URLS.blogPost(p.slug)}" class="blog-card">
           <div class="blog-card-image" style="background-image:url('${p.image}')"></div>
           <div class="blog-card-body"><h3>${p.title}</h3></div>

@@ -122,6 +122,7 @@
           url: `${BASE}/blogs/news/${slug}/`,
           type: 'article',
           article: post,
+          keywords: post.keywords,
           robots: 'index, follow'
         };
       }
@@ -161,6 +162,8 @@
     document.title = meta.title;
     setMeta('description', meta.description);
     setMeta('robots', meta.robots);
+    if (meta.keywords) setMeta('keywords', meta.keywords);
+    if (meta.article?.keywords) setMeta('keywords', meta.article.keywords);
     setMeta('author', SITE_NAME);
     setMeta('geo.region', 'IN-GJ');
     setMeta('geo.placename', 'Gir, Gujarat');

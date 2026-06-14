@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed — Gir Govalan</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <section style="padding:80px 0">
+    <div class="container text-center" style="max-width:560px">
+      <h1 style="color:var(--accent-1)">Thank you!</h1>
+      <p>Your payment was successful. We have received your order and will contact you shortly to confirm delivery.</p>
+      <p id="payment-ref" style="color:#666;font-size:0.95rem"></p>
+      <p style="margin-top:24px">
+        <a href="/collections/all/" class="btn btn-primary">Continue Shopping</a>
+        <a href="https://wa.me/919328289550" class="btn btn-outline" style="margin-left:8px" target="_blank" rel="noopener">WhatsApp Us</a>
+      </p>
+    </div>
+  </section>
+  <div id="site-footer"></div>
+  <script src="/js/urls.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/seo.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/app.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const paymentId = params.get('payment_id');
+    if (paymentId) {
+      document.getElementById('payment-ref').textContent = 'Payment reference: ' + paymentId;
+    }
+  </script>
+</body>
+</html>

@@ -504,7 +504,27 @@ function getProductsByCategory(category) {
 }
 
 function getBlogPost(slug) {
-  return BLOG_POSTS.find(p => p.slug === slug);
+  const post = BLOG_POSTS.find(p => p.slug === slug);
+  if (!post || post.date > todayISO()) return null;
+  return post;
+}
+
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function getPublishedBlogPosts() {
+  const today = todayISO();
+  return BLOG_POSTS
+    .filter(p => p.date <= today)
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
+function getScheduledBlogPosts() {
+  const today = todayISO();
+  return BLOG_POSTS
+    .filter(p => p.date > today)
+    .sort((a, b) => a.date.localeCompare(b.date));
 }
 
 function getCategoryLabel(id) {

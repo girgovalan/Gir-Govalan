@@ -35,6 +35,7 @@
     { "source": "/collections/seed-nuts", "destination": "/collections/all/?category=seeds-nuts", "permanent": true },
     { "source": "/collections/seeds-nuts", "destination": "/collections/all/?category=seeds-nuts", "permanent": true },
     { "source": "/collections/all/products", "destination": "/collections/all/", "permanent": true },
-    { "source": "/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan", "destination": "/products/pure-organic-a2-gir-cow-ghee/", "permanent": true }
+    { "source": "/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan", "destination": "/products/pure-organic-a2-gir-cow-ghee/", "permanent": true },
+    { "source": "/blogs/news/:slug/", "destination": "/blogs/news/_post.html" }
   ]
 }

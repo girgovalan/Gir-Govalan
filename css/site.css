@@ -597,6 +597,23 @@ section { padding: 60px 0; }
   max-width: 400px;
   margin-left: auto;
 }
+.checkout-fields { margin-top: 20px; }
+.checkout-fields .field { margin-bottom: 12px; }
+.checkout-fields label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.9rem; }
+.checkout-fields input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+}
+.checkout-note {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: #666;
+  line-height: 1.5;
+}
 .cart-empty { text-align: center; padding: 60px 20px; }
 
 /* Newsletter */
