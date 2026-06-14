@@ -40,7 +40,7 @@
             <span></span><span></span><span></span>
           </button>
           <a href="${URLS.home}" class="logo-link">
-            <img src="${SITE.logo}" alt="${SITE.name}" class="logo-img" width="190" height="72">
+            <img src="${SITE.logo}" alt="${SITE.name}" class="logo-img" width="300" height="100">
           </a>
           <nav class="nav" aria-label="Main">
             <ul class="nav-list">
