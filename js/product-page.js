@@ -39,7 +39,8 @@
         <button type="button" class="btn btn-primary" id="add-cart">Add to Cart</button>
         <button type="button" class="btn btn-secondary" style="margin-left:8px" id="wa-single">Order on WhatsApp</button>
       </div>
-    </div>`;
+    </div>
+    ${product.longDescription ? `<div class="product-details article-content">${product.longDescription}</div>` : ''}`;
 
   document.querySelectorAll('#variants .variant-pill').forEach(btn => {
     btn.addEventListener('click', () => {
