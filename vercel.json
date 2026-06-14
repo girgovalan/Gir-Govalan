@@ -41,11 +41,5 @@
     { "source": "/blogs/news/_post", "destination": "/blogs/news/", "permanent": true },
     { "source": "/blogs/news/article/", "destination": "/blogs/news/", "permanent": true },
     { "source": "/blogs/news/article", "destination": "/blogs/news/", "permanent": true }
-  ],
-  "rewrites": [
-    {
-      "source": "/blogs/news/:slug((?!article$|_post$|index$)[a-z0-9-]+)/",
-      "destination": "/blogs/news/article.html"
-    }
   ]
 }
