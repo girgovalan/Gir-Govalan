@@ -1,8 +1,8 @@
 /* Product prices — keep in sync with js/data.js */
 const PRICES = {
   'pure-organic-a2-gir-cow-ghee': {
-    price: 1299,
-    variants: { '250ml': 699, '500ml': 1299, '1L': 2499 }
+    price: 1440,
+    variants: { '250ml': 859, '500ml': 1440, '1L': 2790, '5L': 12900 }
   },
   'bilona-gir-ghee-500ml': { price: 1199 },
   'bilona-gir-ghee-1l': { price: 2299 },

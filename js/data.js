@@ -65,120 +65,70 @@ const PRODUCTS = [
     id: 'pure-organic-a2-gir-cow-ghee',
     name: 'Pure Organic A2 Gir Cow Ghee',
     vendor: 'Gir Govalan',
-    price: 1299,
+    price: 1440,
     compareAt: 1499,
     category: 'ghee',
     image: PRODUCT_IMAGES.gheeHero,
     images: [PRODUCT_IMAGES.gheeHero, PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeJar2, PRODUCT_IMAGES.gheeAlt1],
     rating: 5,
     featured: true,
-    description: 'Gir Govalan Pure A2 Gir Cow Ghee is handcrafted from the milk of indigenous Gir cows using the traditional Vedic Bilona process. Made from curd rather than cream, this authentic desi ghee preserves its natural aroma, rich flavor, and nutritional goodness.',
+    reviewCount: 3,
+    features: ['Wooden Bilona Method', 'Organic Fodder For Cows', 'No Added Preservatives'],
+    description: 'Each drop of Gir Govalan Pure A2 Gir Cow Ghee is as pure as gold. Fresh milk from our Gir cows is hand-churned into makhan and slow-cooked using the traditional Bilona method — preserving natural nutrients, aroma, and rich flavour.',
+    tabLabels: {
+      description: 'Product Description',
+      ingredients: 'Ingredients',
+      benefits: 'Benefits',
+      storage: 'Storage Info',
+      faq: 'FAQ'
+    },
+    tabs: {
+      description: `<p>Each drop of our golden <strong>Gir Govalan A2 Cow Ghee</strong> is crafted with care. Fresh, untouched milk from our Gir cows is first turned into makhan by hand-churning and then slowly processed using the traditional Bilona method. The makhan is gently simmered to create pure ghee, preserving all its natural nutrients, aroma, and rich flavour.</p>
+<p>Our Gir cows are raised naturally in the Gir region of Gujarat. They graze on open land and are never given hormonal injections or synthetic feed. We deeply respect our गौ माता (Mother Cow) and धर्ती माता (Mother Earth), making sure every step honours the cows, the land, and nature.</p>
+<p>Every batch is made in small quantities to ensure freshness, purity, and full-bodied taste. Each jar is packed with care so you get authentic, wholesome ghee straight from our farm to your kitchen.</p>`,
+      ingredients: `<p><strong>100% Pure A2 Gir Cow Ghee</strong> — nothing else.</p>
+<ul>
+<li>Indigenous Gir cow milk (A2 protein)</li>
+<li>Traditional cultured curd → bilona churned butter → clarified ghee</li>
+<li>No preservatives, colours, or artificial flavours</li>
+</ul>`,
+      benefits: `<ul class="check-list">
+<li>Rich in healthy fats and fat-soluble vitamins A, D, E, K</li>
+<li>Traditional bilona method preserves authentic aroma and taste</li>
+<li>A2 Gir cow milk — easier to digest for many families</li>
+<li>High smoke point — ideal for Indian cooking and tadka</li>
+<li>Prized in Ayurveda for daily nourishment</li>
+</ul>`,
+      storage: `<p><strong>Storage:</strong> Keep in an airtight container in a cool, dry place away from direct sunlight. Do not use a wet spoon.</p>
+<p><strong>Shelf life:</strong> 12 months from date of packing when stored properly. No refrigeration required under normal conditions.</p>`,
+      faq: `<div class="product-faq">
+<h3>What is A2 Ghee or Gir Cow Ghee?</h3>
+<p>A2 Ghee is made from the milk of purebred Indian cows like the Gir breed, which naturally produce A2 beta-casein protein. It is known to be easier to digest, highly nutritious, and ideal for daily consumption.</p>
+<h3>How is Gir Cow Ghee prepared?</h3>
+<p>We use the Vedic Bilona method: milk → curd → hand-churned butter → slow-cooked pure golden ghee.</p>
+<h3>What makes Gir Govalan ghee unique?</h3>
+<p>Small-batch production from indigenous Gir cows in the Gir region, Maldhari heritage, ethical farming, and no artificial additives.</p>
+<h3>Do you accept international orders?</h3>
+<p>Yes — contact us on WhatsApp for delivery to UAE, USA, UK, and Canada. We will share shipping options and pricing.</p>
+</div>`
+    },
     longDescription: `<div class="product-details-intro">
-<h2>Premium A2 Gir Cow Ghee Made Using the Traditional Vedic Bilona Method</h2>
-<p>Gir Govalan Pure A2 Gir Cow Ghee is handcrafted from the milk of indigenous Gir cows using the traditional Vedic Bilona process. Made from curd rather than cream, this authentic desi ghee preserves its natural aroma, rich flavor, and nutritional goodness.</p>
-<p>Our Gir Cow Ghee is prepared in small batches to maintain purity and quality, delivering a premium ghee experience inspired by centuries of Indian tradition.</p>
+<h2>Premium A2 Gir Cow Ghee — Traditional Vedic Bilona Method</h2>
+<p>Gir Govalan Pure A2 Gir Cow Ghee is handcrafted from indigenous Gir cows using the time-honoured bilona process — for families who want authentic desi ghee from Gujarat.</p>
 </div>
-
-<h2>What is Gir Cow Ghee?</h2>
-<p>Gir Cow Ghee is a nutrient-rich traditional desi ghee prepared from the A2 milk of indigenous Gir cows. Revered in Ayurveda and Indian households for generations, Gir Cow Ghee is known for its rich golden color, pleasant aroma, and wholesome nutritional profile.</p>
-<p>Unlike commercially processed ghee, Gir Govalan Bilona Ghee is made through the traditional curd-churning method, preserving its authentic taste and natural goodness.</p>
-
-<h2>The Traditional Bilona Method</h2>
-<p>The Bilona process is one of the oldest methods of preparing pure desi ghee.</p>
-<h3>Our Process</h3>
-<ol>
-<li>Fresh A2 Gir Cow Milk is collected.</li>
-<li>Milk is naturally converted into curd.</li>
-<li>The curd is churned using a traditional wooden bilona.</li>
-<li>Fresh makkhan (butter) is separated.</li>
-<li>The butter is slow-cooked to produce pure golden ghee.</li>
-</ol>
-<p>This time-honored process requires significantly more milk and effort compared to industrial methods, resulting in superior taste and quality.</p>
-
-<h2>Why Choose Gir Govalan A2 Gir Cow Ghee?</h2>
-<h3>100% A2 Gir Cow Milk</h3>
-<p>Prepared exclusively from indigenous Gir cow milk containing naturally occurring A2 beta-casein protein.</p>
-<h3>Traditional Bilona Preparation</h3>
-<p>Handcrafted using the Vedic curd-churning process for authentic flavor and texture.</p>
-<h3>Rich in Healthy Fats</h3>
-<p>Contains naturally occurring healthy fats that form an important part of a balanced diet.</p>
-<h3>Source of Essential Nutrients</h3>
-<p>Naturally contains fat-soluble vitamins including:</p>
+<h2>Why Choose Gir Govalan?</h2>
 <ul class="check-list">
-<li>Vitamin A</li>
-<li>Vitamin D</li>
-<li>Vitamin E</li>
-<li>Vitamin K</li>
+<li>100% A2 Gir Cow Milk</li>
+<li>Traditional Wooden Bilona Preparation</li>
+<li>Small-batch farm freshness</li>
+<li>No artificial preservatives or colours</li>
 </ul>
-<h3>Contains Beneficial Fatty Acids</h3>
-<p>Gir Cow Ghee naturally contains:</p>
-<ul class="check-list">
-<li>Butyric Acid</li>
-<li>Omega-3 Fatty Acids</li>
-<li>Conjugated Linoleic Acid (CLA)</li>
-</ul>
-<h3>No Artificial Additives</h3>
-<ul class="check-list">
-<li>No Preservatives</li>
-<li>No Artificial Colors</li>
-<li>No Artificial Flavors</li>
-<li>No Adulteration</li>
-</ul>
-
-<h2>Nutritional Highlights</h2>
-<p>Gir Govalan Pure A2 Gir Cow Ghee is valued for its naturally occurring nutrients and traditional preparation process.</p>
-<p>It contains:</p>
-<ul>
-<li>Essential fatty acids</li>
-<li>Fat-soluble vitamins</li>
-<li>Butyric acid</li>
-<li>CLA (Conjugated Linoleic Acid)</li>
-<li>Natural antioxidants</li>
-</ul>
-<p>These nutrients make Gir Cow Ghee a wholesome addition to traditional Indian diets.</p>
-
-<h2>Uses of Gir Cow Ghee</h2>
-<p>Gir Govalan Bilona Ghee can be used for:</p>
-<ul>
-<li>Roti and paratha topping</li>
-<li>Dal and khichdi</li>
-<li>Traditional Indian sweets</li>
-<li>Cooking and sautéing</li>
-<li>Ayurvedic dietary practices</li>
-<li>Daily meals for authentic flavor</li>
-</ul>
-<p>Its naturally high smoke point makes it suitable for various cooking applications.</p>
-
-<h2>Commitment to Purity</h2>
-<p>At Gir Govalan, we focus on:</p>
-<ul>
-<li>Traditional preparation methods</li>
-<li>Ethical cow care</li>
-<li>Quality sourcing</li>
-<li>Small-batch production</li>
-<li>Authentic Bilona craftsmanship</li>
-</ul>
-<p>Every jar reflects our commitment to purity, tradition, and quality.</p>
-
-<h2>Frequently Asked Questions</h2>
-<div class="product-faq">
-<h3>What makes Gir Cow Ghee different from regular cow ghee?</h3>
-<p>Gir Cow Ghee is prepared exclusively from the milk of indigenous Gir cows, known for producing A2 milk. Its traditional Bilona preparation further enhances its authenticity and flavor.</p>
-<h3>What is A2 Gir Cow Ghee?</h3>
-<p>A2 Gir Cow Ghee is ghee prepared from the milk of Gir cows that naturally produce A2 beta-casein protein.</p>
-<h3>What is Bilona Ghee?</h3>
-<p>Bilona Ghee is traditionally prepared by converting milk into curd, churning the curd into butter, and then slow-cooking the butter to produce ghee.</p>
-<h3>Is Gir Govalan Ghee free from preservatives?</h3>
-<p>Yes. Gir Govalan Pure A2 Gir Cow Bilona Ghee contains no artificial preservatives, flavors, or colors.</p>
-</div>
-
-<h2>Experience Authentic Tradition</h2>
-<p>Bring home the richness of traditional Indian nutrition with Gir Govalan Pure A2 Gir Cow Bilona Ghee. Crafted using the Vedic Bilona method and made from premium A2 Gir Cow Milk, every spoonful delivers purity, authenticity, and timeless flavor.</p>
 <p class="product-tagline"><strong>Gir Govalan – Pure Tradition. Pure Nutrition. Pure Ghee.</strong></p>`,
     variants: [
-      { label: '250ml', price: 699 },
-      { label: '500ml', price: 1299 },
-      { label: '1L', price: 2499 }
+      { label: '250ml', price: 859, compareAt: 900 },
+      { label: '500ml', price: 1440, compareAt: 1499 },
+      { label: '1L', price: 2790, compareAt: 2999 },
+      { label: '5L', price: 12900, compareAt: 13999 }
     ]
   },
   {
