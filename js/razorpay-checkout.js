@@ -24,7 +24,7 @@ async function startRazorpayCheckout(cart, customer) {
       name: item.name
     }));
 
-    const res = await fetch('/api/create-order', {
+    const res = await fetch('/api/create-order/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ items, customer })
@@ -54,7 +54,7 @@ async function startRazorpayCheckout(cart, customer) {
       theme: { color: '#7b5495' },
       handler: async function (response) {
         try {
-          const verifyRes = await fetch('/api/verify-payment', {
+          const verifyRes = await fetch('/api/verify-payment/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(response)

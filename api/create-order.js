@@ -1,5 +1,11 @@
 const { calculateCartTotal } = require('./lib/prices');
 
+function getRazorpayCredentials() {
+  const keyId = (process.env.RAZORPAY_KEY_ID || process.env.LIVE_API_KEY || '').trim();
+  const keySecret = (process.env.RAZORPAY_KEY_SECRET || process.env.SECRET_API_KEY || '').trim();
+  return { keyId, keySecret };
+}
+
 module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -11,13 +17,30 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const keyId = process.env.RAZORPAY_KEY_ID;
-  const keySecret = process.env.RAZORPAY_KEY_SECRET;
+  const { keyId, keySecret } = getRazorpayCredentials();
 
   if (!keyId || !keySecret) {
     return res.status(500).json({
-      error: 'Payment is not configured yet. Add RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in Vercel environment variables.'
+      error: 'Payment is not configured. Add RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in Vercel, then redeploy.'
     });
+  }
+
+  if (!keyId.startsWith('rzp_')) {
+    return res.status(500).json({
+      error: 'RAZORPAY_KEY_ID looks wrong. It must be your Key ID (starts with rzp_live_ or rzp_test_), not the secret.'
+    });
+  }
+
+  if (keySecret.startsWith('rzp_')) {
+    return res.status(500).json({
+      error: 'RAZORPAY_KEY_SECRET looks wrong. Paste the secret key from Razorpay, not the Key ID.'
+    });
+  }
+
+  const isLive = keyId.startsWith('rzp_live_');
+  const isTest = keyId.startsWith('rzp_test_');
+  if (!isLive && !isTest) {
+    return res.status(500).json({ error: 'Invalid Razorpay Key ID format.' });
   }
 
   try {
@@ -29,7 +52,7 @@ module.exports = async (req, res) => {
     }
 
     const amountPaise = Math.round(total * 100);
-    const receipt = `gg_${Date.now()}`;
+    const receipt = `gg${Date.now()}`.slice(0, 40);
     const auth = Buffer.from(`${keyId}:${keySecret}`).toString('base64');
 
     const orderRes = await fetch('https://api.razorpay.com/v1/orders', {
@@ -45,8 +68,7 @@ module.exports = async (req, res) => {
         notes: {
           customer_name: customer?.name || '',
           customer_phone: customer?.contact || '',
-          customer_email: customer?.email || '',
-          items: JSON.stringify(items)
+          customer_email: customer?.email || ''
         }
       })
     });
@@ -54,9 +76,11 @@ module.exports = async (req, res) => {
     const orderData = await orderRes.json();
 
     if (!orderRes.ok) {
-      return res.status(500).json({
-        error: orderData.error?.description || 'Could not create Razorpay order.'
-      });
+      const msg = orderData.error?.description || 'Could not create Razorpay order.';
+      const hint = /auth/i.test(msg)
+        ? ' Check RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in Vercel match the same Live (or Test) pair from Razorpay, then redeploy.'
+        : '';
+      return res.status(500).json({ error: msg + hint });
     }
 
     return res.status(200).json({

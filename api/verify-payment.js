@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const keySecret = process.env.RAZORPAY_KEY_SECRET;
+  const keySecret = (process.env.RAZORPAY_KEY_SECRET || process.env.SECRET_API_KEY || '').trim();
   if (!keySecret) {
     return res.status(500).json({ success: false, error: 'Payment not configured.' });
   }
