@@ -1,0 +1,23 @@
+{
+  "name": "gir-govalan",
+  "version": "1.0.0",
+  "description": "A complete, **Shopify-free** website for Gir Govalan — authentic Gir Cow Ghee and farm products from Gujarat.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/girgovalan/Gir-Govalan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/girgovalan/Gir-Govalan/issues"
+  },
+  "homepage": "https://github.com/girgovalan/Gir-Govalan#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}

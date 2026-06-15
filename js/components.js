@@ -155,6 +155,15 @@
     return `<div class="section-label"><img src="${SITE.decor}" alt="" width="90" height="23"><span>${text}</span></div>`;
   }
 
+  function loadAnalytics() {
+    if (document.querySelector('script[data-vercel-analytics]')) return;
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = '/js/analytics.js';
+    script.dataset.vercelAnalytics = '';
+    document.head.appendChild(script);
+  }
+
   window.renderHeader = renderHeader;
   window.renderFooter = renderFooter;
   window.sectionLabel = sectionLabel;
@@ -162,5 +171,6 @@
   document.addEventListener('DOMContentLoaded', () => {
     renderHeader();
     renderFooter();
+    loadAnalytics();
   });
 })();
