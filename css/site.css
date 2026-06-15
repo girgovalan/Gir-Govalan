@@ -618,6 +618,31 @@ section { padding: 60px 0; }
   color: #666;
   line-height: 1.5;
 }
+
+/* Order success */
+.order-success-card {
+  max-width: 520px;
+  margin: 0 auto;
+}
+.order-success-note {
+  margin: 20px 0;
+  padding: 16px;
+  background: var(--bg-2);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.order-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+.order-success-actions .btn-block {
+  width: 100%;
+  text-align: center;
+}
+
 .cart-empty { text-align: center; padding: 60px 20px; }
 
 /* Newsletter */

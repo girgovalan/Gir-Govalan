@@ -51,6 +51,49 @@ function whatsappOrderLink(cart) {
   return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
 }
 
+function whatsappPaidOrderLink(cart, customer, paymentId) {
+  const lines = cart.map(i => `• ${i.name}${i.variant ? ' (' + i.variant + ')' : ''} × ${i.qty} — ${formatPrice(i.price * i.qty)}`);
+  const text = [
+    'Hello Gir Govalan! My Razorpay payment is complete.',
+    '',
+    `Payment ID: ${paymentId || '—'}`,
+    `Name: ${customer.name || '—'}`,
+    `Phone: ${customer.contact || '—'}`,
+    customer.email ? `Email: ${customer.email}` : '',
+    '',
+    'Order:',
+    ...lines,
+    '',
+    `Total paid: ${formatPrice(cartTotal(cart))}`,
+    '',
+    'Please confirm my order and share delivery details. Thank you!'
+  ].filter(Boolean).join('\n');
+  return `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(text)}`;
+}
+
+function savePaidOrderForWhatsApp(cart, customer, paymentId) {
+  try {
+    sessionStorage.setItem('girGovalanPaidOrder', JSON.stringify({
+      cart,
+      customer,
+      paymentId,
+      savedAt: Date.now()
+    }));
+  } catch { /* ignore */ }
+}
+
+function getPaidOrderForWhatsApp() {
+  try {
+    const raw = sessionStorage.getItem('girGovalanPaidOrder');
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (!data.cart?.length) return null;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
 function showToast(msg, type = 'success') {
   let t = document.querySelector('.toast');
   if (!t) {

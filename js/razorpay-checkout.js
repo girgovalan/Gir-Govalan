@@ -62,6 +62,7 @@ async function startRazorpayCheckout(cart, customer) {
           const result = await verifyRes.json();
 
           if (result.success) {
+            savePaidOrderForWhatsApp(getCart(), customer, result.paymentId);
             saveCart([]);
             window.location.href = `/pages/order-success/?payment_id=${encodeURIComponent(result.paymentId)}`;
             return;

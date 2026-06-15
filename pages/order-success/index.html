@@ -10,14 +10,15 @@
 <body>
   <div id="site-header"></div>
   <section style="padding:80px 0">
-    <div class="container text-center" style="max-width:560px">
+    <div class="container text-center order-success-card">
       <h1 style="color:var(--accent-1)">Thank you!</h1>
-      <p>Your payment was successful. We have received your order and will contact you shortly to confirm delivery.</p>
+      <p>Your payment was successful. We have received your order.</p>
       <p id="payment-ref" style="color:#666;font-size:0.95rem"></p>
-      <p style="margin-top:24px">
-        <a href="/collections/all/" class="btn btn-primary">Continue Shopping</a>
-        <a href="https://wa.me/919328289550" class="btn btn-outline" style="margin-left:8px" target="_blank" rel="noopener">WhatsApp Us</a>
-      </p>
+      <p id="whatsapp-step" class="order-success-note">One last step — confirm your order on WhatsApp so we can arrange delivery.</p>
+      <div class="order-success-actions">
+        <a href="#" id="whatsapp-confirm" class="btn btn-primary btn-block" target="_blank" rel="noopener" hidden>Confirm order on WhatsApp</a>
+        <a href="/collections/all/" class="btn btn-outline btn-block">Continue Shopping</a>
+      </div>
     </div>
   </section>
   <div id="site-footer"></div>
@@ -29,8 +30,30 @@
   <script>
     const params = new URLSearchParams(location.search);
     const paymentId = params.get('payment_id');
+    const paymentRef = document.getElementById('payment-ref');
+    const whatsappBtn = document.getElementById('whatsapp-confirm');
+    const whatsappStep = document.getElementById('whatsapp-step');
+
     if (paymentId) {
-      document.getElementById('payment-ref').textContent = 'Payment reference: ' + paymentId;
+      paymentRef.textContent = 'Payment reference: ' + paymentId;
+    }
+
+    const paidOrder = typeof getPaidOrderForWhatsApp === 'function' ? getPaidOrderForWhatsApp() : null;
+    if (paidOrder) {
+      const link = whatsappPaidOrderLink(
+        paidOrder.cart,
+        paidOrder.customer || {},
+        paidOrder.paymentId || paymentId
+      );
+      whatsappBtn.href = link;
+      whatsappBtn.hidden = false;
+    } else if (paymentId) {
+      whatsappStep.textContent = 'Payment received. Message us on WhatsApp with your payment reference so we can confirm delivery.';
+      whatsappBtn.textContent = 'Message on WhatsApp';
+      whatsappBtn.href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hello Gir Govalan! I completed payment.\n\nPayment ID: ' + paymentId + '\n\nPlease confirm my order and delivery. Thank you!')}`;
+      whatsappBtn.hidden = false;
+    } else {
+      whatsappStep.hidden = true;
     }
   </script>
 </body>
