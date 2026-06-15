@@ -73,57 +73,64 @@ const PRODUCTS = [
     rating: 5,
     featured: true,
     reviewCount: 3,
-    features: ['Wooden Bilona Method', 'Organic Fodder For Cows', 'No Added Preservatives'],
-    description: 'Each drop of Gir Govalan Pure A2 Gir Cow Ghee is as pure as gold. Fresh milk from our Gir cows is hand-churned into makhan and slow-cooked using the traditional Bilona method — preserving natural nutrients, aroma, and rich flavour.',
+    features: ['Curd-Churned Bilona', 'Pasture-Raised Gir Cows', 'Single-Ingredient Purity'],
+    description: 'Slow-cooked desi ghee from A2 Gir cow milk, prepared the Vedic way — curd first, then bilona-churned butter, then clarified over a gentle flame for a deep aroma and clean finish.',
     tabLabels: {
-      description: 'Product Description',
-      ingredients: 'Ingredients',
-      benefits: 'Benefits',
-      storage: 'Storage Info',
-      faq: 'FAQ'
+      description: 'About This Ghee',
+      ingredients: 'What\'s Inside',
+      benefits: 'Why Families Choose It',
+      storage: 'Storage & Shelf Life',
+      faq: 'Questions & Answers'
     },
     tabs: {
-      description: `<p>Each drop of our golden <strong>Gir Govalan A2 Cow Ghee</strong> is crafted with care. Fresh, untouched milk from our Gir cows is first turned into makhan by hand-churning and then slowly processed using the traditional Bilona method. The makhan is gently simmered to create pure ghee, preserving all its natural nutrients, aroma, and rich flavour.</p>
-<p>Our Gir cows are raised naturally in the Gir region of Gujarat. They graze on open land and are never given hormonal injections or synthetic feed. We deeply respect our गौ माता (Mother Cow) and धर्ती माता (Mother Earth), making sure every step honours the cows, the land, and nature.</p>
-<p>Every batch is made in small quantities to ensure freshness, purity, and full-bodied taste. Each jar is packed with care so you get authentic, wholesome ghee straight from our farm to your kitchen.</p>`,
-      ingredients: `<p><strong>100% Pure A2 Gir Cow Ghee</strong> — nothing else.</p>
+      description: `<p><strong>Gir Govalan Pure A2 Gir Cow Ghee</strong> is made the way Indian households have trusted for generations: whole milk is set into curd, churned into fresh butter, and simmered until only clear golden ghee remains. We never start from cream — the full bilona path is what gives this ghee its character.</p>
+<p>Our cows belong to the Gir breed, native to the forests and grasslands of Gujarat. They are cared for by pastoral families who know these animals by name. The milk travels a short path from herd to kitchen, so every jar reflects the region it comes from.</p>
+<p>We work in modest batches because ghee is not a commodity to us — it is food for daily rotis, festive sweets, and the quiet ritual of a well-made tadka. That is the standard we pack into every bottle.</p>`,
+      ingredients: `<p>One ingredient only: <strong>clarified butter (ghee)</strong> obtained from A2 Gir cow milk through the traditional curd-and-bilona process.</p>
 <ul>
-<li>Indigenous Gir cow milk (A2 protein)</li>
-<li>Traditional cultured curd → bilona churned butter → clarified ghee</li>
-<li>No preservatives, colours, or artificial flavours</li>
+<li>No added salt, sugar, or flavouring</li>
+<li>No artificial colours or stabilisers</li>
+<li>No blending with vegetable fats</li>
 </ul>`,
       benefits: `<ul class="check-list">
-<li>Rich in healthy fats and fat-soluble vitamins A, D, E, K</li>
-<li>Traditional bilona method preserves authentic aroma and taste</li>
-<li>A2 Gir cow milk — easier to digest for many families</li>
-<li>High smoke point — ideal for Indian cooking and tadka</li>
-<li>Prized in Ayurveda for daily nourishment</li>
+<li>High smoke point — suited for frying, roasting, and everyday Indian cooking</li>
+<li>Natural nutty aroma from slow clarification, not factory deodorising</li>
+<li>A2 Gir cow milk base — a choice many families prefer for daily diets</li>
+<li>Contains naturally occurring fat-soluble vitamins</li>
+<li>Works well for parathas, dal, khichdi, halwa, and Ayurvedic home remedies</li>
 </ul>`,
-      storage: `<p><strong>Storage:</strong> Keep in an airtight container in a cool, dry place away from direct sunlight. Do not use a wet spoon.</p>
-<p><strong>Shelf life:</strong> 12 months from date of packing when stored properly. No refrigeration required under normal conditions.</p>`,
+      storage: `<p>Store the jar tightly closed in a cool, dry cupboard. Keep away from heat and direct sun. Always use a clean, dry spoon.</p>
+<p>When stored correctly, the ghee stays good for up to 12 months from packing. Refrigeration is optional; at room temperature it should remain grain-free and pleasant-smelling.</p>`,
       faq: `<div class="product-faq">
-<h3>What is A2 Ghee or Gir Cow Ghee?</h3>
-<p>A2 Ghee is made from the milk of purebred Indian cows like the Gir breed, which naturally produce A2 beta-casein protein. It is known to be easier to digest, highly nutritious, and ideal for daily consumption.</p>
-<h3>How is Gir Cow Ghee prepared?</h3>
-<p>We use the Vedic Bilona method: milk → curd → hand-churned butter → slow-cooked pure golden ghee.</p>
-<h3>What makes Gir Govalan ghee unique?</h3>
-<p>Small-batch production from indigenous Gir cows in the Gir region, Maldhari heritage, ethical farming, and no artificial additives.</p>
-<h3>Do you accept international orders?</h3>
-<p>Yes — contact us on WhatsApp for delivery to UAE, USA, UK, and Canada. We will share shipping options and pricing.</p>
+<h3>What is bilona ghee?</h3>
+<p>Bilona ghee is prepared from cultured curd, not direct cream. The curd is churned to separate butter, and that butter is cooked down into ghee. It takes longer and uses more milk, which is why true bilona ghee has a fuller taste.</p>
+<h3>How is Gir Govalan ghee different from regular store ghee?</h3>
+<p>We use indigenous Gir cow milk, follow the curd-churned bilona route, and avoid shortcuts like cream-only processing or added chemicals. The result is a single-ingredient product with a pronounced desi aroma.</p>
+<h3>Which size should I buy?</h3>
+<p>250 ml suits first-time buyers or small households. 500 ml and 1 litre are popular for regular cooking. The 5 litre pack works well for joint families, caterers, or monthly stocking.</p>
+<h3>Can I order from abroad?</h3>
+<p>Yes. Message us on WhatsApp with your country and pin code — we will confirm whether we can ship to your address and share the final cost.</p>
 </div>`
     },
     longDescription: `<div class="product-details-intro">
-<h2>Premium A2 Gir Cow Ghee — Traditional Vedic Bilona Method</h2>
-<p>Gir Govalan Pure A2 Gir Cow Ghee is handcrafted from indigenous Gir cows using the time-honoured bilona process — for families who want authentic desi ghee from Gujarat.</p>
+<h2>Authentic A2 Gir Cow Ghee from Gujarat</h2>
+<p>Gir Govalan ghee is rooted in the Gir region’s pastoral heritage — where Maldhari communities have lived alongside indigenous cattle for centuries. Our process respects that lineage: patient churning, slow cooking, and zero compromise on what goes into the jar.</p>
 </div>
-<h2>Why Choose Gir Govalan?</h2>
+<h2>The Bilona Process, Step by Step</h2>
+<ol>
+<li>A2 Gir cow milk is cultured into thick curd.</li>
+<li>Curd is churned with a wooden bilona to draw out butter.</li>
+<li>Butter is heated slowly until water evaporates and pure ghee remains.</li>
+<li>The ghee is filtered, rested, and packed while still aromatic.</li>
+</ol>
+<h2>Good to Know</h2>
 <ul class="check-list">
-<li>100% A2 Gir Cow Milk</li>
-<li>Traditional Wooden Bilona Preparation</li>
-<li>Small-batch farm freshness</li>
-<li>No artificial preservatives or colours</li>
+<li>100% A2 Gir cow milk — no mixing with other breeds</li>
+<li>Curd-based bilona — not industrial cream ghee</li>
+<li>Batch-wise production for consistent quality</li>
+<li>Transparent labelling — ghee only, nothing else</li>
 </ul>
-<p class="product-tagline"><strong>Gir Govalan – Pure Tradition. Pure Nutrition. Pure Ghee.</strong></p>`,
+<p class="product-tagline"><strong>Gir Govalan — Live Pure. Eat Pure.</strong></p>`,
     variants: [
       { label: '250ml', price: 859, compareAt: 900 },
       { label: '500ml', price: 1440, compareAt: 1499 },
