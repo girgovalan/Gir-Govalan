@@ -61,16 +61,16 @@
               <li><a href="${URLS.contact}" class="nav-link${isActive('contact')}">Contact</a></li>
             </ul>
           </nav>
+          <div class="header-search-wrap">
+            <label class="header-search" for="global-search">
+              <span class="header-search-icon" aria-hidden="true">⌕</span>
+              <input type="search" id="global-search" placeholder="Search products..." autocomplete="off">
+            </label>
+          </div>
           <div class="header-actions">
-            <button type="button" class="icon-btn search-toggle" aria-label="Search">⌕</button>
             <a href="${URLS.cart}" class="icon-btn cart-link" aria-label="Cart">
               🛒<span class="cart-badge">${count || ''}</span>
             </a>
-          </div>
-        </div>
-        <div class="search-bar" hidden>
-          <div class="container">
-            <input type="search" id="global-search" placeholder="Search products..." autocomplete="off">
           </div>
         </div>
       </header>

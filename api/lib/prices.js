@@ -1,17 +1,20 @@
 /* Product prices — keep in sync with js/data.js */
 const PRICES = {
   'pure-organic-a2-gir-cow-ghee': {
-    price: 1440,
-    variants: { '250ml': 859, '500ml': 1440, '1L': 2790, '5L': 12900 }
+    price: 1300,
+    variants: { '250ml': 725, '500ml': 1300, '1L': 2500, '5L': 12000 }
   },
   'bilona-gir-ghee-500ml': { price: 1199 },
   'bilona-gir-ghee-1l': { price: 2299 },
-  'a2-gir-milk': { price: 89 },
-  'fresh-curd': { price: 79 },
+  'a2-gir-milk': { price: 120 },
+  'fresh-curd': {
+    price: 150,
+    variants: { '1kg': 150 }
+  },
   'traditional-ladoo': { price: 349 },
   'milk-peda': {
-    price: 399,
-    variants: { '250g': 249, '500g': 399, '1kg': 749 }
+    price: 650,
+    variants: { '500g': 650, '1kg': 1200 }
   },
   'shrikhand': { price: 299 },
   'premium-almonds': { price: 449 },

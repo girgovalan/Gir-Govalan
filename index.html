@@ -43,10 +43,10 @@
   </section>
 
   <section>
-    <div class="container">
+    <div class="container-wide">
       <div id="label-products"></div>
       <div class="section-title"><h2>Fresh &amp; natural product</h2></div>
-      <div class="products-grid" id="home-products"></div>
+      <div class="products-grid products-grid--catalog" id="home-products"></div>
       <p class="text-center mt-2"><a href="/collections/all/" class="btn btn-primary">View All Products</a></p>
     </div>
   </section>
@@ -121,20 +121,34 @@
       `<a href="${c.url}" class="category-card"><img src="${c.icon}" alt="${c.title}"><h3>${c.title}</h3></a>`
     ).join('');
 
-    document.getElementById('home-products').innerHTML = PRODUCTS.slice(0, 5).map(productCardHTML).join('');
+    document.getElementById('home-products').innerHTML = getHomeProducts().map(productCardHTML).join('');
 
     const featured = PRODUCTS.find(p => p.featured) || PRODUCTS[0];
+    const featDefaultIdx = featured.variants ? 0 : -1;
+    const featDefaultVariant = featured.variants?.[featDefaultIdx];
+    const featInitialPrice = featDefaultVariant?.price ?? featured.price;
+    const featInitialCompare = featDefaultVariant?.compareAt ?? featured.compareAt;
+
+    function featPriceHtml(price, compare) {
+      if (compare && compare > price) {
+        return `<span class="product-price-sale">${formatPrice(price)}</span> <s class="product-price-was">${formatPrice(compare)}</s>`;
+      }
+      return formatPrice(price);
+    }
+
     document.getElementById('featured-product').innerHTML = `
       <div class="featured-product">
-        <img src="${featured.images ? featured.images[0] : featured.image}" alt="${featured.name}">
+        <div class="featured-product-image">
+          <img src="${featured.images ? featured.images[0] : featured.image}" alt="${featured.name}">
+        </div>
         <div>
           <p class="product-vendor">${featured.vendor}</p>
           <h2>${featured.name}</h2>
           <p class="product-rating">${'★'.repeat(5)}</p>
-          <p class="product-price">${formatPrice(featured.price)}</p>
+          <p class="product-price" id="feat-price">${featPriceHtml(featInitialPrice, featInitialCompare)}</p>
           <p>${featured.description}</p>
-          ${featured.variants ? `<div class="variant-pills" id="feat-variants">${featured.variants.map((v,i) =>
-            `<button type="button" class="variant-pill${i===1?' active':''}" data-price="${v.price}">${v.label} — ${formatPrice(v.price)}</button>`
+          ${featured.variants ? `<div class="variant-pills" id="feat-variants">${featured.variants.map((v, i) =>
+            `<button type="button" class="variant-pill${i === featDefaultIdx ? ' active' : ''}" data-label="${v.label}" data-price="${v.price}" data-compare="${v.compareAt || ''}">${v.label} — ${formatPrice(v.price)}</button>`
           ).join('')}</div>` : ''}
           <div class="qty-row">
             <button type="button" class="qty-btn" id="feat-minus">−</button>
@@ -146,14 +160,16 @@
         </div>
       </div>`;
 
-    let featPrice = featured.price;
-    let featVariant = featured.variants ? featured.variants[1].label : null;
+    let featPrice = featInitialPrice;
+    let featVariant = featDefaultVariant?.label ?? null;
     document.querySelectorAll('#feat-variants .variant-pill').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('#feat-variants .variant-pill').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         featPrice = +btn.dataset.price;
-        featVariant = btn.textContent.split(' — ')[0];
+        featVariant = btn.dataset.label;
+        const compare = btn.dataset.compare ? +btn.dataset.compare : null;
+        document.getElementById('feat-price').innerHTML = featPriceHtml(featPrice, compare);
       });
     });
     document.getElementById('feat-minus').onclick = () => {

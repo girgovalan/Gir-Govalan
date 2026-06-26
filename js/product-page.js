@@ -42,14 +42,19 @@
   }
 
   function imageGallery() {
+    const galleryClass = product.imageStyle === 'portrait' ? ' product-gallery--portrait'
+      : product.imageStyle === 'fill' ? ' product-gallery--fill' : '';
+    const imgFocusStyle = product.imageFocus
+      ? ` style="object-position:${product.imageFocus === 'center' ? 'center' : `center ${product.imageFocus}`}"`
+      : '';
     const thumbs = imgs.map((src, i) => `
       <button type="button" class="product-thumb${i === 0 ? ' active' : ''}" data-index="${i}" aria-label="View image ${i + 1}">
-        <img src="${src}" alt="">
+        <img src="${src}" alt=""${product.imageFocus ? ` style="object-position:center ${product.imageFocus}"` : ''}>
       </button>`).join('');
     return `
-      <div class="product-gallery">
+      <div class="product-gallery${galleryClass}">
         <button type="button" class="product-main-image-btn" id="open-image-modal" aria-label="Open image">
-          <img id="main-img" src="${imgs[0]}" alt="${product.name}">
+          <img id="main-img" src="${imgs[0]}" alt="${product.name}"${imgFocusStyle}>
         </button>
         ${imgs.length > 1 ? `<div class="product-thumbs">${thumbs}</div>` : ''}
       </div>
@@ -98,15 +103,17 @@
         ${featureBadges()}
         ${product.variants ? `
           <p class="variant-label"><strong>Size:</strong> <span id="selected-size">${product.variants[0].label}</span></p>
-          <div class="variant-pills variant-pills-stacked" id="variants">${variantButtons()}</div>
+          <div class="variant-pills variant-pills-grid" id="variants">${variantButtons()}</div>
         ` : ''}
-        <div class="qty-row">
-          <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity">−</button>
-          <input type="number" class="qty-input" id="qty" value="1" min="1" aria-label="Quantity">
-          <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+        <div class="product-purchase-row">
+          <div class="qty-row">
+            <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity">−</button>
+            <input type="number" class="qty-input" id="qty" value="1" min="1" aria-label="Quantity">
+            <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="button" class="btn btn-primary btn-add-cart-lg" id="add-cart">Add To Cart</button>
         </div>
-        <div class="product-cta-row">
-          <button type="button" class="btn btn-primary" id="add-cart">Add to Cart</button>
+        <div class="product-cta-row product-cta-row--primary">
           <button type="button" class="btn btn-secondary" id="wa-single">Order on WhatsApp</button>
         </div>
       </div>

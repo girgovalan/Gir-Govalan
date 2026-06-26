@@ -55,6 +55,13 @@ module.exports = async (req, res) => {
     const receipt = `gg${Date.now()}`.slice(0, 40);
     const auth = Buffer.from(`${keyId}:${keySecret}`).toString('base64');
 
+    const deliveryParts = [
+      customer?.address,
+      customer?.landmark,
+      [customer?.city, customer?.state, customer?.pincode].filter(Boolean).join(', ')
+    ].filter(Boolean);
+    const deliveryAddress = deliveryParts.join(' | ').slice(0, 255);
+
     const orderRes = await fetch('https://api.razorpay.com/v1/orders', {
       method: 'POST',
       headers: {
@@ -68,7 +75,13 @@ module.exports = async (req, res) => {
         notes: {
           customer_name: customer?.name || '',
           customer_phone: customer?.contact || '',
-          customer_email: customer?.email || ''
+          customer_email: customer?.email || '',
+          delivery_address: deliveryAddress,
+          address: (customer?.address || '').slice(0, 255),
+          landmark: (customer?.landmark || '').slice(0, 255),
+          city: customer?.city || '',
+          state: customer?.state || '',
+          pincode: customer?.pincode || ''
         }
       })
     });

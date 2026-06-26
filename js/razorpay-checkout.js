@@ -9,6 +9,7 @@ async function startRazorpayCheckout(cart, customer) {
     showToast('Please enter your name and phone number.', 'error');
     return;
   }
+  if (!validateCheckoutCustomer(customer, { requireAddress: true })) return;
 
   const payBtn = document.getElementById('razorpay-pay');
   if (payBtn) {
@@ -91,11 +92,13 @@ async function startRazorpayCheckout(cart, customer) {
 }
 
 function getCheckoutCustomer() {
-  return {
-    name: document.getElementById('checkout-name')?.value?.trim() || '',
-    contact: document.getElementById('checkout-phone')?.value?.trim() || '',
-    email: document.getElementById('checkout-email')?.value?.trim() || ''
-  };
+  return typeof getCheckoutCustomerFromForm === 'function'
+    ? getCheckoutCustomerFromForm()
+    : {
+        name: document.getElementById('checkout-name')?.value?.trim() || '',
+        contact: document.getElementById('checkout-phone')?.value?.trim() || '',
+        email: document.getElementById('checkout-email')?.value?.trim() || ''
+      };
 }
 
 function bindRazorpayPayButton(cart) {

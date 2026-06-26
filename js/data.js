@@ -37,12 +37,17 @@ const SITE = {
 
 /* Product photos — currently using available local files in images/products/ */
 const PRODUCT_IMAGES = {
-  gheeHero: productImg('Gir Govalan Packaging.jpeg'),
-  gheeJar: productImg('Gir Govalan Packaging.jpeg'),
-  gheeJar2: productImg('Gir Govalan Packaging.jpeg'),
-  gheeBilona: productImg('Gir Govalan Packaging.jpeg'),
-  gheeAlt1: productImg('Gir Govalan Packaging.jpeg'),
-  gheeAlt2: productImg('Gir Govalan Packaging.jpeg'),
+  gheeJarPhoto: productImg('gir-govalan-ghee-jar.png'),
+  gheeBilonaProcess: productImg('bilona-ghee-process.png'),
+  gheeBoilingMakhan: productImg('boiling-makhan-ghee.png'),
+  gheeMilkingCow: productImg('milking-gir-cow.png'),
+  gheeCaringCow: productImg('caring-gir-cow.png'),
+  gheeHero: productImg('gir-govalan-ghee-jar.png'),
+  gheeJar: productImg('gir-govalan-ghee-jar.png'),
+  gheeJar2: productImg('bilona-ghee-process.png'),
+  gheeBilona: productImg('boiling-makhan-ghee.png'),
+  gheeAlt1: productImg('milking-gir-cow.png'),
+  gheeAlt2: productImg('caring-gir-cow.png'),
   gheeAlt3: productImg('Gir Govalan Packaging.jpeg'),
   milk: productImg('a2-gir-milk.jpg'),
   curd: productImg('fresh-curd.jpg'),
@@ -65,11 +70,19 @@ const PRODUCTS = [
     id: 'pure-organic-a2-gir-cow-ghee',
     name: 'Pure Organic A2 Gir Cow Ghee',
     vendor: 'Gir Govalan',
-    price: 1440,
-    compareAt: 1499,
+    price: 1300,
+    compareAt: 1399,
     category: 'ghee',
-    image: PRODUCT_IMAGES.gheeHero,
-    images: [PRODUCT_IMAGES.gheeHero, PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeJar2, PRODUCT_IMAGES.gheeAlt1],
+    imageStyle: 'fill',
+    imageFocus: 'center',
+    image: PRODUCT_IMAGES.gheeJarPhoto,
+    images: [
+      PRODUCT_IMAGES.gheeJarPhoto,
+      PRODUCT_IMAGES.gheeBilonaProcess,
+      PRODUCT_IMAGES.gheeBoilingMakhan,
+      PRODUCT_IMAGES.gheeMilkingCow,
+      PRODUCT_IMAGES.gheeCaringCow
+    ],
     rating: 5,
     featured: true,
     reviewCount: 3,
@@ -132,10 +145,10 @@ const PRODUCTS = [
 </ul>
 <p class="product-tagline"><strong>Gir Govalan — Live Pure. Eat Pure.</strong></p>`,
     variants: [
-      { label: '250ml', price: 859, compareAt: 900 },
-      { label: '500ml', price: 1440, compareAt: 1499 },
-      { label: '1L', price: 2790, compareAt: 2999 },
-      { label: '5L', price: 12900, compareAt: 13999 }
+      { label: '250ml', price: 725, compareAt: 799 },
+      { label: '500ml', price: 1300, compareAt: 1399 },
+      { label: '1L', price: 2500, compareAt: 2699 },
+      { label: '5L', price: 12000, compareAt: 12999 }
     ]
   },
   {
@@ -144,6 +157,7 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 1199,
     category: 'ghee',
+    showOnHome: false,
     image: PRODUCT_IMAGES.gheeJar,
     images: [PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeAlt2],
     rating: 5,
@@ -155,6 +169,7 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     price: 2299,
     category: 'ghee',
+    showOnHome: false,
     image: PRODUCT_IMAGES.gheeBilona,
     images: [PRODUCT_IMAGES.gheeBilona, PRODUCT_IMAGES.gheeHero, PRODUCT_IMAGES.gheeAlt3],
     rating: 5,
@@ -164,8 +179,10 @@ const PRODUCTS = [
     id: 'a2-gir-milk',
     name: 'A2 Gir Cow Milk',
     vendor: 'Gir Govalan',
-    price: 89,
+    price: 120,
     category: 'dairy',
+    imageStyle: 'portrait',
+    imageFocus: '88%',
     image: PRODUCT_IMAGES.milk,
     images: [PRODUCT_IMAGES.milk],
     rating: 4,
@@ -175,12 +192,15 @@ const PRODUCTS = [
     id: 'fresh-curd',
     name: 'Fresh Curd (Dahi)',
     vendor: 'Gir Govalan',
-    price: 79,
+    price: 150,
     category: 'dairy',
     image: PRODUCT_IMAGES.curd,
     images: [PRODUCT_IMAGES.curd],
     rating: 4,
-    description: 'Thick, creamy curd made from pure Gir cow milk using traditional methods.'
+    description: 'Thick, creamy curd made from pure Gir cow milk using traditional methods.',
+    variants: [
+      { label: '1kg', price: 150 }
+    ]
   },
   {
     id: 'traditional-ladoo',
@@ -197,8 +217,8 @@ const PRODUCTS = [
     id: 'milk-peda',
     name: 'Milk Peda',
     vendor: 'Gir Govalan',
-    price: 399,
-    compareAt: 449,
+    price: 650,
+    compareAt: 699,
     category: 'sweets',
     image: PRODUCT_IMAGES.peda,
     images: [PRODUCT_IMAGES.peda],
@@ -293,9 +313,8 @@ const PRODUCTS = [
 <p>Bring home the sweetness of traditional Gujarati mithai with Gir Govalan Milk Peda. Crafted from pure A2 Gir Cow Milk and our bilona ghee, every bite delivers the warmth, richness, and timeless flavour of homestyle Indian sweets.</p>
 <p class="product-tagline"><strong>Gir Govalan – Pure Tradition. Pure Sweetness. Pure Peda.</strong></p>`,
     variants: [
-      { label: '250g', price: 249 },
-      { label: '500g', price: 399 },
-      { label: '1kg', price: 749 }
+      { label: '500g', price: 650, compareAt: 699 },
+      { label: '1kg', price: 1200, compareAt: 1299 }
     ]
   },
   {
@@ -352,11 +371,11 @@ const TESTIMONIALS = [
 ];
 
 const GALLERY = [
-  { src: PRODUCT_IMAGES.gheeHero, alt: 'Gir Cow Ghee — Gir Govalan' },
-  { src: PRODUCT_IMAGES.gheeJar, alt: 'Gir Govalan ghee jar' },
-  { src: PRODUCT_IMAGES.gheeJar2, alt: 'Gir Cow Ghee product' },
-  { src: PRODUCT_IMAGES.gheeBilona, alt: 'Premium Gir Cow Ghee' },
-  { src: PRODUCT_IMAGES.gheeAlt1, alt: 'Gir Govalan ghee' },
+  { src: PRODUCT_IMAGES.gheeJarPhoto, alt: 'Gir Govalan A2 Gir Cow Ghee jar' },
+  { src: PRODUCT_IMAGES.gheeBilonaProcess, alt: 'Traditional bilona ghee process — Gir Govalan' },
+  { src: PRODUCT_IMAGES.gheeBoilingMakhan, alt: 'Hand-churned bilona ghee — Gir Govalan' },
+  { src: PRODUCT_IMAGES.gheeMilkingCow, alt: 'Milking Gir cow — Gir Govalan farm' },
+  { src: PRODUCT_IMAGES.gheeCaringCow, alt: 'Caring for Gir cows — Gir Govalan' },
   { src: `${CDN}/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg`, alt: 'Our Gir cows' },
   { src: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`, alt: 'Bilona ghee making' },
   { src: `${CDN}/2.jpg`, alt: 'Gir Govalan farm landscape' }
@@ -458,6 +477,17 @@ function getProduct(id) {
 function getProductsByCategory(category) {
   if (!category || category === 'all') return PRODUCTS;
   return PRODUCTS.filter(p => p.category === category);
+}
+
+const HOME_PRODUCT_IDS = [
+  'pure-organic-a2-gir-cow-ghee',
+  'a2-gir-milk',
+  'milk-peda',
+  'fresh-curd'
+];
+
+function getHomeProducts() {
+  return HOME_PRODUCT_IDS.map(id => getProduct(id)).filter(Boolean);
 }
 
 function getBlogPost(slug) {
