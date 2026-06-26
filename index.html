@@ -136,10 +136,12 @@
       return formatPrice(price);
     }
 
+    const featImgFocus = featured.imageFocus ? ` style="object-position:center ${featured.imageFocus}"` : '';
+
     document.getElementById('featured-product').innerHTML = `
       <div class="featured-product">
-        <div class="featured-product-image">
-          <img src="${featured.images ? featured.images[0] : featured.image}" alt="${featured.name}">
+        <div class="featured-product-image${featured.imageStyle === 'fill' || featured.imageStyle === 'portrait' ? ` featured-product-image--${featured.imageStyle}` : ''}">
+          <img src="${featured.images ? featured.images[0] : featured.image}" alt="${featured.name}"${featImgFocus}>
         </div>
         <div>
           <p class="product-vendor">${featured.vendor}</p>
