@@ -52,7 +52,6 @@
                   <li><a href="${URLS.productsCategory('ghee')}">Ghee</a></li>
                   <li><a href="${URLS.productsCategory('dairy')}">Dairy Products</a></li>
                   <li><a href="${URLS.productsCategory('sweets')}">Traditional Sweets</a></li>
-                  <li><a href="${URLS.productsCategory('seeds-nuts')}">Seeds & Nuts</a></li>
                 </ul>
               </li>
               <li><a href="${URLS.about}" class="nav-link${isActive('about')}">About</a></li>

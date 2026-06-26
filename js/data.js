@@ -51,9 +51,9 @@ const PRODUCT_IMAGES = {
   gheeAlt3: productImg('Gir Govalan Packaging.jpeg'),
   milk: productImg('a2-gir-milk.jpg'),
   curd: productImg('fresh-curd.jpg'),
-  ladoo: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476b?w=800&q=85',
-  peda: 'https://images.unsplash.com/photo-1606312619070-df7c6a486c70?w=800&q=85',
-  shrikhand: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=85',
+  ladoo: productImg('traditional-ladoo.jpg'),
+  peda: productImg('milk-peda.jpg'),
+  shrikhand: productImg('shrikhand.jpg'),
   almonds: 'https://images.unsplash.com/photo-1508747703725-f2f5e0f3974b?w=800&q=85',
   dryFruits: 'https://images.unsplash.com/photo-1599594001899-afa833055e28?w=800&q=85'
 };
@@ -61,14 +61,13 @@ const PRODUCT_IMAGES = {
 const CATEGORIES = [
   { id: 'ghee', title: 'Ghee', icon: `${CDN}/clean-GHEE-icon.jpg`, url: '/collections/all/?category=ghee' },
   { id: 'sweets', title: 'Desserts', icon: `${CDN}/girgovalan__DESSERTS_icon_9c2b61f0-1076-4fc1-aef1-f6359de9c8d0.png`, url: '/collections/all/?category=sweets' },
-  { id: 'dairy', title: 'Dairy', icon: `${CDN}/girgovalan__DAIRY_icon_729cc151-5743-466c-b219-d727fb6e089e.png`, url: '/collections/all/?category=dairy' },
-  { id: 'seeds-nuts', title: 'Seed & Nuts', icon: `${CDN}/girgovalan__SEED_NUTS_icon_70bea663-b2f9-4021-b14a-4bc4d23c7294.png`, url: '/collections/all/?category=seeds-nuts' }
+  { id: 'dairy', title: 'Dairy', icon: `${CDN}/girgovalan__DAIRY_icon_729cc151-5743-466c-b219-d727fb6e089e.png`, url: '/collections/all/?category=dairy' }
 ];
 
 const PRODUCTS = [
   {
     id: 'pure-organic-a2-gir-cow-ghee',
-    name: 'Pure Organic A2 Gir Cow Ghee',
+    name: 'Pure Organic A2 Gir Cow Bilona Ghee',
     vendor: 'Gir Govalan',
     price: 1300,
     compareAt: 1399,
@@ -96,7 +95,7 @@ const PRODUCTS = [
       faq: 'Questions & Answers'
     },
     tabs: {
-      description: `<p><strong>Gir Govalan Pure A2 Gir Cow Ghee</strong> is made the way Indian households have trusted for generations: whole milk is set into curd, churned into fresh butter, and simmered until only clear golden ghee remains. We never start from cream — the full bilona path is what gives this ghee its character.</p>
+      description: `<p><strong>Gir Govalan Pure A2 Gir Cow Bilona Ghee</strong> is made the way Indian households have trusted for generations: whole milk is set into curd, churned into fresh butter, and simmered until only clear golden ghee remains. We never start from cream — the full bilona path is what gives this ghee its character.</p>
 <p>Our cows belong to the Gir breed, native to the forests and grasslands of Gujarat. They are cared for by pastoral families who know these animals by name. The milk travels a short path from herd to kitchen, so every jar reflects the region it comes from.</p>
 <p>We work in modest batches because ghee is not a commodity to us — it is food for daily rotis, festive sweets, and the quiet ritual of a well-made tadka. That is the standard we pack into every bottle.</p>`,
       ingredients: `<p>One ingredient only: <strong>clarified butter (ghee)</strong> obtained from A2 Gir cow milk through the traditional curd-and-bilona process.</p>
@@ -126,7 +125,7 @@ const PRODUCTS = [
 </div>`
     },
     longDescription: `<div class="product-details-intro">
-<h2>Authentic A2 Gir Cow Ghee from Gujarat</h2>
+<h2>Authentic A2 Gir Cow Bilona Ghee from Gujarat</h2>
 <p>Gir Govalan ghee is rooted in the Gir region’s pastoral heritage — where Maldhari communities have lived alongside indigenous cattle for centuries. Our process respects that lineage: patient churning, slow cooking, and zero compromise on what goes into the jar.</p>
 </div>
 <h2>The Bilona Process, Step by Step</h2>
@@ -150,30 +149,6 @@ const PRODUCTS = [
       { label: '1L', price: 2500, compareAt: 2699 },
       { label: '5L', price: 12000, compareAt: 12999 }
     ]
-  },
-  {
-    id: 'bilona-gir-ghee-500ml',
-    name: 'Bilona Gir Cow Ghee — 500ml',
-    vendor: 'Gir Govalan',
-    price: 1199,
-    category: 'ghee',
-    showOnHome: false,
-    image: PRODUCT_IMAGES.gheeJar,
-    images: [PRODUCT_IMAGES.gheeJar, PRODUCT_IMAGES.gheeAlt2],
-    rating: 5,
-    description: 'Premium bilona-churned ghee from indigenous Gir cows, nourished with organic feed in natural surroundings.'
-  },
-  {
-    id: 'bilona-gir-ghee-1l',
-    name: 'Bilona Gir Cow Ghee — 1L',
-    vendor: 'Gir Govalan',
-    price: 2299,
-    category: 'ghee',
-    showOnHome: false,
-    image: PRODUCT_IMAGES.gheeBilona,
-    images: [PRODUCT_IMAGES.gheeBilona, PRODUCT_IMAGES.gheeHero, PRODUCT_IMAGES.gheeAlt3],
-    rating: 5,
-    description: 'Family-size pack of authentic bilona ghee — ideal for daily cooking and traditional sweets.'
   },
   {
     id: 'a2-gir-milk',
@@ -327,28 +302,6 @@ const PRODUCTS = [
     images: [PRODUCT_IMAGES.shrikhand],
     rating: 4,
     description: 'Creamy Gujarati shrikhand made from hung curd and natural flavours.'
-  },
-  {
-    id: 'premium-almonds',
-    name: 'Premium Almonds',
-    vendor: 'Gir Govalan',
-    price: 449,
-    category: 'seeds-nuts',
-    image: PRODUCT_IMAGES.almonds,
-    images: [PRODUCT_IMAGES.almonds],
-    rating: 4,
-    description: 'Hand-selected premium almonds — perfect for snacking and traditional recipes.'
-  },
-  {
-    id: 'mixed-dry-fruits',
-    name: 'Mixed Dry Fruits',
-    vendor: 'Gir Govalan',
-    price: 599,
-    category: 'seeds-nuts',
-    image: PRODUCT_IMAGES.dryFruits,
-    images: [PRODUCT_IMAGES.dryFruits],
-    rating: 4,
-    description: 'A wholesome mix of nuts and dry fruits sourced with quality you can trust.'
   }
 ];
 
@@ -371,7 +324,7 @@ const TESTIMONIALS = [
 ];
 
 const GALLERY = [
-  { src: PRODUCT_IMAGES.gheeJarPhoto, alt: 'Gir Govalan A2 Gir Cow Ghee jar' },
+  { src: PRODUCT_IMAGES.gheeJarPhoto, alt: 'Gir Govalan A2 Gir Cow Bilona Ghee jar' },
   { src: PRODUCT_IMAGES.gheeBilonaProcess, alt: 'Traditional bilona ghee process — Gir Govalan' },
   { src: PRODUCT_IMAGES.gheeBoilingMakhan, alt: 'Hand-churned bilona ghee — Gir Govalan' },
   { src: PRODUCT_IMAGES.gheeMilkingCow, alt: 'Milking Gir cow — Gir Govalan farm' },

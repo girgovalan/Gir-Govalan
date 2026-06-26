@@ -4,8 +4,6 @@ const PRICES = {
     price: 1300,
     variants: { '250ml': 725, '500ml': 1300, '1L': 2500, '5L': 12000 }
   },
-  'bilona-gir-ghee-500ml': { price: 1199 },
-  'bilona-gir-ghee-1l': { price: 2299 },
   'a2-gir-milk': { price: 120 },
   'fresh-curd': {
     price: 150,
@@ -16,9 +14,7 @@ const PRICES = {
     price: 650,
     variants: { '500g': 650, '1kg': 1200 }
   },
-  'shrikhand': { price: 299 },
-  'premium-almonds': { price: 449 },
-  'mixed-dry-fruits': { price: 599 }
+  'shrikhand': { price: 299 }
 };
 
 function getItemPrice(productId, variant) {

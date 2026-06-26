@@ -158,18 +158,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://girgovalan.com/products/bilona-gir-ghee-500ml/</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://girgovalan.com/products/bilona-gir-ghee-1l/</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://girgovalan.com/products/a2-gir-milk/</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -195,18 +183,6 @@
   </url>
   <url>
     <loc>https://girgovalan.com/products/shrikhand/</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://girgovalan.com/products/premium-almonds/</loc>
-    <lastmod>2026-05-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://girgovalan.com/products/mixed-dry-fruits/</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>

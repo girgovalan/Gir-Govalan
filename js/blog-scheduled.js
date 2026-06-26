@@ -31,7 +31,7 @@
       title: 'How to Identify Pure Gir Cow Ghee Online — 7 Signs of Authentic Ghee',
       date: '2026-06-17',
       keywords: 'pure Gir cow ghee, identify real ghee, bilona ghee online, authentic desi ghee, buy ghee online Gujarat',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/woman-making-gir_cow-ghee-bilona-ghee.jpg',
+      image: '/images/blog/how-to-identify-pure-gir-cow-ghee.jpg',
       excerpt: 'Buying ghee online? Learn seven simple ways to spot authentic Gir cow bilona ghee and avoid adulterated products.',
       content: `<p>Searching <strong>pure Gir cow ghee online</strong> can be confusing. Many brands claim to sell desi ghee, but not all deliver the authenticity, aroma, and quality of real <strong>bilona ghee</strong> from indigenous Gir cows.</p>
 <h2>7 signs of authentic Gir cow ghee</h2>
@@ -50,7 +50,7 @@
 <h3>7. Consistent reviews and repeat buyers</h3>
 <p>Authentic ghee brands earn loyalty through taste and quality — not just marketing claims.</p>
 <h2>Buy with confidence from Gir Govalan</h2>
-<p>Our <a href="/products/pure-organic-a2-gir-cow-ghee/">Pure Organic A2 Gir Cow Ghee</a> is handcrafted using the Vedic bilona process from indigenous Gir cows. Order directly from Gujarat with full product details, transparent preparation, and farm-to-home purity.</p>`
+<p>Our <a href="/products/pure-organic-a2-gir-cow-ghee/">Pure Organic A2 Gir Cow Bilona Ghee</a> is handcrafted using the Vedic bilona process from indigenous Gir cows. Order directly from Gujarat with full product details, transparent preparation, and farm-to-home purity.</p>`
     },
     {
       slug: 'bilona-ghee-vs-regular-ghee',
@@ -82,7 +82,7 @@
       title: 'Milk Peda: The Beloved Traditional Gujarati Sweet Made from Pure Milk',
       date: '2026-06-23',
       keywords: 'milk peda, penda sweet, Gujarati mithai, doodh peda, traditional Indian sweets Gujarat',
-      image: 'https://images.unsplash.com/photo-1606312619070-df7c6a486c70?w=800&q=85',
+      image: '/images/products/milk-peda.jpg',
       excerpt: 'Discover milk peda — Gujarat\'s favourite mithai. Learn how authentic peda is made from khoya, A2 milk, and bilona ghee.',
       content: `<p><strong>Milk peda</strong> (also called penda in many Gujarati homes) is one of India's most loved traditional sweets. Soft, milky, and melt-in-the-mouth, peda brings back memories of festivals, weddings, and grandmother's kitchen.</p>
 <h2>What is milk peda?</h2>
@@ -105,7 +105,7 @@
       title: 'Gir Cow Ghee Benefits for Children — A Parent\'s Guide to A2 Ghee',
       date: '2026-06-26',
       keywords: 'ghee for children, A2 ghee for kids, Gir cow ghee benefits, ghee in baby diet, healthy ghee India',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/Gir_cow_gir_cow_ghee.jpg',
+      image: '/images/blog/gir-cow-ghee-benefits-for-children.jpg',
       excerpt: 'Is ghee good for children? Learn how pure A2 Gir cow ghee supports growth, digestion, and immunity in kids.',
       content: `<p>Indian parents have used ghee in children's diets for generations. From a small spoon in dal to ghee on roti, this traditional fat is deeply woven into how we nourish our families. But not all ghee is equal — <strong>pure A2 Gir cow ghee</strong> offers qualities that modern parents are rediscovering.</p>
 <h2>Why ghee is valued in children's diets</h2>

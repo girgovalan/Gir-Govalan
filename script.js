@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add some sample data for demonstration
     const products = [
         {
-            name: 'Pure Organic A2 Gir Cow Ghee',
+            name: 'Pure Organic A2 Gir Cow Bilona Ghee',
             price: '₹599',
             image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
             category: 'ghee'
