@@ -6,7 +6,7 @@
       title: 'A2 Milk vs A1 Milk: Why Gir Cow Milk Matters for Your Family',
       date: '2026-06-14',
       keywords: 'A2 milk, A1 vs A2 milk, Gir cow milk, A2 Gir cow milk Gujarat, pure milk benefits',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/Gir_cow_gir_cow_ghee.jpg',
+      image: '/images/blog/a2-milk-vs-a1-milk-gir-cow.jpg',
       excerpt: 'Understand the difference between A1 and A2 milk, and why indigenous Gir cow milk is trusted by families across Gujarat and India.',
       content: `<p>If you have searched for <strong>pure A2 milk near me</strong> or wondered whether Gir cow milk is better than regular dairy, you are not alone. More Indian families are choosing A2 milk for everyday health — and the indigenous <strong>Gir cow</strong> is at the heart of this shift.</p>
 <h2>What is A2 milk?</h2>
@@ -57,8 +57,7 @@
       title: 'Bilona Ghee vs Regular Ghee: Which Is Better for Health and Taste?',
       date: '2026-06-20',
       keywords: 'bilona ghee vs regular ghee, bilona ghee benefits, desi ghee comparison, Gir cow bilona ghee',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/2.jpg',
-      excerpt: 'Compare bilona ghee and regular industrial ghee — preparation, nutrition, taste, and why traditional method matters.',
+      image: '/images/blog/bilona-ghee-vs-regular-ghee.jpg',
       content: `<p>When families search for the <strong>best ghee for health</strong>, one question comes up again and again: is <strong>bilona ghee</strong> really better than regular factory-made ghee? The answer lies in how the ghee is made.</p>
 <h2>How regular ghee is made</h2>
 <p>Most commercial ghee is produced at scale from cream separated in dairies. The process is fast, efficient, and designed for volume — but it often sacrifices the depth of flavour and traditional qualities that define desi ghee.</p>
@@ -82,7 +81,7 @@
       title: 'Milk Peda: The Beloved Traditional Gujarati Sweet Made from Pure Milk',
       date: '2026-06-23',
       keywords: 'milk peda, penda sweet, Gujarati mithai, doodh peda, traditional Indian sweets Gujarat',
-      image: '/images/products/milk-peda.jpg',
+      image: '/images/blog/milk-peda-traditional-gujarati-sweet.jpg',
       excerpt: 'Discover milk peda — Gujarat\'s favourite mithai. Learn how authentic peda is made from khoya, A2 milk, and bilona ghee.',
       content: `<p><strong>Milk peda</strong> (also called penda in many Gujarati homes) is one of India's most loved traditional sweets. Soft, milky, and melt-in-the-mouth, peda brings back memories of festivals, weddings, and grandmother's kitchen.</p>
 <h2>What is milk peda?</h2>
@@ -127,7 +126,7 @@
       title: 'Ayurveda and Gir Cow Ghee: 8 Daily Uses for Health and Wellness',
       date: '2026-06-29',
       keywords: 'Ayurveda ghee benefits, Gir cow ghee daily use, desi ghee Ayurveda, A2 ghee wellness',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/woman-making-gir_cow-ghee-bilona-ghee.jpg',
+      image: '/images/blog/ayurveda-gir-cow-ghee-daily-uses.jpg',
       excerpt: 'Explore eight Ayurvedic ways to use Gir cow ghee daily — from cooking and digestion to skin care and seasonal wellness.',
       content: `<p>In Ayurveda, ghee is more than a cooking fat — it is considered a <em>rasayana</em>, a substance that nourishes body and mind. When made from <strong>A2 Gir cow milk</strong> using the bilona method, ghee carries the qualities Ayurveda has praised for thousands of years.</p>
 <h2>8 daily uses of Gir cow ghee in Ayurveda</h2>
@@ -155,8 +154,7 @@
       title: 'Why Gir Region Ghee Is Famous Across Gujarat and India',
       date: '2026-07-02',
       keywords: 'Gir region ghee, Gujarat ghee, Saurashtra ghee, Gir cow ghee Amreli, famous desi ghee India',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg',
-      excerpt: 'The Gir region of Gujarat is legendary for Gir cows, A2 milk, and bilona ghee. Discover why ghee from this land is prized nationwide.',
+      image: '/images/blog/why-gir-region-ghee-famous-gujarat.jpg',
       content: `<p>When people across India search for <strong>authentic Gujarati ghee</strong>, one name appears again and again: the <strong>Gir region</strong>. Home to indigenous Gir cows, rolling Saurashtra landscapes, and centuries of pastoral tradition, this land produces some of the finest A2 milk and bilona ghee in the country.</p>
 <h2>The Gir cow — Gujarat's living heritage</h2>
 <p>Gir cows are native to the Gir forest and surrounding areas of Junagadh, Amreli, and Bhavnagar. Known for their distinctive appearance, gentle temperament, and rich A2 milk, they are the backbone of premium ghee production in Gujarat.</p>
@@ -177,8 +175,7 @@
       title: 'How to Store Ghee and Traditional Sweets at Home — Freshness Tips',
       date: '2026-07-05',
       keywords: 'how to store ghee, store milk peda, ghee shelf life, keep desi ghee fresh, mithai storage tips',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/2.jpg',
-      excerpt: 'Keep your Gir cow ghee and milk peda fresh longer with these simple storage tips for Indian kitchens.',
+      image: '/images/blog/how-to-store-ghee-and-sweets-at-home.jpg',
       content: `<p>Bought premium <strong>Gir cow ghee</strong> or fresh <strong>milk peda</strong>? Proper storage keeps flavour, aroma, and quality intact. Here is how to store traditional dairy and sweets the right way.</p>
 <h2>How to store bilona ghee</h2>
 <ul>
@@ -206,8 +203,7 @@
       title: 'The Maldhari Community and Gir Cow Farming — A Gir Govalan Story',
       date: '2026-07-08',
       keywords: 'Maldhari community, Gir cow farming, pastoral Gujarat, Gir Govalan story, indigenous cow care',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg',
-      excerpt: 'Meet the Maldhari pastoral tradition behind Gir Govalan — living alongside Gir cows, lions, and the land of Saurashtra.',
+      image: '/images/blog/maldhari-community-gir-cow-farming.jpg',
       content: `<p>Behind every jar of <strong>Gir Govalan ghee</strong> is a way of life shaped by the <strong>Maldhari community</strong> of Gujarat — pastoral families who have lived with Gir cows, open grasslands, and the wild beauty of the Gir region for generations.</p>
 <h2>Who are the Maldharis?</h2>
 <p>Maldharis are traditional pastoral communities of Gujarat whose lives revolve around cattle care, milk, and ghee. Their knowledge of indigenous breeds, seasonal grazing, and animal behaviour is unmatched — passed from elders to children through lived experience, not textbooks.</p>
@@ -228,8 +224,7 @@
       title: 'How to Buy Pure Gir Cow Ghee Online in Gujarat — Complete Buyer\'s Guide',
       date: '2026-07-11',
       keywords: 'buy ghee online Gujarat, order Gir cow ghee online, pure ghee delivery India, Gir Govalan order',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/2.jpg',
-      excerpt: 'A complete guide to ordering pure A2 Gir cow bilona ghee online from Gujarat — what to check, how to order, and delivery tips.',
+      image: '/images/blog/buy-pure-gir-cow-ghee-online-gujarat.jpg',
       content: `<p>Whether you are in Ahmedabad, Surat, Mumbai, or anywhere in India, ordering <strong>pure Gir cow ghee online</strong> is now easier than ever. This guide helps you choose the right ghee and order with confidence from Gujarat's trusted producers.</p>
 <h2>What to look for when buying ghee online</h2>
 <ul>
