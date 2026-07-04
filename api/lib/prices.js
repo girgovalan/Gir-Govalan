@@ -4,10 +4,13 @@ const PRICES = {
     price: 1300,
     variants: { '250ml': 725, '500ml': 1300, '1L': 2500, '5L': 12000 }
   },
-  'a2-gir-milk': { price: 120 },
+  'a2-gir-milk': {
+    price: 120,
+    variants: { '500ml': 65, '1L': 120 }
+  },
   'fresh-curd': {
     price: 150,
-    variants: { '1kg': 150 }
+    variants: { '500g': 80, '1kg': 150 }
   },
   'traditional-ladoo': { price: 349 },
   'milk-peda': {

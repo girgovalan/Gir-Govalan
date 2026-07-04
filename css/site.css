@@ -824,6 +824,23 @@ section.bg-cream {
   font-size: 0.85rem;
 }
 .product-rating-row-card .product-rating { margin: 0; letter-spacing: 1px; }
+.product-rating-row-card .product-review-count {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+.product-card-savings-slot {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+}
+.product-card-variant-slot {
+  min-height: 42px;
+  display: flex;
+  align-items: stretch;
+}
+.product-card-variant-slot:empty {
+  min-height: 0;
+}
 .product-savings {
   margin: 0;
   padding: 8px 12px;
@@ -862,6 +879,12 @@ section.bg-cream {
   padding: 4px 10px;
   border-radius: 3px;
   white-space: nowrap;
+  min-width: 58px;
+  min-height: 24px;
+  text-align: center;
+}
+.badge-save-pct.is-empty {
+  visibility: hidden;
 }
 .product-card-cart {
   margin-top: auto;

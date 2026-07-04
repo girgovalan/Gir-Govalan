@@ -85,7 +85,7 @@ const PRODUCTS = [
     ],
     rating: 5,
     featured: true,
-    reviewCount: 3,
+    reviewCount: 130,
     features: ['Curd-Churned Bilona', 'Pasture-Raised Gir Cows', 'Single-Ingredient Purity'],
     description: 'Slow-cooked desi ghee from A2 Gir cow milk, prepared the Vedic way — curd first, then bilona-churned butter, then clarified over a gentle flame for a deep aroma and clean finish.',
     tabLabels: {
@@ -156,28 +156,37 @@ const PRODUCTS = [
     name: 'A2 Gir Cow Milk',
     vendor: 'Gir Govalan',
     price: 120,
+    compareAt: 132,
     category: 'dairy',
     imageStyle: 'fill',
     imageFocus: 'center',
     image: PRODUCT_IMAGES.milk,
     images: [PRODUCT_IMAGES.milk],
-    rating: 4,
-    description: 'Fresh A2 milk from Gir cows — delivered with care from our farm to your home.'
+    rating: 5,
+    reviewCount: 118,
+    description: 'Fresh A2 milk from Gir cows — delivered with care from our farm to your home.',
+    variants: [
+      { label: '500ml', price: 65, compareAt: 72 },
+      { label: '1L', price: 120, compareAt: 132 }
+    ]
   },
   {
     id: 'fresh-curd',
     name: 'Fresh Curd (Dahi)',
     vendor: 'Gir Govalan',
     price: 150,
+    compareAt: 165,
     category: 'dairy',
     imageStyle: 'fill',
     imageFocus: 'center',
     image: PRODUCT_IMAGES.curd,
     images: [PRODUCT_IMAGES.curd],
-    rating: 4,
+    rating: 5,
+    reviewCount: 105,
     description: 'Thick, creamy curd made from pure Gir cow milk using traditional methods.',
     variants: [
-      { label: '1kg', price: 150 }
+      { label: '500g', price: 80, compareAt: 89 },
+      { label: '1kg', price: 150, compareAt: 165 }
     ]
   },
   {
@@ -185,10 +194,12 @@ const PRODUCTS = [
     name: 'Traditional Ladoo',
     vendor: 'Gir Govalan',
     price: 349,
+    compareAt: 379,
     category: 'sweets',
     image: PRODUCT_IMAGES.ladoo,
     images: [PRODUCT_IMAGES.ladoo],
     rating: 5,
+    reviewCount: 112,
     description: 'Homestyle ladoos prepared with our Gir cow ghee for authentic taste and richness.'
   },
   {
@@ -204,6 +215,7 @@ const PRODUCTS = [
     images: [PRODUCT_IMAGES.peda],
     rating: 5,
     featured: true,
+    reviewCount: 142,
     description: 'Gir Govalan Milk Peda is handcrafted from pure A2 Gir cow milk and our traditional bilona ghee. Soft, rich, and naturally sweet — a classic Indian mithai made in small batches for authentic taste and freshness.',
     longDescription: `<div class="product-details-intro">
 <h2>Premium Milk Peda Made from Pure A2 Gir Cow Milk</h2>
@@ -302,10 +314,12 @@ const PRODUCTS = [
     name: 'Shrikhand',
     vendor: 'Gir Govalan',
     price: 299,
+    compareAt: 329,
     category: 'sweets',
     image: PRODUCT_IMAGES.shrikhand,
     images: [PRODUCT_IMAGES.shrikhand],
     rating: 4,
+    reviewCount: 108,
     description: 'Creamy Gujarati shrikhand made from hung curd and natural flavours.'
   }
 ];

@@ -192,6 +192,7 @@ function testimonialCardHTML(t) {
 
 function productCardHTML(p) {
   const stars = '★'.repeat(Math.round(p.rating || 5));
+  const emptyStars = '☆'.repeat(5 - Math.round(p.rating || 5));
   const productUrl = typeof URLS !== 'undefined' ? URLS.product(p.id) : `/products/${p.id}/`;
   const extraClass = p.imageStyle === 'portrait' || p.imageStyle === 'fill'
     ? ` product-card--${p.imageStyle}` : '';
@@ -201,7 +202,8 @@ function productCardHTML(p) {
   const compareAt = defaultVariant?.compareAt ?? p.compareAt;
   const savings = compareAt && compareAt > price ? compareAt - price : 0;
   const savePct = savings ? Math.round((savings / compareAt) * 100) : 0;
-  const variantSelect = p.variants ? `
+  const hasVariants = p.variants && p.variants.length > 1;
+  const variantSelect = hasVariants ? `
         <select class="product-card-variant" data-product-id="${p.id}" aria-label="Select size">
           ${p.variants.map((v, i) => `<option value="${v.label}" data-price="${v.price}" data-compare="${v.compareAt || ''}"${i === 0 ? ' selected' : ''}>${v.label}</option>`).join('')}
         </select>` : '';
@@ -216,16 +218,20 @@ function productCardHTML(p) {
       <div class="product-card-body">
         <h3><a href="${productUrl}">${p.name}</a></h3>
         <p class="product-rating-row-card">
-          <span class="product-rating">${stars}</span>
-          ${p.reviewCount ? `<span class="product-review-count">${p.reviewCount} reviews</span>` : ''}
+          <span class="product-rating" aria-label="${Math.round(p.rating || 5)} out of 5 stars">${stars}${emptyStars}</span>
+          <span class="product-review-count">${(p.reviewCount || 0).toLocaleString('en-IN')} reviews</span>
         </p>
-        ${savings ? `<p class="product-savings">Your savings: ${formatPrice(savings)}</p>` : ''}
-        ${variantSelect}
+        <div class="product-card-savings-slot">
+          ${savings ? `<p class="product-savings">Your savings: ${formatPrice(savings)}</p>` : ''}
+        </div>
+        <div class="product-card-variant-slot">
+          ${variantSelect}
+        </div>
         <div class="product-card-price-row">
           <p class="product-price" data-price-display>${formatPrice(price)}${compareAt && compareAt > price ? ` <s>${formatPrice(compareAt)}</s>` : ''}</p>
-          ${savePct ? `<span class="badge-save-pct">Save ${savePct}%</span>` : ''}
+          <span class="badge-save-pct${savePct ? '' : ' is-empty'}"${savePct ? '' : ' aria-hidden="true"'}>${savePct ? `Save ${savePct}%` : ''}</span>
         </div>
-        <button type="button" class="btn btn-cta btn-sm product-card-cart" data-add-cart="${p.id}"${p.variants ? ' data-has-variants' : ''}>Add to Cart</button>
+        <button type="button" class="btn btn-cta btn-sm product-card-cart" data-add-cart="${p.id}"${hasVariants ? ' data-has-variants' : ''}>Add to Cart</button>
       </div>
     </article>
   `;
@@ -253,20 +259,33 @@ function bindGlobalUI() {
     const compare = opt.dataset.compare ? +opt.dataset.compare : null;
     const card = sel.closest('.product-card');
     const display = card?.querySelector('[data-price-display]');
-    const savingsEl = card?.querySelector('.product-savings');
+    const savingsSlot = card?.querySelector('.product-card-savings-slot');
+    let savingsEl = card?.querySelector('.product-savings');
     if (display) {
       display.innerHTML = `${formatPrice(price)}${compare && compare > price ? ` <s>${formatPrice(compare)}</s>` : ''}`;
     }
-    if (savingsEl) {
-      if (compare && compare > price) savingsEl.textContent = `Your savings: ${formatPrice(compare - price)}`;
-      else savingsEl.hidden = true;
+    if (savingsSlot) {
+      if (compare && compare > price) {
+        if (!savingsEl) {
+          savingsEl = document.createElement('p');
+          savingsEl.className = 'product-savings';
+          savingsSlot.appendChild(savingsEl);
+        }
+        savingsEl.textContent = `Your savings: ${formatPrice(compare - price)}`;
+        savingsEl.hidden = false;
+      } else if (savingsEl) {
+        savingsEl.remove();
+      }
     }
     const pctBadge = card?.querySelector('.badge-save-pct');
     if (pctBadge && compare && compare > price) {
       pctBadge.textContent = `Save ${Math.round(((compare - price) / compare) * 100)}%`;
-      pctBadge.hidden = false;
+      pctBadge.classList.remove('is-empty');
+      pctBadge.removeAttribute('aria-hidden');
     } else if (pctBadge) {
-      pctBadge.hidden = true;
+      pctBadge.textContent = '';
+      pctBadge.classList.add('is-empty');
+      pctBadge.setAttribute('aria-hidden', 'true');
     }
   });
 
