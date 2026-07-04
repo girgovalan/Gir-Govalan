@@ -66,8 +66,9 @@
     </div>
   </section>
 
-  <section class="section-premium">
-    <div class="container">
+  <section class="ghee-showcase bg-cream">
+    <div class="home-full-banner ghee-process-banner" id="home-ghee-process-banner" aria-label="Gir Govalan ghee journey"></div>
+    <div class="container ghee-showcase-content">
       <div id="label-featured"></div>
       <div class="section-title"><h2>Our best-selling ghee</h2></div>
       <div id="featured-product"></div>
@@ -136,6 +137,9 @@
     ).join('');
 
     document.getElementById('home-products').innerHTML = getHomeProducts().map(productCardHTML).join('');
+
+    document.getElementById('home-ghee-process-banner').innerHTML = `
+      <img src="${HOME_IMAGES.gheeProcessJourney}" alt="Gir Govalan ghee process — from A2 milk to your home" loading="lazy" width="1920" height="640">`;
 
     const featured = PRODUCTS.find(p => p.featured) || PRODUCTS[0];
     const featDefaultIdx = featured.variants ? 0 : -1;

@@ -6,6 +6,14 @@ function productImg(filename) {
   return `${IMG_PRODUCTS}/${encodeURIComponent(filename)}`;
 }
 
+function homeImg(filename) {
+  return `/images/${encodeURIComponent(filename)}`;
+}
+
+const HOME_IMAGES = {
+  gheeProcessJourney: homeImg('Gir Govalan ghee process.png')
+};
+
 const SITE = {
   name: 'Gir Govalan',
   tagline: 'Rooted in Heritage. Blessed with Purity.',
