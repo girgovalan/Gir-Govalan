@@ -255,7 +255,11 @@ function bindGlobalUI() {
 
   document.addEventListener('click', e => {
     const toggle = e.target.closest('.mobile-toggle');
-    if (toggle) document.querySelector('.nav-list')?.classList.toggle('open');
+    if (toggle) {
+      const list = document.querySelector('.nav-list');
+      const open = list?.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
   });
 
   const searchInput = document.getElementById('global-search');

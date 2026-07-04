@@ -39,8 +39,8 @@
     document.getElementById('category-filters').innerHTML = [{ id: 'all', title: 'All' }, ...CATEGORIES].map(c => {
       const id = c.id || 'all';
       const url = id === 'all' ? URLS.products : URLS.productsCategory(id);
-      const active = category === id ? ' style="outline:2px solid var(--accent-1)"' : '';
-      return `<a href="${url}" class="category-card"${active}><h3>${c.title}</h3></a>`;
+      const active = category === id ? ' is-active' : '';
+      return `<a href="${url}" class="category-card${active}"><h3>${c.title}</h3></a>`;
     }).join('');
     let list = getProductsByCategory(category);
     if (q) list = list.filter(p => p.name.toLowerCase().includes(q));
