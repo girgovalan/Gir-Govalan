@@ -74,6 +74,17 @@
     </div>
   </section>
 
+  <section>
+    <div class="container">
+      <div id="label-videos"></div>
+      <div class="section-title"><h2>See our ghee being made</h2></div>
+      <div class="featured-videos-grid" id="home-videos"></div>
+      <p class="text-center mt-2 featured-videos-youtube">
+        <a href="https://www.youtube.com/@GirGovalan" class="btn btn-outline" target="_blank" rel="noopener">More on YouTube</a>
+      </p>
+    </div>
+  </section>
+
   <section class="bg-cream">
     <div class="container">
       <div id="label-testimonials"></div>
@@ -116,6 +127,7 @@
     document.getElementById('label-categories').innerHTML = sectionLabel('OUR CATEGORIES');
     document.getElementById('label-products').innerHTML = sectionLabel('FEATURED PRODUCTS');
     document.getElementById('label-featured').innerHTML = sectionLabel('TOP SALES');
+    document.getElementById('label-videos').innerHTML = sectionLabel('FEATURED VIDEOS');
     document.getElementById('label-testimonials').innerHTML = sectionLabel('TESTIMONIAL');
     document.getElementById('label-blog').innerHTML = sectionLabel('TIPS & ARTICLE');
 
@@ -189,6 +201,8 @@
       const qty = +document.getElementById('feat-qty').value;
       addToCart(featured.id, qty, featVariant);
     };
+
+    document.getElementById('home-videos').innerHTML = FEATURED_VIDEOS.map(featuredVideoCardHTML).join('');
 
     document.getElementById('home-testimonials').innerHTML = TESTIMONIALS.map(testimonialCardHTML).join('');
 

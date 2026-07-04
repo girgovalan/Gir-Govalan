@@ -190,6 +190,23 @@ function testimonialCardHTML(t) {
     </div>`;
 }
 
+function featuredVideoCardHTML(v) {
+  const poster = v.poster ? ` poster="${v.poster}"` : '';
+  return `
+    <article class="featured-video-card">
+      <div class="featured-video-wrap">
+        <video controls playsinline preload="metadata"${poster} aria-label="${v.title}">
+          <source src="${v.src}" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+      <div class="featured-video-body">
+        <h3>${v.title}</h3>
+        <p>${v.description}</p>
+      </div>
+    </article>`;
+}
+
 function productCardHTML(p) {
   const stars = '★'.repeat(Math.round(p.rating || 5));
   const emptyStars = '☆'.repeat(5 - Math.round(p.rating || 5));

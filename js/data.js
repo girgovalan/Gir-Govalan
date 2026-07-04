@@ -324,6 +324,16 @@ const PRODUCTS = [
   }
 ];
 
+const FEATURED_VIDEOS = [
+  {
+    id: 'gir-govalan-ghee-process',
+    title: 'How We Make Bilona Ghee',
+    description: 'From A2 Gir cow milk to pure golden ghee — see the traditional bilona process at Gir Govalan.',
+    src: '/Videos/gir-govalan-ghee-process.mp4',
+    poster: PRODUCT_IMAGES.gheeBilonaProcess
+  }
+];
+
 const TESTIMONIALS = [
   {
     text: 'Gir Cow Ghee has been a game-changer in my kitchen! The rich aroma and exceptional taste of their ghee elevate every dish I prepare. Not only does it add a delightful flavor, but I also appreciate its purity and quality. Highly recommended!',
