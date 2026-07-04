@@ -111,7 +111,7 @@
             <input type="number" class="qty-input" id="qty" value="1" min="1" aria-label="Quantity">
             <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
           </div>
-          <button type="button" class="btn btn-primary btn-add-cart-lg" id="add-cart">Add To Cart</button>
+          <button type="button" class="btn btn-cta btn-add-cart-lg" id="add-cart">Add To Cart</button>
         </div>
         <div class="product-cta-row product-cta-row--primary">
           <button type="button" class="btn btn-secondary" id="wa-single">Order on WhatsApp</button>

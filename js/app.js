@@ -173,6 +173,23 @@ function showToast(msg, type = 'success') {
   setTimeout(() => t.classList.remove('show'), 3000);
 }
 
+function testimonialCardHTML(t) {
+  const initials = t.author.split(/\s+/).map(n => n[0]).join('').slice(0, 2).toUpperCase();
+  const stars = '★'.repeat(5);
+  return `
+    <div class="testimonial-card">
+      <div class="testimonial-card-header">
+        <div class="testimonial-avatar" aria-hidden="true">${initials}</div>
+        <div class="testimonial-author-meta">
+          <strong>${t.author}</strong>
+          <span>${t.role}</span>
+        </div>
+      </div>
+      <p class="testimonial-stars" aria-label="5 out of 5 stars">${stars}</p>
+      <p>"${t.text}"</p>
+    </div>`;
+}
+
 function productCardHTML(p) {
   const stars = '★'.repeat(Math.round(p.rating || 5));
   const productUrl = typeof URLS !== 'undefined' ? URLS.product(p.id) : `/products/${p.id}/`;
@@ -208,7 +225,7 @@ function productCardHTML(p) {
           <p class="product-price" data-price-display>${formatPrice(price)}${compareAt && compareAt > price ? ` <s>${formatPrice(compareAt)}</s>` : ''}</p>
           ${savePct ? `<span class="badge-save-pct">Save ${savePct}%</span>` : ''}
         </div>
-        <button type="button" class="btn btn-outline btn-sm product-card-cart" data-add-cart="${p.id}"${p.variants ? ' data-has-variants' : ''}>Add to Cart</button>
+        <button type="button" class="btn btn-cta btn-sm product-card-cart" data-add-cart="${p.id}"${p.variants ? ' data-has-variants' : ''}>Add to Cart</button>
       </div>
     </article>
   `;
