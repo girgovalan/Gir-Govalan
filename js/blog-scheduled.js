@@ -250,5 +250,4 @@
   ];
 
   BLOG_POSTS.push(...scheduled);
-  BLOG_POSTS.sort((a, b) => b.date.localeCompare(a.date));
 })();

@@ -19,5 +19,8 @@
   "homepage": "https://github.com/girgovalan/Gir-Govalan#readme",
   "dependencies": {
     "@vercel/analytics": "^2.0.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
   }
 }

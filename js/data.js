@@ -375,7 +375,7 @@ const BLOG_POSTS = [
     slug: 'benefits-of-gir-cow-ghee',
     title: 'Benefits of Gir Cow Ghee for Your Daily Diet',
     date: '2025-03-10',
-    image: PRODUCT_IMAGES.gheeHero,
+    image: '/images/blog/benefits-of-gir-cow-ghee.jpg',
     excerpt: 'Discover why A2 Gir cow ghee is prized in Ayurveda and everyday Indian cooking for nourishment and flavour.',
     content: `<p>Gir cow ghee has been treasured for generations in Gujarat and across India. Rich in healthy fats and made through the traditional bilona process, it supports digestion, adds depth to cooking, and carries the authentic taste of the Gir region.</p>
     <p>When you choose ghee from indigenous Gir cows raised ethically on organic feed, you are choosing purity — for your family, for the cows, and for the land.</p>
@@ -386,7 +386,7 @@ const BLOG_POSTS = [
     slug: 'what-is-bilona-ghee',
     title: 'What Is Bilona Ghee and Why It Matters',
     date: '2025-02-18',
-    image: `${CDN}/woman-making-gir_cow-ghee-bilona-ghee.jpg`,
+    image: '/images/blog/what-is-bilona-ghee.jpg',
     excerpt: 'Learn how the ancient bilona method turns A2 milk into the golden ghee your grandmother trusted.',
     content: `<p>Bilona ghee begins with whole A2 milk from Gir cows. The milk is cultured into curd, hand-churned to extract butter, and then slow-cooked until water evaporates and pure ghee remains.</p>
     <p>At Gir Govalan, we honour this craft because it aligns with our values: no shortcuts, no compromise on quality, and full respect for our cows and their natural rhythm.</p>`
@@ -395,7 +395,7 @@ const BLOG_POSTS = [
     slug: 'know-your-gir-cow',
     title: 'Know Your Gir Cow — The Pride of Gujarat',
     date: '2025-01-25',
-    image: `${CDN}/Gir_cow_gir_cow_ghee.jpg`,
+    image: '/images/blog/know-your-gir-cow.jpg',
     excerpt: 'The indigenous Gir breed is known for rich A2 milk and resilience — the heart of our farm.',
     content: `<p>Gir cows are native to the Gir forest region of Gujarat. They are admired for their gentle nature, distinctive appearance, and milk that is naturally high in A2 protein.</p>
     <p>Our herd grazes in open surroundings and receives care like family — because healthy, happy cows are the foundation of exceptional ghee.</p>`
@@ -404,7 +404,7 @@ const BLOG_POSTS = [
     slug: 'cooking-with-pure-ghee',
     title: 'Cooking with Pure Ghee — Tips from Our Kitchen',
     date: '2024-12-05',
-    image: `${CDN}/2.jpg`,
+    image: '/images/blog/cooking-with-pure-ghee.jpg',
     excerpt: 'From tadka to sweets, here is how to get the most from authentic Gir cow ghee in your recipes.',
     content: `<p>Use Gir ghee for tempering spices, roasting grains, or finishing dal — a little goes a long way. Its high smoke point makes it excellent for traditional frying and festive sweets like ladoo and halwa.</p>
     <p>Store ghee in a cool, dry place away from direct sunlight. Properly made bilona ghee stays fresh and aromatic for months when handled with care.</p>`
