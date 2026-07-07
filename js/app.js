@@ -195,7 +195,7 @@ function featuredVideoCardHTML(v) {
   return `
     <article class="featured-video-card">
       <div class="featured-video-wrap">
-        <video controls playsinline preload="metadata"${poster} aria-label="${v.title}">
+        <video controls playsinline preload="none"${poster} aria-label="${v.title}">
           <source src="${v.src}" type="video/mp4">
           Your browser does not support video playback.
         </video>

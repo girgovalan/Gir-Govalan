@@ -86,11 +86,23 @@
   }
 
   const reviewCount = product.reviewCount ? `<span class="product-review-count">${product.reviewCount.toLocaleString('en-IN')} reviews</span>` : '';
+  const trustHeadline = product.category === 'ghee'
+    ? 'Authentic Gir Cow A2 Bilona Ghee — Made Traditionally From Gir Cows'
+    : 'Authentic farm-sourced quality from Gir Govalan';
+  const deliveryInfo = '<p class="product-delivery-note">Free delivery above ₹999 | Dispatch in 24-48 hours | WhatsApp support available</p>';
+  const trustRow = `
+    <div class="product-trust-row">
+      <a href="/pages/gallery/">Farm photos</a>
+      <a href="/#home-videos">Process video</a>
+      <a href="/#label-testimonials">Customer reviews</a>
+      <a href="/pages/who-is-gir-govalan/">Customer stories</a>
+    </div>`;
 
   root.innerHTML = `
     <div class="featured-product product-page-layout">
       <div>${imageGallery()}</div>
       <div class="product-buy-box">
+        <p class="product-trust-headline">${trustHeadline}</p>
         <p class="product-vendor">${product.vendor}</p>
         <h1>${product.name}</h1>
         <p class="product-rating-row">
@@ -98,8 +110,10 @@
           ${reviewCount}
         </p>
         <p class="product-price" id="product-price">${priceHtml(price, compareAt)}</p>
+        ${deliveryInfo}
         <p class="product-tax-note">Inclusive of all taxes</p>
         <p class="product-short-desc">${product.description}</p>
+        ${trustRow}
         ${featureBadges()}
         ${product.variants ? `
           <p class="variant-label"><strong>Size:</strong> <span id="selected-size">${product.variants[0].label}</span></p>
@@ -115,6 +129,9 @@
         </div>
         <div class="product-cta-row product-cta-row--primary">
           <button type="button" class="btn btn-secondary" id="wa-single">Order on WhatsApp</button>
+        </div>
+        <div class="product-cta-row product-cta-row--secondary">
+          <a href="/blogs/news/how-to-identify-pure-gir-cow-ghee/" class="btn btn-outline">How to Identify Pure Ghee</a>
         </div>
       </div>
     </div>

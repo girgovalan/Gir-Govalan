@@ -148,10 +148,34 @@ function updateDataJsImages(mapping) {
   fs.writeFileSync(path.join(ROOT, 'js/data.js'), content);
 }
 
+function parseRecommendedPosts() {
+  const file = path.join(ROOT, 'js/blog-scheduled-recommended.js');
+  if (!fs.existsSync(file)) return [];
+  const content = fs.readFileSync(file, 'utf8');
+  return [...content.matchAll(/slug: '([^']+)',\s*\n\s*title: '((?:\\'|[^'])*)'/g)].map(m => ({
+    slug: m[1],
+    title: m[2].replace(/\\'/g, "'")
+  }));
+}
+
+function updateRecommendedImages(mapping) {
+  const file = path.join(ROOT, 'js/blog-scheduled-recommended.js');
+  if (!fs.existsSync(file)) return;
+  let content = fs.readFileSync(file, 'utf8');
+  for (const { slug, image } of mapping) {
+    const re = new RegExp(`(slug: '${slug}',[\\s\\S]*?image: ')[^']+(')`, 'm');
+    content = content.replace(re, `$1${image}$2`);
+  }
+  fs.writeFileSync(file, content);
+}
+
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  const posts = [...parseExtendedPosts(), ...EXTRA_ORIGINAL];
+  const extended = parseExtendedPosts();
+  const recommended = parseRecommendedPosts();
+  const posts = [...extended, ...EXTRA_ORIGINAL, ...recommended];
   const mapping = [];
+  const startIndex = extended.length + EXTRA_ORIGINAL.length;
 
   for (let i = 0; i < posts.length; i++) {
     const image = await renderHero(posts[i], i);
@@ -159,8 +183,9 @@ async function main() {
     console.log(`✓ ${posts[i].slug}`);
   }
 
-  updateExtendedImages(mapping.filter(m => parseExtendedPosts().some(p => p.slug === m.slug)));
+  updateExtendedImages(mapping.filter(m => extended.some(p => p.slug === m.slug)));
   updateDataJsImages(mapping.filter(m => EXTRA_ORIGINAL.some(p => p.slug === m.slug)));
+  updateRecommendedImages(mapping.filter(m => recommended.some(p => p.slug === m.slug)));
 
   // Update generate-blog-extended.js to use slug-based images on regen
   const genPath = path.join(ROOT, 'scripts/generate-blog-extended.js');

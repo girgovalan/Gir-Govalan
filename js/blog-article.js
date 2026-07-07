@@ -29,6 +29,41 @@
       .join('');
   }
 
+  const GHEE_CLUSTER_SLUGS = [
+    'benefits-of-gir-cow-ghee',
+    'how-to-identify-pure-gir-cow-ghee',
+    'bilona-ghee-vs-regular-ghee',
+    'how-to-store-ghee-and-sweets-at-home',
+    'cooking-with-pure-ghee',
+    'a2-milk-vs-a1-milk-gir-cow',
+    'what-is-bilona-ghee',
+    'know-your-gir-cow'
+  ];
+
+  function gheeClusterHTML(currentPost) {
+    const text = `${currentPost.title} ${currentPost.keywords || ''}`.toLowerCase();
+    const isGheeTopic = /(ghee|bilona|a2|gir cow)/i.test(text);
+    if (!isGheeTopic) return '';
+
+    const links = GHEE_CLUSTER_SLUGS
+      .filter(slug => slug !== currentPost.slug)
+      .map(slug => getBlogPost(slug))
+      .filter(Boolean)
+      .slice(0, 6);
+
+    if (!links.length) return '';
+
+    return `
+      <aside class="article-cluster-links">
+        <h2>Gir Cow Ghee Topic Cluster</h2>
+        <p>Explore related guides to understand Gir cow ghee quality, usage, and buying decisions.</p>
+        <ul>
+          ${links.map(p => `<li><a href="${URLS.blogPost(p.slug)}">${p.title}</a></li>`).join('')}
+          <li><a href="/products/pure-organic-a2-gir-cow-ghee/">Shop Authentic A2 Gir Cow Bilona Ghee</a></li>
+        </ul>
+      </aside>`;
+  }
+
   if (!post) {
     root.innerHTML = `
       <div class="text-center container" style="padding:80px">
@@ -53,6 +88,7 @@
       <h1>${post.title}</h1>
       <img class="article-hero-img" src="${post.image}" alt="${post.title}">
       <div class="article-body">${post.content}</div>
+      ${gheeClusterHTML(post)}
     </div>`;
 
   const morePosts = document.getElementById('more-posts');

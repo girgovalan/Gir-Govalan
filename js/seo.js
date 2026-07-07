@@ -43,6 +43,32 @@
       description: 'Your shopping cart at Gir Govalan.',
       robots: 'noindex, follow',
       type: 'website'
+    },
+    '/a2-gir-cow-ghee-usa/': {
+      title: 'Gir Cow Ghee USA — Redirect',
+      description: 'Redirecting to the primary Gir Cow Ghee USA landing page.',
+      robots: 'noindex, follow',
+      type: 'website'
+    },
+    '/gir-cow-ghee-usa/': {
+      title: 'Buy A2 Gir Cow Ghee in USA | Authentic Bilona Desi Ghee',
+      description: 'Buy A2 Gir Cow Ghee in USA from Gir Govalan. Authentic bilona desi ghee from Gujarat for Indian families across America.',
+      type: 'website'
+    },
+    '/a2-gir-cow-ghee-uae/': {
+      title: 'Buy A2 Gir Cow Ghee in UAE | Authentic Bilona Ghee',
+      description: 'Buy A2 Gir Cow Ghee in UAE from Gir Govalan. Authentic bilona ghee from Gujarat with direct shipping support.',
+      type: 'website'
+    },
+    '/a2-gir-cow-ghee-canada/': {
+      title: 'Buy A2 Gir Cow Ghee in Canada | Authentic Bilona Ghee',
+      description: 'Buy A2 Gir Cow Ghee in Canada from Gir Govalan. Authentic bilona ghee from Gujarat with international shipping support.',
+      type: 'website'
+    },
+    '/a2-gir-cow-ghee-uk/': {
+      title: 'Buy A2 Gir Cow Ghee in UK | Authentic Bilona Ghee',
+      description: 'Buy A2 Gir Cow Ghee in UK from Gir Govalan. Traditional bilona ghee from Gujarat with shipping support.',
+      type: 'website'
     }
   };
 
@@ -90,6 +116,42 @@
     document.head.appendChild(script);
   }
 
+  function excerptFromContent(html, maxLen) {
+    if (!html) return '';
+    const plain = html
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (!plain) return '';
+    return plain.length > maxLen ? `${plain.slice(0, maxLen - 1).trim()}…` : plain;
+  }
+
+  function toAbsoluteImage(url) {
+    if (!url) return DEFAULT_IMAGE;
+    if (/^https?:\/\//i.test(url)) return url;
+    if (url.startsWith('/')) return `${BASE}${url}`;
+    return `${BASE}/${url}`;
+  }
+
+  function extractFaqEntities(html) {
+    if (!html || !/Frequently Asked Questions/i.test(html)) return [];
+    const qa = [];
+    const re = /<h3>(.*?)<\/h3>\s*<p>(.*?)<\/p>/gis;
+    let m;
+    while ((m = re.exec(html))) {
+      const q = m[1].replace(/<[^>]+>/g, '').trim();
+      const a = m[2].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+      if (q && a) {
+        qa.push({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a }
+        });
+      }
+    }
+    return qa.slice(0, 8);
+  }
+
   function resolveMeta() {
     const path = normalizePath(location.pathname);
     const params = new URLSearchParams(location.search);
@@ -115,13 +177,21 @@
       const slug = path.replace('/blogs/news/', '').replace(/\/$/, '');
       const post = typeof getBlogPost === 'function' ? getBlogPost(slug) : null;
       if (post) {
+        const articleDescription =
+          post.metaDescription ||
+          post.excerpt ||
+          excerptFromContent(post.content, 180) ||
+          'Read this Gir Govalan blog article about pure A2 Gir cow ghee and traditional dairy wisdom.';
+        const articleTitle = post.seoTitle || post.title;
         return {
-          title: `${post.title} | Gir Govalan Blog`,
-          description: post.excerpt,
-          image: post.image,
+          title: `${articleTitle} | Gir Govalan Blog`,
+          description: articleDescription,
+          image: toAbsoluteImage(post.image),
           url: `${BASE}/blogs/news/${slug}/`,
           type: 'article',
           article: post,
+          articleTitle,
+          articleDescription,
           keywords: post.keywords,
           robots: 'index, follow'
         };
@@ -174,7 +244,7 @@
     setMeta('og:description', meta.description, true);
     setMeta('og:url', meta.url, true);
     setMeta('og:type', meta.type === 'article' ? 'article' : meta.type === 'product' ? 'product' : 'website', true);
-    setMeta('og:image', meta.image || DEFAULT_IMAGE, true);
+    setMeta('og:image', toAbsoluteImage(meta.image), true);
     setMeta('og:site_name', SITE_NAME, true);
     setMeta('og:locale', 'en_IN', true);
 
@@ -182,7 +252,7 @@
     setMeta('twitter:site', TWITTER);
     setMeta('twitter:title', meta.title);
     setMeta('twitter:description', meta.description);
-    setMeta('twitter:image', meta.image || DEFAULT_IMAGE);
+    setMeta('twitter:image', toAbsoluteImage(meta.image));
 
     if (!document.querySelector('link[rel="icon"]')) {
       setLink('icon', 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/png_logo.png');
@@ -190,7 +260,7 @@
     if (!document.querySelector('link[rel="manifest"]')) {
       setLink('manifest', '/site.webmanifest');
     }
-    setMeta('theme-color', '#7b5495');
+    setMeta('theme-color', '#3d2850');
 
     injectJsonLd({
       '@context': 'https://schema.org',
@@ -215,7 +285,7 @@
 
     if (meta.type === 'product' && meta.product) {
       const p = meta.product;
-      injectJsonLd({
+      const productSchema = {
         '@context': 'https://schema.org',
         '@type': 'Product',
         name: p.name,
@@ -230,7 +300,15 @@
           availability: 'https://schema.org/InStock',
           seller: { '@type': 'Organization', name: SITE_NAME }
         }
-      });
+      };
+      if (p.reviewCount && p.rating) {
+        productSchema.aggregateRating = {
+          '@type': 'AggregateRating',
+          ratingValue: Number(p.rating).toFixed(1),
+          reviewCount: p.reviewCount
+        };
+      }
+      injectJsonLd(productSchema);
     }
 
     if (meta.type === 'article' && meta.article) {
@@ -238,10 +316,10 @@
       injectJsonLd({
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
-        headline: a.title,
-        image: a.image,
+        headline: meta.articleTitle || a.title,
+        image: toAbsoluteImage(a.image),
         datePublished: a.date,
-        description: a.excerpt,
+        description: meta.articleDescription || a.excerpt || excerptFromContent(a.content, 180),
         author: { '@type': 'Organization', name: SITE_NAME },
         publisher: {
           '@type': 'Organization',
@@ -250,6 +328,15 @@
         },
         mainEntityOfPage: meta.url
       });
+
+      const faqEntities = extractFaqEntities(a.content);
+      if (faqEntities.length) {
+        injectJsonLd({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqEntities
+        });
+      }
     }
 
     if (normalizePath(location.pathname) === '/') {

@@ -7,7 +7,8 @@
 | Original | 4 | Dec 2024 – Mar 2025 | `js/data.js` |
 | Batch 1 | 10 | 14 Jun – 11 Jul 2026 | `js/blog-scheduled.js` |
 | Batch 2 | 50 | 14 Jul – 8 Dec 2026 | `js/blog-scheduled-extended.js` |
-| **Total** | **64** | | |
+| Batch 3 (Pinterest) | 6 | 11 Dec – 26 Dec 2026 | `js/blog-scheduled-recommended.js` |
+| **Total** | **70** | | |
 
 ## How auto-publish works
 
@@ -16,7 +17,7 @@ Posts are stored with a `date` field. Only posts where `date <= today` appear on
 - Home page blog section
 - Individual article pages
 
-Scripts load in order: `data.js` → `blog-scheduled.js` → `blog-scheduled-extended.js`
+Scripts load in order: `data.js` → `blog-scheduled.js` → `blog-scheduled-extended.js` → `blog-scheduled-recommended.js`
 
 ## Batch 1 — Jun–Jul 2026
 

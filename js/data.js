@@ -123,10 +123,16 @@ const PRODUCTS = [
       storage: `<p>Store the jar tightly closed in a cool, dry cupboard. Keep away from heat and direct sun. Always use a clean, dry spoon.</p>
 <p>When stored correctly, the ghee stays good for up to 12 months from packing. Refrigeration is optional; at room temperature it should remain grain-free and pleasant-smelling.</p>`,
       faq: `<div class="product-faq">
+<h3>What is A2 Gir Cow Ghee?</h3>
+<p>A2 Gir Cow Ghee is clarified butter made from milk of indigenous Gir cows that naturally produce A2 protein milk. At Gir Govalan, it is made using the traditional curd-churned bilona process.</p>
+<h3>How long does ghee stay fresh?</h3>
+<p>When stored in a cool, dry place with a clean dry spoon, our ghee stays fresh for up to 12 months from packing.</p>
 <h3>What is bilona ghee?</h3>
 <p>Bilona ghee is prepared from cultured curd, not direct cream. The curd is churned to separate butter, and that butter is cooked down into ghee. It takes longer and uses more milk, which is why true bilona ghee has a fuller taste.</p>
 <h3>How is Gir Govalan ghee different from regular store ghee?</h3>
 <p>We use indigenous Gir cow milk, follow the curd-churned bilona route, and avoid shortcuts like cream-only processing or added chemicals. The result is a single-ingredient product with a pronounced desi aroma.</p>
+<h3>How is bilona ghee different from regular ghee?</h3>
+<p>Regular ghee is often cream-based and industrially processed. Bilona ghee follows milk to curd to hand-churned butter to slow-cooked ghee, delivering richer aroma and traditional authenticity.</p>
 <h3>Which size should I buy?</h3>
 <p>250 ml suits first-time buyers or small households. 500 ml and 1 litre are popular for regular cooking. The 5 litre pack works well for joint families, caterers, or monthly stocking.</p>
 <h3>Can I order from abroad?</h3>
@@ -151,6 +157,15 @@ const PRODUCTS = [
 <li>Batch-wise production for consistent quality</li>
 <li>Transparent labelling — ghee only, nothing else</li>
 </ul>
+<h2>Why Choose Our Gir Cow Ghee?</h2>
+<ul class="check-list">
+<li>Traditional bilona method in every batch</li>
+<li>Made from indigenous Gir cow milk</li>
+<li>Farm sourced from Gir region, Gujarat</li>
+<li>Fresh batch preparation with traceable quality</li>
+</ul>
+<h2>How Our Bilona Ghee Is Made</h2>
+<p>We follow a four-step process: milk collection, curd setting, bilona churning, and slow clarification. This preserves aroma, texture, and purity expected from authentic desi ghee.</p>
 <p class="product-tagline"><strong>Gir Govalan — Live Pure. Eat Pure.</strong></p>`,
     variants: [
       { label: '250ml', price: 725, compareAt: 799 },
@@ -336,7 +351,8 @@ const FEATURED_VIDEOS = [
   {
     id: 'gir-govalan-ghee-process',
     title: 'How We Make Bilona Ghee',
-    description: 'From A2 Gir cow milk to pure golden ghee — see the traditional bilona process at Gir Govalan.',
+    seoTitle: 'How We Make Bilona Ghee',
+description: 'From A2 Gir cow milk to pure golden ghee — see the traditional bilona process at Gir Govalan.',
     src: '/Videos/gir-govalan-ghee-process.mp4',
     poster: PRODUCT_IMAGES.gheeBilonaProcess
   }
@@ -374,10 +390,12 @@ const BLOG_POSTS = [
   {
     slug: 'benefits-of-gir-cow-ghee',
     title: 'Benefits of Gir Cow Ghee for Your Daily Diet',
-    date: '2025-03-10',
+    seoTitle: 'Benefits of Gir Cow Ghee for Your Daily Diet',
+date: '2025-03-10',
     image: '/images/blog/benefits-of-gir-cow-ghee.jpg',
     excerpt: 'Discover why A2 Gir cow ghee is prized in Ayurveda and everyday Indian cooking for nourishment and flavour.',
-    content: `<p>Gir cow ghee has been treasured for generations in Gujarat and across India. Rich in healthy fats and made through the traditional bilona process, it supports digestion, adds depth to cooking, and carries the authentic taste of the Gir region.</p>
+    metaDescription: 'Discover why A2 Gir cow ghee is prized in Ayurveda and everyday Indian cooking for nourishment and flavour.',
+content: `<p>Gir cow ghee has been treasured for generations in Gujarat and across India. Rich in healthy fats and made through the traditional bilona process, it supports digestion, adds depth to cooking, and carries the authentic taste of the Gir region.</p>
     <p>When you choose ghee from indigenous Gir cows raised ethically on organic feed, you are choosing purity — for your family, for the cows, and for the land.</p>
     <h3>Why bilona matters</h3>
     <p>The bilona method slowly churns curd into butter and then clarifies it into ghee. This labour-intensive process preserves nutrients and creates the distinctive aroma that sets Gir ghee apart from mass-produced alternatives.</p>`
@@ -385,28 +403,34 @@ const BLOG_POSTS = [
   {
     slug: 'what-is-bilona-ghee',
     title: 'What Is Bilona Ghee and Why It Matters',
-    date: '2025-02-18',
+    seoTitle: 'What Is Bilona Ghee and Why It Matters',
+date: '2025-02-18',
     image: '/images/blog/what-is-bilona-ghee.jpg',
     excerpt: 'Learn how the ancient bilona method turns A2 milk into the golden ghee your grandmother trusted.',
-    content: `<p>Bilona ghee begins with whole A2 milk from Gir cows. The milk is cultured into curd, hand-churned to extract butter, and then slow-cooked until water evaporates and pure ghee remains.</p>
+    metaDescription: 'Learn how the ancient bilona method turns A2 milk into the golden ghee your grandmother trusted.',
+content: `<p>Bilona ghee begins with whole A2 milk from Gir cows. The milk is cultured into curd, hand-churned to extract butter, and then slow-cooked until water evaporates and pure ghee remains.</p>
     <p>At Gir Govalan, we honour this craft because it aligns with our values: no shortcuts, no compromise on quality, and full respect for our cows and their natural rhythm.</p>`
   },
   {
     slug: 'know-your-gir-cow',
     title: 'Know Your Gir Cow — The Pride of Gujarat',
-    date: '2025-01-25',
+    seoTitle: 'Know Your Gir Cow — The Pride of Gujarat',
+date: '2025-01-25',
     image: '/images/blog/know-your-gir-cow.jpg',
     excerpt: 'The indigenous Gir breed is known for rich A2 milk and resilience — the heart of our farm.',
-    content: `<p>Gir cows are native to the Gir forest region of Gujarat. They are admired for their gentle nature, distinctive appearance, and milk that is naturally high in A2 protein.</p>
+    metaDescription: 'The indigenous Gir breed is known for rich A2 milk and resilience — the heart of our farm.',
+content: `<p>Gir cows are native to the Gir forest region of Gujarat. They are admired for their gentle nature, distinctive appearance, and milk that is naturally high in A2 protein.</p>
     <p>Our herd grazes in open surroundings and receives care like family — because healthy, happy cows are the foundation of exceptional ghee.</p>`
   },
   {
     slug: 'cooking-with-pure-ghee',
     title: 'Cooking with Pure Ghee — Tips from Our Kitchen',
-    date: '2024-12-05',
+    seoTitle: 'Cooking with Pure Ghee — Tips from Our Kitchen',
+date: '2024-12-05',
     image: '/images/blog/cooking-with-pure-ghee.jpg',
     excerpt: 'From tadka to sweets, here is how to get the most from authentic Gir cow ghee in your recipes.',
-    content: `<p>Use Gir ghee for tempering spices, roasting grains, or finishing dal — a little goes a long way. Its high smoke point makes it excellent for traditional frying and festive sweets like ladoo and halwa.</p>
+    metaDescription: 'From tadka to sweets, here is how to get the most from authentic Gir cow ghee in your recipes.',
+content: `<p>Use Gir ghee for tempering spices, roasting grains, or finishing dal — a little goes a long way. Its high smoke point makes it excellent for traditional frying and festive sweets like ladoo and halwa.</p>
     <p>Store ghee in a cool, dry place away from direct sunlight. Properly made bilona ghee stays fresh and aromatic for months when handled with care.</p>`
   }
 ];
@@ -414,7 +438,8 @@ const BLOG_POSTS = [
 const PAGES = {
   about: {
     title: 'Who Is Gir Govalan',
-    hero: `${CDN}/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg`,
+    seoTitle: 'Who Is Gir Govalan',
+hero: `${CDN}/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg`,
     photoCaption: 'Gir Govalan real photo',
     sections: [
       {
@@ -447,11 +472,13 @@ const PAGES = {
   },
   gallery: {
     title: 'Gallery',
-    intro: 'A glimpse into our farm, our Gir cows, and the traditional craft of making pure bilona ghee.'
+    seoTitle: 'Gallery',
+intro: 'A glimpse into our farm, our Gir cows, and the traditional craft of making pure bilona ghee.'
   },
   contact: {
     title: 'Contact Us',
-    intro: 'We would love to hear from you. Reach out for orders, wholesale enquiries, or any questions about our products.'
+    seoTitle: 'Contact Us',
+intro: 'We would love to hear from you. Reach out for orders, wholesale enquiries, or any questions about our products.'
   }
 };
 

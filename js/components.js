@@ -14,6 +14,12 @@
   }
 
   const current = getCurrentPage();
+  const INTERNATIONAL_LINKS = [
+    { label: 'Gir Cow Ghee USA', href: '/gir-cow-ghee-usa/' },
+    { label: 'A2 Gir Cow Ghee UAE', href: '/a2-gir-cow-ghee-uae/' },
+    { label: 'A2 Gir Cow Ghee Canada', href: '/a2-gir-cow-ghee-canada/' },
+    { label: 'A2 Gir Cow Ghee UK', href: '/a2-gir-cow-ghee-uk/' }
+  ];
 
   function isActive(key) {
     return current === key ? ' active' : '';
@@ -57,6 +63,12 @@
               <li><a href="${URLS.about}" class="nav-link${isActive('about')}">About</a></li>
               <li><a href="${URLS.gallery}" class="nav-link${isActive('gallery')}">Gallery</a></li>
               <li><a href="${URLS.blog}" class="nav-link${isActive('blog')}">Blog</a></li>
+              <li class="has-dropdown">
+                <a href="/gir-cow-ghee-usa/" class="nav-link">International <span class="caret">▾</span></a>
+                <ul class="dropdown">
+                  ${INTERNATIONAL_LINKS.map(link => `<li><a href="${link.href}">${link.label}</a></li>`).join('')}
+                </ul>
+              </li>
               <li><a href="${URLS.contact}" class="nav-link${isActive('contact')}">Contact</a></li>
             </ul>
           </nav>
@@ -129,6 +141,12 @@
               <li><a href="${URLS.gallery}">Gallery</a></li>
               <li><a href="${URLS.blog}">Blog</a></li>
               <li><a href="${URLS.contact}">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>International</h4>
+            <ul>
+              ${INTERNATIONAL_LINKS.map(link => `<li><a href="${link.href}">${link.label}</a></li>`).join('')}
             </ul>
           </div>
           <div class="footer-col">

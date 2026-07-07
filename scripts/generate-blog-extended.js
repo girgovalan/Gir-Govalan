@@ -110,17 +110,19 @@ const posts = TOPICS.map((t, i) => {
   return {
     slug: t.slug,
     title: t.title,
+    seoTitle: t.title,
     date,
     keywords: t.keywords,
     image,
     excerpt: t.excerpt,
+    metaDescription: t.excerpt,
     content: buildContent(t)
   };
 });
 
 let js = `/* Extended blog schedule — posts 11–60 (Jul 14 – Dec 8, 2026) */\n(function () {\n  const extended = [\n`;
 posts.forEach((p, i) => {
-  js += `    {\n      slug: '${p.slug}',\n      title: '${p.title.replace(/'/g, "\\'")}',\n      date: '${p.date}',\n      keywords: '${p.keywords}',\n      image: '${p.image}',\n      excerpt: '${p.excerpt.replace(/'/g, "\\'")}',\n      content: \`${esc(p.content)}\`\n    }${i < posts.length - 1 ? ',' : ''}\n`;
+  js += `    {\n      slug: '${p.slug}',\n      title: '${p.title.replace(/'/g, "\\'")}',\n      seoTitle: '${p.seoTitle.replace(/'/g, "\\'")}',\n      date: '${p.date}',\n      keywords: '${p.keywords}',\n      image: '${p.image}',\n      excerpt: '${p.excerpt.replace(/'/g, "\\'")}',\n      metaDescription: '${p.metaDescription.replace(/'/g, "\\'")}',\n      content: \`${esc(p.content)}\`\n    }${i < posts.length - 1 ? ',' : ''}\n`;
 });
 js += `  ];\n\n  if (typeof BLOG_POSTS !== 'undefined') {\n    BLOG_POSTS.push(...extended);\n    BLOG_POSTS.sort((a, b) => b.date.localeCompare(a.date));\n  }\n})();\n`;
 
