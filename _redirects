@@ -2,11 +2,21 @@
 
 # Old flat .html files → SEO paths (301 permanent)
 /who-is-gir-govalan.html    /pages/who-is-gir-govalan/    301
+/who-is-gir-govalan         /pages/who-is-gir-govalan/    301
+/who-is-gir-govalan/        /pages/who-is-gir-govalan/    301
 /contact.html               /pages/contact/               301
+/contact                    /pages/contact/               301
+/contact/                   /pages/contact/               301
 /gallery.html               /pages/gallery/               301
+/gallery                    /pages/gallery/               301
+/gallery/                   /pages/gallery/               301
 /blog.html                  /blogs/news/                  301
+/blog                       /blogs/news/                  301
+/blog/                      /blogs/news/                  301
 /blog-post.html             /blogs/news/                  301
 /products.html              /collections/all/             301
+/products                   /collections/all/             301
+/products/                  /collections/all/             301
 /product.html               /collections/all/             301
 /cart.html                  /cart/                        301
 
@@ -20,3 +30,48 @@
 /pages/gallery              /pages/gallery/               301
 /blogs/news                 /blogs/news/                  301
 /collections/all            /collections/all/             301
+
+# Shopify collection URLs
+/collections/ghee           /collections/all/?category=ghee        301
+/collections/ghee/          /collections/all/?category=ghee        301
+/collections/dairy          /collections/all/?category=dairy       301
+/collections/dairy/         /collections/all/?category=dairy       301
+/collections/sweets         /collections/all/?category=sweets      301
+/collections/sweets/        /collections/all/?category=sweets      301
+/collections/desserts       /collections/all/?category=sweets      301
+/collections/desserts/      /collections/all/?category=sweets      301
+/collections/seed-nuts      /collections/all/?category=seeds-nuts  301
+/collections/seed-nuts/     /collections/all/?category=seeds-nuts  301
+/collections/seeds-nuts     /collections/all/?category=seeds-nuts  301
+/collections/seeds-nuts/    /collections/all/?category=seeds-nuts  301
+/collections/all/products   /collections/all/                      301
+/collections/all/products/  /collections/all/                      301
+
+# Legacy international keyword stubs → primary country pages
+/a2-ghee-usa                /gir-cow-ghee-usa/            301
+/a2-ghee-usa/               /gir-cow-ghee-usa/            301
+/a2-gir-cow-ghee-usa        /gir-cow-ghee-usa/            301
+/a2-gir-cow-ghee-usa/       /gir-cow-ghee-usa/            301
+/bilona-ghee-usa            /gir-cow-ghee-usa/            301
+/bilona-ghee-usa/           /gir-cow-ghee-usa/            301
+/indian-organic-ghee-usa    /gir-cow-ghee-usa/            301
+/indian-organic-ghee-usa/   /gir-cow-ghee-usa/            301
+/a2-ghee-uae                /a2-gir-cow-ghee-uae/         301
+/a2-ghee-uae/               /a2-gir-cow-ghee-uae/         301
+/bilona-ghee-uae            /a2-gir-cow-ghee-uae/         301
+/bilona-ghee-uae/           /a2-gir-cow-ghee-uae/         301
+/indian-ghee-dubai          /a2-gir-cow-ghee-uae/         301
+/indian-ghee-dubai/         /a2-gir-cow-ghee-uae/         301
+
+# Short /blog/* aliases
+/blog/benefits-of-gir-cow-ghee      /blogs/news/benefits-of-gir-cow-ghee/      301
+/blog/benefits-of-gir-cow-ghee/     /blogs/news/benefits-of-gir-cow-ghee/      301
+/blog/bilona-ghee-vs-regular-ghee   /blogs/news/bilona-ghee-vs-regular-ghee/   301
+/blog/bilona-ghee-vs-regular-ghee/  /blogs/news/bilona-ghee-vs-regular-ghee/   301
+/blog/gir-cow-ghee-price            /blogs/news/gir-cow-ghee-price/            301
+/blog/gir-cow-ghee-price/           /blogs/news/gir-cow-ghee-price/            301
+/blog/how-to-identify-pure-ghee     /blogs/news/how-to-identify-pure-ghee/     301
+/blog/how-to-identify-pure-ghee/    /blogs/news/how-to-identify-pure-ghee/     301
+
+/blogs/news/_post/          /blogs/news/                  301
+/blogs/news/article/        /blogs/news/                  301

@@ -7,4 +7,4 @@ Allow: /
 # Cart only — do not index checkout basket
 Disallow: /cart/
 
-Sitemap: https://girgovalan.com/sitemap.xml
+Sitemap: https://www.girgovalan.com/sitemap.xml

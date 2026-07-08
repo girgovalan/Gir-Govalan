@@ -1,6 +1,6 @@
 /* Gir Govalan — SEO meta, Open Graph, Twitter Card, JSON-LD */
 (function () {
-  const BASE = 'https://girgovalan.com';
+  const BASE = 'https://www.girgovalan.com';
   const SITE_NAME = 'Gir Govalan';
   const DEFAULT_IMAGE = 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/2.jpg';
   const TWITTER = '@GirGovalan';

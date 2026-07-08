@@ -78,7 +78,7 @@
   document.querySelector('link[rel=canonical]')?.remove();
   const link = document.createElement('link');
   link.rel = 'canonical';
-  link.href = `https://girgovalan.com/blogs/news/${slug}/`;
+  link.href = `https://www.girgovalan.com/blogs/news/${slug}/`;
   document.head.appendChild(link);
 
   root.innerHTML = `

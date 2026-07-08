@@ -6,12 +6,12 @@ RewriteBase /
 # RewriteCond %{HTTPS} off
 # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Old flat files → SEO URLs
-RewriteRule ^who-is-gir-govalan\.html$ /pages/who-is-gir-govalan/ [R=301,L]
-RewriteRule ^contact\.html$ /pages/contact/ [R=301,L]
-RewriteRule ^gallery\.html$ /pages/gallery/ [R=301,L]
-RewriteRule ^blog\.html$ /blogs/news/ [R=301,L]
-RewriteRule ^products\.html$ /collections/all/ [R=301,L]
+# Old flat files / cleanUrls duplicates → SEO URLs
+RewriteRule ^who-is-gir-govalan(\.html)?/?$ /pages/who-is-gir-govalan/ [R=301,L]
+RewriteRule ^contact(\.html)?/?$ /pages/contact/ [R=301,L]
+RewriteRule ^gallery(\.html)?/?$ /pages/gallery/ [R=301,L]
+RewriteRule ^blog(\.html)?/?$ /blogs/news/ [R=301,L]
+RewriteRule ^products(\.html)?/?$ /collections/all/ [R=301,L]
 RewriteRule ^cart\.html$ /cart/ [R=301,L]
 RewriteRule ^product\.html\?id=([^&]+)$ /products/$1/ [R=301,L,QSA]
 RewriteRule ^blog-post\.html\?slug=([^&]+)$ /blogs/news/$1/ [R=301,L,QSA]
@@ -23,6 +23,22 @@ RewriteRule ^collections/sweets/?$ /collections/all/?category=sweets [R=301,L,QS
 RewriteRule ^collections/desserts/?$ /collections/all/?category=sweets [R=301,L,QSA]
 RewriteRule ^collections/seed-nuts/?$ /collections/all/?category=seeds-nuts [R=301,L,QSA]
 RewriteRule ^collections/seeds-nuts/?$ /collections/all/?category=seeds-nuts [R=301,L,QSA]
+RewriteRule ^collections/all/products/?$ /collections/all/ [R=301,L]
+
+# Legacy international keyword stubs → primary country pages
+RewriteRule ^a2-ghee-usa/?$ /gir-cow-ghee-usa/ [R=301,L]
+RewriteRule ^a2-gir-cow-ghee-usa/?$ /gir-cow-ghee-usa/ [R=301,L]
+RewriteRule ^bilona-ghee-usa/?$ /gir-cow-ghee-usa/ [R=301,L]
+RewriteRule ^indian-organic-ghee-usa/?$ /gir-cow-ghee-usa/ [R=301,L]
+RewriteRule ^a2-ghee-uae/?$ /a2-gir-cow-ghee-uae/ [R=301,L]
+RewriteRule ^bilona-ghee-uae/?$ /a2-gir-cow-ghee-uae/ [R=301,L]
+RewriteRule ^indian-ghee-dubai/?$ /a2-gir-cow-ghee-uae/ [R=301,L]
+
+# Short /blog/* aliases
+RewriteRule ^blog/benefits-of-gir-cow-ghee/?$ /blogs/news/benefits-of-gir-cow-ghee/ [R=301,L]
+RewriteRule ^blog/bilona-ghee-vs-regular-ghee/?$ /blogs/news/bilona-ghee-vs-regular-ghee/ [R=301,L]
+RewriteRule ^blog/gir-cow-ghee-price/?$ /blogs/news/gir-cow-ghee-price/ [R=301,L]
+RewriteRule ^blog/how-to-identify-pure-ghee/?$ /blogs/news/how-to-identify-pure-ghee/ [R=301,L]
 
 # Trailing slash for pages
 RewriteRule ^pages/contact$ /pages/contact/ [R=301,L]

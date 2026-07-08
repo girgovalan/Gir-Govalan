@@ -12,7 +12,7 @@
   document.title = product.name + ' — Gir Govalan';
   const link = document.createElement('link');
   link.rel = 'canonical';
-  link.href = 'https://girgovalan.com/products/' + id + '/';
+  link.href = 'https://www.girgovalan.com/products/' + id + '/';
   document.head.appendChild(link);
 
   const imgs = product.images || [product.image];
