@@ -75,3 +75,295 @@
 
 /blogs/news/_post/          /blogs/news/                  301
 /blogs/news/article/        /blogs/news/                  301
+
+# Shopify marketplace/locale legacy URLs (GSC blocked-by-robots leftovers)
+/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping              /gir-cow-ghee-usa/                        301
+/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/             /gir-cow-ghee-usa/                        301
+/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada         /a2-gir-cow-ghee-canada/                  301
+/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada/        /a2-gir-cow-ghee-canada/                  301
+/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia/gir-cow-ghee-usa/                        301
+/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia//gir-cow-ghee-usa/                        301
+/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand                    /gir-cow-ghee-usa/                        301
+/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand/                   /gir-cow-ghee-usa/                        301
+/pages/gir-cow-ghee-in-the-dubai                                        /a2-gir-cow-ghee-uae/                     301
+/pages/gir-cow-ghee-in-the-dubai/                                       /a2-gir-cow-ghee-uae/                     301
+/pages/what-is-gir-cow-gir-govalan                                      /pages/who-is-gir-govalan/                301
+/pages/what-is-gir-cow-gir-govalan/                                     /pages/who-is-gir-govalan/                301
+/blogs/news/what-is-gir-cow-ghee                                        /blogs/news/benefits-of-gir-cow-ghee/     301
+/blogs/news/what-is-gir-cow-ghee/                                       /blogs/news/benefits-of-gir-cow-ghee/     301
+/blogs/news/what-is-desi-cow-ghee                                       /blogs/news/what-is-bilona-ghee/          301
+/blogs/news/what-is-desi-cow-ghee/                                      /blogs/news/what-is-bilona-ghee/          301
+/blogs/news/what-is-a2-gir-cow-ghee                                     /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/blogs/news/what-is-a2-gir-cow-ghee/                                    /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan             /products/pure-organic-a2-gir-cow-ghee/   301
+/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/            /products/pure-organic-a2-gir-cow-ghee/   301
+/products/pure-a2-gir-desi-cow-ghee-by-bilona                           /products/pure-organic-a2-gir-cow-ghee/   301
+/products/pure-a2-gir-desi-cow-ghee-by-bilona/                          /products/pure-organic-a2-gir-cow-ghee/   301
+/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa/products/pure-organic-a2-gir-cow-ghee/   301
+/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa//products/pure-organic-a2-gir-cow-ghee/   301
+/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan     /products/pure-organic-a2-gir-cow-ghee/   301
+/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/    /products/pure-organic-a2-gir-cow-ghee/   301
+/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/products/pure-organic-a2-gir-cow-ghee/   301
+/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan//products/pure-organic-a2-gir-cow-ghee/   301
+/collections/ghee                                                       /collections/all/?category=ghee           301
+/collections/ghee/                                                      /collections/all/?category=ghee           301
+/collections/dairy                                                      /collections/all/?category=dairy          301
+/collections/dairy/                                                     /collections/all/?category=dairy          301
+/collections/sweets                                                     /collections/all/?category=sweets         301
+/collections/sweets/                                                    /collections/all/?category=sweets         301
+/collections/desserts                                                   /collections/all/?category=sweets         301
+/collections/desserts/                                                  /collections/all/?category=sweets         301
+/collections/seed-nuts                                                  /collections/all/?category=seeds-nuts     301
+/collections/seed-nuts/                                                 /collections/all/?category=seeds-nuts     301
+/collections/seeds-nuts                                                 /collections/all/?category=seeds-nuts     301
+/collections/seeds-nuts/                                                /collections/all/?category=seeds-nuts     301
+/collections                                                            /collections/all/                         301
+/collections/                                                           /collections/all/                         301
+/comments                                                               /                                         301
+/comments/                                                              /                                         301
+/search                                                                 /                                         301
+/search/                                                                /                                         301
+/en-us/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping        /gir-cow-ghee-usa/                        301
+/en-us/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/       /gir-cow-ghee-usa/                        301
+/en-ae/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping        /gir-cow-ghee-usa/                        301
+/en-ae/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/       /gir-cow-ghee-usa/                        301
+/ar/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping           /gir-cow-ghee-usa/                        301
+/ar/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/          /gir-cow-ghee-usa/                        301
+/ar-ae/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping        /gir-cow-ghee-usa/                        301
+/ar-ae/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/       /gir-cow-ghee-usa/                        301
+/en-us/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada   /a2-gir-cow-ghee-canada/                  301
+/en-us/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada/  /a2-gir-cow-ghee-canada/                  301
+/en-ae/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada   /a2-gir-cow-ghee-canada/                  301
+/en-ae/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada/  /a2-gir-cow-ghee-canada/                  301
+/ar/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada      /a2-gir-cow-ghee-canada/                  301
+/ar/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada/     /a2-gir-cow-ghee-canada/                  301
+/ar-ae/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada   /a2-gir-cow-ghee-canada/                  301
+/ar-ae/pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada/  /a2-gir-cow-ghee-canada/                  301
+/en-us/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia/gir-cow-ghee-usa/                        301
+/en-us/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia//gir-cow-ghee-usa/                        301
+/en-ae/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia/gir-cow-ghee-usa/                        301
+/en-ae/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia//gir-cow-ghee-usa/                        301
+/ar/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia/gir-cow-ghee-usa/                        301
+/ar/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia//gir-cow-ghee-usa/                        301
+/ar-ae/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia/gir-cow-ghee-usa/                        301
+/ar-ae/pages/copy-of-copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-austalia//gir-cow-ghee-usa/                        301
+/en-us/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand              /gir-cow-ghee-usa/                        301
+/en-us/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand/             /gir-cow-ghee-usa/                        301
+/en-ae/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand              /gir-cow-ghee-usa/                        301
+/en-ae/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand/             /gir-cow-ghee-usa/                        301
+/ar/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand                 /gir-cow-ghee-usa/                        301
+/ar/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand/                /gir-cow-ghee-usa/                        301
+/ar-ae/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand              /gir-cow-ghee-usa/                        301
+/ar-ae/pages/buy-authentic-gir-cow-ghee-in-the-new-zealand/             /gir-cow-ghee-usa/                        301
+/en-us/pages/gir-cow-ghee-in-the-dubai                                  /a2-gir-cow-ghee-uae/                     301
+/en-us/pages/gir-cow-ghee-in-the-dubai/                                 /a2-gir-cow-ghee-uae/                     301
+/en-ae/pages/gir-cow-ghee-in-the-dubai                                  /a2-gir-cow-ghee-uae/                     301
+/en-ae/pages/gir-cow-ghee-in-the-dubai/                                 /a2-gir-cow-ghee-uae/                     301
+/ar/pages/gir-cow-ghee-in-the-dubai                                     /a2-gir-cow-ghee-uae/                     301
+/ar/pages/gir-cow-ghee-in-the-dubai/                                    /a2-gir-cow-ghee-uae/                     301
+/ar-ae/pages/gir-cow-ghee-in-the-dubai                                  /a2-gir-cow-ghee-uae/                     301
+/ar-ae/pages/gir-cow-ghee-in-the-dubai/                                 /a2-gir-cow-ghee-uae/                     301
+/en-us/pages/what-is-gir-cow-gir-govalan                                /pages/who-is-gir-govalan/                301
+/en-us/pages/what-is-gir-cow-gir-govalan/                               /pages/who-is-gir-govalan/                301
+/en-ae/pages/what-is-gir-cow-gir-govalan                                /pages/who-is-gir-govalan/                301
+/en-ae/pages/what-is-gir-cow-gir-govalan/                               /pages/who-is-gir-govalan/                301
+/ar/pages/what-is-gir-cow-gir-govalan                                   /pages/who-is-gir-govalan/                301
+/ar/pages/what-is-gir-cow-gir-govalan/                                  /pages/who-is-gir-govalan/                301
+/ar-ae/pages/what-is-gir-cow-gir-govalan                                /pages/who-is-gir-govalan/                301
+/ar-ae/pages/what-is-gir-cow-gir-govalan/                               /pages/who-is-gir-govalan/                301
+/en-us/pages/who-is-gir-govalan                                         /pages/who-is-gir-govalan/                301
+/en-us/pages/who-is-gir-govalan/                                        /pages/who-is-gir-govalan/                301
+/en-ae/pages/who-is-gir-govalan                                         /pages/who-is-gir-govalan/                301
+/en-ae/pages/who-is-gir-govalan/                                        /pages/who-is-gir-govalan/                301
+/ar/pages/who-is-gir-govalan                                            /pages/who-is-gir-govalan/                301
+/ar/pages/who-is-gir-govalan/                                           /pages/who-is-gir-govalan/                301
+/ar-ae/pages/who-is-gir-govalan                                         /pages/who-is-gir-govalan/                301
+/ar-ae/pages/who-is-gir-govalan/                                        /pages/who-is-gir-govalan/                301
+/en-us/pages/contact                                                    /pages/contact/                           301
+/en-us/pages/contact/                                                   /pages/contact/                           301
+/en-ae/pages/contact                                                    /pages/contact/                           301
+/en-ae/pages/contact/                                                   /pages/contact/                           301
+/ar/pages/contact                                                       /pages/contact/                           301
+/ar/pages/contact/                                                      /pages/contact/                           301
+/ar-ae/pages/contact                                                    /pages/contact/                           301
+/ar-ae/pages/contact/                                                   /pages/contact/                           301
+/en-us/blogs/news/what-is-gir-cow-ghee                                  /blogs/news/benefits-of-gir-cow-ghee/     301
+/en-us/blogs/news/what-is-gir-cow-ghee/                                 /blogs/news/benefits-of-gir-cow-ghee/     301
+/en-ae/blogs/news/what-is-gir-cow-ghee                                  /blogs/news/benefits-of-gir-cow-ghee/     301
+/en-ae/blogs/news/what-is-gir-cow-ghee/                                 /blogs/news/benefits-of-gir-cow-ghee/     301
+/ar/blogs/news/what-is-gir-cow-ghee                                     /blogs/news/benefits-of-gir-cow-ghee/     301
+/ar/blogs/news/what-is-gir-cow-ghee/                                    /blogs/news/benefits-of-gir-cow-ghee/     301
+/ar-ae/blogs/news/what-is-gir-cow-ghee                                  /blogs/news/benefits-of-gir-cow-ghee/     301
+/ar-ae/blogs/news/what-is-gir-cow-ghee/                                 /blogs/news/benefits-of-gir-cow-ghee/     301
+/en-us/blogs/news/what-is-desi-cow-ghee                                 /blogs/news/what-is-bilona-ghee/          301
+/en-us/blogs/news/what-is-desi-cow-ghee/                                /blogs/news/what-is-bilona-ghee/          301
+/en-ae/blogs/news/what-is-desi-cow-ghee                                 /blogs/news/what-is-bilona-ghee/          301
+/en-ae/blogs/news/what-is-desi-cow-ghee/                                /blogs/news/what-is-bilona-ghee/          301
+/ar/blogs/news/what-is-desi-cow-ghee                                    /blogs/news/what-is-bilona-ghee/          301
+/ar/blogs/news/what-is-desi-cow-ghee/                                   /blogs/news/what-is-bilona-ghee/          301
+/ar-ae/blogs/news/what-is-desi-cow-ghee                                 /blogs/news/what-is-bilona-ghee/          301
+/ar-ae/blogs/news/what-is-desi-cow-ghee/                                /blogs/news/what-is-bilona-ghee/          301
+/en-us/blogs/news/what-is-a2-gir-cow-ghee                               /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/en-us/blogs/news/what-is-a2-gir-cow-ghee/                              /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/en-ae/blogs/news/what-is-a2-gir-cow-ghee                               /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/en-ae/blogs/news/what-is-a2-gir-cow-ghee/                              /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/ar/blogs/news/what-is-a2-gir-cow-ghee                                  /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/ar/blogs/news/what-is-a2-gir-cow-ghee/                                 /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/ar-ae/blogs/news/what-is-a2-gir-cow-ghee                               /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/ar-ae/blogs/news/what-is-a2-gir-cow-ghee/                              /blogs/news/a2-milk-vs-a1-milk-gir-cow/   301
+/en-us/blogs/news/what-is-bilona-ghee                                   /blogs/news/what-is-bilona-ghee/          301
+/en-us/blogs/news/what-is-bilona-ghee/                                  /blogs/news/what-is-bilona-ghee/          301
+/en-ae/blogs/news/what-is-bilona-ghee                                   /blogs/news/what-is-bilona-ghee/          301
+/en-ae/blogs/news/what-is-bilona-ghee/                                  /blogs/news/what-is-bilona-ghee/          301
+/ar/blogs/news/what-is-bilona-ghee                                      /blogs/news/what-is-bilona-ghee/          301
+/ar/blogs/news/what-is-bilona-ghee/                                     /blogs/news/what-is-bilona-ghee/          301
+/ar-ae/blogs/news/what-is-bilona-ghee                                   /blogs/news/what-is-bilona-ghee/          301
+/ar-ae/blogs/news/what-is-bilona-ghee/                                  /blogs/news/what-is-bilona-ghee/          301
+/en-us/blogs/news                                                       /blogs/news/                              301
+/en-us/blogs/news/                                                      /blogs/news/                              301
+/en-ae/blogs/news                                                       /blogs/news/                              301
+/en-ae/blogs/news/                                                      /blogs/news/                              301
+/ar/blogs/news                                                          /blogs/news/                              301
+/ar/blogs/news/                                                         /blogs/news/                              301
+/ar-ae/blogs/news                                                       /blogs/news/                              301
+/ar-ae/blogs/news/                                                      /blogs/news/                              301
+/en-us/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan       /products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/      /products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan       /products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/      /products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan          /products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/         /products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan       /products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/      /products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/products/pure-a2-gir-desi-cow-ghee-by-bilona                     /products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/products/pure-a2-gir-desi-cow-ghee-by-bilona/                    /products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/pure-a2-gir-desi-cow-ghee-by-bilona                     /products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/pure-a2-gir-desi-cow-ghee-by-bilona/                    /products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/pure-a2-gir-desi-cow-ghee-by-bilona                        /products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/pure-a2-gir-desi-cow-ghee-by-bilona/                       /products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/pure-a2-gir-desi-cow-ghee-by-bilona                     /products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/pure-a2-gir-desi-cow-ghee-by-bilona/                    /products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa/products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa//products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa/products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa//products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa/products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa//products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa/products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/pure-a2-gir-desi-cow-bilona-ghee-100-organic-ayurvedic-certified-usa//products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan//products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan//products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan  /products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/ /products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan//products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan//products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/products/pure-organic-a2-gir-cow-ghee/   301
+/en-ae/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan//products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/products/pure-organic-a2-gir-cow-ghee/   301
+/ar/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan//products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/products/pure-organic-a2-gir-cow-ghee/   301
+/ar-ae/products/copy-of-copy-of-pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan//products/pure-organic-a2-gir-cow-ghee/   301
+/en-us/collections/all                                                  /collections/all/                         301
+/en-us/collections/all/                                                 /collections/all/                         301
+/en-ae/collections/all                                                  /collections/all/                         301
+/en-ae/collections/all/                                                 /collections/all/                         301
+/ar/collections/all                                                     /collections/all/                         301
+/ar/collections/all/                                                    /collections/all/                         301
+/ar-ae/collections/all                                                  /collections/all/                         301
+/ar-ae/collections/all/                                                 /collections/all/                         301
+/en-us/collections/ghee                                                 /collections/all/?category=ghee           301
+/en-us/collections/ghee/                                                /collections/all/?category=ghee           301
+/en-ae/collections/ghee                                                 /collections/all/?category=ghee           301
+/en-ae/collections/ghee/                                                /collections/all/?category=ghee           301
+/ar/collections/ghee                                                    /collections/all/?category=ghee           301
+/ar/collections/ghee/                                                   /collections/all/?category=ghee           301
+/ar-ae/collections/ghee                                                 /collections/all/?category=ghee           301
+/ar-ae/collections/ghee/                                                /collections/all/?category=ghee           301
+/en-us/collections/dairy                                                /collections/all/?category=dairy          301
+/en-us/collections/dairy/                                               /collections/all/?category=dairy          301
+/en-ae/collections/dairy                                                /collections/all/?category=dairy          301
+/en-ae/collections/dairy/                                               /collections/all/?category=dairy          301
+/ar/collections/dairy                                                   /collections/all/?category=dairy          301
+/ar/collections/dairy/                                                  /collections/all/?category=dairy          301
+/ar-ae/collections/dairy                                                /collections/all/?category=dairy          301
+/ar-ae/collections/dairy/                                               /collections/all/?category=dairy          301
+/en-us/collections/sweets                                               /collections/all/?category=sweets         301
+/en-us/collections/sweets/                                              /collections/all/?category=sweets         301
+/en-ae/collections/sweets                                               /collections/all/?category=sweets         301
+/en-ae/collections/sweets/                                              /collections/all/?category=sweets         301
+/ar/collections/sweets                                                  /collections/all/?category=sweets         301
+/ar/collections/sweets/                                                 /collections/all/?category=sweets         301
+/ar-ae/collections/sweets                                               /collections/all/?category=sweets         301
+/ar-ae/collections/sweets/                                              /collections/all/?category=sweets         301
+/en-us/collections/desserts                                             /collections/all/?category=sweets         301
+/en-us/collections/desserts/                                            /collections/all/?category=sweets         301
+/en-ae/collections/desserts                                             /collections/all/?category=sweets         301
+/en-ae/collections/desserts/                                            /collections/all/?category=sweets         301
+/ar/collections/desserts                                                /collections/all/?category=sweets         301
+/ar/collections/desserts/                                               /collections/all/?category=sweets         301
+/ar-ae/collections/desserts                                             /collections/all/?category=sweets         301
+/ar-ae/collections/desserts/                                            /collections/all/?category=sweets         301
+/en-us/collections/seed-nuts                                            /collections/all/?category=seeds-nuts     301
+/en-us/collections/seed-nuts/                                           /collections/all/?category=seeds-nuts     301
+/en-ae/collections/seed-nuts                                            /collections/all/?category=seeds-nuts     301
+/en-ae/collections/seed-nuts/                                           /collections/all/?category=seeds-nuts     301
+/ar/collections/seed-nuts                                               /collections/all/?category=seeds-nuts     301
+/ar/collections/seed-nuts/                                              /collections/all/?category=seeds-nuts     301
+/ar-ae/collections/seed-nuts                                            /collections/all/?category=seeds-nuts     301
+/ar-ae/collections/seed-nuts/                                           /collections/all/?category=seeds-nuts     301
+/en-us/collections/seeds-nuts                                           /collections/all/?category=seeds-nuts     301
+/en-us/collections/seeds-nuts/                                          /collections/all/?category=seeds-nuts     301
+/en-ae/collections/seeds-nuts                                           /collections/all/?category=seeds-nuts     301
+/en-ae/collections/seeds-nuts/                                          /collections/all/?category=seeds-nuts     301
+/ar/collections/seeds-nuts                                              /collections/all/?category=seeds-nuts     301
+/ar/collections/seeds-nuts/                                             /collections/all/?category=seeds-nuts     301
+/ar-ae/collections/seeds-nuts                                           /collections/all/?category=seeds-nuts     301
+/ar-ae/collections/seeds-nuts/                                          /collections/all/?category=seeds-nuts     301
+/en-us/collections                                                      /collections/all/                         301
+/en-us/collections/                                                     /collections/all/                         301
+/en-ae/collections                                                      /collections/all/                         301
+/en-ae/collections/                                                     /collections/all/                         301
+/ar/collections                                                         /collections/all/                         301
+/ar/collections/                                                        /collections/all/                         301
+/ar-ae/collections                                                      /collections/all/                         301
+/ar-ae/collections/                                                     /collections/all/                         301
+/en-us/comments                                                         /                                         301
+/en-us/comments/                                                        /                                         301
+/en-ae/comments                                                         /                                         301
+/en-ae/comments/                                                        /                                         301
+/ar/comments                                                            /                                         301
+/ar/comments/                                                           /                                         301
+/ar-ae/comments                                                         /                                         301
+/ar-ae/comments/                                                        /                                         301
+/en-us/search                                                           /                                         301
+/en-us/search/                                                          /                                         301
+/en-ae/search                                                           /                                         301
+/en-ae/search/                                                          /                                         301
+/ar/search                                                              /                                         301
+/ar/search/                                                             /                                         301
+/ar-ae/search                                                           /                                         301
+/ar-ae/search/                                                          /                                         301
+/en-us                                                                  /                                         301
+/en-us/                                                                 /                                         301
+/en-us/cart                                                             /cart/                                    301
+/en-us/cart/                                                            /cart/                                    301
+/en-ae                                                                  /                                         301
+/en-ae/                                                                 /                                         301
+/en-ae/cart                                                             /cart/                                    301
+/en-ae/cart/                                                            /cart/                                    301
+/ar                                                                     /                                         301
+/ar/                                                                    /                                         301
+/ar/cart                                                                /cart/                                    301
+/ar/cart/                                                               /cart/                                    301
+/ar-ae                                                                  /                                         301
+/ar-ae/                                                                 /                                         301
+/ar-ae/cart                                                             /cart/                                    301
+/ar-ae/cart/                                                            /cart/                                    301
+/en-us/*                                                                /:splat                                   301
+/en-ae/*                                                                /:splat                                   301
+/ar/*                                                                   /:splat                                   301
+/ar-ae/*                                                                /:splat                                   301
