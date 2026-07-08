@@ -3,6 +3,130 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/products/:slug",
+      "has": [
+        {
+          "type": "query",
+          "key": "pr_prod_strat"
+        }
+      ],
+      "destination": "/products/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/products/:slug",
+      "has": [
+        {
+          "type": "query",
+          "key": "pr_rec_id"
+        }
+      ],
+      "destination": "/products/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/products/:slug/",
+      "has": [
+        {
+          "type": "query",
+          "key": "pr_prod_strat"
+        }
+      ],
+      "destination": "/products/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/products/:slug/",
+      "has": [
+        {
+          "type": "query",
+          "key": "pr_rec_id"
+        }
+      ],
+      "destination": "/products/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/blog-post.html",
       "has": [
         {
@@ -182,66 +306,6 @@
       "permanent": true
     },
     {
-      "source": "/collections/ghee",
-      "destination": "/collections/all/?category=ghee",
-      "permanent": true
-    },
-    {
-      "source": "/collections/ghee/",
-      "destination": "/collections/all/?category=ghee",
-      "permanent": true
-    },
-    {
-      "source": "/collections/dairy",
-      "destination": "/collections/all/?category=dairy",
-      "permanent": true
-    },
-    {
-      "source": "/collections/dairy/",
-      "destination": "/collections/all/?category=dairy",
-      "permanent": true
-    },
-    {
-      "source": "/collections/sweets",
-      "destination": "/collections/all/?category=sweets",
-      "permanent": true
-    },
-    {
-      "source": "/collections/sweets/",
-      "destination": "/collections/all/?category=sweets",
-      "permanent": true
-    },
-    {
-      "source": "/collections/desserts",
-      "destination": "/collections/all/?category=sweets",
-      "permanent": true
-    },
-    {
-      "source": "/collections/desserts/",
-      "destination": "/collections/all/?category=sweets",
-      "permanent": true
-    },
-    {
-      "source": "/collections/seed-nuts",
-      "destination": "/collections/all/?category=seeds-nuts",
-      "permanent": true
-    },
-    {
-      "source": "/collections/seed-nuts/",
-      "destination": "/collections/all/?category=seeds-nuts",
-      "permanent": true
-    },
-    {
-      "source": "/collections/seeds-nuts",
-      "destination": "/collections/all/?category=seeds-nuts",
-      "permanent": true
-    },
-    {
-      "source": "/collections/seeds-nuts/",
-      "destination": "/collections/all/?category=seeds-nuts",
-      "permanent": true
-    },
-    {
       "source": "/collections/all/products",
       "destination": "/collections/all/",
       "permanent": true
@@ -249,16 +313,6 @@
     {
       "source": "/collections/all/products/",
       "destination": "/collections/all/",
-      "permanent": true
-    },
-    {
-      "source": "/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan",
-      "destination": "/products/pure-organic-a2-gir-cow-ghee/",
-      "permanent": true
-    },
-    {
-      "source": "/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/",
-      "destination": "/products/pure-organic-a2-gir-cow-ghee/",
       "permanent": true
     },
     {
@@ -447,6 +501,16 @@
       "permanent": true
     },
     {
+      "source": "/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan",
+      "destination": "/products/pure-organic-a2-gir-cow-ghee/",
+      "permanent": true
+    },
+    {
+      "source": "/products/pure-organic-a2-gir-cow-ghee-desi-cow-gir-govalan/",
+      "destination": "/products/pure-organic-a2-gir-cow-ghee/",
+      "permanent": true
+    },
+    {
       "source": "/products/pure-a2-gir-desi-cow-ghee-by-bilona",
       "destination": "/products/pure-organic-a2-gir-cow-ghee/",
       "permanent": true
@@ -487,6 +551,76 @@
       "permanent": true
     },
     {
+      "source": "/collections/ghee",
+      "destination": "/collections/all/?category=ghee",
+      "permanent": true
+    },
+    {
+      "source": "/collections/ghee/",
+      "destination": "/collections/all/?category=ghee",
+      "permanent": true
+    },
+    {
+      "source": "/collections/dairy",
+      "destination": "/collections/all/?category=dairy",
+      "permanent": true
+    },
+    {
+      "source": "/collections/dairy/",
+      "destination": "/collections/all/?category=dairy",
+      "permanent": true
+    },
+    {
+      "source": "/collections/sweets",
+      "destination": "/collections/all/?category=sweets",
+      "permanent": true
+    },
+    {
+      "source": "/collections/sweets/",
+      "destination": "/collections/all/?category=sweets",
+      "permanent": true
+    },
+    {
+      "source": "/collections/desserts",
+      "destination": "/collections/all/?category=sweets",
+      "permanent": true
+    },
+    {
+      "source": "/collections/desserts/",
+      "destination": "/collections/all/?category=sweets",
+      "permanent": true
+    },
+    {
+      "source": "/collections/seed-nuts",
+      "destination": "/collections/all/?category=seeds-nuts",
+      "permanent": true
+    },
+    {
+      "source": "/collections/seed-nuts/",
+      "destination": "/collections/all/?category=seeds-nuts",
+      "permanent": true
+    },
+    {
+      "source": "/collections/seeds-nuts",
+      "destination": "/collections/all/?category=seeds-nuts",
+      "permanent": true
+    },
+    {
+      "source": "/collections/seeds-nuts/",
+      "destination": "/collections/all/?category=seeds-nuts",
+      "permanent": true
+    },
+    {
+      "source": "/collections/frontpage",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/collections/frontpage/",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
       "source": "/collections",
       "destination": "/collections/all/",
       "permanent": true
@@ -494,6 +628,16 @@
     {
       "source": "/collections/",
       "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/footer-image-and-text",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/footer-image-and-text/",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -1517,6 +1661,46 @@
       "permanent": true
     },
     {
+      "source": "/en-us/collections/frontpage",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/frontpage/",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/frontpage",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/frontpage/",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/frontpage",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/frontpage/",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/frontpage",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/frontpage/",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
       "source": "/en-us/collections",
       "destination": "/collections/all/",
       "permanent": true
@@ -1554,6 +1738,46 @@
     {
       "source": "/ar-ae/collections/",
       "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/pages/footer-image-and-text",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/pages/footer-image-and-text/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/pages/footer-image-and-text",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/pages/footer-image-and-text/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/pages/footer-image-and-text",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/pages/footer-image-and-text/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/pages/footer-image-and-text",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/pages/footer-image-and-text/",
+      "destination": "/",
       "permanent": true
     },
     {

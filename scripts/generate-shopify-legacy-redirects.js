@@ -34,7 +34,9 @@ const map = [
   ['/collections/desserts', '/collections/all/?category=sweets'],
   ['/collections/seed-nuts', '/collections/all/?category=seeds-nuts'],
   ['/collections/seeds-nuts', '/collections/all/?category=seeds-nuts'],
+  ['/collections/frontpage', '/collections/all/'],
   ['/collections', '/collections/all/'],
+  ['/pages/footer-image-and-text', '/'],
   ['/comments', '/'],
   ['/search', '/']
 ];

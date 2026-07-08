@@ -76,6 +76,24 @@
 /blogs/news/_post/          /blogs/news/                  301
 /blogs/news/article/        /blogs/news/                  301
 
+# Priority locale hubs (one-hop canonical consolidation)
+/en-us/collections                                                      /collections/all/                         301
+/en-us/collections/                                                     /collections/all/                         301
+/en-us                                                                  /                                         301
+/en-us/                                                                 /                                         301
+/en-ae/collections                                                      /collections/all/                         301
+/en-ae/collections/                                                     /collections/all/                         301
+/en-ae                                                                  /                                         301
+/en-ae/                                                                 /                                         301
+/ar/collections                                                         /collections/all/                         301
+/ar/collections/                                                        /collections/all/                         301
+/ar                                                                     /                                         301
+/ar/                                                                    /                                         301
+/ar-ae/collections                                                      /collections/all/                         301
+/ar-ae/collections/                                                     /collections/all/                         301
+/ar-ae                                                                  /                                         301
+/ar-ae/                                                                 /                                         301
+
 # Shopify marketplace/locale legacy URLs (GSC blocked-by-robots leftovers)
 /pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping              /gir-cow-ghee-usa/                        301
 /pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/             /gir-cow-ghee-usa/                        301
@@ -117,8 +135,12 @@
 /collections/seed-nuts/                                                 /collections/all/?category=seeds-nuts     301
 /collections/seeds-nuts                                                 /collections/all/?category=seeds-nuts     301
 /collections/seeds-nuts/                                                /collections/all/?category=seeds-nuts     301
+/collections/frontpage                                                  /collections/all/                         301
+/collections/frontpage/                                                 /collections/all/                         301
 /collections                                                            /collections/all/                         301
 /collections/                                                           /collections/all/                         301
+/pages/footer-image-and-text                                            /                                         301
+/pages/footer-image-and-text/                                           /                                         301
 /comments                                                               /                                         301
 /comments/                                                              /                                         301
 /search                                                                 /                                         301
@@ -323,6 +345,14 @@
 /ar/collections/seeds-nuts/                                             /collections/all/?category=seeds-nuts     301
 /ar-ae/collections/seeds-nuts                                           /collections/all/?category=seeds-nuts     301
 /ar-ae/collections/seeds-nuts/                                          /collections/all/?category=seeds-nuts     301
+/en-us/collections/frontpage                                            /collections/all/                         301
+/en-us/collections/frontpage/                                           /collections/all/                         301
+/en-ae/collections/frontpage                                            /collections/all/                         301
+/en-ae/collections/frontpage/                                           /collections/all/                         301
+/ar/collections/frontpage                                               /collections/all/                         301
+/ar/collections/frontpage/                                              /collections/all/                         301
+/ar-ae/collections/frontpage                                            /collections/all/                         301
+/ar-ae/collections/frontpage/                                           /collections/all/                         301
 /en-us/collections                                                      /collections/all/                         301
 /en-us/collections/                                                     /collections/all/                         301
 /en-ae/collections                                                      /collections/all/                         301
@@ -331,6 +361,14 @@
 /ar/collections/                                                        /collections/all/                         301
 /ar-ae/collections                                                      /collections/all/                         301
 /ar-ae/collections/                                                     /collections/all/                         301
+/en-us/pages/footer-image-and-text                                      /                                         301
+/en-us/pages/footer-image-and-text/                                     /                                         301
+/en-ae/pages/footer-image-and-text                                      /                                         301
+/en-ae/pages/footer-image-and-text/                                     /                                         301
+/ar/pages/footer-image-and-text                                         /                                         301
+/ar/pages/footer-image-and-text/                                        /                                         301
+/ar-ae/pages/footer-image-and-text                                      /                                         301
+/ar-ae/pages/footer-image-and-text/                                     /                                         301
 /en-us/comments                                                         /                                         301
 /en-us/comments/                                                        /                                         301
 /en-ae/comments                                                         /                                         301

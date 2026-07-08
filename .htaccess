@@ -40,6 +40,17 @@ RewriteRule ^blog/bilona-ghee-vs-regular-ghee/?$ /blogs/news/bilona-ghee-vs-regu
 RewriteRule ^blog/gir-cow-ghee-price/?$ /blogs/news/gir-cow-ghee-price/ [R=301,L]
 RewriteRule ^blog/how-to-identify-pure-ghee/?$ /blogs/news/how-to-identify-pure-ghee/ [R=301,L]
 
+# Priority: locale hubs and Shopify tracking cleanup
+RewriteCond %{QUERY_STRING} (^|&)pr_(prod_strat|rec_id|rec_pid|ref_pid|seq)= [NC]
+RewriteRule ^products/([^/]+)/?$ /products/$1/ [R=301,L]
+RewriteRule ^en-us/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^en-us/?$ / [R=301,L]
+RewriteRule ^en-ae/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^en-ae/?$ / [R=301,L]
+RewriteRule ^ar/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^ar/?$ / [R=301,L]
+RewriteRule ^ar-ae/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^ar-ae/?$ / [R=301,L]
 
 # Shopify marketplace/locale legacy URLs (GSC blocked-by-robots leftovers)
 RewriteRule ^pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/?$ /gir-cow-ghee-usa/ [R=301,L]
@@ -62,7 +73,9 @@ RewriteRule ^collections/sweets/?$ /collections/all/?category=sweets [R=301,L]
 RewriteRule ^collections/desserts/?$ /collections/all/?category=sweets [R=301,L]
 RewriteRule ^collections/seed-nuts/?$ /collections/all/?category=seeds-nuts [R=301,L]
 RewriteRule ^collections/seeds-nuts/?$ /collections/all/?category=seeds-nuts [R=301,L]
+RewriteRule ^collections/frontpage/?$ /collections/all/ [R=301,L]
 RewriteRule ^collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^pages/footer-image-and-text/?$ / [R=301,L]
 RewriteRule ^comments/?$ / [R=301,L]
 RewriteRule ^search/?$ / [R=301,L]
 RewriteRule ^en-us/pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/?$ /gir-cow-ghee-usa/ [R=301,L]
@@ -165,10 +178,18 @@ RewriteRule ^en-us/collections/seeds-nuts/?$ /collections/all/?category=seeds-nu
 RewriteRule ^en-ae/collections/seeds-nuts/?$ /collections/all/?category=seeds-nuts [R=301,L]
 RewriteRule ^ar/collections/seeds-nuts/?$ /collections/all/?category=seeds-nuts [R=301,L]
 RewriteRule ^ar-ae/collections/seeds-nuts/?$ /collections/all/?category=seeds-nuts [R=301,L]
+RewriteRule ^en-us/collections/frontpage/?$ /collections/all/ [R=301,L]
+RewriteRule ^en-ae/collections/frontpage/?$ /collections/all/ [R=301,L]
+RewriteRule ^ar/collections/frontpage/?$ /collections/all/ [R=301,L]
+RewriteRule ^ar-ae/collections/frontpage/?$ /collections/all/ [R=301,L]
 RewriteRule ^en-us/collections/?$ /collections/all/ [R=301,L]
 RewriteRule ^en-ae/collections/?$ /collections/all/ [R=301,L]
 RewriteRule ^ar/collections/?$ /collections/all/ [R=301,L]
 RewriteRule ^ar-ae/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^en-us/pages/footer-image-and-text/?$ / [R=301,L]
+RewriteRule ^en-ae/pages/footer-image-and-text/?$ / [R=301,L]
+RewriteRule ^ar/pages/footer-image-and-text/?$ / [R=301,L]
+RewriteRule ^ar-ae/pages/footer-image-and-text/?$ / [R=301,L]
 RewriteRule ^en-us/comments/?$ / [R=301,L]
 RewriteRule ^en-ae/comments/?$ / [R=301,L]
 RewriteRule ^ar/comments/?$ / [R=301,L]
@@ -189,13 +210,3 @@ RewriteRule ^en-us/(.*)$ /$1 [R=301,L]
 RewriteRule ^en-ae/(.*)$ /$1 [R=301,L]
 RewriteRule ^ar/(.*)$ /$1 [R=301,L]
 RewriteRule ^ar-ae/(.*)$ /$1 [R=301,L]
-
-# Trailing slash for pages
-RewriteRule ^pages/contact$ /pages/contact/ [R=301,L]
-RewriteRule ^pages/who-is-gir-govalan$ /pages/who-is-gir-govalan/ [R=301,L]
-RewriteRule ^pages/gallery$ /pages/gallery/ [R=301,L]
-
-# Trailing slash for directories
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_URI} !/$
-RewriteRule ^(.*)$ $1/ [R=301,L]
