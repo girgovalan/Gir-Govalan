@@ -52,6 +52,26 @@ RewriteRule ^ar/?$ / [R=301,L]
 RewriteRule ^ar-ae/collections/?$ /collections/all/ [R=301,L]
 RewriteRule ^ar-ae/?$ / [R=301,L]
 
+# Priority: locale hubs
+RewriteRule ^en-us/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^en-us/?$ / [R=301,L]
+RewriteRule ^en-ae/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^en-ae/?$ / [R=301,L]
+RewriteRule ^ar/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^ar/?$ / [R=301,L]
+RewriteRule ^ar-ae/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^ar-ae/?$ / [R=301,L]
+
+# Priority: locale hubs
+RewriteRule ^en-us/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^en-us/?$ / [R=301,L]
+RewriteRule ^en-ae/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^en-ae/?$ / [R=301,L]
+RewriteRule ^ar/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^ar/?$ / [R=301,L]
+RewriteRule ^ar-ae/collections/?$ /collections/all/ [R=301,L]
+RewriteRule ^ar-ae/?$ / [R=301,L]
+
 # Shopify marketplace/locale legacy URLs (GSC blocked-by-robots leftovers)
 RewriteRule ^pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/?$ /gir-cow-ghee-usa/ [R=301,L]
 RewriteRule ^pages/copy-of-copy-of-buy-authentic-gir-cow-ghee-in-the-canada/?$ /a2-gir-cow-ghee-canada/ [R=301,L]

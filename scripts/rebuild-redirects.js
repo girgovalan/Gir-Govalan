@@ -16,22 +16,6 @@ function readJson(file) {
 function priorityVercelRules() {
   const rules = [];
 
-  // Strip Shopify recommendation tracking params to the clean product URL.
-  for (const suffix of ['', '/']) {
-    rules.push({
-      source: `/products/:slug${suffix}`,
-      has: [{ type: 'query', key: 'pr_prod_strat' }],
-      destination: `/products/:slug/`,
-      permanent: true
-    });
-    rules.push({
-      source: `/products/:slug${suffix}`,
-      has: [{ type: 'query', key: 'pr_rec_id' }],
-      destination: `/products/:slug/`,
-      permanent: true
-    });
-  }
-
   // Locale collection hubs → canonical products page in one hop.
   for (const loc of locales) {
     rules.push({ source: `/${loc}/collections`, destination: '/collections/all/', permanent: true });
@@ -55,11 +39,7 @@ function priorityNetlify() {
 }
 
 function priorityHtaccess() {
-  const lines = [
-    '# Priority: locale hubs and Shopify tracking cleanup',
-    'RewriteCond %{QUERY_STRING} (^|&)pr_(prod_strat|rec_id|rec_pid|ref_pid|seq)= [NC]',
-    'RewriteRule ^products/([^/]+)/?$ /products/$1/ [R=301,L]'
-  ];
+  const lines = ['# Priority: locale hubs'];
   for (const loc of locales) {
     lines.push(`RewriteRule ^${loc}/collections/?$ /collections/all/ [R=301,L]`);
     lines.push(`RewriteRule ^${loc}/?$ / [R=301,L]`);
@@ -78,7 +58,10 @@ const priorityKeys = new Set(priorityVercelRules().map((r) => r.source + '=>' + 
 
 const baseRedirects = current.redirects.filter((r) => {
   const key = r.source + '=>' + r.destination;
-  return !generatedKeys.has(key) && !priorityKeys.has(key);
+  if (generatedKeys.has(key) || priorityKeys.has(key)) return false;
+  // Drop broken Shopify tracking-param rules (Vercel preserves query → redirect loop).
+  if (Array.isArray(r.has) && r.has.some((h) => /^pr_/.test(h.key || ''))) return false;
+  return true;
 });
 
 const vercel = {

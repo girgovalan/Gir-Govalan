@@ -94,6 +94,42 @@
 /ar-ae                                                                  /                                         301
 /ar-ae/                                                                 /                                         301
 
+# Priority locale hubs (one-hop canonical consolidation)
+/en-us/collections                                                      /collections/all/                         301
+/en-us/collections/                                                     /collections/all/                         301
+/en-us                                                                  /                                         301
+/en-us/                                                                 /                                         301
+/en-ae/collections                                                      /collections/all/                         301
+/en-ae/collections/                                                     /collections/all/                         301
+/en-ae                                                                  /                                         301
+/en-ae/                                                                 /                                         301
+/ar/collections                                                         /collections/all/                         301
+/ar/collections/                                                        /collections/all/                         301
+/ar                                                                     /                                         301
+/ar/                                                                    /                                         301
+/ar-ae/collections                                                      /collections/all/                         301
+/ar-ae/collections/                                                     /collections/all/                         301
+/ar-ae                                                                  /                                         301
+/ar-ae/                                                                 /                                         301
+
+# Priority locale hubs (one-hop canonical consolidation)
+/en-us/collections                                                      /collections/all/                         301
+/en-us/collections/                                                     /collections/all/                         301
+/en-us                                                                  /                                         301
+/en-us/                                                                 /                                         301
+/en-ae/collections                                                      /collections/all/                         301
+/en-ae/collections/                                                     /collections/all/                         301
+/en-ae                                                                  /                                         301
+/en-ae/                                                                 /                                         301
+/ar/collections                                                         /collections/all/                         301
+/ar/collections/                                                        /collections/all/                         301
+/ar                                                                     /                                         301
+/ar/                                                                    /                                         301
+/ar-ae/collections                                                      /collections/all/                         301
+/ar-ae/collections/                                                     /collections/all/                         301
+/ar-ae                                                                  /                                         301
+/ar-ae/                                                                 /                                         301
+
 # Shopify marketplace/locale legacy URLs (GSC blocked-by-robots leftovers)
 /pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping              /gir-cow-ghee-usa/                        301
 /pages/buy-authentic-gir-cow-ghee-in-the-usa-free-shipping/             /gir-cow-ghee-usa/                        301
