@@ -74,7 +74,7 @@
 
   const CATEGORY_SEO = {
     ghee: { title: 'Gir Cow Ghee', description: 'Pure A2 Gir cow ghee — bilona method, hand-churned in Gujarat. Shop Gir Govalan ghee online.' },
-    dairy: { title: 'Dairy Products', description: 'A2 Gir cow milk, fresh curd and dairy from Gir Govalan farm.' },
+    dairy: { title: 'Dairy Products', description: 'A2 Gir cow milk Surat delivery, fresh curd and dairy from Gir Govalan farm. Shop pure Gir breed milk online.' },
     sweets: { title: 'Traditional Sweets', description: 'Homestyle sweets made with Gir cow ghee — ladoo, shrikhand and more.' },
     'seeds-nuts': { title: 'Seeds & Nuts', description: 'Premium almonds and dry fruits from Gir Govalan.' }
   };
