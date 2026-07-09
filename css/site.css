@@ -1485,6 +1485,23 @@ section.bg-cream {
 .product-details .check-list { list-style: none; padding-left: 0; }
 .product-details .check-list li::before { content: "✓ "; color: var(--accent-1); font-weight: 700; }
 .product-faq h3 { font-size: 1rem; margin-top: 1.5rem; }
+.product-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.95rem;
+}
+.product-compare-table th,
+.product-compare-table td {
+  border: 1px solid rgba(0,0,0,.1);
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+.product-compare-table th {
+  background: var(--cream, #faf6ef);
+  color: var(--accent-1);
+}
 .product-tagline {
   text-align: center;
   font-size: 1.1rem;

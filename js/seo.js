@@ -161,13 +161,16 @@
       const id = path.replace('/products/', '').replace(/\/$/, '');
       const p = typeof getProduct === 'function' ? getProduct(id) : null;
       if (p) {
+        const productTitle = p.seoTitle || `${p.name} — Buy Online | Gir Govalan`;
+        const productDescription = p.metaDescription || p.description;
         return {
-          title: `${p.name} — Buy Online | Gir Govalan`,
-          description: p.description,
+          title: productTitle,
+          description: productDescription,
           image: p.image,
           url: `${BASE}/products/${id}/`,
           type: 'product',
           product: p,
+          keywords: p.keywords,
           robots: 'index, follow'
         };
       }
@@ -290,7 +293,7 @@
         '@type': 'Product',
         name: p.name,
         image: p.image,
-        description: p.description,
+        description: p.metaDescription || p.description,
         brand: { '@type': 'Brand', name: p.vendor || SITE_NAME },
         offers: {
           '@type': 'Offer',
@@ -309,6 +312,16 @@
         };
       }
       injectJsonLd(productSchema);
+
+      const faqHtml = [p.tabs?.faq, p.longDescription].filter(Boolean).join('\n');
+      const faqEntities = extractFaqEntities(faqHtml);
+      if (faqEntities.length) {
+        injectJsonLd({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqEntities
+        });
+      }
     }
 
     if (meta.type === 'article' && meta.article) {

@@ -88,7 +88,11 @@
   const reviewCount = product.reviewCount ? `<span class="product-review-count">${product.reviewCount.toLocaleString('en-IN')} reviews</span>` : '';
   const trustHeadline = product.category === 'ghee'
     ? 'Authentic Gir Cow A2 Bilona Ghee — Made Traditionally From Gir Cows'
-    : 'Authentic farm-sourced quality from Gir Govalan';
+    : product.category === 'dairy' && product.id === 'a2-gir-milk'
+      ? 'Fresh A2 Gir Cow Milk — Farm to Home in Surat & Gujarat'
+      : product.category === 'dairy'
+        ? 'Fresh A2 Gir Cow Dairy — Farm-Sourced Quality from Gir Govalan'
+        : 'Authentic farm-sourced quality from Gir Govalan';
   const deliveryInfo = '<p class="product-delivery-note">Free delivery above ₹999 | Dispatch in 24-48 hours | WhatsApp support available</p>';
   const trustRow = `
     <div class="product-trust-row">
@@ -131,7 +135,11 @@
           <button type="button" class="btn btn-secondary" id="wa-single">Order on WhatsApp</button>
         </div>
         <div class="product-cta-row product-cta-row--secondary">
-          <a href="/blogs/news/how-to-identify-pure-gir-cow-ghee/" class="btn btn-outline">How to Identify Pure Ghee</a>
+          ${product.id === 'a2-gir-milk'
+            ? '<a href="/blogs/news/gir-cow-milk-for-toddlers/" class="btn btn-outline">A2 Milk Guide for Families</a>'
+            : product.category === 'ghee'
+              ? '<a href="/blogs/news/how-to-identify-pure-gir-cow-ghee/" class="btn btn-outline">How to Identify Pure Ghee</a>'
+              : '<a href="/blogs/news/benefits-of-gir-cow-ghee/" class="btn btn-outline">Gir Cow Ghee Benefits</a>'}
         </div>
       </div>
     </div>
