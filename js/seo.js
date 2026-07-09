@@ -231,6 +231,43 @@
     };
   }
 
+  function productOfferExtras() {
+    return {
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingRate: {
+          '@type': 'MonetaryAmount',
+          value: 0,
+          currency: 'INR'
+        },
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'IN'
+        },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 1,
+            maxValue: 2,
+            unitCode: 'DAY'
+          },
+          transitTime: {
+            '@type': 'QuantitativeValue',
+            minValue: 2,
+            maxValue: 7,
+            unitCode: 'DAY'
+          }
+        }
+      },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        applicableCountry: 'IN',
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted'
+      }
+    };
+  }
+
   function applySeo(meta) {
     document.title = meta.title;
     setMeta('description', meta.description);
@@ -292,7 +329,7 @@
         '@context': 'https://schema.org',
         '@type': 'Product',
         name: p.name,
-        image: p.image,
+        image: toAbsoluteImage(p.image),
         description: p.metaDescription || p.description,
         brand: { '@type': 'Brand', name: p.vendor || SITE_NAME },
         offers: {
@@ -301,7 +338,8 @@
           priceCurrency: 'INR',
           price: p.price,
           availability: 'https://schema.org/InStock',
-          seller: { '@type': 'Organization', name: SITE_NAME }
+          seller: { '@type': 'Organization', name: SITE_NAME },
+          ...productOfferExtras()
         }
       };
       if (p.reviewCount && p.rating) {
