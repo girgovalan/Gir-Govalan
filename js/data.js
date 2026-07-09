@@ -25,7 +25,9 @@ const SITE = {
     facebook: 'https://www.facebook.com/GirGovalan/',
     instagram: 'https://www.instagram.com/girgovalan/',
     youtube: 'https://www.youtube.com/@GirGovalan',
-    twitter: 'https://twitter.com/GirGovalan'
+    twitter: 'https://twitter.com/GirGovalan',
+    linkedin: 'https://www.linkedin.com/company/girgovalan/',
+    pinterest: 'https://in.pinterest.com/girgovalan/'
   },
   logo: `${CDN}/logo_done_3a598d0d-0c1a-41fb-9aac-92c5d9a2f98f.jpg`,
   logoWidth: 300,

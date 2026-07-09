@@ -91,6 +91,40 @@
     `;
   }
 
+  function socialLinksHtml() {
+    return `
+      <a class="social-icon-link" href="${SITE.social.facebook}" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <path d="M13.5 8.5V6.8c0-.7.5-1.2 1.2-1.2h1.8V2.5h-2.7c-2.5 0-4.1 1.6-4.1 4.2v1.8H7v3.1h2.7v9h3.8v-9h2.8l.4-3.1h-3.2z"></path>
+        </svg>
+      </a>
+      <a class="social-icon-link" href="${SITE.social.instagram}" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <path d="M7.8 2.5h8.4c2.9 0 5.3 2.4 5.3 5.3v8.4c0 2.9-2.4 5.3-5.3 5.3H7.8c-2.9 0-5.3-2.4-5.3-5.3V7.8c0-2.9 2.4-5.3 5.3-5.3zm0 1.9c-1.9 0-3.4 1.5-3.4 3.4v8.4c0 1.9 1.5 3.4 3.4 3.4h8.4c1.9 0 3.4-1.5 3.4-3.4V7.8c0-1.9-1.5-3.4-3.4-3.4H7.8zm8.8 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4zm0 1.9a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6z"></path>
+        </svg>
+      </a>
+      <a class="social-icon-link" href="${SITE.social.youtube}" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <path d="M21.6 8.2a3 3 0 0 0-2.1-2.1C17.7 5.6 12 5.6 12 5.6s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1C2 10 2 12 2 12s0 2 .4 3.8a3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1c.4-1.8.4-3.8.4-3.8s0-2-.4-3.8zM10 15.1V8.9L15.2 12 10 15.1z"></path>
+        </svg>
+      </a>
+      <a class="social-icon-link" href="${SITE.social.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.25h4.56V23H.22V8.25zM8.08 8.25h4.37v2.01h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.48 3.04 5.48 6.99V23h-4.56v-7.02c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.71V23H8.08V8.25z"></path>
+        </svg>
+      </a>
+      <a class="social-icon-link" href="${SITE.social.pinterest}" target="_blank" rel="noopener" aria-label="Pinterest">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.16 9.43 7.63 11.17-.11-.96-.2-2.43.04-3.48.22-.94 1.41-6 1.41-6s-.36-.72-.36-1.78c0-1.67.97-2.91 2.17-2.91 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-.99 4-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.25 3.78-5.5 0-2.87-2.06-4.88-5.01-4.88-3.41 0-5.42 2.56-5.42 5.21 0 1.03.4 2.14.89 2.74a.36.36 0 0 1 .08.34l-.33 1.36c-.05.2-.18.25-.42.15-1.57-.73-2.55-3.03-2.55-4.89 0-3.98 2.89-7.63 8.34-7.63 4.38 0 7.79 3.12 7.79 7.3 0 4.35-2.74 7.85-6.55 7.85-1.28 0-2.48-.66-2.89-1.44l-.79 3c-.29 1.12-1.07 2.53-1.6 3.39 1.21.37 2.49.57 3.82.57 6.63 0 12-5.37 12-12S18.63 0 12 0z"></path>
+        </svg>
+      </a>
+      <a class="social-icon-link" href="${SITE.social.twitter}" target="_blank" rel="noopener" aria-label="Twitter">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <path d="M18.9 3H22l-6.8 7.8L23 21h-6.2l-4.9-6.4L6.3 21H3.2l7.3-8.4L1 3h6.3l4.4 5.8L18.9 3zm-1.1 16h1.7L6.4 4.9H4.6L17.8 19z"></path>
+        </svg>
+      </a>`;
+  }
+
   function renderFooter() {
     const el = document.getElementById('site-footer');
     if (!el) return;
@@ -102,27 +136,8 @@
             <img src="${SITE.logoFooter}" alt="${SITE.name}" width="160" class="footer-logo">
             <p>At Gir Govalan, we honor the timeless legacy of Gir Cow Ghee, crafted the way nature intended. Born in the heart of the Gir region, our ghee is hand-churned using the ancient bilona method.</p>
             <p class="footer-tagline"><em>${SITE.tagline}</em></p>
-            <div class="social-links social-links-icons" aria-label="Social media links">
-              <a class="social-icon-link" href="${SITE.social.facebook}" target="_blank" rel="noopener" aria-label="Facebook">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                  <path d="M13.5 8.5V6.8c0-.7.5-1.2 1.2-1.2h1.8V2.5h-2.7c-2.5 0-4.1 1.6-4.1 4.2v1.8H7v3.1h2.7v9h3.8v-9h2.8l.4-3.1h-3.2z"></path>
-                </svg>
-              </a>
-              <a class="social-icon-link" href="${SITE.social.instagram}" target="_blank" rel="noopener" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                  <path d="M7.8 2.5h8.4c2.9 0 5.3 2.4 5.3 5.3v8.4c0 2.9-2.4 5.3-5.3 5.3H7.8c-2.9 0-5.3-2.4-5.3-5.3V7.8c0-2.9 2.4-5.3 5.3-5.3zm0 1.9c-1.9 0-3.4 1.5-3.4 3.4v8.4c0 1.9 1.5 3.4 3.4 3.4h8.4c1.9 0 3.4-1.5 3.4-3.4V7.8c0-1.9-1.5-3.4-3.4-3.4H7.8zm8.8 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4zM12 7.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4zm0 1.9a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6z"></path>
-                </svg>
-              </a>
-              <a class="social-icon-link" href="${SITE.social.youtube}" target="_blank" rel="noopener" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                  <path d="M21.6 8.2a3 3 0 0 0-2.1-2.1C17.7 5.6 12 5.6 12 5.6s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1C2 10 2 12 2 12s0 2 .4 3.8a3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1c.4-1.8.4-3.8.4-3.8s0-2-.4-3.8zM10 15.1V8.9L15.2 12 10 15.1z"></path>
-                </svg>
-              </a>
-              <a class="social-icon-link" href="${SITE.social.twitter}" target="_blank" rel="noopener" aria-label="Twitter">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-                  <path d="M18.9 3H22l-6.8 7.8L23 21h-6.2l-4.9-6.4L6.3 21H3.2l7.3-8.4L1 3h6.3l4.4 5.8L18.9 3zm-1.1 16h1.7L6.4 4.9H4.6L17.8 19z"></path>
-                </svg>
-              </a>
+            <div class="social-links social-links-icons" aria-label="Follow us on social media">
+              ${socialLinksHtml()}
             </div>
           </div>
           <div class="footer-col">
@@ -191,6 +206,9 @@
   document.addEventListener('DOMContentLoaded', () => {
     renderHeader();
     renderFooter();
+    document.querySelectorAll('[data-social-links]').forEach(el => {
+      el.innerHTML = socialLinksHtml();
+    });
     loadAnalytics();
   });
 })();

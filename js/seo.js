@@ -321,7 +321,9 @@
         'https://www.facebook.com/GirGovalan/',
         'https://www.instagram.com/girgovalan/',
         'https://www.youtube.com/@GirGovalan',
-        'https://twitter.com/GirGovalan'
+        'https://twitter.com/GirGovalan',
+        'https://www.linkedin.com/company/girgovalan/',
+        'https://in.pinterest.com/girgovalan/'
       ]
     });
 
