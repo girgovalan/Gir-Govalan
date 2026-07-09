@@ -5,8 +5,13 @@ const PRICES = {
     variants: { '250ml': 725, '500ml': 1300, '1L': 2500, '5L': 12000 }
   },
   'a2-gir-milk': {
-    price: 120,
-    variants: { '500ml': 65, '1L': 120 }
+    price: 840,
+    variants: {
+      'Pouch · 7 Litres': 700,
+      'Glass Bottle · 7 Litres': 840,
+      'Pouch · 31 Litres': 3100,
+      'Glass Bottle · 31 Litres': 3720
+    }
   },
   'fresh-curd': {
     price: 150,

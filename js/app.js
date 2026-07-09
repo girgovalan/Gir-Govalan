@@ -14,15 +14,17 @@ function saveCart(cart) {
   });
 }
 
-function addToCart(productId, qty = 1, variantLabel) {
+function addToCart(productId, qty = 1, variantLabel, priceOverride) {
   const product = getProduct(productId);
   if (!product) return;
   const cart = getCart();
   const key = variantLabel ? `${productId}::${variantLabel}` : productId;
   const existing = cart.find(i => i.key === key);
-  const price = variantLabel && product.variants
-    ? (product.variants.find(v => v.label === variantLabel)?.price || product.price)
-    : product.price;
+  const price = priceOverride != null
+    ? priceOverride
+    : (variantLabel && product.variants
+      ? (product.variants.find(v => v.label === variantLabel)?.price || product.price)
+      : product.price);
   if (existing) existing.qty += qty;
   else cart.push({ key, productId, name: product.name, price, qty: qty, variant: variantLabel || null, image: product.image });
   saveCart(cart);

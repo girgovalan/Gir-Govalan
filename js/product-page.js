@@ -16,15 +16,69 @@
   document.head.appendChild(link);
 
   const imgs = product.images || [product.image];
-  let selectedVariant = product.variants ? product.variants[0] : null;
-  let price = selectedVariant ? selectedVariant.price : product.price;
-  let compareAt = selectedVariant?.compareAt ?? product.compareAt;
+  const milkPricing = product.variantPricing;
+  let milkSelection = milkPricing
+    ? { material: milkPricing.default.material, litres: milkPricing.default.litres }
+    : null;
+
+  function milkRate(material) {
+    return milkPricing?.rates[material] || 0;
+  }
+
+  function milkPrice(material, litres) {
+    return milkRate(material) * litres;
+  }
+
+  function milkCompareAt(material, litres) {
+    const sale = milkPrice(material, litres);
+    if (material === 'pouch') return milkPrice('glass', litres);
+    return sale;
+  }
+
+  function milkMaterialLabel(material) {
+    return material === 'pouch' ? 'Pouch' : 'Glass Bottle';
+  }
+
+  function milkVariantLabel(material, litres) {
+    return `${milkMaterialLabel(material)} · ${litres} Litres`;
+  }
+
+  let selectedVariant = !milkPricing && product.variants ? product.variants[0] : null;
+  let price = milkPricing
+    ? milkPrice(milkSelection.material, milkSelection.litres)
+    : (selectedVariant ? selectedVariant.price : product.price);
+  let compareAt = milkPricing
+    ? milkCompareAt(milkSelection.material, milkSelection.litres)
+    : (selectedVariant?.compareAt ?? product.compareAt);
 
   function priceHtml(p, compare) {
     if (compare && compare > p) {
       return `<span class="product-price-sale">${formatPrice(p)}</span> <s class="product-price-was">${formatPrice(compare)}</s>`;
     }
     return formatPrice(p);
+  }
+
+  function shopifyPriceBlock(p, compare) {
+    const regular = compare && compare >= p ? compare : p;
+    const sale = p;
+  if (regular > sale) {
+      return `
+        <div class="product-price-block">
+          <p class="product-price-line"><span class="product-price-label">Regular price</span> <s class="product-price-was">${formatPrice(regular)}</s></p>
+          <p class="product-price-line product-price-line--sale"><span class="product-price-label">Sale price</span> <span class="product-price-sale" id="product-price">${formatPrice(sale)}</span></p>
+        </div>`;
+    }
+    return `
+      <div class="product-price-block">
+        <p class="product-price-line"><span class="product-price-label">Regular price</span> <span id="product-price-regular">${formatPrice(regular)}</span></p>
+        <p class="product-price-line product-price-line--sale"><span class="product-price-label">Sale price</span> <span class="product-price-sale" id="product-price">${formatPrice(sale)}</span></p>
+      </div>`;
+  }
+
+  function updateMainPrice() {
+    const block = document.getElementById('product-price-block');
+    if (!block) return;
+    block.innerHTML = shopifyPriceBlock(price, compareAt).trim();
   }
 
   function variantButtons() {
@@ -35,6 +89,103 @@
         <span class="variant-pill-price">${formatPrice(v.price)}</span>
       </button>`).join('');
   }
+
+  function milkVariantSection() {
+    const presets = milkPricing.litrePresets;
+    const materialButtons = ['pouch', 'glass'].map(id => {
+      const active = milkSelection.material === id ? ' active' : '';
+      const label = milkMaterialLabel(id);
+      const rate = milkRate(id);
+      const total = milkPrice(id, milkSelection.litres);
+      return `<button type="button" class="variant-pill${active}" data-milk-material="${id}">
+        <span class="variant-pill-label">${label} <small>(Rs ${rate}/ltr)</small></span>
+        <span class="variant-pill-price">${formatPrice(total)}</span>
+      </button>`;
+    }).join('');
+
+    const litreButtons = presets.map(p => {
+      const active = milkSelection.litres === p.litres ? ' active' : '';
+      const total = milkPrice(milkSelection.material, p.litres);
+      return `<button type="button" class="variant-pill${active}" data-milk-litres="${p.litres}">
+        <span class="variant-pill-label">${p.litres} Litres <small>${p.hint}</small></span>
+        <span class="variant-pill-price">${formatPrice(total)}</span>
+      </button>`;
+    }).join('');
+
+    const { min, max } = milkPricing.customLitres;
+    const calcNote = `Rs ${milkRate(milkSelection.material)}/ltr × ${milkSelection.litres} litres = ${formatPrice(price)}`;
+
+    return `
+      <p class="variant-label"><strong>Material:</strong> <span id="selected-material">${milkMaterialLabel(milkSelection.material)}</span></p>
+      <div class="variant-pills variant-pills-stacked" id="variants-material">${materialButtons}</div>
+      <p class="variant-label"><strong>Select litres:</strong> <span id="selected-litres">${milkSelection.litres} Litres</span></p>
+      <div class="variant-pills variant-pills-stacked" id="variants-litres">${litreButtons}</div>
+      <div class="litre-custom-row">
+        <label class="litre-custom-label" for="custom-litres">Custom litres (${min}–${max})</label>
+        <div class="delivery-check-row">
+          <input type="number" class="delivery-pincode-input" id="custom-litres" min="${min}" max="${max}" placeholder="e.g. 10" inputmode="numeric">
+          <button type="button" class="btn btn-outline btn-delivery-check" id="apply-custom-litres">Apply</button>
+        </div>
+      </div>
+      <p class="product-price-calc-note" id="price-calc-note">${calcNote}</p>`;
+  }
+
+  function refreshMilkVariantUi() {
+    price = milkPrice(milkSelection.material, milkSelection.litres);
+    compareAt = milkCompareAt(milkSelection.material, milkSelection.litres);
+    selectedVariant = { label: milkVariantLabel(milkSelection.material, milkSelection.litres), price, compareAt };
+    updateMainPrice();
+
+    document.querySelectorAll('[data-milk-material]').forEach(btn => {
+      const id = btn.dataset.milkMaterial;
+      btn.classList.toggle('active', milkSelection.material === id);
+      const priceEl = btn.querySelector('.variant-pill-price');
+      if (priceEl) priceEl.textContent = formatPrice(milkPrice(id, milkSelection.litres));
+    });
+
+    document.querySelectorAll('[data-milk-litres]').forEach(btn => {
+      const litres = +btn.dataset.milkLitres;
+      btn.classList.toggle('active', milkSelection.litres === litres);
+      const priceEl = btn.querySelector('.variant-pill-price');
+      if (priceEl) priceEl.textContent = formatPrice(milkPrice(milkSelection.material, litres));
+    });
+
+    const matEl = document.getElementById('selected-material');
+    const litresEl = document.getElementById('selected-litres');
+    const noteEl = document.getElementById('price-calc-note');
+    if (matEl) matEl.textContent = milkMaterialLabel(milkSelection.material);
+    if (litresEl) litresEl.textContent = `${milkSelection.litres} Litres`;
+    if (noteEl) {
+      noteEl.textContent = `Rs ${milkRate(milkSelection.material)}/ltr × ${milkSelection.litres} litres = ${formatPrice(price)}`;
+    }
+  }
+
+  function deliveryCheckSection() {
+    if (!product.deliveryCheck) return '';
+    return `
+      <div class="product-delivery-check">
+        <p class="variant-label product-delivery-check-title"><strong>DELIVERY OPTIONS</strong></p>
+        <div class="delivery-check-row">
+          <input type="text" class="delivery-pincode-input" id="delivery-pincode" placeholder="Enter your zipcode" maxlength="6" inputmode="numeric" autocomplete="postal-code">
+          <button type="button" class="btn btn-outline btn-delivery-check" id="delivery-check-btn">Check</button>
+        </div>
+        <p class="delivery-check-result" id="delivery-check-result" hidden></p>
+      </div>`;
+  }
+
+  function checkPincode(pin) {
+    const cleaned = String(pin || '').replace(/\D/g, '');
+    if (cleaned.length !== 6) return { ok: false, message: 'Please enter a valid 6-digit Indian pin code.' };
+    if (cleaned.startsWith('395')) {
+      return { ok: true, message: 'Delivery available in Surat (including Varachha, Mota Varachha, Adajan, Vesu, Katargam). Confirm slot on WhatsApp after order.' };
+    }
+    const gujaratPrefixes = ['360', '361', '362', '363', '364', '365', '366', '370', '380', '382', '383', '384', '385', '387', '388', '389', '390', '391', '392', '393', '394', '396'];
+    if (gujaratPrefixes.some(p => cleaned.startsWith(p))) {
+      return { ok: true, message: 'Gujarat delivery available. Share your full address on WhatsApp to confirm timing.' };
+    }
+    return { ok: false, message: 'This pin code is outside our regular Surat/Gujarat milk route. Message us on WhatsApp for a custom quote.' };
+  }
+
 
   function featureBadges() {
     if (!product.features?.length) return '';
@@ -108,21 +259,22 @@
       <div class="product-buy-box">
         <p class="product-trust-headline">${trustHeadline}</p>
         <p class="product-vendor">${product.vendor}</p>
-        <h1>${product.name}</h1>
+        <h1>${product.name}${product.productSubtitle ? ` <span class="product-subtitle">— ${product.productSubtitle}</span>` : ''}</h1>
         <p class="product-rating-row">
           <span class="product-rating">${'★'.repeat(Math.round(product.rating || 5))}</span>
           ${reviewCount}
         </p>
-        <p class="product-price" id="product-price">${priceHtml(price, compareAt)}</p>
+        <div id="product-price-block">${shopifyPriceBlock(price, compareAt)}</div>
         ${deliveryInfo}
         <p class="product-tax-note">Inclusive of all taxes</p>
         <p class="product-short-desc">${product.description}</p>
         ${trustRow}
         ${featureBadges()}
-        ${product.variants ? `
+        ${milkPricing ? milkVariantSection() : (product.variants ? `
           <p class="variant-label"><strong>Size:</strong> <span id="selected-size">${product.variants[0].label}</span></p>
           <div class="variant-pills variant-pills-grid" id="variants">${variantButtons()}</div>
-        ` : ''}
+        ` : '')}
+        ${deliveryCheckSection()}
         <div class="product-purchase-row">
           <div class="qty-row">
             <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity">−</button>
@@ -177,7 +329,7 @@
     }
   });
 
-  // Variants
+  // Variants (flat)
   document.querySelectorAll('#variants .variant-pill').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('#variants .variant-pill').forEach(b => b.classList.remove('active'));
@@ -189,10 +341,55 @@
       };
       price = selectedVariant.price;
       compareAt = selectedVariant.compareAt;
-      document.getElementById('product-price').innerHTML = priceHtml(price, compareAt);
+      updateMainPrice();
       const sizeEl = document.getElementById('selected-size');
       if (sizeEl) sizeEl.textContent = selectedVariant.label;
     });
+  });
+
+  // Milk pricing (material × litres)
+  if (milkPricing) {
+    selectedVariant = { label: milkVariantLabel(milkSelection.material, milkSelection.litres), price, compareAt };
+    document.querySelectorAll('[data-milk-material]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        milkSelection.material = btn.dataset.milkMaterial;
+        refreshMilkVariantUi();
+      });
+    });
+    document.querySelectorAll('[data-milk-litres]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        milkSelection.litres = +btn.dataset.milkLitres;
+        const customInput = document.getElementById('custom-litres');
+        if (customInput) customInput.value = '';
+        refreshMilkVariantUi();
+      });
+    });
+    document.getElementById('apply-custom-litres')?.addEventListener('click', () => {
+      const input = document.getElementById('custom-litres');
+      if (!input) return;
+      const val = Math.round(+input.value);
+      const { min, max } = milkPricing.customLitres;
+      if (!val || val < min || val > max) {
+        showToast(`Enter litres between ${min} and ${max}`);
+        return;
+      }
+      milkSelection.litres = val;
+      refreshMilkVariantUi();
+    });
+  }
+
+
+  document.getElementById('delivery-check-btn')?.addEventListener('click', () => {
+    const input = document.getElementById('delivery-pincode');
+    const result = document.getElementById('delivery-check-result');
+    if (!input || !result) return;
+    const status = checkPincode(input.value);
+    result.hidden = false;
+    result.className = 'delivery-check-result' + (status.ok ? ' delivery-check-result--ok' : ' delivery-check-result--warn');
+    result.textContent = status.message;
+  });
+  document.getElementById('delivery-pincode')?.addEventListener('keydown', e => {
+    if (e.key === 'Enter') document.getElementById('delivery-check-btn')?.click();
   });
 
   // Tabs
@@ -214,7 +411,7 @@
     document.getElementById('qty').value = +document.getElementById('qty').value + 1;
   };
   document.getElementById('add-cart').onclick = () => {
-    addToCart(product.id, +document.getElementById('qty').value, selectedVariant?.label);
+    addToCart(product.id, +document.getElementById('qty').value, selectedVariant?.label, price);
   };
   document.getElementById('wa-single').onclick = () => {
     const qty = +document.getElementById('qty').value;

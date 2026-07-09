@@ -134,7 +134,9 @@
   }
 
   function extractFaqEntities(html) {
-    if (!html || !/Frequently Asked Questions/i.test(html)) return [];
+    if (!html) return [];
+    const hasFaq = /Frequently Asked Questions/i.test(html) || /class="product-faq"/i.test(html);
+    if (!hasFaq) return [];
     const qa = [];
     const re = /<h3>(.*?)<\/h3>\s*<p>(.*?)<\/p>/gis;
     let m;
@@ -149,7 +151,7 @@
         });
       }
     }
-    return qa.slice(0, 8);
+    return qa.slice(0, 12);
   }
 
   function resolveMeta() {

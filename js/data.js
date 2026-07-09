@@ -177,12 +177,13 @@ const PRODUCTS = [
   {
     id: 'a2-gir-milk',
     name: 'A2 Gir Cow Milk',
+    productSubtitle: '1 Litre/day',
     seoTitle: 'A2 Gir Cow Milk Surat — Fresh Farm Delivery | Gir Govalan',
     metaDescription: 'Buy fresh A2 Gir cow milk in Surat from Gir Govalan. Pure indigenous Gir breed milk with A2 protein — farm-sourced, hygienically packed, and delivered across Surat & Gujarat.',
     keywords: 'A2 Gir cow milk Surat, fresh milk delivery Surat, pure Gir cow milk Surat, A2 milk home delivery Surat, farm fresh milk Surat Gujarat, desi cow milk Surat, Gir cow milk near me Surat, A2 milk Mota Varachha Surat, milk delivery Varachha Katargam',
     vendor: 'Gir Govalan',
-    price: 120,
-    compareAt: 132,
+    price: 840,
+    compareAt: 840,
     category: 'dairy',
     imageStyle: 'fill',
     imageFocus: 'center',
@@ -231,38 +232,33 @@ const PRODUCTS = [
 <p>Orders are confirmed on WhatsApp with your area pin code and preferred quantity. Dispatch is typically within <strong>24–48 hours</strong>. Free delivery above ₹999 on combined orders.</p>
 <p>Not in Surat? We also deliver across Gujarat and support enquiries from other cities on WhatsApp.</p>`,
       faq: `<div class="product-faq">
-<h3>Where can I buy A2 Gir cow milk in Surat?</h3>
-<p>You can order Gir Govalan A2 Gir cow milk online for delivery across Surat — including Adajan, Vesu, Piplod, Athwa, Varachha, Mota Varachha, Katargam, and nearby areas. Message us on WhatsApp with your location and we will confirm availability.</p>
-<h3>Is this pure Gir cow milk or mixed breed milk?</h3>
-<p>Our milk comes from indigenous Gir cows — not Jersey or HF crossbreeds. Gir cows naturally produce A2 protein milk, which many Surat families prefer for taste and traditional use.</p>
-<h3>What is A2 milk and why do Surat families prefer it?</h3>
-<p>A2 milk contains A2 beta-casein protein, the type found in indigenous Indian cow breeds like Gir. Many families in Surat and Gujarat choose A2 milk for daily chai, children, and home curd because they find it closer to the desi milk they grew up with.</p>
-<h3>Do you deliver fresh milk to Adajan and Vesu in Surat?</h3>
-<p>Yes. We deliver across major Surat localities including Adajan, Vesu, Piplod, City Light, Athwa, Varachha, Mota Varachha, and Katargam. Share your pin code on WhatsApp for a delivery confirmation.</p>
-<h3>Do you deliver A2 Gir cow milk to Mota Varachha?</h3>
-<p>Yes. Mota Varachha is one of the Surat areas we serve, along with Varachha, Katargam, and nearby east Surat neighbourhoods. Message us on WhatsApp with your Mota Varachha pin code to confirm delivery timing.</p>
-<h3>How fresh is the milk when it reaches Surat?</h3>
-<p>Milk is collected from our farm herd, chilled promptly, and dispatched in hygienic packaging. We work on a short supply chain — farm to pack to delivery — so Surat customers receive milk meant for daily consumption, not long-stored commodity dairy.</p>
-<h3>What pack sizes are available?</h3>
-<p>We offer 500 ml and 1 litre packs. The 1 litre size is popular for joint families and daily chai routines. Larger or repeat orders can be arranged on WhatsApp.</p>
-<h3>Can I use this milk to set curd at home?</h3>
-<p>Yes. A2 Gir cow milk sets thick, creamy curd — a reason many Gujarati households prefer indigenous breed milk. You can also explore our ready-made <a href="/products/fresh-curd/">Fresh Curd (Dahi)</a> from the same farm.</p>
-<h3>Is Gir Govalan milk good for children?</h3>
+<h2>Frequently Asked Questions</h2>
+<h3>Is Gir Govalan milk genuine A2 Gir cow milk?</h3>
+<p>Yes. Our milk comes only from indigenous <strong>Gir cows</strong> — not Jersey, HF, or other crossbreeds. Gir cows naturally produce <strong>A2 beta-casein protein</strong> milk. Gir Govalan is rooted in Maldhari pastoral heritage from Aakolda, Amreli, in Gir country, where cattle care and milk quality have been a way of life for generations.</p>
+<h3>Where do you deliver milk?</h3>
+<p>We deliver <strong>A2 Gir cow milk across Surat</strong> — including Adajan, Vesu, Piplod, City Light, Athwa, Varachha, Mota Varachha, Katargam, Udhna, Puna, and surrounding areas. We also ship farm products throughout <strong>Gujarat</strong>. Share your pin code on WhatsApp and we will confirm delivery timing for your location.</p>
+<h3>Is Gir Govalan milk pasteurised?</h3>
+<p>Our milk is <strong>fresh farm milk</strong> — collected from the herd, filtered, chilled promptly, and hygienically packed for dispatch. It is not long-life UHT carton milk. Refrigerate immediately on delivery and consume within the use-by guidance on your pack. Many Surat households boil milk before use, as with traditional home dairy.</p>
+<h3>Is milk available in pouch or glass bottle?</h3>
+<p>Yes. Choose <strong>Pouch</strong> (Rs 100/ltr) or <strong>Glass Bottle</strong> (Rs 120/ltr) when ordering. Select <strong>7 litres</strong> (1 week) or <strong>31 litres</strong> (1 month) on a 1 litre/day plan, or enter a custom quantity between 1 and 31 litres.</p>
+<h3>Are Gir cows given hormone or growth injections?</h3>
+<p>No. We do not use hormonal or growth boosters to push milk yield. Our Gir cows are raised under ethical pastoral care — open grazing, calm handling, and attention to animal health the Maldhari way, not industrial factory farming.</p>
+<h3>What are your Gir cows fed?</h3>
+<p>Our cows graze on natural grasslands and seasonal vegetation in the Gir region, supplemented with clean farm feed where needed. They are nourished without the heavy industrial feed regimes common in high-volume dairies — healthy cows, honest milk.</p>
+<h3>What is the difference between A1 and A2 milk?</h3>
+<p>Milk protein includes beta-casein. <strong>A2 milk</strong> contains the A2 type — found naturally in indigenous Indian breeds like Gir. Many commercial milks come from crossbred cows and may contain <strong>A1 protein</strong>, or a mix of A1 and A2. Surat families often prefer Gir A2 milk for chai, home curd, and daily drinking because it matches the desi milk tradition they grew up with.</p>
+<h3>Is the milk packed fresh after milking?</h3>
+<p>Yes. Milk moves through a short farm-to-pack chain — milking, chilling, and packing without long warehouse storage. Orders from Surat are typically dispatched within <strong>24–48 hours</strong> of confirmation so your household receives milk meant for daily use.</p>
+<h3>Can I set curd at home with this milk?</h3>
+<p>Yes. A2 Gir cow milk sets thick, creamy dahi — a reason many Gujarati households prefer indigenous breed milk. You can also order our ready-made <a href="/products/fresh-curd/">Fresh Curd (Dahi)</a> from the same farm.</p>
+<h3>Is this milk suitable for children?</h3>
 <p>Many parents in Surat choose A2 Gir cow milk for growing children. Always consult your paediatrician for infants and toddlers. Read our guide: <a href="/blogs/news/gir-cow-milk-for-toddlers/">Gir Cow Milk for Toddlers</a>.</p>
-<h3>How is your milk different from packaged carton milk?</h3>
-<p>Packaged milk often travels long supply chains and may come from mixed breeds. Gir Govalan milk is sourced from Gir cows on our farm network, with transparent origin and A2 protein — closer to what Surat families expect from desi dairy.</p>
-<h3>Do you add preservatives or water?</h3>
-<p>No. Our milk is pure Gir cow milk without added water, powder, preservatives, or artificial ingredients.</p>
-<h3>Can I order milk with ghee or sweets together?</h3>
-<p>Yes. Combine milk with our <a href="/products/pure-organic-a2-gir-cow-ghee/">bilona ghee</a>, <a href="/products/fresh-curd/">curd</a>, or <a href="/products/milk-peda/">milk peda</a> in one cart. Free delivery applies above ₹999.</p>
+<h3>Do you add water, powder, or preservatives?</h3>
+<p>No. Gir Govalan milk is pure Gir cow milk — no added water, milk powder, preservatives, or artificial ingredients.</p>
 <h3>How do I place an order for Surat delivery?</h3>
-<p>Add to cart on this page or tap Order on WhatsApp. Share your Surat area, pin code, quantity, and preferred pack size. We confirm timing and delivery details before dispatch.</p>
-<h3>What if I am outside Surat?</h3>
-<p>We deliver across Gujarat. For other cities, message us on WhatsApp — we will confirm what can be shipped to your pin code.</p>
+<p>Add to cart on this page or tap Order on WhatsApp. Share your area, pin code, material (pouch or glass bottle), and litres needed. You can combine milk with our <a href="/products/pure-organic-a2-gir-cow-ghee/">bilona ghee</a> or sweets in one cart — free delivery above ₹999.</p>
 <h3>How should I store the milk?</h3>
-<p>Refrigerate immediately at 4°C or below. Consume within the use-by period on the pack. Do not leave milk at room temperature for long in Surat\'s warm climate.</p>
-<h3>Why choose Gir Govalan over local Surat milk vendors?</h3>
-<p>Gir Govalan offers traceable A2 Gir cow milk from a named Gujarat farm brand — with consistent quality, hygienic packing, WhatsApp support, and the same ethical standards behind our ghee and sweets. You know the source, not just the seller.</p>
+<p>Refrigerate at 4°C or below as soon as you receive it. Do not leave milk at room temperature for long in Surat\'s warm climate. Use within the period marked on your pack.</p>
 </div>`
     },
     longDescription: `<div class="product-details-intro">
@@ -329,9 +325,21 @@ const PRODUCTS = [
 <li><a href="/blogs/news/fresh-milk-delivery-vs-packaged/">Fresh Farm Milk vs Packaged Milk</a></li>
 </ul>`,
     variants: [
-      { label: '500ml', price: 65, compareAt: 72 },
-      { label: '1L', price: 120, compareAt: 132 }
-    ]
+      { label: 'Pouch · 7 Litres', price: 700 },
+      { label: 'Glass Bottle · 7 Litres', price: 840 },
+      { label: 'Pouch · 31 Litres', price: 3100 },
+      { label: 'Glass Bottle · 31 Litres', price: 3720 }
+    ],
+    variantPricing: {
+      rates: { pouch: 100, glass: 120 },
+      litrePresets: [
+        { litres: 7, hint: '1 week · 1 ltr/day' },
+        { litres: 31, hint: '1 month · 1 ltr/day' }
+      ],
+      customLitres: { min: 1, max: 31 },
+      default: { material: 'glass', litres: 7 }
+    },
+    deliveryCheck: true
   },
   {
     id: 'fresh-curd',
