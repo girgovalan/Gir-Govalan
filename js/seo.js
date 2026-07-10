@@ -270,6 +270,36 @@
     };
   }
 
+  function productReviewExtras(p) {
+    if (!p.reviewCount || !p.rating) return {};
+    const extras = {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: Number(p.rating).toFixed(1),
+        reviewCount: String(p.reviewCount),
+        ratingCount: String(p.reviewCount),
+        bestRating: '5',
+        worstRating: '1'
+      }
+    };
+    if (p.reviews?.length) {
+      extras.review = p.reviews.slice(0, 5).map(r => ({
+        '@type': 'Review',
+        author: { '@type': 'Person', name: r.author },
+        datePublished: r.date,
+        reviewBody: r.body,
+        name: `Review by ${r.author}`,
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: String(r.rating || p.rating),
+          bestRating: '5',
+          worstRating: '1'
+        }
+      }));
+    }
+    return extras;
+  }
+
   function applySeo(meta) {
     document.title = meta.title;
     setMeta('description', meta.description);
@@ -344,15 +374,9 @@
           availability: 'https://schema.org/InStock',
           seller: { '@type': 'Organization', name: SITE_NAME },
           ...productOfferExtras()
-        }
+        },
+        ...productReviewExtras(p)
       };
-      if (p.reviewCount && p.rating) {
-        productSchema.aggregateRating = {
-          '@type': 'AggregateRating',
-          ratingValue: Number(p.rating).toFixed(1),
-          reviewCount: p.reviewCount
-        };
-      }
       injectJsonLd(productSchema);
 
       const faqHtml = [p.tabs?.faq, p.longDescription].filter(Boolean).join('\n');

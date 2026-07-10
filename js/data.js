@@ -96,6 +96,10 @@ const PRODUCTS = [
     rating: 5,
     featured: true,
     reviewCount: 130,
+    reviews: [
+      { author: 'Priya Sharma', role: 'Home Chef', date: '2025-11-12', rating: 5, body: 'The bilona aroma is real — not like store ghee. We use it daily for dal and paratha.' },
+      { author: 'Rajesh Kumar', role: 'Food Blogger', date: '2025-10-03', rating: 5, body: 'Authentic Gir cow ghee with a rich nutty finish. On our third repeat order for the 1 litre jar.' }
+    ],
     features: ['Curd-Churned Bilona', 'Pasture-Raised Gir Cows', 'Single-Ingredient Purity'],
     description: 'Slow-cooked desi ghee from A2 Gir cow milk, prepared the Vedic way — curd first, then bilona-churned butter, then clarified over a gentle flame for a deep aroma and clean finish.',
     tabLabels: {
@@ -193,6 +197,10 @@ const PRODUCTS = [
     images: [PRODUCT_IMAGES.milk],
     rating: 5,
     reviewCount: 118,
+    reviews: [
+      { author: 'Nidhi Shah', role: 'Adajan, Surat', date: '2026-06-20', rating: 5, body: 'Fresh A2 milk for our morning chai. Delivery to Adajan was smooth and the taste is proper desi.' },
+      { author: 'Ketan Desai', role: 'Vesu, Surat', date: '2026-05-14', rating: 5, body: 'We switched from carton milk to Gir Govalan for home curd. Thick dahi every time.' }
+    ],
     features: ['A2 Gir Cow Milk', 'Farm Fresh Quality', 'Surat & Gujarat Delivery', 'No Adulteration'],
     description: 'Fresh A2 Gir cow milk from indigenous Gir cows — hygienically handled and delivered with care from our Gujarat farm to homes in Surat and across the state.',
     tabLabels: {
@@ -356,6 +364,10 @@ const PRODUCTS = [
     images: [PRODUCT_IMAGES.curd],
     rating: 5,
     reviewCount: 105,
+    reviews: [
+      { author: 'Meera Patel', role: 'Homemaker', date: '2025-12-08', rating: 5, body: 'Creamy curd from the same farm as their ghee. Sets well and tastes fresh.' },
+      { author: 'Anita Joshi', role: 'Rajkot', date: '2025-09-22', rating: 5, body: 'Good thickness for Gujarati thali. We order with ghee every month.' }
+    ],
     description: 'Thick, creamy curd made from pure Gir cow milk using traditional methods.',
     variants: [
       { label: '500g', price: 80, compareAt: 89 },
@@ -373,6 +385,10 @@ const PRODUCTS = [
     images: [PRODUCT_IMAGES.ladoo],
     rating: 5,
     reviewCount: 112,
+    reviews: [
+      { author: 'Harsha Mehta', role: 'Surat', date: '2025-10-18', rating: 5, body: 'Festival ladoos with real ghee taste — not oily or overly sweet.' },
+      { author: 'Vikram Singh', role: 'Ahmedabad', date: '2025-08-30', rating: 5, body: 'Ordered for Raksha Bandhan gifting. Family loved the texture and aroma.' }
+    ],
     description: 'Homestyle ladoos prepared with our Gir cow ghee for authentic taste and richness.'
   },
   {
@@ -389,6 +405,10 @@ const PRODUCTS = [
     rating: 5,
     featured: true,
     reviewCount: 142,
+    reviews: [
+      { author: 'Divya Rana', role: 'Mumbai', date: '2025-11-25', rating: 5, body: 'Soft peda with real milk flavour — perfect for Diwali gifting.' },
+      { author: 'Suresh Parmar', role: 'Vadodara', date: '2025-09-10', rating: 5, body: 'Not too sweet, fresh batch taste. Kids finished the box in two days.' }
+    ],
     description: 'Gir Govalan Milk Peda is handcrafted from pure A2 Gir cow milk and our traditional bilona ghee. Soft, rich, and naturally sweet — a classic Indian mithai made in small batches for authentic taste and freshness.',
     longDescription: `<div class="product-details-intro">
 <h2>Premium Milk Peda Made from Pure A2 Gir Cow Milk</h2>
@@ -493,6 +513,10 @@ const PRODUCTS = [
     images: [PRODUCT_IMAGES.shrikhand],
     rating: 4,
     reviewCount: 108,
+    reviews: [
+      { author: 'Pooja Desai', role: 'Surat', date: '2025-10-05', rating: 4, body: 'Creamy shrikhand with natural sweetness. Good with puri on weekends.' },
+      { author: 'Rahul Trivedi', role: 'Gandhinagar', date: '2025-07-19', rating: 5, body: 'Tastes like homemade shrikhand. We pair it with their fresh curd orders.' }
+    ],
     description: 'Creamy Gujarati shrikhand made from hung curd and natural flavours.'
   }
 ];

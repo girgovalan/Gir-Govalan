@@ -1582,6 +1582,18 @@ section.bg-cream {
 }
 
 /* Testimonials */
+.product-reviews {
+  margin-top: var(--space-5);
+  padding: var(--space-5) 0 var(--space-4);
+}
+.product-reviews h2 {
+  margin: 0 0 var(--space-3);
+  text-align: center;
+}
+.product-reviews-grid {
+  max-width: 960px;
+  margin: 0 auto;
+}
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

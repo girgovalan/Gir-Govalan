@@ -236,6 +236,21 @@
       ${product.longDescription ? `<div class="product-details article-content product-details-extra">${product.longDescription}</div>` : ''}`;
   }
 
+  function productReviewsSection() {
+    if (!product.reviews?.length) return '';
+    const cards = product.reviews.map(r => {
+      if (typeof testimonialCardHTML === 'function') {
+        return testimonialCardHTML({ author: r.author, role: r.role || 'Verified buyer', text: r.body });
+      }
+      return `<blockquote class="testimonial-card"><p>"${r.body}"</p><footer>— ${r.author}</footer></blockquote>`;
+    }).join('');
+    return `
+      <section class="product-reviews container-wide" aria-labelledby="product-reviews-heading">
+        <h2 id="product-reviews-heading">Customer reviews</h2>
+        <div class="testimonials-grid product-reviews-grid">${cards}</div>
+      </section>`;
+  }
+
   const reviewCount = product.reviewCount ? `<span class="product-review-count">${product.reviewCount.toLocaleString('en-IN')} reviews</span>` : '';
   const trustHeadline = product.category === 'ghee'
     ? 'Authentic Gir Cow A2 Bilona Ghee — Made Traditionally From Gir Cows'
@@ -295,7 +310,8 @@
         </div>
       </div>
     </div>
-    ${tabsSection()}`;
+    ${tabsSection()}
+    ${productReviewsSection()}`;
 
   // Image gallery
   document.querySelectorAll('.product-thumb').forEach(btn => {
