@@ -359,6 +359,16 @@
 
     if (meta.type === 'product' && meta.product) {
       const p = meta.product;
+      // Prefer one Product graph: drop static Product JSON-LD if present, then inject complete schema.
+      document.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+        try {
+          const data = JSON.parse(script.textContent || '');
+          const types = Array.isArray(data)
+            ? data.map(item => item && item['@type'])
+            : [data && data['@type']];
+          if (types.includes('Product')) script.remove();
+        } catch (_) { /* ignore invalid JSON-LD */ }
+      });
       const productSchema = {
         '@context': 'https://schema.org',
         '@type': 'Product',
@@ -370,7 +380,7 @@
           '@type': 'Offer',
           url: meta.url,
           priceCurrency: 'INR',
-          price: p.price,
+          price: String(p.price),
           availability: 'https://schema.org/InStock',
           seller: { '@type': 'Organization', name: SITE_NAME },
           ...productOfferExtras()
