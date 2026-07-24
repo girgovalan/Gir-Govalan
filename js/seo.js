@@ -23,6 +23,11 @@
       description: 'Contact Gir Govalan for orders, wholesale, and enquiries. Email, phone, WhatsApp. Authentic Gir cow ghee from Gujarat, India.',
       type: 'website'
     },
+    '/pages/return-policy/': {
+      title: 'Return & Refund Policy — Gir Govalan',
+      description: 'Gir Govalan return and refund policy for A2 Gir cow ghee, milk, curd, and sweets. Quality issues handled via WhatsApp support.',
+      type: 'website'
+    },
     '/pages/gallery/': {
       title: 'Gallery — Gir Cows & Bilona Ghee | Gir Govalan',
       description: 'Photos of our Gir cows, farm life in Saurashtra, and traditional bilona ghee making at Gir Govalan.',
@@ -265,7 +270,8 @@
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
         applicableCountry: 'IN',
-        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted'
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+        returnPolicyLink: `${BASE}/pages/return-policy/`
       }
     };
   }

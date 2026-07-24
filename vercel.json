@@ -242,6 +242,11 @@
       "permanent": true
     },
     {
+      "source": "/pages/return-policy",
+      "destination": "/pages/return-policy/",
+      "permanent": true
+    },
+    {
       "source": "/pages/who-is-gir-govalan",
       "destination": "/pages/who-is-gir-govalan/",
       "permanent": true

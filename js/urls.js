@@ -3,6 +3,7 @@ const URLS = {
   home: '/',
   about: '/pages/who-is-gir-govalan/',
   contact: '/pages/contact/',
+  returnPolicy: '/pages/return-policy/',
   gallery: '/pages/gallery/',
   blog: '/blogs/news/',
   blogPost: (slug) => `/blogs/news/${slug}/`,

@@ -156,6 +156,7 @@
               <li><a href="${URLS.gallery}">Gallery</a></li>
               <li><a href="${URLS.blog}">Blog</a></li>
               <li><a href="${URLS.contact}">Contact</a></li>
+              <li><a href="${URLS.returnPolicy}">Return Policy</a></li>
             </ul>
           </div>
           <div class="footer-col">
