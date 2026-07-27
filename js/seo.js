@@ -57,22 +57,22 @@
     },
     '/gir-cow-ghee-usa/': {
       title: 'Buy A2 Gir Cow Ghee in USA | Authentic Bilona Desi Ghee',
-      description: 'Buy A2 Gir Cow Ghee in USA from Gir Govalan. Authentic bilona desi ghee from Gujarat for Indian families across America.',
+      description: 'Order A2 Gir cow bilona ghee for USA homes from Gir Govalan in Gujarat. Real farm ghee for tadka, rotis, and festival sweets — WhatsApp shipping support.',
       type: 'website'
     },
     '/a2-gir-cow-ghee-uae/': {
       title: 'Buy A2 Gir Cow Ghee in UAE | Authentic Bilona Ghee',
-      description: 'Buy A2 Gir Cow Ghee in UAE from Gir Govalan. Authentic bilona ghee from Gujarat with direct shipping support.',
+      description: 'Order A2 Gir cow bilona ghee in UAE from Gir Govalan. Traditional Gujarat farm ghee for Dubai, Abu Dhabi, and Sharjah kitchens — WhatsApp order support.',
       type: 'website'
     },
     '/a2-gir-cow-ghee-canada/': {
       title: 'Buy A2 Gir Cow Ghee in Canada | Authentic Bilona Ghee',
-      description: 'Buy A2 Gir Cow Ghee in Canada from Gir Govalan. Authentic bilona ghee from Gujarat with international shipping support.',
+      description: 'Order A2 Gir cow bilona ghee in Canada from Gir Govalan. Gujarat farm ghee for Toronto, Brampton, Vancouver kitchens — clear shipping help on WhatsApp.',
       type: 'website'
     },
     '/a2-gir-cow-ghee-uk/': {
       title: 'Buy A2 Gir Cow Ghee in UK | Authentic Bilona Ghee',
-      description: 'Buy A2 Gir Cow Ghee in UK from Gir Govalan. Traditional bilona ghee from Gujarat with shipping support.',
+      description: 'Order A2 Gir cow bilona ghee in the UK from Gir Govalan. Farm ghee from Gujarat for London, Leicester, Birmingham kitchens — WhatsApp shipping support.',
       type: 'website'
     }
   };
