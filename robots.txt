@@ -1,8 +1,14 @@
 # Gir Govalan — https://www.girgovalan.com
-# Allow Google to crawl all public pages.
-# Cart uses noindex meta instead of Disallow (avoids "Blocked by robots.txt" noise).
+# Updated 2026-07-27: fully open for crawling (no Disallow rules).
+# Cart and utility pages use noindex meta instead of robots Disallow.
 
 User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
 Allow: /
 
 Sitemap: https://www.girgovalan.com/sitemap.xml

@@ -3,6 +3,56 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/collections/:slug.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/:slug.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/:slug.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/:slug.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/:slug.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/news.atom",
+      "destination": "/blogs/news/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/blogs/news.atom",
+      "destination": "/blogs/news/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/blogs/news.atom",
+      "destination": "/blogs/news/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/blogs/news.atom",
+      "destination": "/blogs/news/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/blogs/news.atom",
+      "destination": "/blogs/news/",
+      "permanent": true
+    },
+    {
       "source": "/search/suggest",
       "destination": "/",
       "permanent": true
