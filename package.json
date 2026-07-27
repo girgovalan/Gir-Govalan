@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "check:blog-length": "node scripts/check-blog-length.js",
-    "expand:short-blogs": "node scripts/expand-short-blog-posts.js"
+    "check:blog-schedule": "node scripts/check-blog-one-per-day.js",
+    "check:blog": "npm run check:blog-length && npm run check:blog-schedule",
+    "expand:short-blogs": "node scripts/expand-short-blog-posts.js",
+    "fix:blog-schedule": "node scripts/fix-blog-one-per-day.js"
   },
   "repository": {
     "type": "git",
