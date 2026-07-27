@@ -3,6 +3,206 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/collections/ghee.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/collections/dairy.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/collections/desserts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/collections/sweets.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/collections/seed-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/collections/seeds-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/collections/frontpage.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/collections/all.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/ghee.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/dairy.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/desserts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/sweets.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/seed-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/seeds-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/frontpage.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/collections/all.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/ghee.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/dairy.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/desserts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/sweets.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/seed-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/seeds-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/frontpage.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/collections/all.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/ghee.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/dairy.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/desserts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/sweets.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/seed-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/seeds-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/frontpage.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/collections/all.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/ghee.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/dairy.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/desserts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/sweets.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/seed-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/seeds-nuts.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/frontpage.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/collections/all.atom",
+      "destination": "/collections/all/",
+      "permanent": true
+    },
+    {
       "source": "/collections/:slug.atom",
       "destination": "/collections/all/",
       "permanent": true
