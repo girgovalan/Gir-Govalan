@@ -4,7 +4,9 @@
   "description": "A complete, **Shopify-free** website for Gir Govalan — authentic Gir Cow Ghee and farm products from Gujarat.",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check:blog-length": "node scripts/check-blog-length.js",
+    "expand:short-blogs": "node scripts/expand-short-blog-posts.js"
   },
   "repository": {
     "type": "git",

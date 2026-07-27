@@ -93,34 +93,36 @@
       excerpt: 'A complete USA buying guide — breed, bilona steps, label traps, smell test, pack sizes, and questions to ask before you pay.',
       metaDescription: 'Full checklist for buying A2 bilona ghee in the USA: what labels hide, how to smell-test, pack sizes, and seller questions.',
       content: `<p>Amazon, Indian grocery apps, and warehouse clubs in the US all sell “desi ghee.” Some jars are honest cooking fat. Many taste fine for frying and fail the moment you make tadka for guests. This guide is a full checklist so you spend once, not three times.</p>
+<p>Use it before Diwali orders, before a new ZIP move, and before you trust a jar for children’s dabba food.</p>
 
 <h2>1) Breed — ask for a real answer</h2>
-<p>“Cow ghee” is not enough. Ask which breed. Gir (and other indigenous breeds) tell you more about the milk. Mixed or unnamed herds are harder to trust when you care about A2 / desi character.</p>
+<p>“Cow ghee” is not enough. Ask which breed. Gir (and other indigenous breeds) tell you more about the milk. Mixed or unnamed herds are harder to trust when you care about A2 / desi character. If the seller will not name a breed, treat the listing as generic cooking fat until proven otherwise.</p>
 
 <h2>2) Process — bilona must mean steps</h2>
 <p>Bilona should mean milk → curd → churned butter → slow cook. If the page only says “traditional” or “handmade” with no steps, assume it may be cream-route industrial ghee. That product can still be edible. It often will not smell like home.</p>
+<p>Ask for a short process note or a video. Farm kitchens that actually churn can usually explain it in plain English.</p>
 
 <h2>3) Ingredients — one line</h2>
-<p>Look for ghee only. Blends with vegetable fat are a different product. If the listing is vague, message the seller and ask for a clear ingredient list.</p>
+<p>Look for ghee only. Blends with vegetable fat are a different product. If the listing is vague, message the seller and ask for a clear ingredient list before you pay.</p>
 
 <h2>4) Human support — ZIP, packing, cost</h2>
 <p>Before you pay anyone (including us), ask:</p>
 <ul>
 <li>Can you ship to my ZIP this month?</li>
-<li>How is the jar packed?</li>
-<li>What is the full cost?</li>
+<li>How is the jar packed for heat and rough handling?</li>
+<li>What is the full cost — product, packing, shipping?</li>
 <li>Who do I contact if the seal breaks?</li>
 </ul>
 <p>Silence before checkout usually means silence after checkout.</p>
 
 <h2>5) Home smell test</h2>
-<p>Warm a small spoon. You want a clean, nutty aroma. Flat or chemical smells mean you will keep searching. In cumin tadka, good ghee wakes the kitchen; weak ghee only oils the pan.</p>
+<p>Warm a small spoon. You want a clean, nutty aroma. Flat or chemical smells mean you will keep searching. In cumin tadka, good ghee wakes the kitchen; weak ghee only oils the pan. Try one weekday dal before you commit the jar to festival mithai.</p>
 
 <h2>6) Pack sizes for US kitchens</h2>
-<p>First order: 500 ml is a fair test. Daily Indian cooking for a family of four often moves to 1 litre. Gift orders need name, phone, and full address. Students can start at 250 ml.</p>
+<p>First order: 500 ml is a fair test. Daily Indian cooking for a family of four often moves to 1 litre. Gift orders need name, phone, and full address. Students can start at 250 ml. Do not buy a giant tin for a dorm fridge you open twice a week.</p>
 
 <h2>7) Price reality</h2>
-<p>True bilona from indigenous cow milk costs more milk per kilo. A jar that is far cheaper than farm bilona peers is rarely a miracle — it is usually a different process.</p>
+<p>True bilona from indigenous cow milk costs more milk per kilo. A jar that is far cheaper than farm bilona peers is rarely a miracle — it is usually a different process. Compare cost per month of cooking, not only cost per gram on the label.</p>
 
 <h2>Where Gir Govalan fits</h2>
 <p>We make A2 Gir cow bilona ghee in Gujarat. Read <a href="/gir-cow-ghee-usa/">USA shipping notes</a>, pick a size on the <a href="/products/pure-organic-a2-gir-cow-ghee/">product page</a>, then WhatsApp your ZIP.</p>
@@ -135,29 +137,50 @@
       image: '/images/blog/ghee-quality-export-standards.jpg',
       excerpt: 'Full practical guide — flying with jars, online delivery questions, summer heat, damaged parcels, and when delivery beats luggage.',
       metaDescription: 'How to bring Indian ghee to the USA: airline packing tips, seller checklist, summer shipping, and home delivery from Gir Govalan.',
-      content: `<p>Two common paths bring Indian ghee into American kitchens: pack jars when you fly, or order delivery for regular cooking. Both work. Both need a clear checklist so you do not get stuck with rules you did not check or a seller who disappears after payment.</p>
+      content: `<p>Two common paths bring Indian ghee into American kitchens: pack jars when you fly home from India, or order delivery for regular cooking. Both work. Both need a clear checklist so you do not get stuck with rules you did not check, a cracked lid in the suitcase, or a seller who disappears after payment.</p>
+<p>This guide is practical. It is not legal advice. Airline and customs rules change — verify them before every trip and every large order.</p>
 
 <h2>Flying with ghee</h2>
-<p>Many travelers put sealed jars in checked bags. Rules change — check your airline and US customs guidance for food items before every trip. Pad jars so lids do not crack. Cabin liquid limits usually make full jars impractical in carry-on.</p>
-<p>This route is good for gifts and small quantities. It is a weak plan if you cook Indian food every week and only visit India once a year.</p>
+<p>Many travelers put sealed jars in checked bags, wrapped in clothes or bubble wrap so lids do not crack under weight. Cabin liquid limits usually make full jars impractical in carry-on. Soft ghee in warm planes can look messy even when the jar is still sealed — pack as if something might leak.</p>
+<ul>
+<li>Use factory-sealed jars, not half-open home tins</li>
+<li>Keep receipts or labels if you are asked what the food is</li>
+<li>Do not assume every relative pack is “fine” without checking current rules</li>
+<li>Gifts for friends are easier in small packs than one giant tin</li>
+</ul>
+<p>This route is good for gifts and a few months of cooking. It is a weak plan if you cook Indian food every week and only visit India once a year.</p>
 
 <h2>Home delivery checklist</h2>
+<p>Before you pay an overseas seller, ask these in writing (WhatsApp is fine):</p>
 <ol>
 <li>Can you ship to my ZIP this month?</li>
 <li>How is the jar packed for heat and rough handling?</li>
-<li>What is the full cost before I pay?</li>
-<li>Who do I message if the seal breaks?</li>
+<li>What is the full cost before I pay — product, packing, shipping?</li>
+<li>Who do I message if the seal breaks or the box arrives crushed?</li>
 <li>Is this bilona from a named breed — or generic cow ghee?</li>
+<li>How long does transit usually take in summer vs winter?</li>
 </ol>
+<p>If a shop cannot answer those, wait. Marketplace listings with no human reply are the fastest way to waste a festival week.</p>
 
 <h2>Summer and long routes</h2>
-<p>Ghee softens in heat. Soft arrival is often texture, not spoilage. Leakage, crushed lids, or off smells need photos and a quick message. Honest sellers give realistic transit windows — not fantasy dates.</p>
+<p>Ghee softens in heat. Soft arrival is often texture, not spoilage. Leakage, crushed lids, or off smells need photos and a quick message. Honest sellers give realistic transit windows — not fantasy dates that ignore monsoon flights and US last-mile delays.</p>
+<p>Store the jar in a cool cupboard after it arrives. Use a dry spoon. Do not leave it next to the stove for weeks of festival cooking.</p>
 
 <h2>When delivery beats luggage</h2>
-<p>If ghee is part of weekly cooking, waiting for the next India trip is stressful. A farm brand with WhatsApp support is usually simpler than hoping a relative remembers to pack jars.</p>
+<p>If ghee is part of weekly cooking — dal, paratha, kids’ rice, weekend sweets — waiting for the next India trip creates stress and last-minute Costco substitutions. A farm brand with ZIP confirmation and WhatsApp support is usually simpler than hoping a relative remembers to pack jars between airport security and gift shopping.</p>
+<p>Delivery also helps households that cannot travel often: students, new parents, elders who want the same jar every month.</p>
+
+<h2>What not to do</h2>
+<ul>
+<li>Do not buy the cheapest unlabelled tin “because it is from India”</li>
+<li>Do not ignore heat packing in July–September routes</li>
+<li>Do not skip photographing damage before you throw the box away</li>
+<li>Do not treat ghee as medicine — it is food; follow your doctor for diet questions</li>
+</ul>
 
 <h2>Gir Govalan</h2>
-<p>We confirm ZIP-level shipping on <a href="/gir-cow-ghee-usa/">Buy A2 Gir Cow Ghee in USA</a>. Also read <a href="/blogs/news/best-a2-ghee-brands-in-usa-what-to-check/">what to check before buying</a> and <a href="/pages/contact/">contact</a>.</p>`
+<p>We confirm ZIP-level shipping on <a href="/gir-cow-ghee-usa/">Buy A2 Gir Cow Ghee in USA</a>. Pick a size on the <a href="/products/pure-organic-a2-gir-cow-ghee/">product page</a>, then message us with your ZIP.</p>
+<p>Also read <a href="/blogs/news/best-a2-ghee-brands-in-usa-what-to-check/">what to check before buying</a>, <a href="/blogs/news/why-indian-families-in-usa-prefer-gir-cow-ghee/">why families reorder</a>, and <a href="/pages/contact/">contact</a>.</p>`
     }
   ]);
 })();
