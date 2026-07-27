@@ -68,15 +68,53 @@
     { slug:'traditional-gujarati-kadhi-with-ghee-tadka', title:'Traditional Gujarati Kadhi with Ghee Tadka', seoTitle:'Traditional Gujarati Kadhi with Ghee Tadka', date:'2026-09-01', keywords:'gujarati kadhi ghee tadka', image:'/images/blog/gujarati-family-recipes-with-pure-ghee.jpg', excerpt:'Gujarati kadhi recipe finished with aromatic ghee tadka.', metaDescription:'Gujarati kadhi recipe finished with aromatic ghee tadka.', content:`<p>Ghee tadka transforms simple kadhi into a full-flavor meal.</p>`},
     { slug:'winter-halwa-with-pure-gir-cow-ghee', title:'Winter Halwa with Pure Gir Cow Ghee', seoTitle:'Winter Halwa with Pure Gir Cow Ghee', date:'2026-09-02', keywords:'winter halwa pure gir cow ghee', image:'/images/blog/winter-foods-ghee-ayurveda.jpg', excerpt:'A rich winter halwa recipe using pure Gir cow ghee.', metaDescription:'A rich winter halwa recipe using pure Gir cow ghee.', content:`<p>Cook low and slow in ghee for glossy texture.</p>`},
     { slug:'ghee-tempered-millet-roti-meal-ideas', title:'Ghee-Tempered Millet Roti Meal Ideas', seoTitle:'Ghee-Tempered Millet Roti Meal Ideas', date:'2026-09-03', keywords:'ghee millet roti meal ideas', image:'/images/blog/gujarati-family-recipes-with-pure-ghee.jpg', excerpt:'Healthy millet roti meal ideas with ghee for daily use.', metaDescription:'Healthy millet roti meal ideas with ghee for daily use.', content:`<p>Millet rotis pair perfectly with a light ghee finish.</p>`},
-    { slug:'best-a2-ghee-brands-in-usa-what-to-check', title:'Buying A2 Ghee in the USA: What to Check First', seoTitle:'Buying A2 Ghee in the USA: What to Check First', date:'2026-07-14', keywords:'a2 ghee usa, buy gir cow ghee america', image:'/images/blog/best-gir-cow-ghee-in-india-what-to-look-for.jpg', excerpt:'A short list for US shoppers comparing Indian ghee online — breed, bilona method, and real support.', metaDescription:'A short list for US shoppers comparing Indian ghee online — breed, bilona method, and real support.', content:`<p>Amazon and Indian grocery apps in the US show dozens of “desi ghee” options. Many taste fine for frying. Few smell like home tadka. Before you buy, check three things: Does the brand name a cow breed? Do they explain bilona as curd → churn → cook? Can you message a person about your ZIP code?</p>
-<p>Ignore gold labels with no farm story. Price alone will not tell you if the jar is cream-based or mixed.</p>
-<p>We publish shipping notes on our <a href="/gir-cow-ghee-usa/">USA ghee page</a> and sizes on the <a href="/products/pure-organic-a2-gir-cow-ghee/">product page</a>.</p>`},
-    { slug:'why-indian-families-in-usa-prefer-gir-cow-ghee', title:'Why US Indian Families Keep Coming Back to Gir Cow Ghee', seoTitle:'Why US Indian Families Keep Coming Back to Gir Cow Ghee', date:'2026-07-15', keywords:'gir cow ghee usa, indian cooking america ghee', image:'/images/blog/gir-cow-ghee-benefits-for-children.jpg', excerpt:'Weekend pooris, school dabbas, Diwali sweets — why bilona ghee still matters in American Indian kitchens.', metaDescription:'Weekend pooris, school dabbas, Diwali sweets — why bilona ghee still matters in American Indian kitchens.', content:`<p>Life in New Jersey or Texas runs on a different clock than a village kitchen in Gujarat. The food memory does not. When the ghee is wrong, dal tastes flat and sweets feel oily. Families who grew up with Gir or desi cow ghee notice that gap fast.</p>
-<p>Gir cow bilona ghee is slower to make and usually costs more per jar. People reorder anyway because one good batch ends the endless label-comparing.</p>
-<p>Read shipping details on <a href="/gir-cow-ghee-usa/">Gir Cow Ghee USA</a>, then message us with your ZIP.</p>`},
-    { slug:'how-to-carry-or-import-indian-ghee-to-usa', title:'Bringing Indian Ghee to the USA: Carry-On vs Home Delivery', seoTitle:'Bringing Indian Ghee to the USA: Carry-On vs Home Delivery', date:'2026-07-16', keywords:'carry ghee to usa, import indian ghee usa', image:'/images/blog/ghee-quality-export-standards.jpg', excerpt:'Practical notes for travelers and first-time online buyers moving ghee from India to America.', metaDescription:'Practical notes for travelers and first-time online buyers moving ghee from India to America.', content:`<p>Travelers sometimes pack sealed jars in checked bags when flying back from India. Rules change — check your airline and US customs guidance for food items before you fly. For weekly cooking, home delivery from a farm brand is usually less hassle than hoping a relative remembers to pack ghee.</p>
-<p>If you order online, ask for packing method, transit window, and full cost before you pay. Summer heat and long routes need honest timelines.</p>
-<p>We confirm ZIP-level shipping on <a href="/gir-cow-ghee-usa/">Buy A2 Gir Cow Ghee in USA</a>.</p>`}
+    { slug:'best-a2-ghee-brands-in-usa-what-to-check', title:'Buying A2 Ghee in the USA: What to Check First', seoTitle:'Buying A2 Ghee in the USA: What to Check First', date:'2026-07-14', keywords:'a2 ghee usa, buy gir cow ghee america', image:'/images/blog/best-gir-cow-ghee-in-india-what-to-look-for.jpg', excerpt:'A full buying guide for US shoppers — breed, bilona method, label traps, pack sizes, and questions to ask before you pay.', metaDescription:'How to buy A2 / bilona ghee in the USA: what to check on labels, what to ask sellers, and how to avoid bland supermarket jars.', content:`<p>Amazon, Indian grocery apps, and big-box stores in the US all sell “desi ghee.” Many jars are fine for frying. Few smell like the tadka you grew up with. This guide is for households in New Jersey, Texas, California, Illinois, and elsewhere who want a clearer way to choose.</p>
+<h2>Three checks before you buy</h2>
+<ol>
+<li><strong>Breed named?</strong> Gir or other indigenous breeds beat vague “cow ghee.”</li>
+<li><strong>Bilona explained?</strong> Look for milk → curd → churn → slow cook — not only the word “traditional.”</li>
+<li><strong>Human support?</strong> Can someone confirm your ZIP, packing, and full cost on WhatsApp or phone?</li>
+</ol>
+<p>Gold foil and the word “pure” are not enough. Price that looks too good for farm bilona ghee is usually a warning.</p>
+<h2>Home smell test</h2>
+<p>Warm a small spoon. Clean, nutty aroma is what you want. Flat or chemical smells mean you will keep searching. In a cumin tadka, good ghee wakes the kitchen; weak ghee just oils the pan.</p>
+<h2>Pack sizes for US kitchens</h2>
+<p>First order: 500 ml is a safe test. Heavy daily cooks and sweet makers often move to 1 litre. Gift orders need a clear name, phone, and address.</p>
+<h2>Where we fit</h2>
+<p>Gir Govalan makes A2 Gir cow bilona ghee in Gujarat. Shipping notes: <a href="/gir-cow-ghee-usa/">USA page</a>. Sizes: <a href="/products/pure-organic-a2-gir-cow-ghee/">product page</a>.</p>
+<p>Also read: <a href="/blogs/news/why-indian-families-in-usa-prefer-gir-cow-ghee/">why US families reorder Gir cow ghee</a> · <a href="/blogs/news/how-to-carry-or-import-indian-ghee-to-usa/">carry vs delivery</a>.</p>`},
+    { slug:'why-indian-families-in-usa-prefer-gir-cow-ghee', title:'Why US Indian Families Keep Coming Back to Gir Cow Ghee', seoTitle:'Why US Indian Families Keep Coming Back to Gir Cow Ghee', date:'2026-07-15', keywords:'gir cow ghee usa, indian cooking america ghee', image:'/images/blog/gir-cow-ghee-benefits-for-children.jpg', excerpt:'Weekend pooris, school dabbas, Diwali mithai — how food memory drives ghee choices in American Indian kitchens.', metaDescription:'Why Indian families in the USA prefer Gir cow bilona ghee for everyday cooking, kids’ meals, and festivals.', content:`<p>Life in Edison or Houston runs on a different clock than a village kitchen in Gujarat. The food memory does not. When the ghee is wrong, dal tastes flat and festival sweets feel greasy. Families who grew up with Gir or other desi cow ghee notice that gap in one or two meals.</p>
+<h2>What people actually cook</h2>
+<ul>
+<li>Weeknight dal and jeera rice</li>
+<li>School dabba parathas</li>
+<li>Weekend pooris</li>
+<li>Diwali or pujan mithai</li>
+<li>A spoon on khichdi when someone is unwell</li>
+</ul>
+<p>You do not need a full thali every night. Even a few ghee meals a week keep the habit alive — if the jar tastes right.</p>
+<h2>Why bilona costs more — and why people pay</h2>
+<p>Curd-churned ghee uses more milk and more time than cream-only factory ghee. The aroma is deeper. Once a household finds a batch that matches home, they stop comparing twenty Amazon listings every month.</p>
+<h2>Trust that helps overseas buyers</h2>
+<p>Named Gir cows, clear bilona steps, farm photos, and a WhatsApp reply about ZIP codes beat vague “premium” labels. See our <a href="/pages/who-is-gir-govalan/">story</a>, <a href="/pages/gallery/">gallery</a>, and <a href="/#home-videos">process video</a>.</p>
+<h2>How to start</h2>
+<p>Read <a href="/gir-cow-ghee-usa/">Gir Cow Ghee USA</a>, pick a size on the <a href="/products/pure-organic-a2-gir-cow-ghee/">product page</a>, message your ZIP before you pay.</p>`},
+    { slug:'how-to-carry-or-import-indian-ghee-to-usa', title:'Bringing Indian Ghee to the USA: Carry-On vs Home Delivery', seoTitle:'Bringing Indian Ghee to the USA: Carry-On vs Home Delivery', date:'2026-07-16', keywords:'carry ghee to usa, import indian ghee usa', image:'/images/blog/ghee-quality-export-standards.jpg', excerpt:'Travel packing, online delivery questions, summer heat, and how to avoid surprise costs on your first India-to-US ghee order.', metaDescription:'Practical guide to carrying or ordering Indian ghee to the USA — airline tips, seller questions, and home delivery.', content:`<p>There are two common paths: pack jars when you fly, or order delivery for regular cooking. Both work. Both need a short checklist so you do not get stuck at customs or stuck with a silent seller.</p>
+<h2>Flying with ghee</h2>
+<p>Many travelers put sealed jars in checked bags. Rules change — check your airline and US customs guidance for food items before every trip. Keep jars sealed and padded. Carry-on liquid limits usually make cabin packing impractical for full jars.</p>
+<h2>Home delivery checklist</h2>
+<ol>
+<li>Can you ship to my ZIP this month?</li>
+<li>How is the jar packed for heat and rough handling?</li>
+<li>What is the full cost before I pay?</li>
+<li>Who do I message if the seal breaks?</li>
+<li>Is this bilona from a named breed?</li>
+</ol>
+<h2>Summer and long routes</h2>
+<p>Ghee softens in heat. Soft arrival is often texture, not spoilage. Leakage, crushed lids, or off smells need photos and a quick message. Honest sellers give realistic transit windows — not fantasy dates.</p>
+<h2>When delivery beats luggage</h2>
+<p>If you cook Indian food weekly, waiting for the next India trip is a weak plan. A farm brand with WhatsApp support is usually simpler than hoping a relative remembers to pack ghee.</p>
+<p>We confirm ZIP-level shipping on <a href="/gir-cow-ghee-usa/">Buy A2 Gir Cow Ghee in USA</a>. Also: <a href="/blogs/news/best-a2-ghee-brands-in-usa-what-to-check/">what to check before buying</a> · <a href="/pages/contact/">contact</a>.</p>`}
   ];
 
   if (typeof BLOG_POSTS !== 'undefined') {
