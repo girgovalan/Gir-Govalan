@@ -1,3 +1,11 @@
+# Shopify search suggest endpoints (GSC 404)
+/search/suggest / 301
+/search/suggest/ / 301
+/search/* / 301
+/en-us/search/* / 301
+/en-ae/search/* / 301
+/ar/search/* / 301
+/ar-ae/search/* / 301
 # GSC leftover Shopify / duplicate URL fixes
 /cdn/* / 301
 /account/ /pages/contact/ 301

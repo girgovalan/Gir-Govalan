@@ -3,6 +3,41 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/search/suggest",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/search/suggest/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/search/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/search/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/search/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/search/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/search/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/cdn/:path*",
       "destination": "/",
       "permanent": true
