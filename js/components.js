@@ -37,8 +37,17 @@
     const el = document.getElementById('site-header');
     if (!el) return;
     el.innerHTML = `
-      <div class="announcement">
-        <p>Free delivery on orders above ₹999 · Authentic Gir Cow Ghee from Gujarat</p>
+      <div class="announcement" role="region" aria-label="Site announcement">
+        <div class="announcement-track">
+          <div class="announcement-group">
+            <p class="announcement-item">Free delivery on orders above ₹999 · Authentic Gir Cow Ghee from Gujarat</p>
+            <p class="announcement-item" aria-hidden="true">Free delivery on orders above ₹999 · Authentic Gir Cow Ghee from Gujarat</p>
+          </div>
+          <div class="announcement-group" aria-hidden="true">
+            <p class="announcement-item">Free delivery on orders above ₹999 · Authentic Gir Cow Ghee from Gujarat</p>
+            <p class="announcement-item">Free delivery on orders above ₹999 · Authentic Gir Cow Ghee from Gujarat</p>
+          </div>
+        </div>
       </div>
       <header class="header">
         <div class="container header-inner">

@@ -109,18 +109,48 @@ h1, h2, h3, h4 {
   }
 }
 
-/* Announcement */
+/* Announcement — continuous right-to-left marquee */
 .announcement {
   background: var(--gold-gradient);
   color: var(--purple-deep);
-  text-align: center;
-  padding: 10px var(--space-2);
+  padding: 10px 0;
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
 }
-.announcement p { margin: 0; }
+.announcement-track {
+  display: inline-flex;
+  width: max-content;
+  animation: announcement-marquee 28s linear infinite;
+}
+.announcement-group {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+.announcement-item {
+  margin: 0;
+  padding: 0 3rem;
+  flex-shrink: 0;
+}
+@keyframes announcement-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track {
+    animation: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .announcement-group[aria-hidden="true"] { display: none; }
+  .announcement-group { display: block; }
+  .announcement-item { padding: 0 var(--space-2); }
+  .announcement-item + .announcement-item { display: none; }
+}
 
 /* Header */
 .header {
