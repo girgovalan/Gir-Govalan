@@ -29,7 +29,7 @@ const SITE = {
     linkedin: 'https://www.linkedin.com/company/girgovalan/',
     pinterest: 'https://in.pinterest.com/girgovalan/'
   },
-  logo: `${CDN}/png_logo.png`,
+  logo: '/images/logo-header.png',
   logoWidth: 300,
   logoFooter: `${CDN}/png_logo.png`,
   footerImageDesktop: `${CDN}/footer_image_1_home_page.png?v=1676397932`,

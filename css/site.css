@@ -233,6 +233,7 @@ h1, h2, h3, h4 {
   width: auto;
   max-width: 260px;
   object-fit: contain;
+  background: transparent;
 }
 @media (max-width: 768px) {
   .header-inner {
