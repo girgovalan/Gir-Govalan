@@ -119,8 +119,14 @@
   if (typeof BLOG_POSTS !== 'undefined') {
     for (const post of countryCluster) {
       const idx = BLOG_POSTS.findIndex(p => p.slug === post.slug);
-      if (idx >= 0) BLOG_POSTS[idx] = { ...BLOG_POSTS[idx], ...post };
-      else BLOG_POSTS.push(post);
+      if (idx >= 0) {
+        const existing = BLOG_POSTS[idx];
+        const merged = { ...existing, ...post };
+        if (existing.date && post.date && existing.date < post.date) merged.date = existing.date;
+        BLOG_POSTS[idx] = merged;
+      } else {
+        BLOG_POSTS.push(post);
+      }
     }
     BLOG_POSTS.sort((a, b) => b.date.localeCompare(a.date));
   }
