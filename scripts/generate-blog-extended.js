@@ -23,9 +23,9 @@ const IMAGES = [
   '/images/products/a2-gir-milk.jpg',
   '/images/products/fresh-curd.jpg',
   '/images/products/milk-peda.jpg',
-  'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/2.jpg',
+  '/images/gir-govalan-farm-landscape-gujarat.jpg',
   'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/Gir_cow_gir_cow_ghee.jpg',
-  'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg'
+  '/images/gir-cows-gir-govalan-farm-gujarat.jpg'
 ];
 
 const TOPICS = [

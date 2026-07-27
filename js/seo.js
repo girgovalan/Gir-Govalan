@@ -2,7 +2,7 @@
 (function () {
   const BASE = 'https://www.girgovalan.com';
   const SITE_NAME = 'Gir Govalan';
-  const DEFAULT_IMAGE = 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/2.jpg';
+  const DEFAULT_IMAGE = '/images/gir-govalan-farm-landscape-gujarat.jpg';
   const TWITTER = '@GirGovalan';
 
   const STATIC_PAGES = {
@@ -15,7 +15,7 @@
     '/pages/who-is-gir-govalan/': {
       title: 'Who Is Gir Govalan — Jituben\'s Story | A2 Gir Cow Ghee Gujarat',
       description: 'Meet Jituben and Gir Govalan — Maldhari heritage from Aakolda Amreli, Gir cows, bilona ghee, and our journey from village to your home.',
-      image: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/WhatsApp_Image_2025-03-16_at_11.06.35_AM.jpg',
+      image: '/images/gir-cows-gir-govalan-farm-gujarat.jpg',
       type: 'article'
     },
     '/pages/contact/': {
@@ -333,7 +333,7 @@
     setMeta('twitter:image', toAbsoluteImage(meta.image));
 
     if (!document.querySelector('link[rel="icon"]')) {
-      setLink('icon', 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/png_logo.png');
+      setLink('icon', '/images/gir-govalan-logo.png');
     }
     if (!document.querySelector('link[rel="manifest"]')) {
       setLink('manifest', '/site.webmanifest');
@@ -345,7 +345,7 @@
       '@type': 'Organization',
       name: SITE_NAME,
       url: BASE,
-      logo: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/png_logo.png',
+      logo: `${BASE}/images/gir-govalan-logo.png`,
       description: 'Authentic A2 Gir Cow Ghee from Gujarat — bilona method, ethical farming.',
       address: {
         '@type': 'PostalAddress',
@@ -419,7 +419,7 @@
         publisher: {
           '@type': 'Organization',
           name: SITE_NAME,
-          logo: { '@type': 'ImageObject', url: 'https://cdn.shopify.com/s/files/1/0686/6944/0297/files/png_logo.png' }
+          logo: { '@type': 'ImageObject', url: `${BASE}/images/gir-govalan-logo.png` }
         },
         mainEntityOfPage: meta.url
       });
