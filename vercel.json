@@ -3,6 +3,86 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/cdn/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/account/",
+      "destination": "/pages/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/.well-known/shopify/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/meta.json",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/products/bilona-gir-ghee-500ml",
+      "destination": "/products/pure-organic-a2-gir-cow-ghee/",
+      "permanent": true
+    },
+    {
+      "source": "/products/bilona-gir-ghee-500ml/",
+      "destination": "/products/pure-organic-a2-gir-cow-ghee/",
+      "permanent": true
+    },
+    {
+      "source": "/products/bilona-gir-ghee-1l",
+      "destination": "/products/pure-organic-a2-gir-cow-ghee/",
+      "permanent": true
+    },
+    {
+      "source": "/products/bilona-gir-ghee-1l/",
+      "destination": "/products/pure-organic-a2-gir-cow-ghee/",
+      "permanent": true
+    },
+    {
+      "source": "/products/premium-almonds",
+      "destination": "/collections/all/?category=seeds-nuts",
+      "permanent": true
+    },
+    {
+      "source": "/products/premium-almonds/",
+      "destination": "/collections/all/?category=seeds-nuts",
+      "permanent": true
+    },
+    {
+      "source": "/products/mixed-dry-fruits",
+      "destination": "/collections/all/?category=seeds-nuts",
+      "permanent": true
+    },
+    {
+      "source": "/products/mixed-dry-fruits/",
+      "destination": "/collections/all/?category=seeds-nuts",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/news/how-to-identify-pure-ghee",
+      "destination": "/blogs/news/how-to-identify-pure-gir-cow-ghee/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/news/how-to-identify-pure-ghee/",
+      "destination": "/blogs/news/how-to-identify-pure-gir-cow-ghee/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/news/gir-cow-ghee-price",
+      "destination": "/blogs/news/gir-cow-ghee-price-why-premium-ghee-costs-more/",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/news/gir-cow-ghee-price/",
+      "destination": "/blogs/news/gir-cow-ghee-price-why-premium-ghee-costs-more/",
+      "permanent": true
+    },
+    {
       "source": "/en-us/collections",
       "destination": "/collections/all/",
       "permanent": true
@@ -128,22 +208,22 @@
     },
     {
       "source": "/blog/gir-cow-ghee-price",
-      "destination": "/blogs/news/gir-cow-ghee-price/",
+      "destination": "/blogs/news/gir-cow-ghee-price-why-premium-ghee-costs-more/",
       "permanent": true
     },
     {
       "source": "/blog/gir-cow-ghee-price/",
-      "destination": "/blogs/news/gir-cow-ghee-price/",
+      "destination": "/blogs/news/gir-cow-ghee-price-why-premium-ghee-costs-more/",
       "permanent": true
     },
     {
       "source": "/blog/how-to-identify-pure-ghee",
-      "destination": "/blogs/news/how-to-identify-pure-ghee/",
+      "destination": "/blogs/news/how-to-identify-pure-gir-cow-ghee/",
       "permanent": true
     },
     {
       "source": "/blog/how-to-identify-pure-ghee/",
-      "destination": "/blogs/news/how-to-identify-pure-ghee/",
+      "destination": "/blogs/news/how-to-identify-pure-gir-cow-ghee/",
       "permanent": true
     },
     {

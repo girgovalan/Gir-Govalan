@@ -1,10 +1,8 @@
-# Gir Govalan — https://girgovalan.com
-# Keep this file simple so Google can crawl all public pages.
+# Gir Govalan — https://www.girgovalan.com
+# Allow Google to crawl all public pages.
+# Cart uses noindex meta instead of Disallow (avoids "Blocked by robots.txt" noise).
 
 User-agent: *
 Allow: /
-
-# Cart only — do not index checkout basket
-Disallow: /cart/
 
 Sitemap: https://www.girgovalan.com/sitemap.xml

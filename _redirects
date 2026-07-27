@@ -1,3 +1,20 @@
+# GSC leftover Shopify / duplicate URL fixes
+/cdn/* / 301
+/account/ /pages/contact/ 301
+/.well-known/shopify/* / 301
+/meta.json / 301
+/products/bilona-gir-ghee-500ml /products/pure-organic-a2-gir-cow-ghee/ 301
+/products/bilona-gir-ghee-500ml/ /products/pure-organic-a2-gir-cow-ghee/ 301
+/products/bilona-gir-ghee-1l /products/pure-organic-a2-gir-cow-ghee/ 301
+/products/bilona-gir-ghee-1l/ /products/pure-organic-a2-gir-cow-ghee/ 301
+/products/premium-almonds /collections/all/?category=seeds-nuts 301
+/products/premium-almonds/ /collections/all/?category=seeds-nuts 301
+/products/mixed-dry-fruits /collections/all/?category=seeds-nuts 301
+/products/mixed-dry-fruits/ /collections/all/?category=seeds-nuts 301
+/blogs/news/how-to-identify-pure-ghee /blogs/news/how-to-identify-pure-gir-cow-ghee/ 301
+/blogs/news/how-to-identify-pure-ghee/ /blogs/news/how-to-identify-pure-gir-cow-ghee/ 301
+/blogs/news/gir-cow-ghee-price /blogs/news/gir-cow-ghee-price-why-premium-ghee-costs-more/ 301
+/blogs/news/gir-cow-ghee-price/ /blogs/news/gir-cow-ghee-price-why-premium-ghee-costs-more/ 301
 # Netlify redirects — keep Google-indexed Shopify URLs working
 
 # Old flat .html files → SEO paths (301 permanent)
