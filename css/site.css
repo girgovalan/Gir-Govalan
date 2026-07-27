@@ -152,15 +152,21 @@ h1, h2, h3, h4 {
   .announcement-item + .announcement-item { display: none; }
 }
 
+/* Sticky site chrome — stick the wrapper so menu never scrolls away */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
 /* Header */
 .header {
   background: rgba(255, 253, 248, 0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 2px solid rgba(212, 160, 23, 0.25);
-  position: sticky;
-  top: 0;
-  z-index: 200;
+  position: relative;
+  z-index: 1;
   box-shadow: 0 4px 24px rgba(61, 40, 80, 0.06);
 }
 .header-inner {
@@ -2300,7 +2306,6 @@ section.bg-cream {
     gap: var(--space-4);
   }
   .mobile-toggle { display: flex; }
-  .header { position: sticky; }
   .header-inner {
     flex-wrap: wrap;
     min-height: auto;
