@@ -3,6 +3,17 @@
   "trailingSlash": true,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "girgovalan.com"
+        }
+      ],
+      "destination": "https://www.girgovalan.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/collections/ghee.atom",
       "destination": "/collections/all/",
       "permanent": true
