@@ -2,9 +2,17 @@
 /search/suggest / 301
 /search/suggest/ / 301
 /search/* / 301
+/en-us/search/suggest / 301
+/en-us/search/suggest/ / 301
 /en-us/search/* / 301
+/en-ae/search/suggest / 301
+/en-ae/search/suggest/ / 301
 /en-ae/search/* / 301
+/ar/search/suggest / 301
+/ar/search/suggest/ / 301
 /ar/search/* / 301
+/ar-ae/search/suggest / 301
+/ar-ae/search/suggest/ / 301
 /ar-ae/search/* / 301
 # GSC leftover Shopify / duplicate URL fixes
 /cdn/* / 301

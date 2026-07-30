@@ -318,32 +318,72 @@
       "permanent": true
     },
     {
-      "source": "/search/:path*",
+      "source": "/en-us/search/suggest",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/en-us/search/:path*",
+      "source": "/en-us/search/suggest/",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/en-ae/search/:path*",
+      "source": "/en-ae/search/suggest",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/ar/search/:path*",
+      "source": "/en-ae/search/suggest/",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/ar-ae/search/:path*",
+      "source": "/ar/search/suggest",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/cdn/:path*",
+      "source": "/ar/search/suggest/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/search/suggest",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/search/suggest/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/search/:path(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/search/:path(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en-ae/search/:path(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar/search/:path(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ar-ae/search/:path(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cdn/:path(.*)",
       "destination": "/",
       "permanent": true
     },
@@ -353,7 +393,7 @@
       "permanent": true
     },
     {
-      "source": "/.well-known/shopify/:path*",
+      "source": "/.well-known/shopify/:path(.*)",
       "destination": "/",
       "permanent": true
     },
@@ -2322,23 +2362,23 @@
       "permanent": true
     },
     {
-      "source": "/en-us/:path*",
-      "destination": "/:path*",
+      "source": "/en-us/:path(.*)",
+      "destination": "/:path",
       "permanent": true
     },
     {
-      "source": "/en-ae/:path*",
-      "destination": "/:path*",
+      "source": "/en-ae/:path(.*)",
+      "destination": "/:path",
       "permanent": true
     },
     {
-      "source": "/ar/:path*",
-      "destination": "/:path*",
+      "source": "/ar/:path(.*)",
+      "destination": "/:path",
       "permanent": true
     },
     {
-      "source": "/ar-ae/:path*",
-      "destination": "/:path*",
+      "source": "/ar-ae/:path(.*)",
+      "destination": "/:path",
       "permanent": true
     }
   ]
