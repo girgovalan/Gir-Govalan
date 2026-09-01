@@ -11,6 +11,12 @@ async function startRazorpayCheckout(cart, customer) {
   }
   if (!validateCheckoutCustomer(customer, { requireAddress: true })) return;
 
+  // Track InitiateCheckout event with Meta Pixel
+  if (typeof MetaPixel !== 'undefined') {
+    const cartTotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    MetaPixel.trackInitiateCheckout(cart, cartTotal);
+  }
+
   const payBtn = document.getElementById('razorpay-pay');
   if (payBtn) {
     payBtn.disabled = true;
@@ -63,6 +69,17 @@ async function startRazorpayCheckout(cart, customer) {
           const result = await verifyRes.json();
 
           if (result.success) {
+            // Track Purchase event with Meta Pixel
+            const cart = getCart();
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            
+            if (typeof MetaPixel !== 'undefined') {
+              MetaPixel.trackPurchase(result.paymentId, cart, total, {
+                email: customer.email || '',
+                contact: customer.contact || ''
+              });
+            }
+            
             savePaidOrderForWhatsApp(getCart(), customer, result.paymentId);
             saveCart([]);
             window.location.href = `/pages/order-success/?payment_id=${encodeURIComponent(result.paymentId)}`;

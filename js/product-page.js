@@ -291,7 +291,7 @@
         ` : '')}
         ${deliveryCheckSection()}
         <div class="product-purchase-row">
-          <div class="qty-row">
+        <div class="qty-row">
             <button type="button" class="qty-btn" id="qty-minus" aria-label="Decrease quantity">−</button>
             <input type="number" class="qty-input" id="qty" value="1" min="1" aria-label="Quantity">
             <button type="button" class="qty-btn" id="qty-plus" aria-label="Increase quantity">+</button>
