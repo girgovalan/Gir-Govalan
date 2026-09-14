@@ -1,0 +1,30 @@
+:root { color-scheme: light; font-family: Georgia, serif; --ink: #241d18; --muted: #756b63; --line: #e7ded5; --accent: #76528d; --paper: #fffdf9; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #f5f0e9; color: var(--ink); }
+button, input { font: inherit; }
+button { cursor: pointer; border: 0; background: var(--accent); color: white; padding: 10px 16px; border-radius: 4px; }
+button.secondary { background: transparent; border: 1px solid var(--line); color: var(--ink); }
+.admin-shell { max-width: 1200px; margin: 0 auto; padding: 36px 20px 60px; }
+.admin-header, .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.eyebrow { color: var(--accent); letter-spacing: .12em; text-transform: uppercase; font: 12px Arial, sans-serif; }
+h1 { margin: 0 0 24px; font-size: clamp(32px, 5vw, 54px); font-weight: 400; }
+h2 { margin-top: 0; font-weight: 400; }
+.panel, .order { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; }
+.login-panel { max-width: 460px; padding: 28px; margin-top: 30px; }
+.login-panel form { display: flex; gap: 8px; }
+input { min-width: 0; flex: 1; border: 1px solid var(--line); padding: 11px; border-radius: 4px; }
+.error { color: #a23b32; min-height: 1em; }
+.toolbar { padding: 18px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters button { background: transparent; border: 1px solid var(--line); color: var(--muted); padding: 7px 10px; }
+.filters button.active { background: var(--accent); color: white; border-color: var(--accent); }
+.muted { color: var(--muted); font: 14px Arial, sans-serif; }
+.orders { display: grid; gap: 14px; }
+.order { padding: 18px; display: grid; grid-template-columns: 1.3fr 1fr auto; gap: 18px; align-items: start; }
+.order h3, .order p { margin: 0 0 7px; }
+.order h3 { font-size: 18px; }
+.order small, .order .meta { color: var(--muted); font: 13px Arial, sans-serif; }
+.order select, .order .tracking { width: 100%; margin-top: 8px; padding: 8px; border: 1px solid var(--line); }
+.order-actions { display: flex; flex-direction: column; gap: 8px; }
+@media (max-width: 720px) { .order { grid-template-columns: 1fr; } .toolbar { align-items: flex-start; flex-direction: column; } .login-panel form { flex-direction: column; } }
+@media print { .admin-header, .toolbar, .order-actions, .filters, #status { display: none; } body { background: white; } .order { break-inside: avoid; } }

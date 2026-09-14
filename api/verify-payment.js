@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+const { getSupabaseConfig, supabaseRequest } = require('./lib/supabase');
 
 module.exports = async (req, res) => {
   if (req.method === 'OPTIONS') {
@@ -35,6 +36,16 @@ module.exports = async (req, res) => {
 
     if (expected !== razorpay_signature) {
       return res.status(400).json({ success: false, error: 'Invalid payment signature.' });
+    }
+
+    if (getSupabaseConfig()) {
+      await supabaseRequest(`orders?razorpay_order_id=eq.${encodeURIComponent(razorpay_order_id)}`, {
+        method: 'PATCH',
+        body: JSON.stringify({
+          razorpay_payment_id,
+          payment_status: 'paid'
+        })
+      });
     }
 
     return res.status(200).json({ success: true, paymentId: razorpay_payment_id });

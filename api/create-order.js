@@ -1,4 +1,5 @@
 const { calculateCartTotal } = require('./lib/prices');
+const { getSupabaseConfig, supabaseRequest } = require('./lib/supabase');
 
 function getRazorpayCredentials() {
   const keyId = (process.env.RAZORPAY_KEY_ID || process.env.LIVE_API_KEY || '').trim();
@@ -94,6 +95,26 @@ module.exports = async (req, res) => {
         ? ' Check RAZORPAY_KEY_ID and RAZORPAY_KEY_SECRET in Vercel match the same Live (or Test) pair from Razorpay, then redeploy.'
         : '';
       return res.status(500).json({ error: msg + hint });
+    }
+
+    if (getSupabaseConfig()) {
+      await supabaseRequest('orders', {
+        method: 'POST',
+        body: JSON.stringify({
+          razorpay_order_id: orderData.id,
+          customer_name: customer?.name || '',
+          customer_phone: customer?.contact || '',
+          customer_email: customer?.email || null,
+          address: customer?.address || '',
+          landmark: customer?.landmark || null,
+          city: customer?.city || '',
+          state: customer?.state || '',
+          pincode: customer?.pincode || '',
+          items,
+          amount_paise: amountPaise,
+          currency: 'INR'
+        })
+      });
     }
 
     return res.status(200).json({
