@@ -26,6 +26,16 @@ input { min-width: 0; flex: 1; border: 1px solid var(--line); padding: 11px; bor
 .customer .meta { color: var(--muted); font: 13px Arial, sans-serif; }
 .coupon-form { padding: 16px; display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
 .coupon-form input, .coupon-form select { flex: 1 1 140px; }
+.products { display: grid; gap: 10px; }
+.product-row { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: grid; grid-template-columns: 1.5fr repeat(3, 1fr) auto; gap: 10px; align-items: center; }
+.product-row h3, .product-row p { margin: 0; }
+.product-row input { width: 100%; }
+.low-stock { color: #a23b32; }
+.analytics-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 16px 0; }
+.metric { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 16px; }
+.metric strong { display: block; font: 24px Georgia, serif; margin-top: 8px; }
+.analytics-list { padding: 18px; }
+@media (max-width: 900px) { .analytics-cards { grid-template-columns: repeat(2, 1fr); } .product-row { grid-template-columns: 1fr 1fr; } }
 .order { padding: 18px; display: grid; grid-template-columns: 1.3fr 1fr auto; gap: 18px; align-items: start; }
 .order h3, .order p { margin: 0 0 7px; }
 .order h3 { font-size: 18px; }

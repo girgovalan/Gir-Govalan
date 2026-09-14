@@ -53,6 +53,18 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: 'Invalid cart items.' });
     }
 
+    if (getSupabaseConfig()) {
+      const productIds = [...new Set(items.map(item => item.productId))];
+      const products = await supabaseRequest(`products?id=in.(${productIds.map(id => encodeURIComponent(id)).join(',')})&select=id,stock_quantity,active`);
+      for (const item of items) {
+        const product = products.find(candidate => candidate.id === item.productId);
+        const quantity = Math.max(1, Math.min(99, parseInt(item.qty, 10) || 1));
+        if (!product || !product.active || product.stock_quantity < quantity) {
+          return res.status(409).json({ error: `${item.name || 'This product'} is out of stock.` });
+        }
+      }
+    }
+
     let discountPaise = 0;
     let appliedCoupon = null;
     if (couponCode) {

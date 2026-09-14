@@ -1,5 +1,34 @@
 create extension if not exists pgcrypto;
 
+create table if not exists public.products (
+  id text primary key,
+  name text not null,
+  sku text,
+  price_paise integer not null check (price_paise >= 0),
+  sale_price_paise integer,
+  stock_quantity integer not null default 0 check (stock_quantity >= 0),
+  low_stock_threshold integer not null default 5 check (low_stock_threshold >= 0),
+  category text,
+  image_url text,
+  variants jsonb not null default '[]'::jsonb,
+  active boolean not null default true,
+  inventory_deducted_count integer not null default 0,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+alter table public.products enable row level security;
+
+insert into public.products (id, name, price_paise, category, image_url)
+values
+  ('pure-organic-a2-gir-cow-ghee', 'Pure Organic A2 Gir Cow Bilona Ghee', 130000, 'ghee', '/images/products/gir-govalan-ghee-jar.png'),
+  ('a2-gir-milk', 'A2 Gir Cow Milk', 84000, 'dairy', '/images/products/a2-gir-milk.jpg'),
+  ('fresh-curd', 'Fresh Curd', 15000, 'dairy', '/images/products/fresh-curd.jpg'),
+  ('traditional-ladoo', 'Traditional Ladoo', 34900, 'sweets', '/images/products/traditional-ladoo.jpg'),
+  ('milk-peda', 'Milk Peda', 65000, 'sweets', '/images/products/milk-peda.jpg'),
+  ('shrikhand', 'Shrikhand', 29900, 'sweets', '/images/products/shrikhand.jpg')
+on conflict (id) do nothing;
+
 create table if not exists public.coupons (
   id uuid primary key default gen_random_uuid(),
   code text unique not null,
@@ -64,6 +93,7 @@ create table if not exists public.orders (
   notes text,
   coupon_code text,
   discount_paise integer not null default 0,
+  inventory_deducted boolean not null default false,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -112,6 +142,29 @@ for each row execute function public.set_customer_updated_at();
 alter table public.orders enable row level security;
 alter table public.orders add column if not exists coupon_code text;
 alter table public.orders add column if not exists discount_paise integer not null default 0;
+alter table public.orders add column if not exists inventory_deducted boolean not null default false;
+
+create or replace function public.fulfill_paid_order(order_id_input uuid)
+returns void language plpgsql security definer as $$
+declare
+  order_row public.orders%rowtype;
+  item jsonb;
+  product_row public.products%rowtype;
+  quantity integer;
+begin
+  select * into order_row from public.orders where id = order_id_input for update;
+  if not found or order_row.inventory_deducted or order_row.payment_status <> 'paid' then return; end if;
+  for item in select * from jsonb_array_elements(order_row.items) loop
+    quantity := greatest(1, least(99, coalesce((item->>'qty')::integer, 1)));
+    select * into product_row from public.products where id = item->>'productId' for update;
+    if not found or not product_row.active or product_row.stock_quantity < quantity then
+      raise exception 'Insufficient stock for product %', item->>'productId';
+    end if;
+    update public.products set stock_quantity = stock_quantity - quantity, inventory_deducted_count = inventory_deducted_count + quantity where id = product_row.id;
+  end loop;
+  update public.orders set inventory_deducted = true where id = order_id_input;
+end;
+$$;
 
 create or replace function public.redeem_coupon(coupon_code_input text)
 returns void language plpgsql security definer as $$

@@ -39,7 +39,7 @@ module.exports = async (req, res) => {
     }
 
     if (getSupabaseConfig()) {
-      const orders = await supabaseRequest(`orders?razorpay_order_id=eq.${encodeURIComponent(razorpay_order_id)}&select=coupon_code,payment_status`);
+      const orders = await supabaseRequest(`orders?razorpay_order_id=eq.${encodeURIComponent(razorpay_order_id)}&select=id,coupon_code,payment_status`);
       await supabaseRequest(`orders?razorpay_order_id=eq.${encodeURIComponent(razorpay_order_id)}`, {
         method: 'PATCH',
         body: JSON.stringify({
@@ -50,6 +50,9 @@ module.exports = async (req, res) => {
       const order = orders?.[0];
       if (order?.coupon_code && order.payment_status !== 'paid') {
         await supabaseRequest('rpc/redeem_coupon', { method: 'POST', body: JSON.stringify({ coupon_code_input: order.coupon_code }) });
+      }
+      if (order?.id) {
+        await supabaseRequest('rpc/fulfill_paid_order', { method: 'POST', body: JSON.stringify({ order_id_input: order.id }) });
       }
     }
 

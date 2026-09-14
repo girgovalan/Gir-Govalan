@@ -78,6 +78,26 @@ async function loadCoupons() {
   document.querySelectorAll('.coupon-toggle').forEach(button => { button.onclick = async () => { await fetch('/api/admin-coupons', { method: 'PATCH', headers: { Authorization: `Bearer ${token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ id: button.dataset.id, active: button.dataset.active !== 'true' }) }); loadCoupons(); }; });
 }
 
+async function loadProducts() {
+  $('#products-status').textContent = 'Loading products...';
+  const response = await fetch('/api/admin-products', { headers: { Authorization: `Bearer ${token()}` } });
+  const data = await response.json();
+  $('#products').innerHTML = (data.products || []).map(product => `<article class="product-row"><div><h3>${product.name}</h3><p class="meta">${product.id} · ${product.active ? 'Active' : 'Inactive'}</p></div><label>Price<input class="product-price" data-id="${product.id}" type="number" value="${(product.price_paise / 100).toFixed(2)}"></label><label>Stock<input class="product-stock" data-id="${product.id}" type="number" min="0" value="${product.stock_quantity}"></label><label>Low stock<input class="product-threshold" data-id="${product.id}" type="number" min="0" value="${product.low_stock_threshold}"></label><button class="save-product" data-id="${product.id}">Save</button></article>`).join('') || '<div class="panel" style="padding:24px">No products found.</div>';
+  $('#products-status').textContent = `${data.products?.length || 0} product(s)`;
+  document.querySelectorAll('.save-product').forEach(button => { button.onclick = async () => { const id = button.dataset.id; await fetch('/api/admin-products', { method: 'PATCH', headers: { Authorization: `Bearer ${token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ id, price: document.querySelector(`.product-price[data-id="${id}"]`).value, stock_quantity: document.querySelector(`.product-stock[data-id="${id}"]`).value, low_stock_threshold: document.querySelector(`.product-threshold[data-id="${id}"]`).value }) }); loadProducts(); }; });
+}
+
+async function loadAnalytics() {
+  $('#analytics-status').textContent = 'Loading analytics...';
+  const response = await fetch('/api/admin-analytics', { headers: { Authorization: `Bearer ${token()}` } });
+  const data = await response.json();
+  if (!response.ok) { $('#analytics-status').textContent = data.error || 'Could not load analytics.'; return; }
+  const metric = (label, value) => `<article class="metric"><span class="meta">${label}</span><strong>${value}</strong></article>`;
+  $('#analytics-cards').innerHTML = [metric('Total revenue', money(data.revenue)), metric('Paid orders', data.paidOrders), metric('Customers', data.customers), metric('New customers', data.newCustomers), metric('Repeat customers', data.repeatCustomers), metric('Repeat purchase rate', `${data.repeatRate.toFixed(1)}%`), metric('Average order value', money(data.averageOrderValue)), metric('Today', money(data.today)), metric('This month', money(data.month)), metric('Coupon discounts', money(data.couponDiscounts))].join('');
+  $('#best-sellers').innerHTML = `<h2>Best-selling products</h2>${data.bestSellers?.length ? `<ol>${data.bestSellers.map(item => `<li>${item.name} · ${item.quantity} sold</li>`).join('')}</ol>` : '<p class="muted">No paid product sales yet.</p>'}`;
+  $('#analytics-status').textContent = 'Paid orders only';
+}
+
 async function saveShipping(id) {
   const orderStatus = document.querySelector(`.order-status[data-id="${id}"]`).value;
   const trackingNumber = document.querySelector(`.tracking[data-id="${id}"]`).value;
@@ -95,7 +115,7 @@ function showDashboard() { $('#login').hidden = true; $('#dashboard').hidden = f
 $('#login-form').onsubmit = event => { event.preventDefault(); sessionStorage.setItem(tokenKey, $('#token').value.trim()); showDashboard(); };
 $('#logout').onclick = () => { sessionStorage.removeItem(tokenKey); showLogin(); };
 $('#refresh').onclick = loadOrders;
-$('#views').onclick = event => { const view = event.target.dataset.view; if (!view) return; document.querySelectorAll('#views button').forEach(button => button.classList.toggle('active', button.dataset.view === view)); $('#orders-view').hidden = view !== 'orders'; $('#customers-view').hidden = view !== 'customers'; $('#coupons-view').hidden = view !== 'coupons'; if (view === 'customers') loadCustomers(); else if (view === 'coupons') loadCoupons(); else loadOrders(); };
+$('#views').onclick = event => { const view = event.target.dataset.view; if (!view) return; document.querySelectorAll('#views button').forEach(button => button.classList.toggle('active', button.dataset.view === view)); ['orders', 'customers', 'coupons', 'products', 'analytics'].forEach(name => { $(`#${name}-view`).hidden = view !== name; }); if (view === 'customers') loadCustomers(); else if (view === 'coupons') loadCoupons(); else if (view === 'products') loadProducts(); else if (view === 'analytics') loadAnalytics(); else loadOrders(); };
 $('#coupon-form').onsubmit = async event => { event.preventDefault(); const body = Object.fromEntries(new FormData(event.target)); body.one_per_customer = event.target.one_per_customer.checked; const response = await fetch('/api/admin-coupons', { method: 'POST', headers: { Authorization: `Bearer ${token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); const result = await response.json(); $('#coupons-status').textContent = response.ok ? 'Coupon created.' : result.error; event.target.reset(); loadCoupons(); };
 $('#filters').onclick = event => { if (!event.target.dataset.status && event.target.tagName !== 'BUTTON') return; activeStatus = event.target.dataset.status || ''; document.querySelectorAll('#filters button').forEach(button => button.classList.toggle('active', button.dataset.status === activeStatus)); loadOrders(); };
 if (token()) showDashboard(); else showLogin();
