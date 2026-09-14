@@ -8,6 +8,18 @@ function money(paise, currency = 'INR') {
   return new Intl.NumberFormat('en-IN', { style: 'currency', currency }).format(paise / 100);
 }
 
+const shippingPartners = ['Manual / local carrier', 'Delhivery', 'Shiprocket', 'DHL', 'FedEx', 'UPS', 'Other'];
+
+function trackingUrl(partner, trackingNumber) {
+  if (!trackingNumber) return '';
+  const encoded = encodeURIComponent(trackingNumber);
+  if (partner === 'Delhivery') return `https://www.delhivery.com/track/package/${encoded}`;
+  if (partner === 'DHL') return `https://www.dhl.com/global-en/home/tracking.html?tracking-id=${encoded}`;
+  if (partner === 'FedEx') return `https://www.fedex.com/fedextrack/?trknbr=${encoded}`;
+  if (partner === 'UPS') return `https://www.ups.com/track?tracknum=${encoded}`;
+  return '';
+}
+
 function printOrder(order, label = false) {
   if (!order) return;
   const title = label ? 'Shipping label' : 'Invoice';
@@ -26,7 +38,7 @@ function printOrder(order, label = false) {
 
 function orderCard(order) {
   const items = (order.items || []).map(item => `${item.name || item.productId}${item.variant ? ` (${item.variant})` : ''} × ${item.qty}`).join(', ');
-  return `<article class="order"><div><h3>#${order.order_number} · ${order.customer_name}</h3><p class="meta">${new Date(order.created_at).toLocaleString()} · ${order.customer_phone}</p><p>${items}</p><p><strong>${money(order.amount_paise, order.currency)}</strong> · Payment: ${order.payment_status}</p></div><div><p>${order.address}<br>${order.city}, ${order.state} - ${order.pincode}</p><select class="order-status" data-id="${order.id}">${['new', 'processing', 'shipped', 'delivered', 'cancelled'].map(status => `<option ${status === order.order_status ? 'selected' : ''}>${status}</option>`).join('')}</select><input class="tracking" data-id="${order.id}" value="${order.tracking_number || ''}" placeholder="Tracking number"></div><div class="order-actions"><button data-print="invoice" data-order="${order.id}">Print invoice</button><button class="secondary" data-print="label" data-order="${order.id}">Print label</button></div></article>`;
+  return `<article class="order"><div><h3>#${order.order_number} · ${order.customer_name}</h3><p class="meta">${new Date(order.created_at).toLocaleString()} · ${order.customer_phone}</p><p>${items}</p><p><strong>${money(order.amount_paise, order.currency)}</strong> · Payment: ${order.payment_status}</p></div><div><p>${order.address}<br>${order.city}, ${order.state} - ${order.pincode}</p><select class="order-status" data-id="${order.id}">${['new', 'processing', 'shipped', 'delivered', 'cancelled'].map(status => `<option ${status === order.order_status ? 'selected' : ''}>${status}</option>`).join('')}</select><select class="shipping-partner" data-id="${order.id}"><option value="">Shipping partner</option>${shippingPartners.map(partner => `<option ${partner === order.shipping_partner ? 'selected' : ''}>${partner}</option>`).join('')}</select><input class="tracking" data-id="${order.id}" value="${order.tracking_number || ''}" placeholder="Tracking / AWB number"><div class="shipping-actions"><button data-shipment="create" data-order="${order.id}">Create shipment</button><button class="secondary" data-shipment="track" data-order="${order.id}">Track shipment</button></div></div><div class="order-actions"><button data-print="invoice" data-order="${order.id}">Print invoice</button><button class="secondary" data-print="label" data-order="${order.id}">Print label</button></div></article>`;
 }
 
 async function loadOrders() {
@@ -36,13 +48,23 @@ async function loadOrders() {
   const data = await response.json();
   $('#orders').innerHTML = data.orders?.length ? data.orders.map(orderCard).join('') : '<div class="panel" style="padding:24px">No orders found.</div>';
   $('#status').textContent = `${data.orders?.length || 0} order(s)`;
-  document.querySelectorAll('.order-status').forEach(select => { select.onchange = () => updateOrder(select.dataset.id, select.value, document.querySelector(`.tracking[data-id="${select.dataset.id}"]`).value); });
-  document.querySelectorAll('.tracking').forEach(input => { input.onchange = () => updateOrder(input.dataset.id, document.querySelector(`.order-status[data-id="${input.dataset.id}"]`).value, input.value); });
+  document.querySelectorAll('.order-status').forEach(select => { select.onchange = () => saveShipping(select.dataset.id); });
+  document.querySelectorAll('.shipping-partner').forEach(select => { select.onchange = () => saveShipping(select.dataset.id); });
+  document.querySelectorAll('.tracking').forEach(input => { input.onchange = () => saveShipping(input.dataset.id); });
   document.querySelectorAll('[data-print]').forEach(button => { button.onclick = () => printOrder(data.orders.find(order => order.id === button.dataset.order), button.dataset.print === 'label'); });
+  document.querySelectorAll('[data-shipment="create"]').forEach(button => { button.onclick = () => { const order = data.orders.find(item => item.id === button.dataset.order); alert(order?.shipping_partner ? 'Shipment creation is ready for this partner once its API credentials are configured.' : 'Select a shipping partner first.'); }; });
+  document.querySelectorAll('[data-shipment="track"]').forEach(button => { button.onclick = () => { const order = data.orders.find(item => item.id === button.dataset.order); const url = trackingUrl(order?.shipping_partner, order?.tracking_number); if (url) window.open(url, '_blank', 'noopener'); else alert('Add a supported shipping partner and tracking/AWB number first.'); }; });
 }
 
-async function updateOrder(id, orderStatus, trackingNumber) {
-  await fetch('/api/admin-orders', { method: 'PATCH', headers: { Authorization: `Bearer ${token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ id, order_status: orderStatus, tracking_number: trackingNumber }) });
+async function saveShipping(id) {
+  const orderStatus = document.querySelector(`.order-status[data-id="${id}"]`).value;
+  const trackingNumber = document.querySelector(`.tracking[data-id="${id}"]`).value;
+  const shippingPartner = document.querySelector(`.shipping-partner[data-id="${id}"]`).value;
+  await updateOrder(id, orderStatus, trackingNumber, shippingPartner);
+}
+
+async function updateOrder(id, orderStatus, trackingNumber, shippingPartner = '') {
+  await fetch('/api/admin-orders', { method: 'PATCH', headers: { Authorization: `Bearer ${token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ id, order_status: orderStatus, tracking_number: trackingNumber, shipping_partner: shippingPartner }) });
 }
 
 function showLogin(error = '') { $('#login').hidden = false; $('#dashboard').hidden = true; $('#login-error').textContent = error; }
