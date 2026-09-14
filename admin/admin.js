@@ -69,6 +69,15 @@ async function loadCustomers() {
   $('#customers-status').textContent = `${data.customers?.length || 0} customer(s)`;
 }
 
+async function loadCoupons() {
+  $('#coupons-status').textContent = 'Loading coupons...';
+  const response = await fetch('/api/admin-coupons', { headers: { Authorization: `Bearer ${token()}` } });
+  const data = await response.json();
+  $('#coupons').innerHTML = data.coupons?.length ? data.coupons.map(coupon => `<article class="customer"><div><h3>${coupon.code}</h3><p class="meta">${coupon.discount_type === 'percentage' ? `${coupon.discount_value}% off` : money(coupon.discount_value * 100) + ' off'} · ${coupon.active ? 'Active' : 'Inactive'}</p></div><div><p>Used: ${coupon.usage_count}${coupon.usage_limit ? ` / ${coupon.usage_limit}` : ''}<br>${coupon.minimum_order_paise ? `Minimum order ${money(coupon.minimum_order_paise)}` : 'No minimum order'}</p></div><div><button class="secondary coupon-toggle" data-id="${coupon.id}" data-active="${coupon.active}">${coupon.active ? 'Disable' : 'Enable'}</button></div></article>`).join('') : '<div class="panel" style="padding:24px">No coupons found.</div>';
+  $('#coupons-status').textContent = `${data.coupons?.length || 0} coupon(s)`;
+  document.querySelectorAll('.coupon-toggle').forEach(button => { button.onclick = async () => { await fetch('/api/admin-coupons', { method: 'PATCH', headers: { Authorization: `Bearer ${token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ id: button.dataset.id, active: button.dataset.active !== 'true' }) }); loadCoupons(); }; });
+}
+
 async function saveShipping(id) {
   const orderStatus = document.querySelector(`.order-status[data-id="${id}"]`).value;
   const trackingNumber = document.querySelector(`.tracking[data-id="${id}"]`).value;
@@ -86,6 +95,7 @@ function showDashboard() { $('#login').hidden = true; $('#dashboard').hidden = f
 $('#login-form').onsubmit = event => { event.preventDefault(); sessionStorage.setItem(tokenKey, $('#token').value.trim()); showDashboard(); };
 $('#logout').onclick = () => { sessionStorage.removeItem(tokenKey); showLogin(); };
 $('#refresh').onclick = loadOrders;
-$('#views').onclick = event => { const view = event.target.dataset.view; if (!view) return; document.querySelectorAll('#views button').forEach(button => button.classList.toggle('active', button.dataset.view === view)); $('#orders-view').hidden = view !== 'orders'; $('#customers-view').hidden = view !== 'customers'; if (view === 'customers') loadCustomers(); else loadOrders(); };
+$('#views').onclick = event => { const view = event.target.dataset.view; if (!view) return; document.querySelectorAll('#views button').forEach(button => button.classList.toggle('active', button.dataset.view === view)); $('#orders-view').hidden = view !== 'orders'; $('#customers-view').hidden = view !== 'customers'; $('#coupons-view').hidden = view !== 'coupons'; if (view === 'customers') loadCustomers(); else if (view === 'coupons') loadCoupons(); else loadOrders(); };
+$('#coupon-form').onsubmit = async event => { event.preventDefault(); const body = Object.fromEntries(new FormData(event.target)); body.one_per_customer = event.target.one_per_customer.checked; const response = await fetch('/api/admin-coupons', { method: 'POST', headers: { Authorization: `Bearer ${token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); const result = await response.json(); $('#coupons-status').textContent = response.ok ? 'Coupon created.' : result.error; event.target.reset(); loadCoupons(); };
 $('#filters').onclick = event => { if (!event.target.dataset.status && event.target.tagName !== 'BUTTON') return; activeStatus = event.target.dataset.status || ''; document.querySelectorAll('#filters button').forEach(button => button.classList.toggle('active', button.dataset.status === activeStatus)); loadOrders(); };
 if (token()) showDashboard(); else showLogin();

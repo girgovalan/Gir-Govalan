@@ -1,5 +1,27 @@
 create extension if not exists pgcrypto;
 
+create table if not exists public.coupons (
+  id uuid primary key default gen_random_uuid(),
+  code text unique not null,
+  discount_type text not null check (discount_type in ('percentage', 'fixed')),
+  discount_value integer not null check (discount_value > 0),
+  minimum_order_paise integer not null default 0 check (minimum_order_paise >= 0),
+  maximum_discount_paise integer,
+  starts_at timestamptz,
+  expires_at timestamptz,
+  usage_limit integer,
+  usage_count integer not null default 0,
+  one_per_customer boolean not null default false,
+  product_ids jsonb not null default '[]'::jsonb,
+  categories jsonb not null default '[]'::jsonb,
+  active boolean not null default true,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create index if not exists coupons_code_idx on public.coupons (code);
+alter table public.coupons enable row level security;
+
 create table if not exists public.customers (
   id uuid primary key default gen_random_uuid(),
   name text not null,
@@ -40,6 +62,8 @@ create table if not exists public.orders (
   tracking_number text,
   shipping_partner text,
   notes text,
+  coupon_code text,
+  discount_paise integer not null default 0,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -61,6 +85,18 @@ where orders.customer_id is null and orders.customer_phone = customers.phone;
 create index if not exists orders_status_idx on public.orders (order_status, created_at desc);
 create index if not exists orders_payment_status_idx on public.orders (payment_status, created_at desc);
 
+create or replace function public.set_coupon_updated_at()
+returns trigger language plpgsql as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
+drop trigger if exists coupons_updated_at on public.coupons;
+create trigger coupons_updated_at before update on public.coupons
+for each row execute function public.set_coupon_updated_at();
+
 create or replace function public.set_customer_updated_at()
 returns trigger language plpgsql as $$
 begin
@@ -74,6 +110,20 @@ create trigger customers_updated_at before update on public.customers
 for each row execute function public.set_customer_updated_at();
 
 alter table public.orders enable row level security;
+alter table public.orders add column if not exists coupon_code text;
+alter table public.orders add column if not exists discount_paise integer not null default 0;
+
+create or replace function public.redeem_coupon(coupon_code_input text)
+returns void language plpgsql security definer as $$
+begin
+  update public.coupons
+  set usage_count = usage_count + 1
+  where code = upper(trim(coupon_code_input))
+    and active = true
+    and (usage_limit is null or usage_count < usage_limit);
+  if not found then raise exception 'Coupon usage limit reached or coupon is inactive.'; end if;
+end;
+$$;
 
 create or replace function public.set_order_updated_at()
 returns trigger language plpgsql as $$

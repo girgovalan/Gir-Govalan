@@ -24,6 +24,8 @@ input { min-width: 0; flex: 1; border: 1px solid var(--line); padding: 11px; bor
 .customer { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 16px; }
 .customer h3, .customer p { margin: 0 0 6px; }
 .customer .meta { color: var(--muted); font: 13px Arial, sans-serif; }
+.coupon-form { padding: 16px; display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.coupon-form input, .coupon-form select { flex: 1 1 140px; }
 .order { padding: 18px; display: grid; grid-template-columns: 1.3fr 1fr auto; gap: 18px; align-items: start; }
 .order h3, .order p { margin: 0 0 7px; }
 .order h3 { font-size: 18px; }

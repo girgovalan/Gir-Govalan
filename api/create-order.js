@@ -1,5 +1,6 @@
 const { calculateCartTotal } = require('./lib/prices');
 const { getSupabaseConfig, supabaseRequest } = require('./lib/supabase');
+const { validateCoupon } = require('./lib/coupons');
 
 function getRazorpayCredentials() {
   const keyId = (process.env.RAZORPAY_KEY_ID || process.env.LIVE_API_KEY || '').trim();
@@ -45,14 +46,22 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const { items, customer } = req.body || {};
-    const total = calculateCartTotal(items);
+    const { items, customer, couponCode } = req.body || {};
+    const subtotal = calculateCartTotal(items);
 
-    if (total == null || total < 1) {
+    if (subtotal == null || subtotal < 1) {
       return res.status(400).json({ error: 'Invalid cart items.' });
     }
 
-    const amountPaise = Math.round(total * 100);
+    let discountPaise = 0;
+    let appliedCoupon = null;
+    if (couponCode) {
+      if (!getSupabaseConfig()) return res.status(500).json({ error: 'Coupons are not configured.' });
+      const result = await validateCoupon(couponCode, items, customer, Math.round(subtotal * 100));
+      discountPaise = result.discount;
+      appliedCoupon = result.code;
+    }
+    const amountPaise = Math.max(1, Math.round(subtotal * 100) - discountPaise);
     const receipt = `gg${Date.now()}`.slice(0, 40);
     const auth = Buffer.from(`${keyId}:${keySecret}`).toString('base64');
 
@@ -127,6 +136,8 @@ module.exports = async (req, res) => {
           pincode: customer?.pincode || '',
           items,
           amount_paise: amountPaise,
+          coupon_code: appliedCoupon,
+          discount_paise: discountPaise,
           currency: 'INR'
         })
       });

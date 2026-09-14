@@ -31,10 +31,11 @@ async function startRazorpayCheckout(cart, customer) {
       name: item.name
     }));
 
+    const couponCode = document.getElementById('coupon-code')?.value?.trim().toUpperCase() || '';
     const res = await fetch('/api/create-order/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ items, customer })
+      body: JSON.stringify({ items, customer, couponCode })
     });
 
     const data = await res.json();

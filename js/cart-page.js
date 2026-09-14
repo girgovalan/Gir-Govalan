@@ -21,6 +21,7 @@ function renderCart() {
     <div class="cart-summary">
       <h3>Order summary</h3>
       <p><strong>Subtotal:</strong> ${formatPrice(cartTotal(cart))}</p>
+      <div class="coupon-row"><label for="coupon-code">Have a coupon?</label><div><input id="coupon-code" type="text" placeholder="Coupon code" autocomplete="off"><button type="button" class="btn btn-outline" id="apply-coupon">Apply</button></div><p id="coupon-message" class="checkout-note"></p></div>
       <div class="checkout-fields">
         <p class="checkout-heading">Delivery details</p>
         <div class="field"><label for="checkout-name">Full name *</label><input type="text" id="checkout-name" name="checkout-name" required autocomplete="name"></div>
@@ -47,6 +48,20 @@ function renderCart() {
     btn.onclick = () => { const item = cart.find(i => i.key === btn.dataset.key); updateCartQty(btn.dataset.key, item.qty + 1); renderCart(); };
   });
   bindRazorpayPayButton(cart);
+  const couponBtn = document.getElementById('apply-coupon');
+  if (couponBtn) couponBtn.onclick = async () => {
+    const code = document.getElementById('coupon-code').value.trim();
+    const message = document.getElementById('coupon-message');
+    if (!code) { message.textContent = 'Enter a coupon code.'; return; }
+    couponBtn.disabled = true;
+    try {
+      const response = await fetch('/api/validate-coupon/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ code, items: cart, customer: getCheckoutCustomerFromForm() }) });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error);
+      message.textContent = `Coupon applied: ${formatPrice(result.discount / 100)} off. Total: ${formatPrice(result.total / 100)}`;
+    } catch (error) { message.textContent = error.message || 'Coupon could not be applied.'; }
+    couponBtn.disabled = false;
+  };
   const waBtn = document.getElementById('whatsapp-order');
   if (waBtn) {
     waBtn.onclick = () => {
