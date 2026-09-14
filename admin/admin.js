@@ -87,6 +87,8 @@ async function loadProducts() {
   document.querySelectorAll('.save-product').forEach(button => { button.onclick = async () => { const id = button.dataset.id; await fetch('/api/admin-products', { method: 'PATCH', headers: { Authorization: `Bearer ${token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ id, price: document.querySelector(`.product-price[data-id="${id}"]`).value, stock_quantity: document.querySelector(`.product-stock[data-id="${id}"]`).value, low_stock_threshold: document.querySelector(`.product-threshold[data-id="${id}"]`).value }) }); loadProducts(); }; });
 }
 
+$('#product-form').onsubmit = async event => { event.preventDefault(); const body = Object.fromEntries(new FormData(event.target)); const response = await fetch('/api/admin-products', { method: 'POST', headers: { Authorization: `Bearer ${token()}`, 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); const result = await response.json(); $('#products-status').textContent = response.ok ? 'Product added.' : result.error; if (response.ok) { event.target.reset(); loadProducts(); } };
+
 async function loadAnalytics() {
   $('#analytics-status').textContent = 'Loading analytics...';
   const response = await fetch('/api/admin-analytics', { headers: { Authorization: `Bearer ${token()}` } });
