@@ -9,11 +9,19 @@ function money(paise, currency = 'INR') {
 }
 
 function printOrder(order, label = false) {
+  if (!order) return;
   const title = label ? 'Shipping label' : 'Invoice';
-  const items = (order.items || []).map(item => `<li>${item.name || item.productId}${item.variant ? ` (${item.variant})` : ''} × ${item.qty}</li>`).join('');
-  const popup = window.open('', '_blank', 'noopener');
-  popup.document.write(`<title>${title} #${order.order_number}</title><h1>Gir Govalan - ${title}</h1><p>Order #${order.order_number}</p><h2>${order.customer_name}</h2><p>${order.customer_phone}<br>${order.address}<br>${order.landmark || ''}<br>${order.city}, ${order.state} - ${order.pincode}</p><ul>${items}</ul><strong>Total: ${money(order.amount_paise, order.currency)}</strong>`);
-  popup.print();
+  const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
+  const items = (order.items || []).map(item => `<li>${escapeHtml(item.name || item.productId)}${item.variant ? ` (${escapeHtml(item.variant)})` : ''} x ${escapeHtml(item.qty)}</li>`).join('');
+  const popup = window.open('', '_blank');
+  if (!popup) {
+    alert('Please allow pop-ups for the admin dashboard to print this document.');
+    return;
+  }
+  popup.document.open();
+  popup.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${escapeHtml(title)} #${escapeHtml(order.order_number)}</title><style>body{font:16px Arial,sans-serif;max-width:760px;margin:40px auto;color:#241d18}h1{font:28px Georgia,serif;border-bottom:2px solid #76528d;padding-bottom:12px}li{margin:8px 0}.total{font-size:20px;margin-top:24px}</style></head><body><h1>Gir Govalan - ${escapeHtml(title)}</h1><p>Order #${escapeHtml(order.order_number)}</p><h2>${escapeHtml(order.customer_name)}</h2><p>${escapeHtml(order.customer_phone)}<br>${escapeHtml(order.address)}<br>${escapeHtml(order.landmark)}<br>${escapeHtml(order.city)}, ${escapeHtml(order.state)} - ${escapeHtml(order.pincode)}</p><ul>${items}</ul><p class="total"><strong>Total: ${escapeHtml(money(order.amount_paise, order.currency))}</strong></p></body></html>`);
+  popup.document.close();
+  popup.onload = () => { popup.focus(); popup.print(); };
 }
 
 function orderCard(order) {
