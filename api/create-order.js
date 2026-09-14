@@ -98,9 +98,24 @@ module.exports = async (req, res) => {
     }
 
     if (getSupabaseConfig()) {
+      const customers = await supabaseRequest('customers?on_conflict=phone', {
+        method: 'POST',
+        headers: { Prefer: 'resolution=merge-duplicates,return=representation' },
+        body: JSON.stringify({
+          name: customer?.name || '',
+          phone: customer?.contact || '',
+          email: customer?.email || null,
+          address: customer?.address || '',
+          city: customer?.city || '',
+          state: customer?.state || '',
+          pincode: customer?.pincode || '',
+          country: customer?.country || 'India'
+        })
+      });
       await supabaseRequest('orders', {
         method: 'POST',
         body: JSON.stringify({
+          customer_id: customers?.[0]?.id || null,
           razorpay_order_id: orderData.id,
           customer_name: customer?.name || '',
           customer_phone: customer?.contact || '',

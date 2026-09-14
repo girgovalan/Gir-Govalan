@@ -33,6 +33,6 @@ Use the same secret as `RAZORPAY_WEBHOOK_SECRET` and subscribe to:
 
 ## 3. Open the dashboard
 
-Visit `/admin/` and enter the value of `ADMIN_API_TOKEN`. The dashboard supports order filtering, fulfillment status, partner selection, tracking/AWB numbers, invoice printing, and shipping-label printing. Create shipment is provider-neutral until courier API credentials are configured; Track shipment opens supported carrier tracking pages when an AWB is present.
+Visit `/admin/` and enter the value of `ADMIN_API_TOKEN`. The dashboard supports order filtering, customer records, paid-order totals, fulfillment status, partner selection, tracking/AWB numbers, invoice printing, and shipping-label printing. Create shipment is provider-neutral until courier API credentials are configured; Track shipment opens supported carrier tracking pages when an AWB is present.
 
 The current shipping fields are provider-neutral. A carrier integration still needs the selected partner's API credentials and shipment endpoint.

@@ -20,6 +20,10 @@ input { min-width: 0; flex: 1; border: 1px solid var(--line); padding: 11px; bor
 .filters button.active { background: var(--accent); color: white; border-color: var(--accent); }
 .muted { color: var(--muted); font: 14px Arial, sans-serif; }
 .orders { display: grid; gap: 14px; }
+.customers { display: grid; gap: 10px; }
+.customer { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 16px; }
+.customer h3, .customer p { margin: 0 0 6px; }
+.customer .meta { color: var(--muted); font: 13px Arial, sans-serif; }
 .order { padding: 18px; display: grid; grid-template-columns: 1.3fr 1fr auto; gap: 18px; align-items: start; }
 .order h3, .order p { margin: 0 0 7px; }
 .order h3 { font-size: 18px; }

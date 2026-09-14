@@ -56,6 +56,19 @@ async function loadOrders() {
   document.querySelectorAll('[data-shipment="track"]').forEach(button => { button.onclick = () => { const order = data.orders.find(item => item.id === button.dataset.order); const url = trackingUrl(order?.shipping_partner, order?.tracking_number); if (url) window.open(url, '_blank', 'noopener'); else alert('Add a supported shipping partner and tracking/AWB number first.'); }; });
 }
 
+function customerCard(customer) {
+  return `<article class="customer"><div><h3>${customer.name}</h3><p class="meta">${customer.phone}${customer.email ? ` · ${customer.email}` : ''}</p></div><div><p>${customer.address || 'No address saved'}<br>${[customer.city, customer.state, customer.pincode].filter(Boolean).join(', ')}</p></div><div><strong>${customer.order_count} order(s)</strong><p class="meta">${money(customer.total_spent_paise)}</p></div></article>`;
+}
+
+async function loadCustomers() {
+  $('#customers-status').textContent = 'Loading customers...';
+  const response = await fetch('/api/admin-customers', { headers: { Authorization: `Bearer ${token()}` } });
+  if (response.status === 401) return showLogin('Invalid admin token.');
+  const data = await response.json();
+  $('#customers').innerHTML = data.customers?.length ? data.customers.map(customerCard).join('') : '<div class="panel" style="padding:24px">No customers found.</div>';
+  $('#customers-status').textContent = `${data.customers?.length || 0} customer(s)`;
+}
+
 async function saveShipping(id) {
   const orderStatus = document.querySelector(`.order-status[data-id="${id}"]`).value;
   const trackingNumber = document.querySelector(`.tracking[data-id="${id}"]`).value;
@@ -73,5 +86,6 @@ function showDashboard() { $('#login').hidden = true; $('#dashboard').hidden = f
 $('#login-form').onsubmit = event => { event.preventDefault(); sessionStorage.setItem(tokenKey, $('#token').value.trim()); showDashboard(); };
 $('#logout').onclick = () => { sessionStorage.removeItem(tokenKey); showLogin(); };
 $('#refresh').onclick = loadOrders;
+$('#views').onclick = event => { const view = event.target.dataset.view; if (!view) return; document.querySelectorAll('#views button').forEach(button => button.classList.toggle('active', button.dataset.view === view)); $('#orders-view').hidden = view !== 'orders'; $('#customers-view').hidden = view !== 'customers'; if (view === 'customers') loadCustomers(); else loadOrders(); };
 $('#filters').onclick = event => { if (!event.target.dataset.status && event.target.tagName !== 'BUTTON') return; activeStatus = event.target.dataset.status || ''; document.querySelectorAll('#filters button').forEach(button => button.classList.toggle('active', button.dataset.status === activeStatus)); loadOrders(); };
 if (token()) showDashboard(); else showLogin();
