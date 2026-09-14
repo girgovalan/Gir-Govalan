@@ -28,6 +28,13 @@ function addToCart(productId, qty = 1, variantLabel, priceOverride) {
   if (existing) existing.qty += qty;
   else cart.push({ key, productId, name: product.name, price, qty: qty, variant: variantLabel || null, image: product.image });
   saveCart(cart);
+  if (typeof trackGa4 === 'function') {
+    trackGa4('add_to_cart', {
+      currency: 'INR',
+      value: price * qty,
+      items: ga4Items([{ productId, name: product.name, variant: variantLabel || null, price, qty }])
+    });
+  }
   showToast(qty > 1 ? `Added ${qty} items to cart` : 'Added to cart');
 }
 
@@ -258,6 +265,10 @@ function productCardHTML(p) {
 
 function bindGlobalUI() {
   document.body.addEventListener('click', e => {
+    const contactLink = e.target.closest('a[href^="mailto:"], a[href^="tel:"], a[href*="wa.me/"]');
+    if (contactLink && typeof trackGa4 === 'function') {
+      trackGa4('contact_click', { method: contactLink.href.startsWith('mailto:') ? 'email' : contactLink.href.startsWith('tel:') ? 'phone' : 'whatsapp' });
+    }
     const add = e.target.closest('[data-add-cart]');
     if (add) {
       e.preventDefault();

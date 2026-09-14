@@ -32,6 +32,9 @@ async function startRazorpayCheckout(cart, customer) {
     }));
 
     const couponCode = document.getElementById('coupon-code')?.value?.trim().toUpperCase() || '';
+    if (typeof trackGa4 === 'function') {
+      trackGa4('begin_checkout', { currency: 'INR', value: cartTotal(cart), coupon: couponCode || undefined, items: ga4Items(cart) });
+    }
     const res = await fetch('/api/create-order/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -70,8 +73,11 @@ async function startRazorpayCheckout(cart, customer) {
           const result = await verifyRes.json();
 
           if (result.success) {
-            // Track Purchase event with Meta Pixel
             const cart = getCart();
+            if (typeof trackGa4Purchase === 'function') {
+              trackGa4Purchase(result.paymentId, cart, data.amount, data.currency || 'INR', couponCode);
+            }
+            // Track Purchase event with Meta Pixel
             const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
             
             if (typeof MetaPixel !== 'undefined') {

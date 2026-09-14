@@ -9,6 +9,14 @@
     return;
   }
 
+  if (typeof trackGa4 === 'function') {
+    trackGa4('view_item', {
+      currency: 'INR',
+      value: Number(product.price || 0),
+      items: ga4Items([{ productId: product.id, name: product.name, price: product.price, qty: 1 }])
+    });
+  }
+
   document.title = product.name + ' — Gir Govalan';
   const link = document.createElement('link');
   link.rel = 'canonical';
