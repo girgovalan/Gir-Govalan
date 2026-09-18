@@ -541,9 +541,34 @@ const FEATURED_VIDEOS = [
     id: 'gir-govalan-ghee-process',
     title: 'How We Make Bilona Ghee',
     seoTitle: 'How We Make Bilona Ghee',
-description: 'From A2 Gir cow milk to pure golden ghee — see the traditional bilona process at Gir Govalan.',
+    description: 'From A2 Gir cow milk to pure golden ghee — see the traditional bilona process at Gir Govalan.',
     src: '/Videos/gir-govalan-ghee-process.mp4',
-    poster: PRODUCT_IMAGES.gheeBilonaProcess
+    poster: PRODUCT_IMAGES.gheeBilonaProcess,
+    productId: 'pure-organic-a2-gir-cow-ghee'
+  },
+  {
+    id: 'gir-govalan-intro',
+    title: 'Welcome to Gir Govalan',
+    description: 'Meet Gir Govalan and discover our farm-to-home products.',
+    src: '/Videos/Gir%20Govalan%20Intro.mp4',
+    poster: PRODUCT_IMAGES.gheeJarPhoto,
+    productId: 'pure-organic-a2-gir-cow-ghee'
+  },
+  {
+    id: 'a2-milk-surat',
+    title: 'Fresh A2 Gir Cow Milk in Surat',
+    description: 'Fresh farm milk delivered to Surat homes.',
+    src: '/Videos/A2%20milk%20Surat.mp4',
+    poster: PRODUCT_IMAGES.milk,
+    productId: 'a2-gir-milk'
+  },
+  {
+    id: 'gir-cow-milk-surat',
+    title: 'Gir Cow Milk Surat',
+    description: 'Pure Gir cow milk from our farm to your home.',
+    src: '/Videos/Gir%20cow%20milk%20surat.mp4',
+    poster: PRODUCT_IMAGES.milk,
+    productId: 'a2-gir-milk'
   }
 ];
 

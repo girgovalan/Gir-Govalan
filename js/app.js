@@ -200,18 +200,32 @@ function testimonialCardHTML(t) {
 }
 
 function featuredVideoCardHTML(v) {
-  const poster = v.poster ? ` poster="${v.poster}"` : '';
+  const linkedProduct = v.productId && typeof getProduct === 'function' ? getProduct(v.productId) : null;
+  const media = v.instagramUrl
+    ? `<a class="featured-video-instagram-link" href="${v.instagramUrl}" target="_blank" rel="noopener" aria-label="Watch ${v.title} on Instagram">
+        <img src="${v.poster || ''}" alt="${v.title}" loading="lazy">
+        <span class="featured-video-instagram-badge">Instagram</span>
+        <span class="featured-video-play" aria-hidden="true">▶</span>
+      </a>`
+    : `<video controls autoplay muted loop playsinline preload="auto" aria-label="${v.title}">
+        <source src="${v.src}" type="video/mp4">
+        Your browser does not support video playback.
+      </video>`;
+
+  const product = linkedProduct ? `
+    <div class="featured-video-product featured-video-product--button-only">
+      <strong class="featured-video-product-name">${linkedProduct.name}</strong>
+      <button type="button" class="btn btn-cta featured-video-add" data-add-cart="${linkedProduct.id}">Add to Cart</button>
+    </div>` : '';
+
   return `
     <article class="featured-video-card">
       <div class="featured-video-wrap">
-        <video controls playsinline preload="none"${poster} aria-label="${v.title}">
-          <source src="${v.src}" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
+        ${media}
       </div>
       <div class="featured-video-body">
         <h3>${v.title}</h3>
-        <p>${v.description}</p>
+        ${product}
       </div>
     </article>`;
 }
