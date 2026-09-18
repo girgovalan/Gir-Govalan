@@ -29,7 +29,7 @@ const SITE = {
     linkedin: 'https://www.linkedin.com/company/girgovalan/',
     pinterest: 'https://in.pinterest.com/girgovalan/'
   },
-  logo: '/images/logo-header.png',
+  logo: '/images/optimized/logo-header.webp',
   logoWidth: 300,
   logoFooter: '/images/gir-govalan-logo.png',
   footerImageDesktop: '/images/gir-govalan-footer-cows-desktop.png',
@@ -47,19 +47,19 @@ const SITE = {
 
 /* Product photos — currently using available local files in images/products/ */
 const PRODUCT_IMAGES = {
-  gheeJarPhoto: productImg('gir-govalan-ghee-jar.png'),
+  gheeJarPhoto: '/images/optimized/gir-govalan-ghee-jar.webp',
   gheeBilonaProcess: productImg('bilona-ghee-process.png'),
   gheeBoilingMakhan: productImg('boiling-makhan-ghee.png'),
   gheeMilkingCow: productImg('milking-gir-cow.png'),
   gheeCaringCow: productImg('caring-gir-cow.png'),
-  gheeHero: productImg('gir-govalan-ghee-jar.png'),
-  gheeJar: productImg('gir-govalan-ghee-jar.png'),
+  gheeHero: '/images/optimized/gir-govalan-ghee-jar.webp',
+  gheeJar: '/images/optimized/gir-govalan-ghee-jar.webp',
   gheeJar2: productImg('bilona-ghee-process.png'),
   gheeBilona: productImg('boiling-makhan-ghee.png'),
   gheeAlt1: productImg('milking-gir-cow.png'),
   gheeAlt2: productImg('caring-gir-cow.png'),
   gheeAlt3: productImg('gir-govalan-a2-ghee-packaging.jpg'),
-  milk: productImg('a2-gir-milk.jpg'),
+  milk: '/images/optimized/a2-gir-milk.webp',
   curd: productImg('fresh-curd.jpg'),
   ladoo: productImg('traditional-ladoo.jpg'),
   peda: productImg('milk-peda.jpg'),
@@ -69,10 +69,10 @@ const PRODUCT_IMAGES = {
 };
 
 const CATEGORIES = [
-  { id: 'ghee', title: 'Ghee', icon: '/images/icons/gir-cow-ghee-category-icon.jpg', url: '/collections/all/?category=ghee' },
-  { id: 'dairy', title: 'Dairy', icon: '/images/icons/a2-gir-cow-dairy-category-icon.png', url: '/collections/all/?category=dairy' },
-  { id: 'sweets', title: 'Desserts', icon: '/images/icons/gujarati-desserts-mithai-category-icon.png', url: '/collections/all/?category=sweets' },
-  { id: 'seeds-nuts', title: 'Seeds & Nuts', icon: '/images/icons/seeds-nuts-dry-fruits-category-icon.png', url: '/collections/all/?category=seeds-nuts' }
+  { id: 'ghee', title: 'Ghee', icon: '/images/optimized/gir-cow-ghee-category-icon.webp', url: '/collections/all/?category=ghee' },
+  { id: 'dairy', title: 'Dairy', icon: '/images/optimized/a2-gir-cow-dairy-category-icon.webp', url: '/collections/all/?category=dairy' },
+  { id: 'sweets', title: 'Desserts', icon: '/images/optimized/gujarati-desserts-mithai-category-icon.webp', url: '/collections/all/?category=sweets' },
+  { id: 'seeds-nuts', title: 'Seeds & Nuts', icon: '/images/optimized/seeds-nuts-dry-fruits-category-icon.webp', url: '/collections/all/?category=seeds-nuts' }
 ];
 
 const PRODUCTS = [
@@ -598,7 +598,7 @@ const GALLERY = [
   { src: PRODUCT_IMAGES.gheeBoilingMakhan, alt: 'Hand-churned bilona ghee — Gir Govalan' },
   { src: PRODUCT_IMAGES.gheeMilkingCow, alt: 'Milking Gir cow — Gir Govalan farm' },
   { src: PRODUCT_IMAGES.gheeCaringCow, alt: 'Caring for Gir cows — Gir Govalan' },
-  { src: '/images/gir-cows-gir-govalan-farm-gujarat.jpg', alt: 'Our Gir cows' },
+  { src: '/images/optimized/gir-cows-gir-govalan-farm-gujarat.webp', alt: 'Our Gir cows' },
   { src: '/images/gir-govalan-farm-landscape-gujarat.jpg', alt: 'Gir Govalan farm landscape' }
 ];
 
@@ -761,7 +761,7 @@ const PAGES = {
   about: {
     title: 'Who Is Gir Govalan',
     seoTitle: 'Who Is Gir Govalan',
-    hero: '/images/gir-cows-gir-govalan-farm-gujarat.jpg',
+    hero: '/images/optimized/gir-cows-gir-govalan-farm-gujarat.webp',
     photoCaption: 'Gir Govalan real photo',
     sections: [
       {
