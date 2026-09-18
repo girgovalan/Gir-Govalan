@@ -161,21 +161,22 @@
   <div id="site-footer"></div>
   <button class="scroll-top" aria-label="Back to top">↑</button>
 
-  <script src="/js/urls.js"></script>
-  <script src="/js/data.js"></script>
-  <script src="/js/blog-scheduled.js"></script>
-  <script src="/js/blog-scheduled-extended.js"></script>
-  <script src="/js/blog-scheduled-recommended.js"></script>
-  <script src="/js/blog-month1-sprint.js"></script>
-  <script src="/js/blog-international-long.js"></script>
-  <script src="/js/blog-country-clusters.js"></script>
-  <script src="/js/blog-usa-cluster.js"></script>
-  <script src="/js/seo.js"></script>
-  <script src="/js/components.js"></script>
-  <script src="/js/app.js"></script>
-  <script src="/js/meta-pixel.js"></script>
+  <script defer src="/js/urls.js"></script>
+  <script defer src="/js/data.js"></script>
+  <script defer src="/js/blog-scheduled.js"></script>
+  <script defer src="/js/blog-scheduled-extended.js"></script>
+  <script defer src="/js/blog-scheduled-recommended.js"></script>
+  <script defer src="/js/blog-month1-sprint.js"></script>
+  <script defer src="/js/blog-international-long.js"></script>
+  <script defer src="/js/blog-country-clusters.js"></script>
+  <script defer src="/js/blog-usa-cluster.js"></script>
+  <script defer src="/js/seo.js"></script>
+  <script defer src="/js/components.js"></script>
+  <script defer src="/js/app.js"></script>
+  <script defer src="/js/meta-pixel.js"></script>
   <script>
-    document.getElementById('label-categories').innerHTML = sectionLabel('OUR CATEGORIES');
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('label-categories').innerHTML = sectionLabel('OUR CATEGORIES');
     document.getElementById('label-products').innerHTML = sectionLabel('FEATURED PRODUCTS');
     document.getElementById('label-featured').innerHTML = sectionLabel('TOP SALES');
     document.getElementById('label-videos').innerHTML = sectionLabel('FEATURED VIDEOS');
@@ -279,7 +280,7 @@
 
     document.getElementById('home-testimonials').innerHTML = TESTIMONIALS.map(testimonialCardHTML).join('');
 
-    document.getElementById('home-blog').innerHTML = getPublishedBlogPosts().slice(0, 3).map(post => `
+      document.getElementById('home-blog').innerHTML = getPublishedBlogPosts().slice(0, 3).map(post => `
       <a href="/blogs/news/${post.slug}/" class="blog-card">
         <div class="blog-card-image" style="background-image:url('${post.image}')"></div>
         <div class="blog-card-body">
@@ -287,7 +288,8 @@
           <h3>${post.title}</h3>
         </div>
       </a>
-    `).join('');
+      `).join('');
+    });
   </script>
 </body>
 </html>
