@@ -82,7 +82,7 @@ const PRODUCTS = [
     vendor: 'Gir Govalan',
     seoTitle: "A2 Cow Ghee & Gir Cow Ghee Price | Bilona Ghee Online — Gir Govalan",
     metaDescription: "Buy pure A2 cow ghee and Gir cow bilona ghee online from Gir Govalan, Gujarat. Choose 250ml to 5L packs, compare prices, and order organic desi ghee for home delivery.",
-    keywords: "a2 cow ghee, gir cow ghee, gir cow ghee price, a2 gir cow ghee, a2 desi ghee, gir organic ghee, a2 cow ghee near me, a2 gir cow ghee price, organic desi cow ghee, a2 organic ghee, a2 ghee, pure ghee, a2 bilona ghee",
+    keywords: "a2 cow ghee, gir cow ghee, gir cow ghee price, a2 gir cow ghee, a2 desi ghee, a2 cow ghee near me, a2 gir cow ghee price, organic desi cow ghee, a2 organic ghee, a2 ghee, pure ghee, a2 bilona ghee",
     price: 1300,
     compareAt: 1399,
     category: 'ghee',
