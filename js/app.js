@@ -278,6 +278,17 @@ function productCardHTML(p) {
 }
 
 function bindGlobalUI() {
+  if (!document.querySelector('.whatsapp-float') && typeof SITE !== 'undefined' && SITE.whatsapp) {
+    const whatsappButton = document.createElement('a');
+    whatsappButton.className = 'whatsapp-float';
+    whatsappButton.href = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent('Hello Gir Govalan, I would like to know more about your products.')}`;
+    whatsappButton.target = '_blank';
+    whatsappButton.rel = 'noopener noreferrer';
+    whatsappButton.setAttribute('aria-label', 'Chat with Gir Govalan on WhatsApp');
+    whatsappButton.innerHTML = '<span aria-hidden="true">◔</span><strong>WhatsApp</strong>';
+    document.body.appendChild(whatsappButton);
+  }
+
   document.body.addEventListener('click', e => {
     const contactLink = e.target.closest('a[href^="mailto:"], a[href^="tel:"], a[href*="wa.me/"]');
     if (contactLink && typeof trackGa4 === 'function') {
