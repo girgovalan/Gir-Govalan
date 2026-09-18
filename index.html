@@ -258,25 +258,9 @@
 
     document.getElementById('home-videos').innerHTML = FEATURED_VIDEOS.map(featuredVideoCardHTML).join('');
 
-    const homeVideos = document.querySelectorAll('#home-videos video');
-    homeVideos.forEach((video, index) => {
+    document.querySelectorAll('#home-videos video').forEach(video => {
       video.muted = true;
-      if (index === 0) video.play().catch(() => {});
-      video.addEventListener('ended', () => {
-        const card = video.closest('.featured-video-card');
-        const nextCard = card?.nextElementSibling;
-        if (nextCard) {
-          featuredVideos.scrollTo({
-            left: nextCard.offsetLeft - featuredVideos.offsetLeft,
-            behavior: 'smooth'
-          });
-          const nextVideo = nextCard.querySelector('video');
-          nextVideo?.play().catch(() => {});
-        } else {
-          featuredVideos.scrollTo({ left: 0, behavior: 'smooth' });
-          featuredVideos.querySelector('video')?.play().catch(() => {});
-        }
-      });
+      video.play().catch(() => {});
     });
 
     const featuredVideos = document.getElementById('home-videos');

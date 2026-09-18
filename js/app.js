@@ -207,7 +207,7 @@ function featuredVideoCardHTML(v) {
         <span class="featured-video-instagram-badge">Instagram</span>
         <span class="featured-video-play" aria-hidden="true">▶</span>
       </a>`
-    : `<video controls muted playsinline preload="auto" aria-label="${v.title}">
+    : `<video controls autoplay muted loop playsinline preload="auto" aria-label="${v.title}">
         <source src="${v.src}" type="video/mp4">
         Your browser does not support video playback.
       </video>`;
