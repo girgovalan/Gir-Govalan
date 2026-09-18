@@ -17,7 +17,15 @@
     });
   }
 
-  document.title = product.name + ' — Gir Govalan';
+  document.title = product.seoTitle || product.name + ' — Gir Govalan';
+  const descriptionMeta = document.querySelector('meta[name="description"]');
+  if (descriptionMeta && product.metaDescription) {
+    descriptionMeta.setAttribute('content', product.metaDescription);
+  }
+  const keywordsMeta = document.querySelector('meta[name="keywords"]');
+  if (keywordsMeta && product.keywords) {
+    keywordsMeta.setAttribute('content', product.keywords);
+  }
   const link = document.createElement('link');
   link.rel = 'canonical';
   link.href = 'https://www.girgovalan.com/products/' + id + '/';
