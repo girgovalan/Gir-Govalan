@@ -80,9 +80,9 @@ const PRODUCTS = [
     id: 'pure-organic-a2-gir-cow-ghee',
     name: 'Pure Organic A2 Gir Cow Bilona Ghee',
     vendor: 'Gir Govalan',
-    seoTitle: "A2 Cow Ghee & Gir Cow Ghee Price | Bilona Ghee Online — Gir Govalan",
-    metaDescription: "Buy pure A2 cow ghee and Gir cow bilona ghee online from Gir Govalan, Gujarat. Choose 250ml to 5L packs, compare prices, and order organic desi ghee for home delivery.",
-    keywords: "a2 cow ghee, gir cow ghee, gir cow ghee price, a2 gir cow ghee, a2 desi ghee, a2 cow ghee near me, a2 gir cow ghee price, organic desi cow ghee, a2 organic ghee, a2 ghee, pure ghee, a2 bilona ghee",
+    seoTitle: "A2 Cow Ghee | Pure A2 Gir Cow Bilona Ghee Online - Gir Govalan",
+    seoH1: 'Pure A2 Cow Ghee from Gir Cows - Traditional Bilona Method',
+    metaDescription: "Buy pure A2 cow ghee made from Gir cow milk using the traditional Bilona method. Gir Govalan's desi ghee is curd-churned for everyday cooking, tadka, and sweets.",
     price: 1300,
     compareAt: 1399,
     category: 'ghee',
@@ -152,7 +152,7 @@ const PRODUCTS = [
 <h2>Authentic A2 Gir Cow Bilona Ghee from Gujarat</h2>
 <p>Gir Govalan ghee is rooted in the Gir region’s pastoral heritage — where Maldhari communities have lived alongside indigenous cattle for centuries. Our process respects that lineage: patient churning, slow cooking, and zero compromise on what goes into the jar.</p>
 </div>
-<h2>The Bilona Process, Step by Step</h2>
+<h2>How Our A2 Gir Cow Ghee Is Made</h2>
 <ol>
 <li>A2 Gir cow milk is cultured into thick curd.</li>
 <li>Curd is churned with a wooden bilona to draw out butter.</li>
@@ -166,15 +166,17 @@ const PRODUCTS = [
 <li>Batch-wise production for consistent quality</li>
 <li>Transparent labelling — ghee only, nothing else</li>
 </ul>
-<h2>Why Choose Our Gir Cow Ghee?</h2>
+<h2>Why Choose Gir Govalan A2 Cow Ghee?</h2>
 <ul class="check-list">
 <li>Traditional bilona method in every batch</li>
 <li>Made from indigenous Gir cow milk</li>
 <li>Farm sourced from Gir region, Gujarat</li>
 <li>Fresh batch preparation with traceable quality</li>
 </ul>
-<h2>How Our Bilona Ghee Is Made</h2>
+<h2>A2 Cow Ghee for Everyday Cooking</h2>
 <p>We follow a four-step process: milk collection, curd setting, bilona churning, and slow clarification. This preserves aroma, texture, and purity expected from authentic desi ghee.</p>
+<h2>Why Bilona Ghee Is Different</h2>
+<p>A2 Bilona ghee follows the traditional path from milk to curd, hand-churned butter, and slow-cooked ghee. That process gives Gir cow bilona ghee its distinctive aroma and texture.</p>
 <p class="product-tagline"><strong>Gir Govalan — Live Pure. Eat Pure.</strong></p>`,
     variants: [
       { label: '250ml', price: 725, compareAt: 799 },

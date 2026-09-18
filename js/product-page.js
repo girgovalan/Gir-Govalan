@@ -22,10 +22,6 @@
   if (descriptionMeta && product.metaDescription) {
     descriptionMeta.setAttribute('content', product.metaDescription);
   }
-  const keywordsMeta = document.querySelector('meta[name="keywords"]');
-  if (keywordsMeta && product.keywords) {
-    keywordsMeta.setAttribute('content', product.keywords);
-  }
   const link = document.createElement('link');
   link.rel = 'canonical';
   link.href = 'https://www.girgovalan.com/products/' + id + '/';
@@ -290,7 +286,7 @@
       <div class="product-buy-box">
         <p class="product-trust-headline">${trustHeadline}</p>
         <p class="product-vendor">${product.vendor}</p>
-        <h1>${product.name}${product.productSubtitle ? ` <span class="product-subtitle">— ${product.productSubtitle}</span>` : ''}</h1>
+        <h1>${product.seoH1 || product.name}${product.productSubtitle ? ` <span class="product-subtitle">— ${product.productSubtitle}</span>` : ''}</h1>
         <p class="product-rating-row">
           <span class="product-rating">${'★'.repeat(Math.round(product.rating || 5))}</span>
           ${reviewCount}
