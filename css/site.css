@@ -2429,10 +2429,11 @@ section.bg-cream {
   place-items: center;
   width: 25px;
   height: 25px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  font-size: 1.15rem;
-  line-height: 1;
+}
+.whatsapp-float-icon svg {
+  display: block;
+  width: 25px;
+  height: 25px;
 }
 .whatsapp-float strong {
   font-size: 0.85rem;

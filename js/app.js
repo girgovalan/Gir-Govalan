@@ -285,7 +285,7 @@ function bindGlobalUI() {
     whatsappButton.target = '_blank';
     whatsappButton.rel = 'noopener noreferrer';
     whatsappButton.setAttribute('aria-label', 'Chat with Gir Govalan on WhatsApp');
-    whatsappButton.innerHTML = '<span aria-hidden="true">◔</span><strong>WhatsApp</strong>';
+    whatsappButton.innerHTML = '<span class="whatsapp-float-icon" aria-hidden="true"><svg viewBox="0 0 24 24" role="img"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.55L2.2 21.8l5.2-1.36A9.8 9.8 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.08-1.12l-.3-.18-3.08.8.82-3-.2-.31A8 8 0 1 1 12 19.9Zm4.4-5.97c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.68 2.56 4.07 3.59.57.25 1.02.4 1.37.51.58.18 1.1.15 1.51.09.46-.07 1.43-.58 1.63-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" fill="currentColor"/></svg></span><strong>WhatsApp</strong>';
     document.body.appendChild(whatsappButton);
   }
 
