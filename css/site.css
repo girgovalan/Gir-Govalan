@@ -690,6 +690,9 @@ section.bg-cream {
   color: #fff;
   letter-spacing: 0.02em;
 }
+.trust-bar-item a {
+  color: #fff !important;
+}
 .trust-bar-item span:first-child {
   display: inline-flex;
   align-items: center;
