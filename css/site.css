@@ -3155,6 +3155,137 @@ section.bg-cream {
   }
 }
 
+@media (min-width: 769px) {
+  body.has-mobile-product-bar {
+    padding-bottom: 96px;
+  }
+  .product-page-layout--pure-organic-a2-gir-cow-ghee .product-short-desc {
+    display: -webkit-box;
+    overflow: hidden;
+    margin-bottom: 4px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  .product-page-layout--pure-organic-a2-gir-cow-ghee .product-short-desc.is-expanded {
+    display: block;
+    -webkit-line-clamp: unset;
+  }
+  .product-page-layout--pure-organic-a2-gir-cow-ghee .product-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 14px;
+    padding: 5px 0;
+    border: 0;
+    background: transparent;
+    color: var(--accent-1);
+    font: 600 .875rem/1.4 var(--font, Arial, sans-serif);
+    cursor: pointer;
+  }
+  .product-page-layout--pure-organic-a2-gir-cow-ghee .product-read-more::after {
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    content: "";
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform .18s ease;
+  }
+  .product-page-layout--pure-organic-a2-gir-cow-ghee .product-read-more[aria-expanded="true"]::after {
+    transform: translateY(2px) rotate(225deg);
+  }
+  .mobile-product-bar {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    min-height: 84px;
+    padding: 12px 40px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 -5px 20px rgba(48, 42, 27, .1);
+  }
+  .mobile-product-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    margin-right: auto;
+  }
+  .mobile-product-summary img {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+  }
+  .mobile-product-summary > div {
+    display: grid;
+    gap: 3px;
+  }
+  .mobile-product-variant {
+    color: var(--text-muted);
+    font-size: .85rem;
+  }
+  .mobile-product-price {
+    color: var(--accent-1);
+    font-size: 1rem;
+  }
+  .mobile-product-add {
+    min-height: 48px;
+    flex: 0 1 320px;
+    padding: 12px 24px;
+    border: 1px solid var(--cta);
+    border-radius: 8px;
+    background: var(--gold-gradient);
+    color: var(--text);
+    box-shadow: 0 3px 9px var(--cta-soft);
+    font-size: .9rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .product-page-section .product-page-layout {
+    align-items: start;
+  }
+  .product-page-layout--pure-organic-a2-gir-cow-ghee .product-main-image-btn {
+    width: min(100%, 560px);
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  @media (min-width: 769px) and (max-width: 900px) {
+    .mobile-product-bar {
+      gap: 16px;
+      padding-right: 24px;
+      padding-left: 24px;
+    }
+    .mobile-product-add {
+      flex-basis: 250px;
+    }
+  }
+  .product-page-layout--pure-organic-a2-gir-cow-ghee .product-gallery--fill .product-main-image-btn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+  }
+  .product-page-layout--pure-organic-a2-gir-cow-ghee .product-gallery--square .product-main-image-btn {
+    aspect-ratio: 1;
+  }
+  .product-page-layout--pure-organic-a2-gir-cow-ghee .product-gallery--square .product-main-image-btn img {
+    object-fit: contain;
+    padding: 16px;
+  }
+}
+
 @media (max-width: 768px) {
   .product-page-section { background: var(--bg-1); }
   .product-page-section .product-page-layout--pure-organic-a2-gir-cow-ghee .product-gallery {
