@@ -345,12 +345,31 @@ function bindGlobalUI() {
   });
 
   document.addEventListener('click', e => {
+    const searchToggle = e.target.closest('.mobile-search-toggle');
+    if (searchToggle) {
+      const headerInner = searchToggle.closest('.header-inner');
+      const open = headerInner?.classList.toggle('search-open');
+      searchToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) document.getElementById('global-search')?.focus();
+      return;
+    }
+
     const toggle = e.target.closest('.mobile-toggle');
     if (toggle) {
       const list = document.querySelector('.nav-list');
       const open = list?.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    const headerInner = document.querySelector('.header-inner.search-open');
+    if (!headerInner) return;
+    headerInner.classList.remove('search-open');
+    const searchToggle = headerInner.querySelector('.mobile-search-toggle');
+    searchToggle?.setAttribute('aria-expanded', 'false');
+    searchToggle?.focus();
   });
 
   const searchInput = document.getElementById('global-search');

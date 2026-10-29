@@ -103,7 +103,7 @@ const PRODUCTS = [
       { author: 'Priya Sharma', role: 'Home Chef', date: '2025-11-12', rating: 5, body: 'The bilona aroma is real — not like store ghee. We use it daily for dal and paratha.' },
       { author: 'Rajesh Kumar', role: 'Food Blogger', date: '2025-10-03', rating: 5, body: 'Authentic Gir cow ghee with a rich nutty finish. On our third repeat order for the 1 litre jar.' }
     ],
-    features: ['Curd-Churned Bilona', 'Pasture-Raised Gir Cows', 'Single-Ingredient Purity'],
+    features: ['Traditional Bilona Method', 'A2 Gir Cow Milk', 'Single-Ingredient Purity', 'Slow-Cooked for Deep Aroma'],
     description: 'Slow-cooked desi ghee from A2 Gir cow milk, prepared the Vedic way — curd first, then bilona-churned butter, then clarified over a gentle flame for a deep aroma and clean finish.',
     tabLabels: {
       description: 'About This Ghee',

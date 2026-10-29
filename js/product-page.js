@@ -95,11 +95,25 @@
 
   function variantButtons() {
     if (!product.variants) return '';
-    return product.variants.map((v, i) => `
+    return product.variants.map((v, i) => {
+      const pack = v.label.match(/(\d+(?:\.\d+)?)\s*(ml|l)\b/i);
+      const packMl = pack ? Number(pack[1]) * (pack[2].toLowerCase() === 'l' ? 1000 : 1) : 0;
+      const unitPrice = packMl ? `₹${(v.price / packMl).toFixed(2)}/ml` : '';
+      const badge = product.category === 'ghee' && /^1\s*l$/i.test(v.label.trim())
+        ? 'Popular pick'
+        : product.category === 'ghee' && /^5\s*l$/i.test(v.label.trim())
+          ? 'Lowest price per ml'
+          : '';
+      return `
       <button type="button" class="variant-pill${i === 0 ? ' active' : ''}" data-label="${v.label}" data-price="${v.price}" data-compare="${v.compareAt || ''}">
-        <span class="variant-pill-label">${v.label}</span>
-        <span class="variant-pill-price">${formatPrice(v.price)}</span>
-      </button>`).join('');
+        ${badge ? `<span class="variant-pill-badge">${badge}</span>` : ''}
+        <span class="variant-pill-copy">
+          <span class="variant-pill-label">${v.label}</span>
+          <span class="variant-pill-price">${formatPrice(v.price)}</span>
+          ${unitPrice ? `<small class="variant-pill-unit-price">${unitPrice}</small>` : ''}
+        </span>
+      </button>`;
+    }).join('');
   }
 
   function milkVariantSection() {
@@ -147,6 +161,8 @@
     compareAt = milkCompareAt(milkSelection.material, milkSelection.litres);
     selectedVariant = { label: milkVariantLabel(milkSelection.material, milkSelection.litres), price, compareAt };
     updateMainPrice();
+    document.getElementById('mobile-product-variant').textContent = selectedVariant.label;
+    document.getElementById('mobile-product-price').textContent = formatPrice(price);
 
     document.querySelectorAll('[data-milk-material]').forEach(btn => {
       const id = btn.dataset.milkMaterial;
@@ -219,11 +235,30 @@
         <button type="button" class="product-main-image-btn" id="open-image-modal" aria-label="Open image">
           <img id="main-img" src="${imgs[0]}" alt="${product.name}"${imgFocusStyle}>
         </button>
+        ${imgs.length > 1 ? `
+          <button type="button" class="product-gallery-arrow product-gallery-arrow--previous" data-gallery-step="-1" aria-label="View previous image">‹</button>
+          <button type="button" class="product-gallery-arrow product-gallery-arrow--next" data-gallery-step="1" aria-label="View next image">›</button>
+          <span class="product-gallery-count" aria-live="polite">1 / ${imgs.length}</span>` : ''}
         ${imgs.length > 1 ? `<div class="product-thumbs">${thumbs}</div>` : ''}
       </div>
       <div class="product-image-modal" id="image-modal" hidden>
         <button type="button" class="product-image-modal-close" id="close-image-modal" aria-label="Close">&times;</button>
         <img id="modal-img" src="${imgs[0]}" alt="${product.name}">
+      </div>`;
+  }
+
+  function mobilePurchaseBar() {
+    const variantLabel = selectedVariant?.label || product.variants?.[0]?.label || 'Standard pack';
+    return `
+      <div class="mobile-product-bar" id="mobile-product-bar">
+        <div class="mobile-product-summary">
+          <img src="${product.image}" alt="">
+          <div>
+            <span class="mobile-product-variant" id="mobile-product-variant">${variantLabel}</span>
+            <strong class="mobile-product-price" id="mobile-product-price">${formatPrice(price)}</strong>
+          </div>
+        </div>
+        <button type="button" class="btn btn-cta mobile-product-add" id="mobile-add-cart">Add to Cart</button>
       </div>`;
   }
 
@@ -279,9 +314,16 @@
       <a href="/#label-testimonials">Customer reviews</a>
       <a href="/pages/who-is-gir-govalan/">Customer stories</a>
     </div>`;
+  const purchaseTrustStrip = product.category === 'ghee' ? `
+    <div class="product-purchase-trust" aria-label="Shopping information">
+      <span><b aria-hidden="true">✓</b> Free delivery above ₹999</span>
+      <span><b aria-hidden="true">◆</b> Farm-sourced</span>
+      <span><b aria-hidden="true">✓</b> Secure checkout</span>
+      <span><b aria-hidden="true">↗</b> WhatsApp support</span>
+    </div>` : '';
 
   root.innerHTML = `
-    <div class="featured-product product-page-layout">
+    <div class="featured-product product-page-layout product-page-layout--${product.id}">
       <div>${imageGallery()}</div>
       <div class="product-buy-box">
         <p class="product-trust-headline">${trustHeadline}</p>
@@ -295,6 +337,7 @@
         ${deliveryInfo}
         <p class="product-tax-note">Inclusive of all taxes</p>
         <p class="product-short-desc">${product.description}</p>
+        ${product.id === 'pure-organic-a2-gir-cow-ghee' ? '<button type="button" class="product-read-more" aria-expanded="false">Read more</button>' : ''}
         ${trustRow}
         ${featureBadges()}
         ${milkPricing ? milkVariantSection() : (product.variants ? `
@@ -313,6 +356,7 @@
         <div class="product-cta-row product-cta-row--primary">
           <button type="button" class="btn btn-secondary" id="wa-single">Order on WhatsApp</button>
         </div>
+        ${purchaseTrustStrip}
         <div class="product-cta-row product-cta-row--secondary">
           ${product.id === 'a2-gir-milk'
             ? '<a href="/blogs/news/gir-cow-milk-for-toddlers/" class="btn btn-outline">A2 Milk Guide for Families</a>'
@@ -323,18 +367,42 @@
       </div>
     </div>
     ${tabsSection()}
-    ${productReviewsSection()}`;
+    ${productReviewsSection()}
+    ${mobilePurchaseBar()}`;
+  document.body.classList.add('has-mobile-product-bar');
 
   // Image gallery
+  let activeImageIndex = 0;
+  function selectImage(index) {
+    activeImageIndex = (index + imgs.length) % imgs.length;
+    document.querySelector('.product-gallery')?.classList.toggle(
+      'product-gallery--square',
+      product.id === 'pure-organic-a2-gir-cow-ghee' && activeImageIndex > 0
+    );
+    document.getElementById('main-img').src = imgs[activeImageIndex];
+    const modalImg = document.getElementById('modal-img');
+    if (modalImg) modalImg.src = imgs[activeImageIndex];
+    document.querySelectorAll('.product-thumb').forEach((btn, i) => {
+      btn.classList.toggle('active', i === activeImageIndex);
+    });
+    const count = document.querySelector('.product-gallery-count');
+    if (count) count.textContent = `${activeImageIndex + 1} / ${imgs.length}`;
+  }
   document.querySelectorAll('.product-thumb').forEach(btn => {
     btn.onclick = () => {
-      const idx = +btn.dataset.index;
-      document.getElementById('main-img').src = imgs[idx];
-      const modalImg = document.getElementById('modal-img');
-      if (modalImg) modalImg.src = imgs[idx];
-      document.querySelectorAll('.product-thumb').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      selectImage(+btn.dataset.index);
     };
+  });
+  document.querySelectorAll('[data-gallery-step]').forEach(btn => {
+    btn.addEventListener('click', () => selectImage(activeImageIndex + +btn.dataset.galleryStep));
+  });
+  document.querySelector('.product-read-more')?.addEventListener('click', event => {
+    const button = event.currentTarget;
+    const description = document.querySelector('.product-short-desc');
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    description.classList.toggle('is-expanded', !expanded);
+    button.setAttribute('aria-expanded', String(!expanded));
+    button.textContent = expanded ? 'Read more' : 'Read less';
   });
 
   const modal = document.getElementById('image-modal');
@@ -372,6 +440,8 @@
       updateMainPrice();
       const sizeEl = document.getElementById('selected-size');
       if (sizeEl) sizeEl.textContent = selectedVariant.label;
+      document.getElementById('mobile-product-variant').textContent = selectedVariant.label;
+      document.getElementById('mobile-product-price').textContent = formatPrice(price);
     });
   });
 
@@ -440,6 +510,9 @@
   };
   document.getElementById('add-cart').onclick = () => {
     addToCart(product.id, +document.getElementById('qty').value, selectedVariant?.label, price);
+  };
+  document.getElementById('mobile-add-cart').onclick = () => {
+    document.getElementById('add-cart').click();
   };
   document.getElementById('wa-single').onclick = () => {
     const qty = +document.getElementById('qty').value;

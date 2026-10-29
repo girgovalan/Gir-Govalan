@@ -81,7 +81,7 @@
               <li><a href="${URLS.contact}" class="nav-link${isActive('contact')}">Contact</a></li>
             </ul>
           </nav>
-          <div class="header-search-wrap">
+          <div class="header-search-wrap" id="mobile-search-panel">
             <label class="header-search" for="global-search">
               <span class="header-search-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
@@ -90,6 +90,9 @@
             </label>
           </div>
           <div class="header-actions">
+            <button type="button" class="icon-btn mobile-search-toggle" aria-label="Search" aria-controls="mobile-search-panel" aria-expanded="false">
+              <svg viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+            </button>
             <a href="${URLS.cart}" class="icon-btn cart-link" aria-label="Cart">
               <svg viewBox="0 0 24 24" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6L5 3H2"/><circle cx="9" cy="20" r="1.5" fill="currentColor" stroke="none"/><circle cx="18" cy="20" r="1.5" fill="currentColor" stroke="none"/></svg>
               <span class="cart-badge">${count || ''}</span>
